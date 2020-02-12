@@ -68,10 +68,6 @@ var markers = new L.MarkerClusterGroup({
     animate: true
 }).addTo(map);
 
-//var markers = new L.MarkerClusterGroup().addTo(map);
-
-var dic = {};
-
 var xhr = new XMLHttpRequest();
 xhr.open('get', 'https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json');
 xhr.send();
@@ -98,7 +94,11 @@ xhr.onload = function () {
             data[i].geometry.coordinates[1],
             data[i].geometry.coordinates[0]
         ], { icon: imageIcon }
-        ).bindPopup(data[i].properties.name);
+        ).bindPopup(
+            '<p class="popup-name">' + data[i].properties.name + '<p/>' +
+            '<p class="popup-phone">[電話] ' + data[i].properties.phone + '<p/>' +
+            '<p class="popup-mask">[口罩] 成人: ' + data[i].properties.mask_adult + '、兒童: ' + data[i].properties.mask_child + '<p/>' +
+            '<p class="popup-address">[地址] ' + data[i].properties.address + '<p/>');
         markers.addLayer(mark);
     }
     map.addLayer(markers);
