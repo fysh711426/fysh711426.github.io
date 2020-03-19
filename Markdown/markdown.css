@@ -1,0 +1,121 @@
+.vscode-body {
+	max-width: 720px;
+	font-family: "Lato","PingFang TC", "Helvetica Neue", Helvetica, "Microsoft JhengHei", "·s²Ó©úÅé", Arial, sans-serif;
+}
+
+.vscode-body code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+
+.vscode-body pre {
+    color: initial;
+    background: #232323 !important;
+}
+
+.vscode-body pre code {
+    color: #e6e1dc;
+}
+
+/*
+Copyright (c) 2006, Ivan Sagalaev
+All rights reserved.
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of highlight.js nor the names of its contributors 
+      may be used to endorse or promote products derived from this software 
+      without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE REGENTS AND CONTRIBUTORS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+/*
+Railscasts-like style (c) Visoft, Inc. (Damien White)
+*/
+
+.vscode-body .hljs {
+	display:block;
+	overflow-x:auto;
+	padding:0.5em;
+	background:#232323;
+	color:#e6e1dc;
+}
+.vscode-body .hljs-comment,.vscode-body .hljs-quote {
+	color:#bc9458;
+	font-style:italic;
+}
+.vscode-body .hljs-keyword,.vscode-body .hljs-selector-tag {
+	color:#c26230;
+}
+.vscode-body .hljs-string,.vscode-body .hljs-number,.vscode-body .hljs-regexp,.vscode-body .hljs-variable,.vscode-body .hljs-template-variable {
+	color:#a5c261;
+}
+.vscode-body .hljs-subst {
+	color:#519f50;
+}
+.vscode-body .hljs-tag,.vscode-body .hljs-name {
+	color:#e8bf6a;
+}
+.vscode-body .hljs-type {
+	color:#da4939;
+}
+.vscode-body .hljs-symbol,.vscode-body .hljs-bullet,.vscode-body .hljs-built_in,.vscode-body .hljs-builtin-name,.vscode-body .hljs-attr,.vscode-body .hljs-link {
+	color:#6d9cbe;
+}
+.vscode-body .hljs-params {
+	color:#d0d0ff;
+}
+.vscode-body .hljs-attribute {
+	color:#cda869;
+}
+.vscode-body .hljs-meta {
+	color:#9b859d;
+}
+.vscode-body .hljs-title,.vscode-body .hljs-section {
+	color:#ffc66d;
+}
+.vscode-body .hljs-addition {
+	background-color:#144212;
+	color:#e6e1dc;
+	display:inline-block;
+	width:100%;
+}
+.vscode-body .hljs-deletion {
+	background-color:#600;
+	color:#e6e1dc;
+	display:inline-block;
+	width:100%;
+}
+.vscode-body .hljs-selector-class {
+	color:#9b703f;
+}
+.vscode-body .hljs-selector-id {
+	color:#8b98ab;
+}
+.vscode-body .hljs-emphasis {
+	font-style:italic;
+}
+.vscode-body .hljs-strong {
+	font-weight:bold;
+}
+.vscode-body .hljs-link {
+	text-decoration:underline;
+}
