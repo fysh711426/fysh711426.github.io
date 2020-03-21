@@ -1,0 +1,125 @@
+@font-face { 
+    font-family: huninn;
+    src: url(jf-openhuninn-1.0.ttf) format('woff2');
+    font-display: auto;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 20px;
+}
+
+body {
+    margin: 0 auto;
+    font-family: "huninn";
+    color: #252525;
+}
+
+.container {
+    background-color: #fffcfc;
+}
+
+.header {
+    background-color: #fffcfc;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+}
+
+.content {
+    margin-top: 2em;
+    padding-bottom: 2em;
+    min-height: 100vh;
+}
+
+.warp {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: inline-block;
+    height: 62px;
+    line-height: 62px;
+    text-align: left;
+    margin-right: 5px;
+    padding-left: 5px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.logo a {
+    display: inline;
+    vertical-align: baseline;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    color: #00a0e9;
+}
+
+.logo a:hover {
+    opacity: 0.5;
+}
+
+.block {
+    box-shadow: 
+        0 2px 5px 0 rgba(0, 0, 0, 0.15), 
+        0 3px 3px -2px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    padding: 8px 16px;
+}
+
+.block-children {
+    padding-left: 20px;
+    overflow: hidden;
+    max-height: 0;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+}
+
+.block-children.show {
+    max-height: initial;
+    opacity: 1;
+}
+
+.block a {
+    display: inline-block;
+    padding: 10px 10px;
+    transition: 0.3s ease-in-out;
+    color: #626262;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.block a:hover {
+    opacity: 0.5;
+}
+
+.block .icon {
+    display: inline-block;
+    color: silver;
+    font: normal normal normal 12px/1 FontAwesome;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+}
+
+.block .icon:before {
+    content: "\f054";
+}
+
+.block .icon.show:before {
+    content: "\f078";
+}
+
+.block-children.articles a {
+    display: block;
+    font-weight: normal;
+    color: #00a0e9;
+}
