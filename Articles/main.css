@@ -1,8 +1,8 @@
-@font-face { 
+/*@font-face { 
     font-family: huninn;
     src: url(jf-openhuninn-1.0.ttf) format('woff2');
     font-display: auto;
-}
+}*/
 
 ::-webkit-scrollbar {
     width: 8px;
