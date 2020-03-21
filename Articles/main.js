@@ -3,7 +3,6 @@ var fontFace = new FontFace(
     'url(jf-openhuninn-1.0.ttf) format("woff2")');
 fontFace.display = 'auto';
 document.fonts.add(fontFace);
-fontFace.load();
 fontFace.load().then(function () {
     document.body.classList.add('loaded');
 });
