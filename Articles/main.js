@@ -1,3 +1,7 @@
+window.onload = function() {
+    document.body.classList.add('loaded');
+};
+
 function toggle(e) {
     var children = e.nextElementSibling;
     var icon = e.previousElementSibling;

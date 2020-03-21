@@ -22,6 +22,12 @@ body {
     margin: 0 auto;
     font-family: "huninn";
     color: #252525;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
 }
 
 .container {
