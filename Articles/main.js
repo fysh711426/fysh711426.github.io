@@ -1,9 +1,8 @@
-var fontFace = new FontFace(
-    'huninn',
-    'url(jf-openhuninn-1.0.ttf) format("woff2")');
-fontFace.display = 'auto';
-document.fonts.add(fontFace);
-fontFace.load().then(function () {
+document.addEventListener("DOMContentLoaded", function(){
+    document.body.classList.add('dom-loaded');
+});
+
+window.addEventListener("load", function(event) {
     document.body.classList.add('loaded');
 });
 
