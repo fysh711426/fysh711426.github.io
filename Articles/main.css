@@ -23,16 +23,28 @@ body {
     font-family: "huninn";
     color: #252525;
     display: none;
+}
+
+body.loaded {
+    display: block;
+}
+
+#inner-header {
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
 }
 
-body.loaded {
+#inner-header.loaded {
     opacity: 1;
 }
 
-body.dom-loaded {
-    display: block;
+.inner-block {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.inner-block.loaded {
+    opacity: 1;
 }
 
 .container {
@@ -106,6 +118,8 @@ body.dom-loaded {
     color: #626262;
     text-decoration: none;
     font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
 }
 
 .block a:hover {
