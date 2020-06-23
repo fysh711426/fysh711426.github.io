@@ -22,10 +22,10 @@ body {
     margin: 0 auto;
     font-family: "huninn", "Microsoft JhengHei";
     color: #252525;
-    display: none;
+    /* display: none; */
 }
 
-body.loaded {
+/* body.loaded {
     display: block;
 }
 
@@ -45,7 +45,7 @@ body.loaded {
 
 .inner-block.loaded {
     opacity: 1;
-}
+} */
 
 .container {
     background-color: #fffcfc;
