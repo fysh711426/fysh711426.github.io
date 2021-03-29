@@ -1,8 +1,8 @@
-@font-face { 
+/* @font-face { 
     font-family: huninn;
     src: url(jf-openhuninn-1.0.ttf) format('woff2');
     font-display: auto;
-}
+} */
 
 ::-webkit-scrollbar {
     width: 8px;
@@ -20,7 +20,8 @@
 
 body {
     margin: 0 auto;
-    font-family: "huninn", "Microsoft JhengHei";
+    /* font-family: "huninn", "Microsoft JhengHei"; */
+    font-family: "Microsoft JhengHei";
     color: #252525;
     /* display: none; */
 }
@@ -145,6 +146,7 @@ body {
 
 .block-children.articles a {
     display: block;
-    font-weight: normal;
+    /* font-weight: normal; */
+    font-weight: bold;
     color: #00a0e9;
 }
