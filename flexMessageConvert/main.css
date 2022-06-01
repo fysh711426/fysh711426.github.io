@@ -1,0 +1,186 @@
+﻿::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 20px;
+}
+
+html,
+body {
+    height: 110%;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    /* background-color: #181c27; */
+    background-color: #202225;
+    color: #c4c6c9;
+    text-size-adjust: 100%;
+    /* font-family: "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+    font-family: "Open Sans", Helvetica, "Lucida Sans Unicode", "Lucida Grande", "Arial", "Verdana", "sansSerif";
+}
+
+.header {
+    height: 20vh;
+    /* background-color: rgb(211, 186, 160); */
+    background-color: #202225;
+}
+
+.main {
+    max-width: 1024px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 6rem;
+}
+
+.board {
+    position: relative;
+    margin-top: -5rem;
+    /* background-color: #252d38; */
+    background-color: #2f3136;
+    padding-top: 2rem;
+    /* padding-bottom: 3rem; */
+    padding-bottom: 2rem;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 0.35rem;
+    box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+}
+
+.container {
+    max-width: 85%;
+    margin: auto;
+}
+
+.center-content {
+    text-align: center;
+}
+
+.about-name {
+    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #ddd;
+}
+
+.about-intro {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.content {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: #202225;
+    border: 1px solid #2c2c2c;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: "Source Code Pro", monospace;
+}
+
+.result-content {
+    margin-top: 14px;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    color: #fff;
+    background-color: #5865f2;
+    /* width: 65px; */
+    height: 38px;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 38px;
+    padding: 2px 16px;
+    outline: 0;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a.button:link,
+a.button:visited,
+a.button:active {
+    color: #fff;
+}
+
+@media screen and (min-width: 1025px) {
+    a.button:hover {
+        /* box-shadow: 0 4px 14px 0 rgba(0,0,0,.4); */
+        background-color: #4e59e0;
+    }
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:link,
+a:visited,
+a:active {
+    color: #0094ff;
+}
+
+@media screen and (min-width: 1025px) {
+    a:hover {
+        color: #0072c4;
+    }
+}
+
+.align-right {
+    text-align: right;
+}
+
+.CodeMirror {
+    width: 100%;
+    line-height: 1.6em;
+    background-color: #202225;
+    color: #c6c6c6;
+    height: 400px;
+}
+
+.CodeMirror-lines {
+    padding: 0 0;
+}
+
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+    padding: 0 0;
+}
+
+.CodeMirror-cursor {
+    border-left-color: #c6c6c6;
+}
+
+.CodeMirror-placeholder.CodeMirror-line-like {
+    opacity: 0.5;
+}
+
+.CodeMirror-focused .CodeMirror-selected,
+.CodeMirror-focused .CodeMirror-selectedtext,
+.CodeMirror-line::selection,
+.CodeMirror-line>span::selection,
+.CodeMirror-line>span>span::selection {
+    background: rgba(53, 73, 91, 0.8) !important;
+}
+
+.CodeMirror-selected,
+.CodeMirror-selectedtext {
+    background: rgba(74, 74, 74, 0.8) !important;
+}
