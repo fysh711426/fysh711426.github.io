@@ -5,39 +5,61 @@ if (mode != 'csharp' && mode != 'php')
 var aboutName = '';
 var aboutIntro = '';
 if (mode == 'csharp') {
-    aboutName = '[C#] FlexMessageConvert';
+    aboutName = 'C# - FlexMessageConvert';
     aboutIntro =
         'Convert JSON structure to C# or ' +
         '<a href="index.html?mode=php">PHP</a>' +
         ' object.';
 }
 if (mode == 'php') {
-    aboutName = '[PHP] FlexMessageConvert';
+    aboutName = 'PHP - FlexMessageConvert';
     aboutIntro =
         'Convert JSON structure to ' +
         '<a href="index.html?mode=csharp">C#</a>' +
         ' or PHP object.';
 }
 
-document.getElementsByClassName('about-name')
-[0].innerHTML = aboutName;
-document.getElementsByClassName('about-intro')
-[0].innerHTML = aboutIntro;
+document.getElementsByClassName('about-name')[0].innerHTML = aboutName;
+document.getElementsByClassName('about-intro')[0].innerHTML = aboutIntro;
 
-var cm = CodeMirror.fromTextArea(
+var source = CodeMirror.fromTextArea(
     document.getElementById('source'), {
     lineWrapping: true,
     styleSelectedText: true
 });
 
-var result = null;
-var resultContent = document.getElementsByClassName('result-content')[0];
+var result = CodeMirror.fromTextArea(
+    document.getElementById('result'), {
+    lineWrapping: true,
+    styleSelectedText: true
+});
+
+var resultWarp = document.getElementsByClassName('result-warp')[0];
+var error = document.getElementsByClassName('error')[0];
+
+var showError = function (s) {
+    resultWarp.style.display = 'none';
+    error.style.display = 'none';
+    setTimeout(function () {
+        error.style.display = 'block';
+        error.innerHTML = s;
+    }, 200);
+}
+
+var showResult = function (s) {
+    error.style.display = 'none';
+    resultWarp.style.display = 'none';
+    setTimeout(function () {
+        resultWarp.style.display = 'block';
+        result.setValue(s);
+    }, 200);
+}
+
 var btn = document.getElementById('convert');
 btn.onclick = function () {
-    var input = cm.getValue();
+    var input = source.getValue();
     if (input == "") {
-        resultContent.style.display = 'none';
-        alert('Json string is empty.');
+        showError('Json string is empty.');
         return;
     }
     try {
@@ -46,21 +68,10 @@ btn.onclick = function () {
             output = flexMessageConvertCSharp(input);
         if (mode == 'php')
             output = flexMessageConvertPHP(input);
-        if (resultContent.style.display == 'none') {
-            resultContent.style.display = 'block';
-            if (result == null) {
-                result = CodeMirror.fromTextArea(
-                    document.getElementById('result'), {
-                    lineWrapping: true,
-                    styleSelectedText: true
-                });
-            }
-        }
-        result.setValue(output);
+        showResult(output);
     }
     catch (err) {
-        resultContent.style.display = 'none';
-        alert('[Failed] ' + err.message);
+        showError('Failed: ' + err.message);
     }
 }
 
