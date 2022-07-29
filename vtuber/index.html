@@ -2,8 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vtuber - 資料統計</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/vtuber/">
     <link rel="shortcut icon" href="icon/favicon.ico" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
@@ -43,7 +44,7 @@
                 <div></div>
                 <div class="end">
                     <div class="nav-link">
-                        <a href="../about.html">關於本站</a>
+                        <a href="about.html">關於本站</a>
                     </div>
                 </div>
             </div>
@@ -51,15 +52,15 @@
         <div class="container">
             <div class="left-menu active">
                 <div class="left-menu-inner">
-                    <a href="?m=popular" select-val="popular" class="left-menu-item">
+                    <a href="index.html?m=popular" select-val="popular" class="left-menu-item">
                         <!-- <i class="fa-brands fa-hotjar fa-fw"></i></i> -->熱度排行</a>
-                    <a href="?m=subscribe" select-val="subscribe" class="left-menu-item">
+                    <a href="index.html?m=subscribe" select-val="subscribe" class="left-menu-item">
                         <!-- <i class="fa-solid fa-bell fa-fw"></i> -->訂閱排行</a>
-                    <a href="?m=singing" select-val="singing" class="left-menu-item">
+                    <a href="index.html?m=singing" select-val="singing" class="left-menu-item">
                         <!-- <i class="fa-solid fa-microphone fa-fw"></i> -->歌回影片</a>
-                    <a href="?m=growing" select-val="growing" class="left-menu-item">
+                    <a href="index.html?m=growing" select-val="growing" class="left-menu-item">
                         <!-- <i class="fa-solid fa-chart-line fa-fw"></i> -->本周成長</a>
-                    <a href="?m=newcomer" select-val="newcomer" class="left-menu-item">
+                    <a href="index.html?m=newcomer" select-val="newcomer" class="left-menu-item">
                         <!-- <i class="fa-solid fa-user-group fa-fw"></i> -->本月新人</a>
                 </div>
             </div>
@@ -68,10 +69,10 @@
                 <div class="main-inner">
                     <div class="sub-menu">
                         <div class="sub-menu-inner">
-                            <a :href="'?m='+menu+'&s=tw'" select-val="tw" class="sub-menu-item">台灣</a>
-                            <a :href="'?m='+menu+'&s=hololive'" select-val="hololive" class="sub-menu-item">Hololive</a>
-                            <a :href="'?m='+menu+'&s=anycolor'" select-val="anycolor" class="sub-menu-item">彩虹社</a>
-                            <a :href="'?m='+menu+'&s=other'" select-val="other" class="sub-menu-item">其他</a>
+                            <a :href="'index.html?m='+menu+'&s=tw'" select-val="tw" class="sub-menu-item">台灣</a>
+                            <a :href="'index.html?m='+menu+'&s=hololive'" select-val="hololive" class="sub-menu-item">Hololive</a>
+                            <a :href="'index.html?m='+menu+'&s=anycolor'" select-val="anycolor" class="sub-menu-item">彩虹社</a>
+                            <a :href="'index.html?m='+menu+'&s=other'" select-val="other" class="sub-menu-item">其他</a>
                         </div>
                     </div>
                     <div v-if="isLoaded" class="board">
@@ -96,8 +97,8 @@
                                 <i class="fa-solid fa-user-group"></i>
                                 本月新人
                             </span>
-                            <a v-if="showDay" :href="'?m='+menu+'&s='+submenu+'&d=7'" class="day left" :class="{ active: day==7 }">7天</a>
-                            <a v-if="showDay" :href="'?m='+menu+'&s='+submenu+'&d=30'" class="day right" :class="{ active: day==30 }">30天</a>
+                            <a v-if="showDay" :href="'index.html?m='+menu+'&s='+submenu+'&d=7'" class="day left" :class="{ active: day==7 }">7天</a>
+                            <a v-if="showDay" :href="'index.html?m='+menu+'&s='+submenu+'&d=30'" class="day right" :class="{ active: day==30 }">30天</a>
                         </div>
                         <table>
                             <thead>
