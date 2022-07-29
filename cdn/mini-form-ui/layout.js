@@ -51,8 +51,8 @@ var $m = (function () {
                 }
             }
         },
-        tooltip: function () {
-            var items = document.querySelectorAll('.tooltip');
+        tooltip: function (selector) {
+            var items = document.querySelectorAll(selector);
             var template = document.querySelector('.tooltip-template');
             for (var i = 0; i < items.length; i++) {
                 (function() {
