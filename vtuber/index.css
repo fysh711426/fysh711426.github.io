@@ -1,0 +1,299 @@
+.day {
+    display: flex;
+    border: 1px solid #e6e6e6;
+    font-size: 0.9rem;
+    width: 2.5rem;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.day.left {
+    padding: 5px 5px 5px 10px;
+    border-radius: 3.5rem 0 0 3.5rem;
+    margin-left: auto;
+}
+
+.day.right {
+    padding: 5px 10px 5px 5px;
+    border-radius: 0 3.5rem 3.5rem 0;
+    border-left: none;
+}
+
+.day.active {
+    background-color: #f1f1f1;
+}
+
+@media screen and (min-width: 1025px) {
+    .day.active:hover {
+        background-color: #f1f1f1;
+    }
+
+    .day:hover {
+        background-color: #f5f5f5;
+    }
+}
+
+.rank {
+    width: 3.5rem;
+}
+
+td.rank  {
+    font-size: 1.8rem;
+    font-family: Segoe UI;
+}
+
+@media screen and (max-width: 640px) {
+    .rank {
+        width: 2.5rem;
+    }
+
+    td.rank  {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .rank {
+        width: 3rem;
+    }
+
+    td.rank  {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .rank {
+        width: 3.5rem;
+    }
+
+    td.rank  {
+        font-size: 1.8rem;
+    }
+}
+
+.rank-var {
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+}
+
+.rank-var.up {
+    color: #4d9612;
+}
+
+.rank-var.down {
+    color: #e44141;
+}
+
+.rank-var.desh {
+    font-size: 0.5rem;
+}
+
+.rank-var.new {
+    font-size: 0.8rem;
+    color: #4d9612;
+}
+
+.logo {
+    width: 4.5rem;
+    padding-right: 1rem;
+}
+
+.logo-warp {
+    height: 4.5rem;
+    width: 4.5rem;
+}
+
+.logo-warp img {
+    height: 100%;
+    width: auto;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 640px) {
+    .logo {
+        width: 3.5rem;
+    }
+
+    .logo-warp {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .logo {
+        width: 4rem;
+    }
+
+    .logo-warp {
+        height: 4rem;
+        width: 4rem;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .logo {
+        width: 4.5rem;
+    }
+
+    .logo-warp {
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+}
+
+.name {
+    text-align: left;
+    width: 35%;
+}
+
+.name-warp span {
+    display: inline-block;
+    max-width: 100%;
+    line-height: inherit;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.score {
+    width: 25%;
+}
+
+td.score  {
+    font-size: 0.9rem;
+}
+
+.video {
+    width: 8.9rem;
+}
+
+.video-warp {
+    height: 5rem;
+    width: 8.9rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.35rem;
+    margin: 0 auto;
+}
+
+.video-warp img {
+    height: 100%;
+    width: auto;
+    /* border-radius: 0.15rem; */
+}
+
+.video-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(rgba(0,0,0,.05) 65%,rgba(0,0,0,.5));
+}
+
+.video-view {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 640px) {
+    .video {
+        width: 3rem;
+    }
+
+    .video-warp {
+        display: none;
+    }
+
+    .video-link {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .video {
+        width: 11rem;
+        max-width: 176px;
+    }
+
+    .video-warp {
+        display: block;
+        height: 6.18rem;
+        width: 11rem;
+        max-height: 99px;
+        max-width: 176px;
+    }
+
+    .video-link {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .video {
+        width: 14rem;
+        max-width: 224px;
+    }
+
+    .video-warp {
+        display: block;
+        height: 7.87rem;
+        width: 14rem;
+        max-height: 126px;
+        max-width: 224px;
+    }
+
+    .video-link {
+        display: none;
+    }
+}
+
+.about-content {
+    padding: 16px 32px 32px 32px;
+}
+
+.about-content p.hr {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.about-content a,
+.about-content a:link,
+.about-content a:visited,
+.about-content a:active {
+    color: #0094ff;
+}
+
+.about-content ul {
+    padding-left: 2rem;
+    margin-top: 0px;
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    margin-top: 0px;
+    margin-bottom: 1rem;
+}
+
+.about-content h1 {
+    padding-bottom: 10px;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+    /* border-bottom: 1px solid #e6e6e6; */
+}
+
+.about-content h3 {
+    font-size: 1.25em;
+    margin-top: 24px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+}

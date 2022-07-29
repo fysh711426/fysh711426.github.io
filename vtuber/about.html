@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vtuber - 關於本站</title>
+    <link rel="shortcut icon" href="icon/favicon.ico" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.statically.io/gh/fysh711426/MiniFormUI/master/layout.css" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" href="https://fysh711426.github.io/cdn/mini-form-ui/layout.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script src="https://cdn.statically.io/gh/fysh711426/fysh711426.github.io/master/cdn/vue.min.js"></script>
+    <!-- <script src="https://cdn.statically.io/gh/fysh711426/MiniFormUI/master/layout.js" crossorigin="anonymous"></script> -->
+    <script src="https://fysh711426.github.io/cdn/mini-form-ui/layout.js" crossorigin="anonymous"></script>
+    <script src="functions.js"></script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZKLLQXNS6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QZKLLQXNS6');
+    </script>
+</head>
+
+<body>
+    <div id="app" class="layout">
+        <div class="header sticky">
+            <div class="header-inner">
+                <div class="start">
+                    <div class="nav-button">
+                        <button class="nav-button-d" onclick="$m.onNav()"><i class="fa fa-bars"></i></button>
+                        <button class="nav-button-m" onclick="$m.onNavOpen()"><i class="fa fa-bars"></i></button>
+                    </div>
+                    <div class="nav-title nologo">
+                        <span>Vtuber</span>
+                    </div>
+                </div>
+                <div></div>
+                <div class="end">
+                    <div class="nav-link">
+                        <a href="../about.html">關於本站</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="left-menu active">
+                <div class="left-menu-inner">
+                    <a href="../index.html?m=popular" select-val="popular" class="left-menu-item">
+                        <!-- <i class="fa-brands fa-hotjar fa-fw"></i></i> -->熱度排行</a>
+                    <a href="../index.html?m=subscribe" select-val="subscribe" class="left-menu-item">
+                        <!-- <i class="fa-solid fa-bell fa-fw"></i> -->訂閱排行</a>
+                    <a href="../index.html?m=singing" select-val="singing" class="left-menu-item">
+                        <!-- <i class="fa-solid fa-microphone fa-fw"></i> -->歌回影片</a>
+                    <a href="../index.html?m=growing" select-val="growing" class="left-menu-item">
+                        <!-- <i class="fa-solid fa-chart-line fa-fw"></i> -->本周成長</a>
+                    <a href="../index.html?m=newcomer" select-val="newcomer" class="left-menu-item">
+                        <!-- <i class="fa-solid fa-user-group fa-fw"></i> -->本月新人</a>
+                </div>
+            </div>
+            <div class="left-menu-mask" onclick="$m.onNavClose()"></div>
+            <div class="main">
+                <div class="main-inner">
+                    <div class="board">
+                        <div class="about-content">
+                            <h1>關於本站</h1>
+                            <p>這是一個 Vtuber 資料統計網站，方便大家認識新 V。</p>
+                            <p class="hr"></p>
+                            <h3># 資料來源</h3>
+                            <p>Vtuber 資料來源於下列網站。</p>
+                            <ul>
+                                <li><a href="https://vt.cdein.cc/list" target="_blank">https://vt.cdein.cc/list</a></li>
+                                <li><a href="https://taiwanvtuberdata.github.io" target="_blank">https://taiwanvtuberdata.github.io</a></li>
+                                <li><a href="https://virtual-youtuber.userlocal.jp" target="_blank">https://virtual-youtuber.userlocal.jp</a></li>
+                            </ul>
+                            <p>統計資料來源於 Youtube，使用 YoutubeParser 定期取得。</p>
+                            <ul>
+                                <li><a href="https://github.com/fysh711426/YoutubeParser" target="_blank">https://github.com/fysh711426/YoutubeParser</a></li>
+                            </ul>
+                            <p class="hr"></p>
+                            <h3># 更新時間</h3>
+                            <p>每日 3:00 更新統計資訊，每 7 日更新 Vtuber 資訊，資料儲存於此專案。</p>
+                            <ul>
+                                <li><a href="https://github.com/fysh711426/VtuberData" target="_blank">https://github.com/fysh711426/VtuberData</a></li>
+                            </ul>
+                            <p class="hr"></p>
+                            <h3># 原始碼</h3>
+                            <p>網站公開原始碼。</p>
+                            <ul>
+                                <li><a href="https://github.com/fysh711426/VtuberWeb" target="_blank">https://github.com/fysh711426/VtuberWeb</a></li>
+                                <li><a href="https://github.com/fysh711426/VtuberCrawler" target="_blank">https://github.com/fysh711426/VtuberCrawler</a></li>
+                            </ul>
+                            <p>介面使用 Mini Form UI。</p>
+                            <ul>
+                                <li><a href="https://github.com/fysh711426/MiniFormUI" target="_blank">https://github.com/fysh711426/MiniFormUI</a></li>
+                            </ul>
+                            <p class="hr"></p>
+                            <h3># 問題回報</h3>
+                            <p>可以在這些地方找到我。 ╰（￣▽￣）╭</p>
+                            <ul>
+                                <li><a href="https://www.youtube.com/channel/UC-nyIVHa8aV9y5EmGtwwY8A" target="_blank"># Youtube</a></li>
+                                <li><a href="https://github.com/fysh711426" target="_blank"># Github</a></li>
+                                <li><a href="https://ithelp.ithome.com.tw/users/20106865/profile" target="_blank"># iThelp</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="footer">
+                <div class="footer-inner">
+                    footer
+                </div>
+            </div> -->
+        </div>
+    </div>
+</body>
+
+</html>
