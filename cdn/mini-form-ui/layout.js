@@ -55,7 +55,7 @@ var $m = (function () {
             var items = document.querySelectorAll(selector);
             var template = document.querySelector('.tooltip-template');
             for (var i = 0; i < items.length; i++) {
-                (function() {
+                (function () {
                     var item = items[i];
                     var element = null;
                     item.addEventListener("mouseenter", function () {
@@ -80,6 +80,33 @@ var $m = (function () {
                     });
                 })();
             }
+        },
+        gotop: function (selector) {
+            function getScroll() {
+                return document.documentElement.scrollTop || document.body.scrollTop;
+            }
+            var gotop = document.querySelector(selector);
+            gotop.addEventListener("click", function (e) {
+                e.preventDefault();
+                var scroll = getScroll();
+                setTimeout(function () {
+                    scroll = Math.floor(scroll * 0.65);
+                    document.documentElement.scrollTop = document.body.scrollTop = scroll;
+                    if (scroll > 0) {
+                        setTimeout(arguments.callee, 25);
+                    }
+                }, 25);
+            });
+            document.addEventListener('scroll', function () {
+                var scroll = getScroll();
+                if (scroll < 200) {
+                    gotop.className = gotop.className.replace(' show', '');
+                } else {
+                    if (gotop.className.indexOf('show') === -1) {
+                        gotop.className = gotop.className + ' show';
+                    }
+                }
+            });
         }
     };
     function createElement(html) {

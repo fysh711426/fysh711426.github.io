@@ -23,18 +23,21 @@ z-index
     background: #ddd;
     border-radius: 20px;
 }
+
 /*----- scrollbar -----*/
 
 /*----- layout -----*/
 
-html, body {
+html,
+body {
     padding: 0;
     margin: 0;
     min-height: 100%;
     min-width: 100%;
 }
 
-html, body {
+html,
+body {
     /* color: #474747; */
     color: #262626;
     font-size: 1rem;
@@ -58,7 +61,9 @@ a {
     cursor: pointer;
 }
 
-a:link, a:visited, a:active {
+a:link,
+a:visited,
+a:active {
     color: #242424;
 }
 
@@ -134,7 +139,7 @@ a:link, a:visited, a:active {
     .nav-button-d {
         display: none;
     }
-    
+
     .nav-button-m {
         display: block;
     }
@@ -339,7 +344,7 @@ a:link, a:visited, a:active {
     .sub-menu-item.active:hover {
         background-color: #f1f1f1;
     }
-    
+
     .sub-menu-item:hover {
         background-color: #f5f5f5;
     }
@@ -421,25 +426,32 @@ table th {
     font-weight: normal;
 }
 
-table th, table td {
+table th,
+table td {
     border-top: 1px solid #e6e6e6;
     padding: 15px 15px;
 }
 
 @media screen and (max-width: 640px) {
-    table th, table td {
+
+    table th,
+    table td {
         padding: 15px 5px;
     }
 }
 
 @media screen and (min-width: 641px) {
-    table th, table td {
+
+    table th,
+    table td {
         padding: 15px 10px;
     }
 }
 
 @media screen and (min-width: 1025px) {
-    table th, table td {
+
+    table th,
+    table td {
         padding: 15px 15px;
     }
 }
@@ -460,6 +472,70 @@ table th, table td {
 }
 
 /*----- table -----*/
+
+/*----- control -----*/
+
+.control {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    z-index: 100000;
+}
+
+.control .button {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 50%;
+    text-align: center;
+    margin-top: 15px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: 0 6px 10px -5px rgb(0 0 0 / 50%);
+    outline: 0;
+}
+
+.control a.button:link,
+.control a.button:visited,
+.control a.button:active {
+    color: #f5f5f5;
+    background-color: #454545;
+}
+
+@media screen and (min-width: 1025px) {
+    .control {
+        bottom: 100px;
+        right: 50px;
+    }
+
+    .control .button {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .control a.button:hover {
+        background-color: #5e5e5e;
+    }
+}
+
+/*----- control -----*/
+
+/*----- gotop -----*/
+
+.control .gotop {
+    display: none;
+}
+
+.control .gotop.show {
+    display: block;
+}
+
+/*----- gotop -----*/
 
 /*----- tooltip -----*/
 
