@@ -33,6 +33,16 @@
     }
 }
 
+.board-header-title {
+    display: flex;
+    align-items: center;
+}
+
+.board-header .description {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+
 .rank {
     width: 3.5rem;
 }
@@ -296,4 +306,22 @@ td.score  {
     margin-bottom: 1rem;
     font-weight: 600;
     line-height: 1.25;
+}
+
+@media screen and (max-width: 640px) {
+    .about-content {
+        padding: 16px 8px 32px 8px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .about-content {
+        padding: 16px 32px 32px 32px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .about-content {
+        padding: 16px 32px 32px 32px;
+    }
 }

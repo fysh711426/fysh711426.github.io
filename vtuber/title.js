@@ -7,7 +7,7 @@
         if (menu === 'subscribe')
             return '訂閱排行';
         if (menu === 'singing')
-            return '歌回影片';
+            return '歌回排行';
         if (menu === 'growing')
             return '本周成長';
         if (menu === 'newcomer')

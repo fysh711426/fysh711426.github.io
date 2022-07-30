@@ -25,6 +25,7 @@ var vm = new Vue({
             // }
             $m.selectMenu(this.menu);
             $m.selectSubMenu(this.submenu);
+            $m.gotop('.gotop');
             await this.getData();
             this.isLoaded = true;
             setTimeout(function () {
