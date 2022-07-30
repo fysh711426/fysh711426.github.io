@@ -238,7 +238,7 @@ a:active {
         z-index: 5500;
         top: 60px;
         left: 0;
-        bottom: 0;
+        height: 100vh;
         margin: 0 0 0 0;
         border-radius: 0px;
     }
