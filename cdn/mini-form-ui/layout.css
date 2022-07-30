@@ -477,8 +477,6 @@ table td {
 
 .control {
     position: fixed;
-    bottom: 50px;
-    right: 20px;
     z-index: 100000;
 }
 
@@ -490,9 +488,6 @@ table td {
     border-radius: 50%;
     text-align: center;
     margin-top: 15px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
     box-shadow: 0 6px 10px -5px rgb(0 0 0 / 50%);
     outline: 0;
 }
@@ -504,10 +499,23 @@ table td {
     background-color: #454545;
 }
 
+@media screen and (min-width: 0px) {
+    .control {
+        bottom: 25px;
+        right: 25px;
+    }
+
+    .control .button {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+}
+
 @media screen and (min-width: 1025px) {
     .control {
-        bottom: 100px;
-        right: 50px;
+        bottom: 30px;
+        right: 30px;
     }
 
     .control .button {
@@ -515,9 +523,7 @@ table td {
         height: 60px;
         line-height: 60px;
     }
-}
 
-@media screen and (min-width: 1025px) {
     .control a.button:hover {
         background-color: #5e5e5e;
     }
