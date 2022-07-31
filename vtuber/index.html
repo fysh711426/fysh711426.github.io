@@ -165,7 +165,7 @@
                                     <td class="logo">
                                         <a :href="item.channelUrl" target="_blank">
                                             <div class="logo-warp">
-                                                <img :src="item.thumbnail" />
+                                                <img :src="item.thumbnail" @error="imgError($event)" />
                                             </div>
                                         </a>
                                     </td>
@@ -173,12 +173,24 @@
                                         <div class="name-warp">
                                             <span :title="item.name">{{item.name}}</span>
                                         </div>
-                                        <div class="tag">
+                                        <div v-if="item.subscribe != 0" class="tag">
                                             <span>{{item.subscribe}}</span><span>訂閱</span>
                                         </div>
                                     </td>
                                     <td class="score">
-                                        <span>{{item.score}}</span><span v-if="menu == 'growing'">%</span>
+                                        <span v-if="menu == 'popular'">{{item.score}}</span>
+                                        <span v-if="menu == 'singing'">{{item.score}}</span>
+                                        <span v-if="menu == 'subscribe'">
+                                            <span v-if="item.score == 0">-</span>
+                                            <span v-if="item.score != 0">{{item.score}}</span>
+                                        </span>
+                                        <span v-if="menu == 'growing'">
+                                            <span>{{item.score}}</span><span v-if="menu == 'growing'">%</span>
+                                        </span>
+                                        <span v-if="menu == 'newcomer'">
+                                            <span v-if="item.score == 0">-</span>
+                                            <span v-if="item.score != 0">{{item.score}}</span>
+                                        </span>
                                     </td>
                                     <td class="video">
                                         <a v-if="item.videoViewCount != '0'" :href="item.videoUrl" :title="item.videoTitle" target="_blank">
