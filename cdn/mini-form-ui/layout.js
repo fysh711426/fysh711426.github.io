@@ -90,7 +90,7 @@ var $m = (function () {
                 e.preventDefault();
                 var scroll = getScroll();
                 setTimeout(function () {
-                    scroll = Math.floor(scroll * 0.25);
+                    scroll = Math.floor(scroll * 0.85);
                     document.documentElement.scrollTop = document.body.scrollTop = scroll;
                     if (scroll > 0) {
                         setTimeout(arguments.callee, 25);
