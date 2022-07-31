@@ -107,10 +107,6 @@ var $m = (function () {
                     }
                 }
             });
-        },
-        imgerror: function (e, url) {
-            e.target.onerror = null;
-            e.target.src = url;
         }
     };
     function createElement(html) {
