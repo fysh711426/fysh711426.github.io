@@ -107,6 +107,16 @@ var $m = (function () {
                     }
                 }
             });
+        },
+        imgerror: function (e, url) {
+            var img = new Image();
+            img.src = url;
+            img.onload = function () {
+                if (this.complete) {
+                    e.target.src = img.src;
+                    img = null;
+                }
+            }
         }
     };
     function createElement(html) {
