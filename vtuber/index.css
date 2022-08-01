@@ -325,3 +325,7 @@ td.score  {
         padding: 16px 32px 32px 32px;
     }
 }
+
+.indent {
+    padding-left: 1rem;
+}
