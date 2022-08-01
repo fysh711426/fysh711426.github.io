@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Mini Form UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/mini-form-ui/">
+    <link rel="shortcut icon" href="icon/favicon.ico" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="demo.css">
+    <script src="layout.js"></script>
+
+    <script>
+        var errorImage = 'images/default-head-176x176.png';
+        function imgError(e) {
+            if (errorImage) {
+                e.target.src = errorImage;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="header sticky">
+            <div class="header-inner">
+                <div class="start">
+                    <div class="nav-button">
+                        <button class="nav-button-d" onclick="$m.onNav()"><i class="fa fa-bars"></i></button>
+                        <button class="nav-button-m" onclick="$m.onNavOpen()"><i class="fa fa-bars"></i></button>
+                    </div>
+                    <!-- <div class="nav-logo cicle">
+                        <img src="" />
+                    </div> -->
+                    <div class="nav-title nologo">
+                        <span>Mini</span>
+                    </div>
+                </div>
+                <div></div>
+                <div class="end">
+                    <div class="nav-link">
+                        <a href="">About</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="left-menu active">
+                <div class="left-menu-inner">
+                    <a href="" select-val="Item1" class="left-menu-item">Item1</a>
+                    <a href="" select-val="Item2" class="left-menu-item">Item2</a>
+                    <a href="" select-val="Item3" class="left-menu-item">Item3</a>
+                    <a href="" select-val="Item4" class="left-menu-item">Item4</a>
+                    <a href="" select-val="Item5" class="left-menu-item">Item5</a>
+                </div>
+            </div>
+            <div class="left-menu-mask" onclick="$m.onNavClose()"></div>
+            <div class="main">
+                <div class="main-inner">
+                    <div class="sub-menu">
+                        <div class="sub-menu-inner">
+                            <a href="" select-val="Item1" class="sub-menu-item">Item1</a>
+                            <a href="" select-val="Item2" class="sub-menu-item">Item2</a>
+                            <a href="" select-val="Item3" class="sub-menu-item">Item3</a>
+                            <a href="" select-val="Item4" class="sub-menu-item">Item4</a>
+                        </div>
+                    </div>
+                    <div class="board">
+                        <div class="board-header">
+                            <i class="fa-brands fa-hotjar"></i>
+                            Hot Rank
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="rank">Rank</th>
+                                    <th class="logo"></th>
+                                    <th class="name">Name</th>
+                                    <th class="score">Hot
+                                        <span class="tooltip" content="影片觀看中位數">
+                                            <i class="fa-regular fa-circle-question"></i>
+                                        </span>
+                                    </th>
+                                    <th class="video">Video</th>
+                                </tr>
+                                <!-- <tr>
+                                    <th colspan="5" class="row-empty">No data result.</th>
+                                </tr> -->
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="rank">
+                                        <span>1</span>
+                                        <div class="rank-var up">
+                                            <i class="fa-solid fa-angle-up"></i>
+                                            <span>10</span>
+                                        </div>
+                                    </td>
+                                    <td class="logo">
+                                        <div class="logo-warp">
+                                            <img src="https://yt3.ggpht.com/y_VXsJfNp8sTQCB0lFemCleWB-9HpZ9R2pk7wbCOGrvkpFS3Qa1RAXqUVpgb0NNN9_xzWT446A=s176-c-k-c0x00ffffff-no-rj" />
+                                        </div>
+                                    </td>
+                                    <td class="name">
+                                        <div class="name-warp">
+                                            <span>李李鈴蘭</span>
+                                        </div>
+                                        <div class="tag"># 184K</div>
+                                    </td>
+                                    <td class="score">37294</td>
+                                    <td class="video">
+                                        <div class="video-warp">
+                                            <img src="https://i.ytimg.com/vi/rvkMbydTrU0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAmkHQn4ENwaiERjRLH3PWeDvsqyA" />
+                                            <div class="video-mask"></div>
+                                            <div class="video-view">
+                                                <i class="fa-solid fa-play"></i>
+                                                <span>81K</span>
+                                            </div>
+                                        </div>
+                                        <div class="video-link">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">
+                                        <span>2</span>
+                                        <div class="rank-var down">
+                                            <i class="fa-solid fa-chevron-down"></i>
+                                            <span>5</span>
+                                        </div>
+                                    </td>
+                                    <td class="logo">
+                                        <div class="logo-warp">
+                                            <img src="https://yt3.ggpht.com/__E4VedeoEpLn1OPMqodtM4urz99mFfhilyFzCmJJJ_FnpLr6MdrXrLwPYe7aR7lvkmk3M40Bv4=s176-c-k-c0x00ffffff-no-rj" />
+                                        </div>
+                                    </td>
+                                    <td class="name">
+                                        <div class="name-warp">
+                                            <span>神稻櫻火</span>
+                                        </div>
+                                        <div class="tag"># 32K</div>
+                                    </td>
+                                    <td class="score">17804</td>
+                                    <td class="video">
+                                        <div class="video-warp">
+                                            <img src="https://i.ytimg.com/vi/NHReT2XrZmM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCRHkt4ocXKsiXJo47Rmf_uo5eVkw" />
+                                            <div class="video-mask"></div>
+                                            <div class="video-view">
+                                                <i class="fa-solid fa-play"></i>
+                                                <span>83K</span>
+                                            </div>
+                                        </div>
+                                        <div class="video-link">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">
+                                        <span>3</span>
+                                        <div class="rank-var new">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </div>
+                                    </td>
+                                    <td class="logo">
+                                        <div class="logo-warp">
+                                            <img src="https://yt3.ggpht.com/LmqWHwQzqspXt0i0FtMHbhLykq-q9aYRKp1GiLwnY7VNl0Jgfukehm4lRJBu80AxsH_LNa4kqA=s176-c-k-c0x00ffffff-no-rj" />
+                                        </div>
+                                    </td>
+                                    <td class="name">
+                                        <div class="name-warp">
+                                            <span>瑪格麗特·溫特斯</span>
+                                        </div>
+                                        <div class="tag"># 36K</div>
+                                    </td>
+                                    <td class="score">12488</td>
+                                    <td class="video">
+                                        <div class="video-warp">
+                                            <img src="https://i.ytimg.com/vi/D_mhJlWgAsY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyfTY4RjdI0-EtqtY2D36btSnSxQ" />
+                                            <div class="video-mask"></div>
+                                            <div class="video-view">
+                                                <i class="fa-solid fa-play"></i>
+                                                <span>53K</span>
+                                            </div>
+                                        </div>
+                                        <div class="video-link">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">
+                                        <span>4</span>
+                                        <div class="rank-var new">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </div>
+                                    </td>
+                                    <td class="logo">
+                                        <div class="logo-warp">
+                                            <img src="" onerror="imgError(event)" />
+                                        </div>
+                                    </td>
+                                    <td class="name">
+                                        <div class="name-warp">
+                                            <span>xxx</span>
+                                        </div>
+                                    </td>
+                                    <td class="score">-</td>
+                                    <td class="video">
+                                        <div class="video-warp">
+                                            <img src="https://i.ytimg.com/vi/D_mhJlWgsY/hqdefault.jpg" />
+                                            <div class="video-mask"></div>
+                                            <div class="video-view">
+                                                <i class="fa-solid fa-play"></i>
+                                                <span>53K</span>
+                                            </div>
+                                        </div>
+                                        <div class="video-link">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-inner">
+                        <span>Copyright © 2022</span>
+                        <span class="copyright-divider">|</span>
+                        <span>小碼農米爾</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tooltip-template">
+        <div class="tooltip-block __class__">
+            <div class="tooltip-inner">__content__</div>
+        </div>
+    </div>
+    <div class="control">
+        <a class="button gotop" href="javascript:void(0)">
+            <i class="fa-solid fa-angle-up"></i>
+        </a>
+    </div>
+    <script>
+        $m.selectMenu('Item1');
+        $m.selectSubMenu('Item1');
+        $m.tooltip('.tooltip');
+        $m.gotop('.gotop');
+    </script>
+</body>
+
+</html>
