@@ -365,9 +365,32 @@ a:active {
 }
 
 .main-inner {
-    /* margin: 15px 0px 15px 15px; */
+    min-height: calc(100vh - 75px - 50px - 1rem);
     margin: 0px 0px 15px 0px;
 }
+
+/*----- main -----*/
+
+/*----- footer -----*/
+
+.footer {
+    color: #999;
+    font-size: 0.8rem;
+    margin: 0px 0px 0px 0px;
+    text-align: center;
+}
+
+.footer-inner {
+    padding: 15px 0px 15px 0px;
+}
+
+.copyright-divider {
+    margin: 0 0.3rem;
+}
+
+/*----- footer -----*/
+
+/*----- board -----*/
 
 .board {
     background-color: #fff;
@@ -411,7 +434,7 @@ a:active {
     padding-right: 0.5rem;
 }
 
-/*----- main -----*/
+/*----- board -----*/
 
 /*----- table -----*/
 
