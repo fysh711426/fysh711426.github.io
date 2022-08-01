@@ -119,7 +119,7 @@ var $m = (function () {
                 return document.documentElement.clientHeight || document.body.clientHeight;
             }
             document.addEventListener('scroll', function () {
-                if (getScrollTop() + getClientHeight() >= getScrollHeight()) {
+                if (getScrollTop() + getClientHeight() + 10 >= getScrollHeight()) {
                     callback.call(this);
                 }
             });
