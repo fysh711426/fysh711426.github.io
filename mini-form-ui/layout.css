@@ -434,6 +434,16 @@ a:active {
     padding-right: 0.5rem;
 }
 
+.board-header-title {
+    display: flex;
+    align-items: center;
+}
+
+.board-header .description {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+
 /*----- board -----*/
 
 /*----- table -----*/
