@@ -107,6 +107,22 @@ var $m = (function () {
                     }
                 }
             });
+        },
+        onScrollEnd: function (callback) {
+            function getScrollTop() {
+                return document.documentElement.scrollTop || document.body.scrollTop;
+            }
+            function getScrollHeight() {
+                return document.documentElement.scrollHeight || document.body.scrollHeight;
+            }
+            function getClientHeight() {
+                return document.documentElement.clientHeight || document.body.clientHeight;
+            }
+            document.addEventListener('scroll', function () {
+                if (getScrollTop() + getClientHeight() >= getScrollHeight()) {
+                    callback.call(this);
+                }
+            });
         }
     };
     function createElement(html) {
