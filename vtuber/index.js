@@ -8,9 +8,12 @@ var vm = new Vue({
         day: '',
         showDay: false,
         showRankVar: false,
-        isLoaded: false,
         errorImage: null,
-        datas: []
+        isLoaded: false,
+        datas: [],
+        showCount: 20,
+        showSpinner: false,
+        isLoadMore: false
     },
     methods: {
         init: async function () {
@@ -24,15 +27,18 @@ var vm = new Vue({
             // if (this.menu === 'popular' || this.menu === 'subscribe') {
             //     this.showRankVar = true;
             // }
-            $m.selectMenu(this.menu);
-            $m.selectSubMenu(this.submenu);
-            $m.gotop('.gotop');
+            selectMenu(this.menu);
+            selectSubMenu(this.submenu);
+            gotop('.gotop');
+            onScrollEnd(this.onScrollEnd, 50);
             this.errorImage = await this.loadedErrorImage(
                 'https://cdn.statically.io/gh/fysh711426/fysh711426.github.io/master/mini-form-ui/images/default-head-176x176.png');
             this.datas = await this.getData();
+            this.checkSpinner();
             this.isLoaded = true;
             setTimeout(function () {
-                $m.tooltip('.tooltip');
+                tooltip('.tooltip');
+                spinner('.spinner');
             }, 1);
         },
         getApi: function () {
@@ -45,6 +51,24 @@ var vm = new Vue({
             if (api) {
                 var response = await axios.get(api);
                 return response.data;
+            }
+        },
+        onScrollEnd: function() {
+            if (!this.isLoadMore) {
+                this.isLoadMore = true;
+                setTimeout(() => {
+                    if (this.showCount < this.datas.length) {
+                        this.showCount += 20;
+                    }
+                    this.checkSpinner();
+                    this.isLoadMore = false;
+                }, 500);
+            }
+        },
+        checkSpinner: function() {
+            this.showSpinner = false;
+            if (this.showCount < this.datas.length) {
+                this.showSpinner = true;
             }
         },
         imgError: function (e) {

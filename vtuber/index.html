@@ -10,11 +10,13 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <!-- <link rel="stylesheet" href="https://cdn.statically.io/gh/fysh711426/MiniFormUI/master/layout.css" crossorigin="anonymous" /> -->
     <link rel="stylesheet" href="https://fysh711426.github.io/mini-form-ui/layout.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fysh711426.github.io/mini-form-ui/spinner.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="index.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <script src="https://cdn.statically.io/gh/fysh711426/fysh711426.github.io/master/cdn/vue.min.js"></script>
     <!-- <script src="https://cdn.statically.io/gh/fysh711426/MiniFormUI/master/layout.js" crossorigin="anonymous"></script> -->
     <script src="https://fysh711426.github.io/mini-form-ui/layout.js" crossorigin="anonymous"></script>
+    <script src="https://fysh711426.github.io/mini-form-ui/spinner.js" crossorigin="anonymous"></script>
     <script src="functions.js"></script>
     <script src="title.js"></script>
     
@@ -34,8 +36,8 @@
             <div class="header-inner">
                 <div class="start">
                     <div class="nav-button">
-                        <button class="nav-button-d" onclick="$m.onNav()"><i class="fa fa-bars"></i></button>
-                        <button class="nav-button-m" onclick="$m.onNavOpen()"><i class="fa fa-bars"></i></button>
+                        <button class="nav-button-d" onclick="onNav()"><i class="fa fa-bars"></i></button>
+                        <button class="nav-button-m" onclick="onNavOpen()"><i class="fa fa-bars"></i></button>
                     </div>
                     <div class="nav-title nologo">
                         <a href="index.html">
@@ -66,13 +68,13 @@
                         <!-- <i class="fa-solid fa-user-group fa-fw"></i> -->本月新人</a>
                 </div>
             </div>
-            <div class="left-menu-mask" onclick="$m.onNavClose()"></div>
+            <div class="left-menu-mask" onclick="onNavClose()"></div>
             <div class="main">
                 <div class="main-inner">
                     <div class="sub-menu">
                         <div class="sub-menu-inner">
                             <a :href="'index.html?m='+menu+'&s=tw'" select-val="tw" class="sub-menu-item">台灣</a>
-                            <a :href="'index.html?m='+menu+'&s=hololive'" select-val="hololive" class="sub-menu-item">Hololive</a>
+                            <a :href="'index.html?m='+menu+'&s=hololive'" select-val="hololive" class="sub-menu-item">hololive</a>
                             <a :href="'index.html?m='+menu+'&s=anycolor'" select-val="anycolor" class="sub-menu-item">彩虹社</a>
                             <a :href="'index.html?m='+menu+'&s=other'" select-val="other" class="sub-menu-item">其他</a>
                         </div>
@@ -137,7 +139,7 @@
                                 </tr>
                             </thead>
                             <tbody v-if="datas.length > 0">
-                                <tr v-for="item in datas" :key="item.channelUrl">
+                                <tr v-if="index < showCount" v-for="(item, index) in datas" :key="item.channelUrl">
                                     <td class="rank">
                                         <span>{{item.rank}}</span>
                                         <div v-if="showRankVar">
@@ -210,6 +212,9 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <div v-show="showSpinner" class="spinner-block">
+                            <div class="spinner"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="footer">
