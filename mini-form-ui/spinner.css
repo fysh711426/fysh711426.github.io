@@ -3,8 +3,8 @@
 .spinner {
     display: inline-block;
     position: relative;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     font-size: 0;
 }
 
@@ -20,7 +20,7 @@
     width: 100%;
     height: 100%;
     white-space: nowrap;
-    color: #aaa;
+    color: #454545;
     animation-duration: 5332ms;
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     animation-iteration-count: infinite;
