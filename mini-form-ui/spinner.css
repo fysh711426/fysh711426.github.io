@@ -1,0 +1,233 @@
+/*----- spinner -----*/
+
+.spinner {
+    display: inline-block;
+    position: relative;
+    width: 28px;
+    height: 28px;
+    font-size: 0;
+}
+
+.spinner-inner {
+    width: 100%;
+    height: 100%;
+    direction: ltr;
+    animation: container-rotate 1568ms linear infinite;
+}
+
+.spinner-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    color: #aaa;
+    animation-duration: 5332ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-iteration-count: infinite;
+    opacity: 1;
+}
+
+.spinner-layer::after {
+    content: "";
+    left: 45%;
+    width: 10%;
+    border-top-style: solid;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    border-width: 3px;
+    border-radius: 50%;
+}
+
+.spinner-circle {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.spinner-circle-inner {
+    animation-duration: 1333ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-iteration-count: infinite;
+    bottom: 0;
+    width: 200%;
+    border-style: solid;
+    border-bottom-color: transparent !important;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    border-width: 3px;
+    border-radius: 50%;
+}
+
+.spinner-circle.left .spinner-circle-inner {
+    animation-name: left-spin;
+    left: 0;
+    border-right-color: transparent !important;
+    transform: rotate(129deg);
+}
+
+.spinner-circle.right .spinner-circle-inner {
+    animation-name: right-spin;
+    left: -100%;
+    border-left-color: transparent !important;
+    transform: rotate(-129deg);
+}
+
+.spinner-layer.layer-1 {
+    animation-name: fill-unfill-rotate, layer-1-fade-in-out;
+}
+
+.spinner-layer.layer-2 {
+    animation-name: fill-unfill-rotate, layer-2-fade-in-out;
+}
+
+.spinner-layer.layer-3 {
+    animation-name: fill-unfill-rotate, layer-3-fade-in-out;
+}
+
+.spinner-layer.layer-4 {
+    animation-name: fill-unfill-rotate, layer-4-fade-in-out;
+}
+
+@keyframes container-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes left-spin {
+    0% {
+        transform: rotate(130deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(130deg);
+    }
+}
+
+@keyframes right-spin {
+    0% {
+        transform: rotate(-130deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-130deg);
+    }
+}
+
+@keyframes fill-unfill-rotate {
+    12.5% {
+        transform: rotate(135deg);
+    }
+    25% {
+        transform: rotate(270deg);
+    }
+    37.5% {
+        transform: rotate(405deg);
+    }
+    50% {
+        transform: rotate(540deg);
+    }
+    62.5% {
+        transform: rotate(675deg);
+    }
+    75% {
+        transform: rotate(810deg);
+    }
+    87.5% {
+        transform: rotate(945deg);
+    }
+    100% {
+        transform: rotate(1080deg);
+    }
+}
+
+@keyframes layer-1-fade-in-out {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    26% {
+        opacity: 0;
+    }
+    89% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes layer-2-fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    51% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes layer-3-fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    76% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes layer-4-fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    65% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*----- spinner -----*/

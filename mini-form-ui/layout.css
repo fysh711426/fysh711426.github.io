@@ -67,6 +67,10 @@ a:active {
     color: #242424;
 }
 
+.center {
+    text-align: center;
+}
+
 /*----- layout -----*/
 
 /*----- header -----*/
@@ -323,7 +327,6 @@ a:active {
 .sub-menu-inner {
     display: flex;
     justify-content: center;
-    /* padding: 15px 15px 15px 15px; */
     padding: 0px 15px 0px 15px;
     word-wrap: break-word;
     word-break: break-all;
@@ -331,7 +334,7 @@ a:active {
 
 .sub-menu-item {
     display: block;
-    padding: 10px 15px 10px 15px;
+    padding: 5px 15px;
     font-size: 1rem;
 }
 
@@ -445,6 +448,35 @@ a:active {
 }
 
 /*----- board -----*/
+
+/*----- block -----*/
+
+.block {
+    margin: 15px auto;
+    padding: 15px 15px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+@media screen and (max-width: 640px) {
+    .block {
+        padding: 15px 5px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .block {
+        padding: 15px 10px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .block {
+        padding: 15px 15px;
+    }
+}
+
+/*----- block -----*/
 
 /*----- table -----*/
 
@@ -600,3 +632,20 @@ table td {
 }
 
 /*----- tooltip -----*/
+
+/*----- spinner-block -----*/
+
+.spinner-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+}
+
+/*----- spinner-block -----*/
+
+/*----- progress-bar -----*/
+
+
+
+/*----- progress-bar -----*/

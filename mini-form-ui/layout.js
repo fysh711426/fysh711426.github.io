@@ -123,6 +123,9 @@ var $m = (function () {
                     callback.call(this);
                 }
             });
+        },
+        spinner: function(selector) {
+            __spinner(selector);
         }
     };
     function createElement(html) {

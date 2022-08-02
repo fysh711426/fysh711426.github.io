@@ -9,8 +9,10 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="spinner.css">
     <link rel="stylesheet" href="demo.css">
     <script src="layout.js"></script>
+    <script src="spinner.js"></script>
 
     <script>
         var errorImage = 'images/default-head-176x176.png';
@@ -226,6 +228,9 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="spinner-block">
+                            <div class="spinner"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="footer">
@@ -253,6 +258,7 @@
         $m.selectSubMenu('Item1');
         $m.tooltip('.tooltip');
         $m.gotop('.gotop');
+        $m.spinner('.spinner');
     </script>
 </body>
 
