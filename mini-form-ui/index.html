@@ -30,8 +30,8 @@
             <div class="header-inner">
                 <div class="start">
                     <div class="nav-button">
-                        <button class="nav-button-d" onclick="$m.onNav()"><i class="fa fa-bars"></i></button>
-                        <button class="nav-button-m" onclick="$m.onNavOpen()"><i class="fa fa-bars"></i></button>
+                        <button class="nav-button-d" onclick="onNav()"><i class="fa fa-bars"></i></button>
+                        <button class="nav-button-m" onclick="onNavOpen()"><i class="fa fa-bars"></i></button>
                     </div>
                     <!-- <div class="nav-logo cicle">
                         <img src="" />
@@ -58,7 +58,7 @@
                     <a href="" select-val="Item5" class="left-menu-item">Item5</a>
                 </div>
             </div>
-            <div class="left-menu-mask" onclick="$m.onNavClose()"></div>
+            <div class="left-menu-mask" onclick="onNavClose()"></div>
             <div class="main">
                 <div class="main-inner">
                     <div class="sub-menu">
@@ -254,11 +254,11 @@
         </a>
     </div>
     <script>
-        $m.selectMenu('Item1');
-        $m.selectSubMenu('Item1');
-        $m.tooltip('.tooltip');
-        $m.gotop('.gotop');
-        $m.spinner('.spinner');
+        selectMenu('Item1');
+        selectSubMenu('Item1');
+        tooltip('.tooltip');
+        gotop('.gotop');
+        spinner('.spinner');
     </script>
 </body>
 

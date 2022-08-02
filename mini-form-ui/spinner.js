@@ -1,4 +1,4 @@
-var __spinner = (function() {
+var spinner = (function() {
     var innerHTML = `
         <div class="spinner-inner">
             <div class="spinner-layer layer-1">
