@@ -91,7 +91,7 @@ var gotop = (function () {
             }, 25);
         });
         document.addEventListener('scroll', function () {
-            var scroll = getScroll();
+            var scroll = getScrollTop();
             if (scroll < 200) {
                 gotop.className = gotop.className.replace(' show', '');
             } else {
