@@ -64,9 +64,10 @@ var onScrollEnd = (function () {
     function getClientHeight() {
         return document.documentElement.clientHeight || document.body.clientHeight;
     }
-    return function (callback) {
+    return function (callback, offset) {
+        offset = offset || 10;
         document.addEventListener('scroll', function () {
-            if (getScrollTop() + getClientHeight() + 10 >= getScrollHeight()) {
+            if (getScrollTop() + getClientHeight() + offset >= getScrollHeight()) {
                 callback.call(this);
             }
         });
