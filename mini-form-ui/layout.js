@@ -54,26 +54,6 @@ function selectSubMenu(val) {
     }
 }
 
-var onScrollEnd = (function () {
-    function getScrollTop() {
-        return document.documentElement.scrollTop || document.body.scrollTop;
-    }
-    function getScrollHeight() {
-        return document.documentElement.scrollHeight || document.body.scrollHeight;
-    }
-    function getClientHeight() {
-        return document.documentElement.clientHeight || document.body.clientHeight;
-    }
-    return function (callback, offset) {
-        offset = offset || 10;
-        document.addEventListener('scroll', function () {
-            if (getScrollTop() + getClientHeight() + offset >= getScrollHeight()) {
-                callback.call(this);
-            }
-        });
-    }
-})();
-
 var gotop = (function () {
     function getScrollTop() {
         return document.documentElement.scrollTop || document.body.scrollTop;
