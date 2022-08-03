@@ -35,10 +35,11 @@ var vm = new Vue({
                 'https://cdn.statically.io/gh/fysh711426/fysh711426.github.io/master/mini-form-ui/images/default-head-176x176.png');
             this.datas = await this.getData();
             this.checkSpinner();
-            this.isLoaded = true;
+            var _this = this;
             setTimeout(function () {
                 tooltip('.tooltip');
                 spinner('.spinner');
+                _this.isLoaded = true;
             }, 1);
         },
         getApi: function () {
