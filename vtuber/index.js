@@ -37,9 +37,11 @@ var vm = new Vue({
             this.checkSpinner();
             var _this = this;
             setTimeout(function () {
-                tooltip('.tooltip');
-                spinner('.spinner');
                 _this.isLoaded = true;
+                setTimeout(function () {
+                    tooltip('.tooltip');
+                    spinner('.spinner');
+                }, 1);
             }, 1);
         },
         getApi: function () {
