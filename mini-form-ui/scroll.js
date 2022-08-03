@@ -12,7 +12,7 @@ var onScrollEnd = (function () {
     return function (callback, distance) {
         distance = distance || 0;
         document.addEventListener('scroll', function () {
-            if (getScrollTop() + getClientHeight() + offset >= getScrollHeight()) {
+            if (getScrollTop() + getClientHeight() + distance >= getScrollHeight()) {
                 callback.call(this);
             }
         });
