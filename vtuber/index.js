@@ -53,7 +53,7 @@ var vm = new Vue({
             var _this = this;
             document.addEventListener('scroll', function () {
                 console.log(_this.scrollPos);
-                _this.scrollPos = getScrollTop() + ' + ' + getClientHeight() + ' = ' + 
+                _this.scrollPos = getScrollTop() + ' + ' + getClientHeight() + '('+ window.innerHeight + ')' + ' = ' + 
                 (getScrollTop() + getClientHeight()) + ' >= ' + getScrollHeight();
             });
         },
