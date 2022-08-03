@@ -50,11 +50,19 @@ var vm = new Vue({
             function getClientHeight() {
                 return document.documentElement.clientHeight || document.body.clientHeight;
             }
+            function getDocHeight() {
+                var D = document;
+                return Math.max(
+                    D.body.scrollHeight, D.documentElement.scrollHeight,
+                    D.body.offsetHeight, D.documentElement.offsetHeight,
+                    D.body.clientHeight, D.documentElement.clientHeight
+                );
+            }
             var _this = this;
             document.addEventListener('scroll', function () {
                 console.log(_this.scrollPos);
                 _this.scrollPos = getScrollTop() + ' + ' + getClientHeight() + '('+ window.innerHeight + ')' + ' = ' + 
-                (getScrollTop() + getClientHeight()) + ' >= ' + getScrollHeight();
+                (getScrollTop() + getClientHeight()) + ' >= ' + getScrollHeight()+ '('+ getDocHeight() + ')' +;
             });
         },
         getApi: function () {
