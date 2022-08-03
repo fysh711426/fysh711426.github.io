@@ -13,8 +13,7 @@ var vm = new Vue({
         datas: [],
         showCount: 20,
         showSpinner: false,
-        isLoadMore: false,
-        scrollPos: ''
+        isLoadMore: false
     },
     methods: {
         init: async function () {
@@ -41,29 +40,6 @@ var vm = new Vue({
                 tooltip('.tooltip');
                 spinner('.spinner');
             }, 1);
-            function getScrollTop() {
-                return document.documentElement.scrollTop || document.body.scrollTop;
-            }
-            function getScrollHeight() {
-                return document.documentElement.scrollHeight || document.body.scrollHeight;
-            }
-            function getClientHeight() {
-                return document.documentElement.clientHeight || document.body.clientHeight;
-            }
-            function getDocHeight() {
-                var D = document;
-                return Math.max(
-                    D.body.scrollHeight, D.documentElement.scrollHeight,
-                    D.body.offsetHeight, D.documentElement.offsetHeight,
-                    D.body.clientHeight, D.documentElement.clientHeight
-                );
-            }
-            var _this = this;
-            document.addEventListener('scroll', function () {
-                console.log(_this.scrollPos);
-                _this.scrollPos = getScrollTop() + ' + ' + getClientHeight() + '('+ window.innerHeight + ')' + ' = ' + 
-                (getScrollTop() + getClientHeight()) + ' >= ' + getScrollHeight()+ '('+ getDocHeight() + ')';
-            });
         },
         getApi: function () {
             return this.apiBase +
