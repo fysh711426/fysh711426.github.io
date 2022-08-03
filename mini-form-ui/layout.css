@@ -408,18 +408,21 @@ a:active {
 @media screen and (max-width: 640px) {
     .board {
         padding: 15px 5px;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
     }
 }
 
 @media screen and (min-width: 641px) {
     .board {
         padding: 15px 10px;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
     }
 }
 
 @media screen and (min-width: 1025px) {
     .board {
         padding: 15px 15px;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     }
 }
 
