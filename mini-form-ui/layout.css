@@ -180,6 +180,11 @@ a:active {
     align-self: center;
 }
 
+.nav-logo-warp {
+    display: flex;
+    align-items: center;
+}
+
 .nav-title.nologo {
     padding-left: 10px;
 }
