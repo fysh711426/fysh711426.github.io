@@ -58,6 +58,9 @@ var progress = (function () {
     }
     function set(num) {
         init();
+        if (num === 1) {
+            started = false;
+        }
         queue.push(function(next) {
             setTimeout(function() {
                 num = minmax(num, settings.minimum, 1);
@@ -65,7 +68,6 @@ var progress = (function () {
                 ele.style.width = num * 100 + '%';
                 percent = num;
                 if (num === 1) {
-                    started = false;
                     setTimeout(function() {
                         ele.style.opacity = 0;
                         setTimeout(function() {
