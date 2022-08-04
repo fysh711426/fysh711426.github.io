@@ -180,8 +180,12 @@
                                         </a>
                                     </td>
                                     <td class="name">
-                                        <div class="name-warp">
-                                            <span :title="item.name">{{item.name}}</span>
+                                        <div class="name-warp"
+                                            :class="{'hover':item.channelUrl==nameOver}">
+                                            <div class="name-text" @mouseover="onNameOver(item)">{{item.name}}</div>
+                                            <div class="name-over-warp">
+                                                <div class="name-over" @mouseleave="nameOver=null">{{item.name}}</div>
+                                            </div>
                                         </div>
                                         <div v-if="item.subscribe != 0" class="tag">
                                             <span>{{item.subscribe}}</span><span>訂閱</span>

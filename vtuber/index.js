@@ -13,7 +13,8 @@ var vm = new Vue({
         datas: [],
         showCount: 20,
         showSpinner: false,
-        isLoadMore: false
+        isLoadMore: false,
+        nameOver: null
     },
     methods: {
         init: async function () {
@@ -96,6 +97,9 @@ var vm = new Vue({
                 }
                 img.src = url;
             });
+        },
+        onNameOver: function(item) {
+            this.nameOver = item.channelUrl;
         }
     },
     mounted() {
