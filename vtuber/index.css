@@ -1,3 +1,13 @@
+.progress {
+    /* background: #0098a1; */
+    background: #28C8C8;
+}
+
+.nav-title a span{
+    /* color: #0098a1; */
+    color: #28C8C8;
+}
+
 .day {
     display: flex;
     border: 1px solid #e6e6e6;
