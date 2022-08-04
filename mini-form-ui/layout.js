@@ -58,6 +58,9 @@ var gotop = (function () {
     function getScrollTop() {
         return document.documentElement.scrollTop || document.body.scrollTop;
     }
+    function getClientWidth() {
+        return document.documentElement.clientWidth;
+    }
     var onScroll = function (callback, delay) {
         var scheduled = false;
         delay = delay || 100;
@@ -76,8 +79,9 @@ var gotop = (function () {
         gotop.addEventListener("click", function (e) {
             e.preventDefault();
             var scroll = getScrollTop();
+            var speed = getClientWidth() >= 1025 ? 0.85 : 0.55;
             setTimeout(function () {
-                scroll = Math.floor(scroll * 0.85);
+                scroll = Math.floor(scroll * speed);
                 document.documentElement.scrollTop = document.body.scrollTop = scroll;
                 if (scroll > 0) {
                     setTimeout(arguments.callee, 25);

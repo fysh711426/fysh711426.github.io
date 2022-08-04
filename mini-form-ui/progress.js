@@ -84,15 +84,19 @@ var progress = (function () {
     }
     var queue = (function() {
         var tasks = [];
+        var working = false;
         function next() {
             var task = tasks.shift();
-            if (task) {
-                task(next);
+            if (!task) {
+                working = false;
+                return;
             }
+            task(next);
         }
         function push(func) {
             tasks.push(func);
-            if (tasks.length === 1) {
+            if (!working) {
+                working = true;
                 next();
             }
         }
