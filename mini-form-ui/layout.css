@@ -368,7 +368,9 @@ a:active {
 }
 
 .main-inner {
-    min-height: calc(100vh - 75px - 50px - 1rem);
+    /* https://css-tricks.com/couple-takes-sticky-footer/ */
+    /* screen - header - footer - content */
+    min-height: calc(100vh - 75px - 35px - 1rem);
     margin: 0px 0px 15px 0px;
 }
 
@@ -408,21 +410,18 @@ a:active {
 @media screen and (max-width: 640px) {
     .board {
         padding: 15px 5px;
-        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
     }
 }
 
 @media screen and (min-width: 641px) {
     .board {
         padding: 15px 10px;
-        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
     }
 }
 
 @media screen and (min-width: 1025px) {
     .board {
         padding: 15px 15px;
-        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     }
 }
 
@@ -611,44 +610,13 @@ table td {
 
 /*----- gotop -----*/
 
-/*----- tooltip -----*/
-
-.tooltip-template {
-    display: none;
-}
-
-.tooltip-block {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
-.tooltip-inner {
-    font-size: 0.9rem;
-    line-height: 0.9rem;
-    padding: 15px;
-    max-width: 250px;
-    background-color: #fff;
-    border-radius: 0.35rem;
-    border: 1px solid #e6e6e6;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
-}
-
-/*----- tooltip -----*/
-
 /*----- spinner-block -----*/
 
 .spinner-block {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15px auto;
+    margin: 20px auto 15px auto;
 }
 
 /*----- spinner-block -----*/
-
-/*----- progress-bar -----*/
-
-
-
-/*----- progress-bar -----*/

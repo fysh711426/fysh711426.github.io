@@ -1,0 +1,20 @@
+.tooltip-template {
+    display: none;
+}
+
+.tooltip-block {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.tooltip-inner {
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    padding: 15px;
+    max-width: 250px;
+    background-color: #fff;
+    border-radius: 0.35rem;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+}
