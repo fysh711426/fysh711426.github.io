@@ -8,16 +8,16 @@
     <link rel="shortcut icon" href="icon/favicon.ico" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="tooltip.css">
     <link rel="stylesheet" href="progress.css">
     <link rel="stylesheet" href="spinner.css">
     <link rel="stylesheet" href="demo.css">
-    <script src="layout.js"></script>
+    <link rel="stylesheet" href="layout.css">
     <script src="scroll.js"></script>
     <script src="tooltip.js"></script>
     <script src="progress.js"></script>
     <script src="spinner.js"></script>
+    <script src="layout.js"></script>
     
     <script>
         var errorImage = 'images/default-head-176x176.png';
@@ -264,9 +264,6 @@
         tooltip('.tooltip');
         gotop('.gotop');
         spinner('.spinner');
-        progress.config({
-            color: '#ffb600'
-        });
         progress.start();
         setTimeout(function() {
             progress.done();

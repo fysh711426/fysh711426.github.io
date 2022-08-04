@@ -73,6 +73,14 @@ a:active {
 
 /*----- layout -----*/
 
+/*----- progress -----*/
+
+.progress {
+    background: #ffb600;
+}
+
+/*----- progress -----*/
+
 /*----- header -----*/
 
 .header {

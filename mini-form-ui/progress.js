@@ -4,8 +4,7 @@ var progress = (function () {
         _settings =  _settings || {
             minimum: 0.08,
             speed: 200,
-            color: '#0076ff',
-            easing: 'linear',
+            easing: 'linear'
         };
         for(var i in _settings) {
             settings[i] = _settings[i];
@@ -17,7 +16,6 @@ var progress = (function () {
         if (!ele) {
             ele = document.createElement('div');
             ele.className = 'progress';
-            ele.style.background = settings.color;
             ele.style.transition = 'all ' + settings.speed + 'ms ' + settings.easing;
             ele.style.opacity = 1;
             ele.style.width = '0px';
@@ -60,23 +58,46 @@ var progress = (function () {
     }
     function set(num) {
         init();
-        setTimeout(function() {
-            num = minmax(num, settings.minimum, 1);
-            ele.style.opacity = 1;
-            ele.style.width = num * 100 + '%';
-            percent = num;
-            if (num === 1) {
-                setTimeout(function() {
-                    ele.style.opacity = 0;
+        queue.push(function(next) {
+            setTimeout(function() {
+                num = minmax(num, settings.minimum, 1);
+                ele.style.opacity = 1;
+                ele.style.width = num * 100 + '%';
+                percent = num;
+                if (num === 1) {
+                    started = false;
                     setTimeout(function() {
-                        ele.style.width = '0px';
-                        percent = 0;
-                        started = false;
+                        ele.style.opacity = 0;
+                        setTimeout(function() {
+                            ele.style.width = '0px';
+                            percent = 0;
+                            next();
+                        }, settings.speed);
                     }, settings.speed);
-                }, settings.speed);
-            }
+                    return;
+                }
+                next();
+            }, 1);
         });
     }
+    var queue = (function() {
+        var tasks = [];
+        function next() {
+            var task = tasks.shift();
+            if (task) {
+                task(next);
+            }
+        }
+        function push(func) {
+            tasks.push(func);
+            if (tasks.length === 1) {
+                next();
+            }
+        }
+        return {
+            push: push
+        }
+    })();
     function minmax(n, min, max) {
         if (n < min) return min;
         if (n > max) return max;
