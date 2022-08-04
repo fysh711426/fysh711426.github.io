@@ -27,6 +27,10 @@ var vm = new Vue({
             // if (this.menu === 'popular' || this.menu === 'subscribe') {
             //     this.showRankVar = true;
             // }
+            progress.config({
+                color: '#ffb600'
+            });
+            progress.start();
             selectMenu(this.menu);
             selectSubMenu(this.submenu);
             gotop('.gotop');
@@ -38,6 +42,7 @@ var vm = new Vue({
             var _this = this;
             setTimeout(function () {
                 _this.isLoaded = true;
+                progress.done();
                 setTimeout(function () {
                     tooltip('.tooltip');
                     spinner('.spinner');
