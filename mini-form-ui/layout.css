@@ -76,7 +76,9 @@ a:active {
 /*----- progress -----*/
 
 .progress {
-    background: #ffb600;
+    /* background: #ffb600; */
+    /* background: #28C8C8; */
+    background: #454545;
 }
 
 /*----- progress -----*/
