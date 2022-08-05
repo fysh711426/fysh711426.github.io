@@ -80,13 +80,14 @@ var gotop = (function () {
             e.preventDefault();
             var scroll = getScrollTop();
             var speed = getClientWidth() >= 1025 ? 0.85 : 0.55;
+            var delay = getClientWidth() >= 1025 ? 25 : 100;
             setTimeout(function () {
                 scroll = Math.floor(scroll * speed);
                 document.documentElement.scrollTop = document.body.scrollTop = scroll;
                 if (scroll > 0) {
-                    setTimeout(arguments.callee, 25);
+                    setTimeout(arguments.callee, delay);
                 }
-            }, 25);
+            }, delay);
         });
         onScroll(function () {
             var scroll = getScrollTop();
