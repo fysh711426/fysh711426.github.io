@@ -46,7 +46,7 @@
                     </div>
                     <a class="nav-logo-warp" href="index.html">
                         <div class="nav-logo cicle">
-                            <img src="images/logo.png" />
+                            <img src="images/logo-48x48.png" />
                         </div>
                         <div class="nav-title">
                             <span>Vtuber</span>
@@ -207,13 +207,21 @@
                                         </span>
                                     </td>
                                     <td class="video">
-                                        <a v-if="item.videoViewCount != '0'" :href="item.videoUrl" :title="item.videoTitle" target="_blank">
-                                            <div class="video-warp">
-                                                <img :src="item.videoThumbnail" />
-                                                <div class="video-mask"></div>
-                                                <div class="video-view">
-                                                    <i class="fa-solid fa-play"></i>
-                                                    <span>{{item.videoViewCount}}</span>
+                                        <a v-if="item.videoViewCount != '0'" :href="item.videoUrl" target="_blank">
+                                            <div class="video-warp"
+                                                :class="{'hover':item.channelUrl==videoOver}"
+                                                @mouseover="onVideoOver (item)"
+                                                @mouseleave="videoOver=null">
+                                                <div class="video-over">
+                                                    <div class="video-thumbnail">
+                                                        <img :src="item.videoThumbnail" />
+                                                        <div class="video-mask"></div>
+                                                        <div class="video-view">
+                                                            <i class="fa-solid fa-play"></i>
+                                                            <span>{{item.videoViewCount}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="video-title">{{item.videoTitle}}</div>
                                                 </div>
                                             </div>
                                             <div class="video-link">

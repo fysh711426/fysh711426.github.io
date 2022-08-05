@@ -14,7 +14,8 @@ var vm = new Vue({
         showCount: 20,
         showSpinner: false,
         isLoadMore: false,
-        nameOver: null
+        nameOver: null,
+        videoOver: null
     },
     methods: {
         init: async function () {
@@ -100,6 +101,9 @@ var vm = new Vue({
         },
         onNameOver: function(item) {
             this.nameOver = item.channelUrl;
+        },
+        onVideoOver: function(item) {
+            this.videoOver = item.channelUrl;
         }
     },
     mounted() {

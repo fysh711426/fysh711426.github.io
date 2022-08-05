@@ -3,13 +3,23 @@
     background: #28C8C8;
 }
 
+@media screen and (max-width: 640px) {
+    .progress {
+        height: 4px;
+    }
+}
+
 .nav-title span{
     /* color: #0098a1; */
     color: #28C8C8;
 }
 
 .nav-logo {
-    margin: 10px 0px 10px -5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.nav-logo-warp {
+    margin-left: -5px;
 }
 
 .day {
@@ -195,15 +205,15 @@ td.rank  {
     display: block;
     position: absolute;
     top: -8px;
-    left: -10px;
+    left: -11px;
     padding: 10px;
     background-color: #fff;
     border-radius: 0.35rem;
     border: 1px solid #e6e6e6;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     max-width: 180%;
-    display: inline-block;
     line-height: 1rem;
+    cursor: pointer;
 }
 
 .score {
@@ -219,16 +229,23 @@ td.score  {
 }
 
 .video-warp {
+    position: relative;
+    height: 5rem;
+    width: 8.9rem;
+}
+
+.video-thumbnail {
     height: 5rem;
     width: 8.9rem;
     overflow: hidden;
     position: relative;
+    z-index: 100;
     border-radius: 0.35rem;
     margin: 0 auto;
     background-color: rgb(204, 204, 204);
 }
 
-.video-warp img {
+.video-thumbnail img {
     height: 100%;
     width: auto;
     margin: auto;
@@ -253,6 +270,38 @@ td.score  {
     font-weight: bold;
 }
 
+.video-title {
+    display: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    max-width: 100%;
+    padding: 5px 5px 0px 5px;
+    text-align: left;
+}
+
+.video-warp.hover .video-title {
+    display: block;
+}
+
+.video-warp.hover .video-over {
+    display: block;
+    position: absolute;
+    z-index: 150;
+    top: -20px;
+    left: -11px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 0.35rem;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    cursor: pointer;
+}
+
+.video-warp.hover img {
+    transform: scale(1.12);
+    transition: all 2000ms cubic-bezier(.19,1,.22,1) 0ms;
+}
+
 @media screen and (max-width: 640px) {
     .video {
         width: 2rem;
@@ -274,6 +323,13 @@ td.score  {
     }
 
     .video-warp {
+        height: 6.18rem;
+        width: 11rem;
+        max-height: 99px;
+        max-width: 176px;
+    }
+
+    .video-thumbnail {
         display: block;
         height: 6.18rem;
         width: 11rem;
@@ -293,6 +349,13 @@ td.score  {
     }
 
     .video-warp {
+        height: 7.87rem;
+        width: 14rem;
+        max-height: 126px;
+        max-width: 224px;
+    }
+
+    .video-thumbnail {
         display: block;
         height: 7.87rem;
         width: 14rem;
