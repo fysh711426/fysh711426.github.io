@@ -462,6 +462,7 @@ a:active {
 .board-header .description {
     font-size: 1rem;
     padding-left: 0.5rem;
+    cursor: pointer;
 }
 
 /*----- board -----*/

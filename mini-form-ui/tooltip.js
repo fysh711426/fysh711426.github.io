@@ -6,9 +6,11 @@ var tooltip = (function () {
             return div.children[0];
         }
     }
-    return function (selector) {
+    return function (selector, settings) {
+        settings = settings || {};
+        var template = settings.template || '.tooltip-template';
+        var templateHTML = document.querySelector(template).innerHTML;
         var items = document.querySelectorAll(selector);
-        var template = document.querySelector('.tooltip-template');
         for (var i = 0; i < items.length; i++) {
             (function () {
                 var item = items[i];
@@ -16,7 +18,7 @@ var tooltip = (function () {
                 item.addEventListener("mouseenter", function () {
                     if (!element) {
                         var rect = item.getBoundingClientRect();
-                        var html = template.innerHTML;
+                        var html = templateHTML;
                         var content = item.getAttribute('content');
                         html = html.replace('__content__', content);
                         element = createElement(html);
