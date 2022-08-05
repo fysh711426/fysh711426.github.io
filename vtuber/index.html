@@ -207,12 +207,12 @@
                                         </span>
                                     </td>
                                     <td class="video">
-                                        <a v-if="item.videoViewCount != '0'" :href="item.videoUrl" target="_blank">
-                                            <div class="video-warp"
-                                                :class="{'hover':item.channelUrl==videoOver}"
-                                                @mouseover="onVideoOver (item)"
-                                                @mouseleave="videoOver=null">
-                                                <div class="video-over">
+                                        <div class="video-warp" v-if="item.videoViewCount != '0'"
+                                            :class="{'hover':item.channelUrl==videoOver}"
+                                            @mouseover="onVideoOver (item)"
+                                            @mouseleave="videoOver=null">
+                                            <div class="video-over">
+                                                <a :href="item.videoUrl" target="_blank">
                                                     <div class="video-thumbnail">
                                                         <img :src="item.videoThumbnail" />
                                                         <div class="video-mask"></div>
@@ -221,13 +221,15 @@
                                                             <span>{{item.videoViewCount}}</span>
                                                         </div>
                                                     </div>
-                                                    <div class="video-title">{{item.videoTitle}}</div>
-                                                </div>
+                                                </a>
+                                                <div class="video-title">{{item.videoTitle}}</div>
                                             </div>
-                                            <div class="video-link">
+                                        </div>
+                                        <div class="video-link">
+                                            <a :href="item.videoUrl" target="_blank">
                                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                            </div>
-                                        </a>
+                                            </a>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
