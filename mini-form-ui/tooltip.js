@@ -24,13 +24,16 @@ var tooltip = (function () {
         _settings = _settings || {};
         setting.template = _settings.template || '.tooltip-template';
         setting.placement = _settings.placement || 'bottom';
+        setting.container = _settings.container || 'body';
         var templateHTML = document.querySelector(setting.template).innerHTML;
         var items = document.querySelectorAll(selector);
         for (var i = 0; i < items.length; i++) {
             (function () {
                 var item = items[i];
                 var element = null;
-                item.addEventListener("mouseenter", function () {
+                var itemHover = false;
+                var elementHover = false;
+                function mouseenter() {
                     if (!element) {
                         var html = templateHTML;
                         var attrs = item.attributes;
@@ -41,18 +44,49 @@ var tooltip = (function () {
                             }
                         }
                         element = createElement(html);
-                        document.body.appendChild(element);
+                        if (setting.container === 'self') {
+                            item.appendChild(element);
+                        } else {
+                            document.querySelector(setting.container)
+                                .appendChild(element);
+                        }
+                        element.addEventListener('mouseenter', function() {
+                            elementHover = true;
+                        });
+                        element.addEventListener('mouseleave', function() {
+                            elementHover = false;
+                            mouseleave();
+                        });
                         var position = getPosition(setting.placement, item, element);
                         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
                         var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
                         element.style.transform = 'translate3d(' + (position[0] + scrollLeft) + 'px, ' + (position[1] + scrollTop) + 'px, 0px)';
                     }
-                });
-                item.addEventListener("mouseleave", function () {
+                }
+                function mouseleave() {
                     if (element) {
-                        document.body.removeChild(element);
-                        element = null;
+                        setTimeout(function() {
+                            if (element) {
+                                if (!itemHover && !elementHover) {
+                                    if (setting.container === 'self') {
+                                        item.removeChild(element);
+                                    } else {
+                                        document.querySelector(setting.container)
+                                            .removeChild(element);
+                                    }
+                                    element = null;
+                                }
+                            }
+                        }, 80);
                     }
+                }
+                item.addEventListener('mouseenter', function() {
+                    itemHover = true;
+                    mouseenter();
+                });
+                item.addEventListener('mouseleave', function() {
+                    itemHover = false;
+                    mouseleave();
                 });
             })();
         }
