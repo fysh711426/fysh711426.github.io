@@ -13,6 +13,7 @@ var vm = new Vue({
         datas: [],
         showCount: 20,
         showSpinner: false,
+        showSpinnerBlock: false,
         isLoadMore: false,
         nameOver: null,
         videoOver: null
@@ -37,7 +38,7 @@ var vm = new Vue({
             this.errorImage = await this.loadedErrorImage(
                 'https://cdn.statically.io/gh/fysh711426/fysh711426.github.io/master/mini-form-ui/images/default-head-176x176.png');
             this.datas = await this.getData();
-            this.checkSpinner();
+            this.checkSpinnerBlock();
             var _this = this;
             setTimeout(function () {
                 _this.isLoaded = true;
@@ -63,19 +64,21 @@ var vm = new Vue({
         onScrollEnd: function() {
             if (!this.isLoadMore) {
                 this.isLoadMore = true;
+                this.showSpinner = true;
                 setTimeout(() => {
                     if (this.showCount < this.datas.length) {
                         this.showCount += 20;
                     }
-                    this.checkSpinner();
+                    this.checkSpinnerBlock();
                     this.isLoadMore = false;
+                    this.showSpinner = false;
                 }, 500);
             }
         },
-        checkSpinner: function() {
-            this.showSpinner = false;
+        checkSpinnerBlock: function() {
+            this.showSpinnerBlock = false;
             if (this.showCount < this.datas.length) {
-                this.showSpinner = true;
+                this.showSpinnerBlock = true;
             }
         },
         imgError: function (e) {
