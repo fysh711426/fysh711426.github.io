@@ -6,6 +6,11 @@ var tooltip = (function () {
             return div.children[0];
         }
     }
+    function remove(element) {
+        try {
+            document.body.removeChild(element);
+        } catch { }
+    }
     function getPosition(placement, item, element) {
         var rect = item.getBoundingClientRect();
         if (placement === 'bottom') {
@@ -19,12 +24,12 @@ var tooltip = (function () {
             return [left, top];
         }
     }
+    var global = null;
     return function (selector, _settings) {
         var setting = {};
         _settings = _settings || {};
         setting.template = _settings.template || '.tooltip-template';
         setting.placement = _settings.placement || 'bottom';
-        setting.container = _settings.container || 'body';
         var templateHTML = document.querySelector(setting.template).innerHTML;
         var items = document.querySelectorAll(selector);
         for (var i = 0; i < items.length; i++) {
@@ -44,16 +49,11 @@ var tooltip = (function () {
                             }
                         }
                         element = createElement(html);
-                        if (setting.container === 'self') {
-                            item.appendChild(element);
-                        } else {
-                            document.querySelector(setting.container)
-                                .appendChild(element);
-                        }
-                        element.addEventListener('mouseenter', function() {
+                        document.body.appendChild(element);
+                        element.addEventListener('mouseenter', function () {
                             elementHover = true;
                         });
-                        element.addEventListener('mouseleave', function() {
+                        element.addEventListener('mouseleave', function () {
                             elementHover = false;
                             mouseleave();
                         });
@@ -62,29 +62,28 @@ var tooltip = (function () {
                         var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
                         element.style.transform = 'translate3d(' + (position[0] + scrollLeft) + 'px, ' + (position[1] + scrollTop) + 'px, 0px)';
                     }
+                    if (global != null && global != element)
+                        remove(global);
+                    global = element;
                 }
                 function mouseleave() {
                     if (element) {
-                        setTimeout(function() {
+                        setTimeout(function () {
                             if (element) {
                                 if (!itemHover && !elementHover) {
-                                    if (setting.container === 'self') {
-                                        item.removeChild(element);
-                                    } else {
-                                        document.querySelector(setting.container)
-                                            .removeChild(element);
-                                    }
+                                    remove(element);
                                     element = null;
                                 }
                             }
                         }, 80);
                     }
                 }
-                item.addEventListener('mouseenter', function() {
+                
+                item.addEventListener('mouseenter', function () {
                     itemHover = true;
                     mouseenter();
                 });
-                item.addEventListener('mouseleave', function() {
+                item.addEventListener('mouseleave', function () {
                     itemHover = false;
                     mouseleave();
                 });
