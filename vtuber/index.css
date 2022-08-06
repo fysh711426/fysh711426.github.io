@@ -277,6 +277,10 @@ td.score  {
     font-weight: bold;
 }
 
+.video-link {
+    cursor: pointer;
+}
+
 .video-link-icon {
     position: absolute;
     bottom: 8px;
