@@ -208,23 +208,31 @@
                                         </span>
                                     </td>
                                     <td class="video">
-                                        <a v-if="item.videoViewCount != '0'" v-mounted="onItemMounted" target="_blank"
-                                            :href="item.videoUrl" :id="'video-tooltip-'+item.id"
+                                        <div v-if="item.videoViewCount != '0'" v-mounted="onItemMounted"
+                                            :id="'video-tooltip-'+item.id"
                                             :data-content="item.videoTitle"
                                             :data-thumbnail="item.videoThumbnail"
-                                            :data-view="item.videoViewCount">
-                                            <div class="video-warp">
+                                            :data-view="item.videoViewCount"
+                                            :data-url="item.videoUrl">
+                                            <div class="video-warp"
+                                                >
                                                 <img :src="item.videoThumbnail" />
                                                 <div class="video-mask"></div>
                                                 <div class="video-view">
                                                     <i class="fa-solid fa-play"></i>
                                                     <span>{{item.videoViewCount}}</span>
                                                 </div>
+                                                <a :href="item.videoUrl" onclick="onLink(event)" target="_blank">
+                                                    <div class="video-link-icon">
+                                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                    </div>
+                                                </a>
                                             </div>
                                             <div class="video-link">
-                                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                <i class="fa-regular fa-circle-play"></i>
+                                                <!-- <i class="fa-solid fa-arrow-up-right-from-square"></i> -->
                                             </div>
-                                        </a>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -259,6 +267,11 @@
                         <i class="fa-solid fa-play"></i>
                         <span>__data-view__</span>
                     </div>
+                    <a href="__data-url__" onclick="onLink(event)" target="_blank">
+                        <div class="video-link-icon">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                    </a>
                 </div>
                 <div class="video-title">__data-content__</div>
             </div>

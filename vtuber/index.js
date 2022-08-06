@@ -119,3 +119,7 @@ var vm = new Vue({
         this.init();
     }
 });
+
+function onLink(e) {
+    e.stopPropagation();
+}
