@@ -123,3 +123,8 @@ var vm = new Vue({
 function onLink(e) {
     e.stopPropagation();
 }
+
+(function() {
+    var layout = document.querySelector('.layout');
+    layout.style.opacity = 1;
+})();

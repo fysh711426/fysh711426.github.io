@@ -211,9 +211,10 @@
                                         <div v-if="item.videoViewCount != '0'" v-mounted="onItemMounted"
                                             :id="'video-tooltip-'+item.id"
                                             :data-content="item.videoTitle"
-                                            :data-thumbnail="item.videoThumbnail"
                                             :data-view="item.videoViewCount"
-                                            :data-url="item.videoUrl">
+                                            :data-url="item.videoUrl"
+                                            :data-thumbnail="item.videoThumbnail"
+                                            :data-src="'src'">
                                             <div class="video-warp"
                                                 >
                                                 <img :src="item.videoThumbnail" />
@@ -261,7 +262,7 @@
         <div class="tooltip-block video-tooltip-block">
             <div class="tooltip-inner video-tooltip-inner">
                 <div class="video-warp">
-                    <img src="__data-thumbnail__" />
+                    <img __data-src__="__data-thumbnail__" />
                     <div class="video-mask"></div>
                     <div class="video-view">
                         <i class="fa-solid fa-play"></i>

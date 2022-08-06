@@ -1,3 +1,12 @@
+::selection {
+	background: #ade1f5;
+	color: #fff;
+}
+
+.layout {
+    opacity: 0;
+}
+
 .progress {
     /* background: #0098a1; */
     background: #28C8C8;
@@ -242,11 +251,11 @@ td.score  {
     height: 100%;
     width: auto;
     margin: auto;
+    transition: all 2000ms cubic-bezier(.19,1,.22,1) 0ms;
 }
 
 .video-warp:hover img {
     transform: scale(1.12);
-    transition: all 2000ms cubic-bezier(.19,1,.22,1) 0ms;
 }
 
 .video-mask {
