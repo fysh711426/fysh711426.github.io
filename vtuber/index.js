@@ -104,6 +104,12 @@ var vm = new Vue({
         },
         onVideoOver: function(item) {
             this.videoOver = item.channelUrl;
+        },
+        onItemMounted: function(el) {
+            tooltip('#' + el.id, {
+                template: '.video-tooltip-template',
+                placement: 'left'
+            });
         }
     },
     mounted() {

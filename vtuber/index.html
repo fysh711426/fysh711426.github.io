@@ -22,6 +22,7 @@
     <script src="https://fysh711426.github.io/mini-form-ui/progress.js" crossorigin="anonymous"></script>
     <script src="https://fysh711426.github.io/mini-form-ui/spinner.js" crossorigin="anonymous"></script>
     <script src="https://fysh711426.github.io/mini-form-ui/layout.js" crossorigin="anonymous"></script>
+    <script src="directive.js"></script>
     <script src="functions.js"></script>
     <script src="title.js"></script>
     
@@ -92,35 +93,35 @@
                             <span v-if="menu == 'popular'" class="board-header-title">
                                 <i class="fa-brands fa-hotjar"></i>
                                 <span>熱度排行</span>
-                                <span class="tooltip description" content="熱度：影片觀看中位數">
+                                <span class="tooltip description" data-content="熱度：影片觀看中位數">
                                     <i class="fa-regular fa-circle-question"></i>
                                 </span>
                             </span>
                             <span v-if="menu == 'subscribe'" class="board-header-title">
                                 <i class="fa-solid fa-bell"></i>
                                 <span>訂閱排行</span>
-                                <span class="tooltip description" content="30日訂閱排行">
+                                <span class="tooltip description" data-content="30日訂閱排行">
                                     <i class="fa-regular fa-circle-question"></i>
                                 </span>
                             </span>
                             <span v-if="menu == 'singing'" class="board-header-title">
                                 <i class="fa-solid fa-microphone"></i>
                                 <span>歌回排行</span>
-                                <span class="tooltip description" content="觀看：最高觀看數">
+                                <span class="tooltip description" data-content="觀看：最高觀看數">
                                     <i class="fa-regular fa-circle-question"></i>
                                 </span>
                             </span>
                             <span v-if="menu == 'growing'" class="board-header-title">
                                 <i class="fa-solid fa-chart-line"></i>
                                 <span>本周成長</span>
-                                <span class="tooltip description" content="成長：訂閱成長率">
+                                <span class="tooltip description" data-content="成長：訂閱成長率">
                                     <i class="fa-regular fa-circle-question"></i>
                                 </span>
                             </span>
                             <span v-if="menu == 'newcomer'" class="board-header-title">
                                 <i class="fa-solid fa-user-group"></i>
                                 <span>本月新人</span>
-                                <span class="tooltip description" content="30日新人排行">
+                                <span class="tooltip description" data-content="30日新人排行">
                                     <i class="fa-regular fa-circle-question"></i>
                                 </span>
                             </span>
@@ -147,7 +148,7 @@
                                 </tr>
                             </thead>
                             <tbody v-if="datas.length > 0">
-                                <tr v-if="index < showCount" v-for="(item, index) in datas" :key="item.channelUrl">
+                                <tr v-if="index < showCount" v-for="(item, index) in datas" :key="item.id">
                                     <td class="rank">
                                         <span>{{item.rank}}</span>
                                         <div v-if="showRankVar">
@@ -207,29 +208,23 @@
                                         </span>
                                     </td>
                                     <td class="video">
-                                        <div class="video-warp" v-if="item.videoViewCount != '0'"
-                                            :class="{'hover':item.channelUrl==videoOver}"
-                                            @mouseover="onVideoOver (item)"
-                                            @mouseleave="videoOver=null">
-                                            <div class="video-over">
-                                                <a :href="item.videoUrl" target="_blank">
-                                                    <div class="video-thumbnail">
-                                                        <img :src="item.videoThumbnail" />
-                                                        <div class="video-mask"></div>
-                                                        <div class="video-view">
-                                                            <i class="fa-solid fa-play"></i>
-                                                            <span>{{item.videoViewCount}}</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                                <div class="video-title">{{item.videoTitle}}</div>
+                                        <a v-if="item.videoViewCount != '0'" v-mounted="onItemMounted" target="_blank"
+                                            :href="item.videoUrl" :id="'video-tooltip-'+item.id"
+                                            :data-content="item.videoTitle"
+                                            :data-thumbnail="item.videoThumbnail"
+                                            :data-view="item.videoViewCount">
+                                            <div class="video-warp">
+                                                <img :src="item.videoThumbnail" />
+                                                <div class="video-mask"></div>
+                                                <div class="video-view">
+                                                    <i class="fa-solid fa-play"></i>
+                                                    <span>{{item.videoViewCount}}</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="video-link">
-                                            <a :href="item.videoUrl" target="_blank">
+                                            <div class="video-link">
                                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                            </a>
-                                        </div>
+                                            </div>
+                                        </a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -250,8 +245,23 @@
         </div>
     </div>
     <div class="tooltip-template">
-        <div class="tooltip-block __class__">
-            <div class="tooltip-inner">__content__</div>
+        <div class="tooltip-block">
+            <div class="tooltip-inner">__data-content__</div>
+        </div>
+    </div>
+    <div class="video-tooltip-template">
+        <div class="tooltip-block video-tooltip-block">
+            <div class="tooltip-inner video-tooltip-inner">
+                <div class="video-warp">
+                    <img src="__data-thumbnail__" />
+                    <div class="video-mask"></div>
+                    <div class="video-view">
+                        <i class="fa-solid fa-play"></i>
+                        <span>__data-view__</span>
+                    </div>
+                </div>
+                <div class="video-title">__data-content__</div>
+            </div>
         </div>
     </div>
     <div class="control">
