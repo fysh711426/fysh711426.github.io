@@ -1,14 +1,10 @@
 var progress = (function () {
     var settings = {};
     function config(_settings) {
-        _settings =  _settings || {
-            minimum: 0.08,
-            speed: 200,
-            easing: 'linear'
-        };
-        for(var i in _settings) {
-            settings[i] = _settings[i];
-        }
+        _settings =  _settings || {};
+        settings.minimum = _settings.minimum || 0.08;
+        settings.speed = _settings.speed || 200;
+        settings.easing = _settings.easing || 'linear';
     }
     config();
     var ele = null;

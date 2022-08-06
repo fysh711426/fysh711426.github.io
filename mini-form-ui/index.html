@@ -79,7 +79,7 @@
                             <span class="board-header-title">
                                 <i class="fa-brands fa-hotjar"></i>
                                 <span>Hot Rank</span>
-                                <span class="tooltip description" content="熱度：影片觀看中位數">
+                                <span class="tooltip description" data-content="熱度：影片觀看中位數">
                                     <i class="fa-regular fa-circle-question"></i>
                                 </span>
                             </span>
@@ -119,7 +119,8 @@
                                     </td>
                                     <td class="score">37294</td>
                                     <td class="video">
-                                        <div class="video-warp">
+                                        <div class="video-warp tooltip"
+                                            data-content="【畢業典禮】致我的哇賽棒棒風鈴草🐺啟程LA！｜Linglan Lily’s graduation ceremony #李李鈴蘭">
                                             <img src="https://i.ytimg.com/vi/rvkMbydTrU0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAmkHQn4ENwaiERjRLH3PWeDvsqyA" />
                                             <div class="video-mask"></div>
                                             <div class="video-view">
@@ -250,7 +251,7 @@
     </div>
     <div class="tooltip-template">
         <div class="tooltip-block">
-            <div class="tooltip-inner">__content__</div>
+            <div class="tooltip-inner">__data-content__</div>
         </div>
     </div>
     <div class="control">
@@ -261,7 +262,10 @@
     <script>
         selectMenu('Item1');
         selectSubMenu('Item1');
-        tooltip('.tooltip');
+        tooltip('.board-header .tooltip');
+        tooltip('.video .tooltip', {
+            placement: 'left'
+        });
         gotop('.gotop');
         spinner('.spinner');
         progress.start();

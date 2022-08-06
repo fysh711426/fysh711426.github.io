@@ -10,7 +10,7 @@
 
 .tooltip-inner {
     font-size: 0.9rem;
-    line-height: 0.9rem;
+    line-height: 1.5;
     padding: 15px;
     max-width: 250px;
     background-color: #fff;

@@ -177,6 +177,11 @@ td.rank  {
     margin: auto;
 }
 
+.video-warp:hover img {
+    transform: scale(1.12);
+    transition: all 2000ms cubic-bezier(.19,1,.22,1) 0ms;
+}
+
 .video-mask {
     position: absolute;
     top: 0;
