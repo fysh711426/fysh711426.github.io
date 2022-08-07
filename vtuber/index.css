@@ -213,7 +213,7 @@ td.rank  {
 .name-warp.hover .name-over {
     display: block;
     position: absolute;
-    top: -8px;
+    top: -12px;
     left: -11px;
     padding: 10px;
     background-color: #fff;
@@ -365,6 +365,8 @@ td.score  {
 
 .video-tooltip-inner .video-title {
     padding: 0px 5px 0px 5px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 @media screen and (max-width: 640px) {
