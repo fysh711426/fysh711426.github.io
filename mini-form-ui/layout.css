@@ -354,13 +354,13 @@ a:active {
 }
 
 .sub-menu-item.active {
-    background-color: #f1f1f1;
+    /* background-color: #f1f1f1; */
     border-bottom: 3px solid #505050;
 }
 
 @media screen and (min-width: 1025px) {
     .sub-menu-item.active:hover {
-        background-color: #f1f1f1;
+        /* background-color: #f1f1f1; */
     }
 
     .sub-menu-item:hover {
