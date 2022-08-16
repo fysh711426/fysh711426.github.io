@@ -153,12 +153,12 @@
                                         <span>{{item.rank}}</span>
                                         <div v-if="showRankVar">
                                             <div v-if="item.rankVar > 0" class="rank-var up">
-                                                <i class="fa-solid fa-angle-up"></i>
-                                                <span>{{item.rankVar}}</span>
+                                                <!-- <i class="fa-solid fa-angle-up"></i> -->
+                                                <span class="symbol">+</span><span>{{item.rankVar}}</span>
                                             </div>
                                             <div v-if="item.rankVar < 0" class="rank-var down">
-                                                <i class="fa-solid fa-chevron-down"></i>
-                                                <span>{{item.rankVar * -1}}</span>
+                                                <!-- <i class="fa-solid fa-chevron-down"></i> -->
+                                                <span class="symbol">-</span><span>{{item.rankVar * -1}}</span>
                                             </div>
                                             <div v-if="item.rankVar == 0" class="rank-var desh">
                                                 <i class="fa-solid fa-minus"></i>

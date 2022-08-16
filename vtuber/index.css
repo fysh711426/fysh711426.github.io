@@ -110,8 +110,12 @@ td.rank  {
 }
 
 .rank-var {
-    font-size: 0.9rem;
-    line-height: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 0.95rem;
+}
+
+.rank-var .symbol{
+    font-weight: bold;
 }
 
 .rank-var.up {
