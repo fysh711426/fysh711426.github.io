@@ -349,7 +349,7 @@ a:active {
 
 .sub-menu-item {
     display: block;
-    padding: 10px 15px;
+    padding: 10px 15px 7px 15px;
     font-size: 1rem;
 }
 
@@ -547,6 +547,16 @@ table td {
     border-radius: 0.25rem;
     font-size: 0.9rem;
     line-height: 0.9rem;
+}
+
+.tag-o{
+    display: inline-block;
+    color: #7e7e7e;
+    padding: 5px;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    border: 1px solid #e6e6e6;
 }
 
 .row-empty {
