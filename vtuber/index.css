@@ -18,6 +18,10 @@
     }
 }
 
+.nav-title {
+    margin-right: 8px;
+}
+
 .nav-title span{
     /* color: #0098a1; */
     color: #28C8C8;
