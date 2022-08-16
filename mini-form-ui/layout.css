@@ -349,7 +349,7 @@ a:active {
 
 .sub-menu-item {
     display: block;
-    padding: 5px 15px;
+    padding: 10px 15px;
     font-size: 1rem;
 }
 
@@ -359,9 +359,9 @@ a:active {
 }
 
 @media screen and (min-width: 1025px) {
-    .sub-menu-item.active:hover {
-        /* background-color: #f1f1f1; */
-    }
+    /* .sub-menu-item.active:hover {
+        background-color: #f1f1f1;
+    } */
 
     .sub-menu-item:hover {
         background-color: #f5f5f5;
