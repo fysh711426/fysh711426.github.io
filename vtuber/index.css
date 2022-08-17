@@ -114,9 +114,9 @@ td.rank  {
     line-height: 0.95rem;
 }
 
-.rank-var .symbol{
+/* .rank-var .symbol{
     font-weight: bold;
-}
+} */
 
 .rank-var.up {
     color: #4d9612;
