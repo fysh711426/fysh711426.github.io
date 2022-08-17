@@ -77,9 +77,9 @@ td.rank  {
     line-height: 0.95rem;
 }
 
-.rank-var .symbol{
+/* .rank-var .symbol{
     font-weight: bold;
-}
+} */
 
 .rank-var.up {
     color: #4d9612;
@@ -197,10 +197,24 @@ td.rank  {
 
 .video-view {
     position: absolute;
-    left: 8px;
-    bottom: 8px;
+    left: 10px;
+    bottom: 10px;
     font-size: 0.8rem;
     line-height: 0.8rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.video-link {
+    cursor: pointer;
+}
+
+.video-link-icon {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 1rem;
+    line-height: 1rem;
     color: #fff;
     font-weight: bold;
 }
@@ -221,13 +235,16 @@ td.rank  {
 
 @media screen and (min-width: 641px) {
     .video {
-        width: 8rem;
+        width: 11rem;
+        max-width: 176px;
     }
 
     .video-warp {
         display: block;
-        height: 4.5rem;
-        width: 8rem;
+        height: 6.18rem;
+        width: 11rem;
+        max-height: 99px;
+        max-width: 176px;
     }
 
     .video-link {
@@ -237,13 +254,16 @@ td.rank  {
 
 @media screen and (min-width: 1025px) {
     .video {
-        width: 8.9rem;
+        width: 14rem;
+        max-width: 224px;
     }
 
     .video-warp {
         display: block;
-        height: 5rem;
-        width: 8.9rem;
+        height: 7.87rem;
+        width: 14rem;
+        max-height: 126px;
+        max-width: 224px;
     }
 
     .video-link {
@@ -251,6 +271,38 @@ td.rank  {
     }
 }
 
-.tooltip-inner {
+.video-tooltip-template .tooltip-block {
+    display: none;
+}
+
+.video-tooltip-block {
     font-weight: bold;
+}
+
+.video-tooltip-inner {
+    padding: 10px;
+}
+
+.video-tooltip-inner .video-warp {
+    margin-bottom: 5px;
+    width: 250px;
+    height: 140px;
+    max-width: none;
+    max-height: none;
+}
+
+.video-tooltip-inner .video-title {
+    padding: 0px 5px 0px 5px;
+}
+
+@media screen and (max-width: 640px) {
+    .video-tooltip-inner .video-warp {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .video-tooltip-inner .video-warp {
+        display: none;
+    }
 }
