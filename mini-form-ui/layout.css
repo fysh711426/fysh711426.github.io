@@ -172,15 +172,10 @@ a {
 
 .nav-link-c {
     border-radius: 100px;
-    margin-left: 15px;
     display: flex;
     align-items: center;
     font-size: 1rem;
     align-self: center;
-}
-
-.theme-button {
-    margin-left: 15px;
 }
 
 .theme-button-light {
@@ -210,6 +205,10 @@ a {
         padding: 5px 5px;
     }
 
+    .theme-button {
+        margin-right: 10px;
+    }
+
     .theme-button-text {
         display: none;
     }
@@ -218,6 +217,10 @@ a {
 @media screen and (min-width: 641px) {
     .nav-link-c {
         padding: 5px 15px;
+    }
+
+    .theme-button {
+        margin-right: 15px;
     }
     
     .theme-button-text {

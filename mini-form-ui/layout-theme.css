@@ -43,7 +43,7 @@ body.dark {
     --menuHover: #333333;
     --menuSelected: #ccc;
     --leftMenuBorderTop: rgb(60, 60, 60, .12);
-    --leftMenuOpenBorderTop: #4d4d4d;
+    --leftMenuOpenBorderTop: rgb(255, 255, 255, .1);
     --footerFontColor: #aaa;
     --tagOColor: #aaa;
     --tagOBorderColor: #4d4d4d;
@@ -113,14 +113,26 @@ a:active {
     }
 }
 
-.nav-link-c {
-    color: var(--themeButtonFontColor);
-    background-color: var(--themeButtonBgColor);
+@media screen and (max-width: 640px) {
+    .nav-link-c {
+        color: var(--themeButtonBgColor);
+    }
+
+    a.nav-link-c {
+        color: var(--themeButtonBgColor);
+    }
 }
 
-a.nav-link-c {
-    color: var(--themeButtonFontColor);
-    background-color: var(--themeButtonBgColor);
+@media screen and (min-width: 641px) {
+    .nav-link-c {
+        color: var(--themeButtonFontColor);
+        background-color: var(--themeButtonBgColor);
+    }
+
+    a.nav-link-c {
+        color: var(--themeButtonFontColor);
+        background-color: var(--themeButtonBgColor);
+    }
 }
 
 /*----- header -----*/
