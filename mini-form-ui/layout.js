@@ -54,6 +54,41 @@ function selectSubMenu(val) {
     }
 }
 
+var changeTheme = null;
+function checkTheme() {
+    function setTheme(theme) {
+        document.body.className = document.body.className
+            .replace(' light', '').replace(' dark', '');
+        document.body.className = document.body.className + ' ' + theme;
+    }
+    var theme = localStorage.getItem('THEME');
+    if (theme === '') {
+        var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        theme = darkQuery.matches ? "dark" : "light";
+    }
+    setTheme(theme);
+    changeTheme = function(newTheme) {
+        var theme = localStorage.getItem('THEME');
+        if (newTheme !== theme) {
+            localStorage.setItem('THEME', newTheme);
+        }
+        setTheme(newTheme);
+    };
+}
+
+function changeThemeButton(newTheme) {
+    var light = document.querySelector('.theme-button-light');
+    var dark = document.querySelector('.theme-button-dark');
+    if (newTheme === 'light') {
+        light.style.display = 'flex';
+        dark.style.display = 'none';
+    }
+    else {
+        light.style.display = 'none';
+        dark.style.display = 'flex';
+    }
+}
+
 var gotop = (function () {
     function getScrollTop() {
         return document.documentElement.scrollTop || document.body.scrollTop;

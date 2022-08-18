@@ -1,3 +1,16 @@
+body.light {
+    /* color: #454545; */
+    --spinnerColor: #5e5e5e;
+}
+
+body.dark {
+    --spinnerColor: #c4c6c9;
+}
+
+.spinner-layer {
+    color: var(--spinnerColor);
+}
+
 .spinner {
     display: inline-block;
     position: relative;
@@ -18,8 +31,6 @@
     width: 100%;
     height: 100%;
     white-space: nowrap;
-    /* color: #454545; */
-    color: #5e5e5e;
     animation-duration: 5332ms;
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     animation-iteration-count: infinite;
