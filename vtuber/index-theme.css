@@ -19,13 +19,17 @@ body.dark {
     --aboutHrColor: #4d4d4d;
     --aboutLinkColor: #33aaff;
     --nameBgColor: #333333;
-    --nameBorderColor: #393939;
+    --nameBorderColor: #595959;
     --nameShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
     
 }
 
 ::selection {
 	background: var(--selectionBgColor);
+}
+
+body.dark .nav-logo img {
+    filter: brightness(1);
 }
 
 .progress {
