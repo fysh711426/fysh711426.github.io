@@ -13,6 +13,8 @@ body.light {
     --menuActive: #f1f1f1;
     --menuHover: #f5f5f5;
     --menuSelected: #505050;
+    --leftMenuBorderTop: rgb(60, 60, 60, .12);
+    --leftMenuOpenBorderTop: rgb(60, 60, 60, .12);
     --footerFontColor: #999;
     --tagOColor: #7e7e7e;
     --tagOBorderColor: #e6e6e6;
@@ -40,6 +42,8 @@ body.dark {
     --menuActive: #393939;
     --menuHover: #333333;
     --menuSelected: #ccc;
+    --leftMenuBorderTop: rgb(60, 60, 60, .12);
+    --leftMenuOpenBorderTop: #4d4d4d;
     --footerFontColor: #aaa;
     --tagOColor: #aaa;
     --tagOBorderColor: #4d4d4d;
@@ -100,12 +104,21 @@ a:active {
 
 
 @media screen and (min-width: 1025px) {
-    .nav-link a:hover {
+    .nav-link:hover {
+        color: var(--linkHoverColor);
+    }
+
+    a.nav-link:hover {
         color: var(--linkHoverColor);
     }
 }
 
 .nav-link-c {
+    color: var(--themeButtonFontColor);
+    background-color: var(--themeButtonBgColor);
+}
+
+a.nav-link-c {
     color: var(--themeButtonFontColor);
     background-color: var(--themeButtonBgColor);
 }
@@ -117,6 +130,13 @@ a:active {
 .left-menu {
     background-color: var(--boardColor);
     box-shadow: var(--boardShadow);
+    border-top-color: var(--leftMenuBorderTop);
+}
+
+@media screen and (max-width: 1330px) {
+    .left-menu.open {
+        border-top-color: var(--leftMenuOpenBorderTop);
+    }
 }
 
 .left-menu-item.active {
