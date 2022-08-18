@@ -13,7 +13,8 @@ body.light {
 
 body.dark {
     --selectionBgColor: #80d0ef;
-    --logoColor: #26c0c0;
+    /* --logoColor: #26c0c0; */
+    --logoColor: #28C8C8;
     --videoWarpBgColor: rgb(185, 185, 185);
     --aboutHrColor: #4d4d4d;
     --aboutLinkColor: #33aaff;
