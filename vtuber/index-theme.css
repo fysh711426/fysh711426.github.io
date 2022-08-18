@@ -13,10 +13,10 @@ body.light {
 
 body.dark {
     --selectionBgColor: #80d0ef;
-    --logoColor: #23b3b3;
+    --logoColor: #26c0c0;
     --videoWarpBgColor: rgb(185, 185, 185);
     --aboutHrColor: #4d4d4d;
-    --aboutLinkColor: #0086e6;
+    --aboutLinkColor: #33aaff;
     --nameBgColor: #333333;
     --nameBorderColor: #393939;
     --nameShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
