@@ -1,5 +1,4 @@
 ::selection {
-	background: #ade1f5;
 	color: #fff;
 }
 
@@ -36,38 +35,7 @@
 }
 
 .day {
-    display: flex;
-    border: 1px solid #e6e6e6;
-    font-size: 0.9rem;
     width: 2.5rem;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.day.left {
-    padding: 5px 5px 5px 10px;
-    border-radius: 3.5rem 0 0 3.5rem;
-    margin-left: auto;
-}
-
-.day.right {
-    padding: 5px 10px 5px 5px;
-    border-radius: 0 3.5rem 3.5rem 0;
-    border-left: none;
-}
-
-.day.active {
-    background-color: #f1f1f1;
-}
-
-@media screen and (min-width: 1025px) {
-    .day.active:hover {
-        background-color: #f1f1f1;
-    }
-
-    .day:hover {
-        background-color: #f5f5f5;
-    }
 }
 
 .rank {
@@ -224,10 +192,9 @@ td.rank  {
     top: -7px;
     left: -11px;
     padding: 5px 10px 5px 10px;
-    background-color: #fff;
     border-radius: 0.35rem;
-    border: 1px solid #e6e6e6;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    border-width: 1px;
+    border-style: solid;
     max-width: 180%;
     line-height: 1.5;
     cursor: pointer;
@@ -252,7 +219,6 @@ td.score  {
     position: relative;
     border-radius: 0.35rem;
     margin: 0 auto;
-    background-color: rgb(204, 204, 204);
 }
 
 .video-warp img {
@@ -392,14 +358,8 @@ td.score  {
 }
 
 .about-content p.hr {
-    border-bottom: 1px solid #e6e6e6;
-}
-
-.about-content a,
-.about-content a:link,
-.about-content a:visited,
-.about-content a:active {
-    color: #0094ff;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
 }
 
 .about-content ul {

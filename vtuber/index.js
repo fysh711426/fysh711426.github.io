@@ -3,6 +3,7 @@ var vm = new Vue({
     data: {
         // apiBase: 'https://cdn.statically.io/gh/fysh711426/VtuberData/master/api/',
         apiBase: 'https://raw.githubusercontent.com/fysh711426/VtuberData/master/api/',
+        theme: '',
         menu: '',
         submenu: '',
         day: '',
@@ -30,6 +31,11 @@ var vm = new Vue({
             // if (this.menu === 'popular' || this.menu === 'subscribe') {
             //     this.showRankVar = true;
             // }
+            this.theme = 'dark';
+            if (document.body.className.indexOf('dark') === -1) {
+                this.theme = 'light';
+            }
+            changeThemeButton(this.theme);
             progress.start();
             selectMenu(this.menu);
             selectSubMenu(this.submenu);
@@ -60,6 +66,11 @@ var vm = new Vue({
                 var response = await axios.get(api);
                 return response.data;
             }
+        },
+        toggleTheme: function() {
+            this.theme = this.theme === 'light' ? 'dark' : 'light';
+            changeThemeButton(this.theme);
+            changeTheme(this.theme);
         },
         onScrollEnd: function() {
             if (!this.isLoadMore) {

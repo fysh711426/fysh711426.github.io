@@ -1,0 +1,57 @@
+body.light {
+    --selectionBgColor: #ade1f5;
+    --logoColor: #28C8C8;
+    --videoWarpBgColor: rgb(204, 204, 204);
+    --aboutHrColor: #e6e6e6;
+    --aboutLinkColor: #0094ff;
+    --nameBgColor: #fff;
+    --nameBorderColor: #e6e6e6;
+    --nameShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    
+
+}
+
+body.dark {
+    --selectionBgColor: #80d0ef;
+    --logoColor: #23b3b3;
+    --videoWarpBgColor: rgb(185, 185, 185);
+    --aboutHrColor: #4d4d4d;
+    --aboutLinkColor: #0086e6;
+    --nameBgColor: #333333;
+    --nameBorderColor: #393939;
+    --nameShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    
+}
+
+::selection {
+	background: var(--selectionBgColor);
+}
+
+.progress {
+    background: var(--logoColor);
+}
+
+.nav-title span{
+    color: var(--logoColor);
+}
+
+.name-warp.hover .name-over {
+    background-color: var(--nameBgColor);
+    border-color: var(--nameBorderColor);
+    box-shadow: var(--nameShadow);
+}
+
+.video-warp {
+    background-color: var(--videoWarpBgColor);
+}
+
+.about-content p.hr {
+    border-bottom-color: var(--aboutHrColor);
+}
+
+.about-content a,
+.about-content a:link,
+.about-content a:visited,
+.about-content a:active {
+    color: var(--aboutLinkColor);
+}
