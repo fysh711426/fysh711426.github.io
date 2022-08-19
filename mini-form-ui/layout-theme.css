@@ -32,15 +32,15 @@ body.light {
 
 body.dark {
     --bgColor: #181818;
-    --boardColor: #212121;
+    --boardColor: #303030;
     --boardShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
     --fontColor: #d2d3d5;
     --linkColor: #d2d3d5;
     --linkHoverColor: #fff;
     --themeButtonBgColor: #f9f9f9;
     --themeButtonFontColor: #181818;
-    --menuActive: #393939;
-    --menuHover: #333333;
+    --menuActive: #454545;
+    --menuHover: #404040;
     --menuSelected: #ccc;
     --leftMenuBorderTop: rgb(60, 60, 60, .12);
     --leftMenuOpenBorderTop: rgb(255, 255, 255, .1);
@@ -53,8 +53,8 @@ body.dark {
     --progressColor: #ccc;
     --hrColor: #4d4d4d;
     --buttonRound: #4d4d4d;
-    --buttonRoundActive: #393939;
-    --buttonRoundHover: #333333;
+    --buttonRoundActive: #454545;
+    --buttonRoundHover: #404040;
 }
 
 body.dark img {
@@ -115,11 +115,11 @@ a:active {
 
 @media screen and (max-width: 640px) {
     .nav-link-c {
-        color: var(--themeButtonBgColor);
+        color: var(--linkColor);
     }
 
     a.nav-link-c {
-        color: var(--themeButtonBgColor);
+        color: var(--linkColor);
     }
 }
 
