@@ -114,8 +114,10 @@ var gotop = (function () {
         gotop.addEventListener("click", function (e) {
             e.preventDefault();
             var scroll = getScrollTop();
-            var speed = getClientWidth() >= 1025 ? 0.85 : 0.65;
-            var delay = getClientWidth() >= 1025 ? 25 : 100;
+            // var speed = getClientWidth() >= 1025 ? 0.85 : 0.65;
+            // var delay = getClientWidth() >= 1025 ? 25 : 100;
+            var speed = 0.85;
+            var delay = 25;
             setTimeout(function () {
                 scroll = Math.floor(scroll * speed);
                 document.documentElement.scrollTop = document.body.scrollTop = scroll;

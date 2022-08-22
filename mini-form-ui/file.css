@@ -1,3 +1,11 @@
+/*  
+z-index
+    file-navbar.sticky = 10000
+    file-navbar.over = 20000
+    file-image-block.over = 15000
+    file-navbar-title = 25000
+*/
+
 /*----- font-awesome -----*/
 
 .fa-fw {
@@ -5,6 +13,18 @@
 }
 
 /*----- font-awesome -----*/
+
+/*----- gotop -----*/
+
+.control .gotop.show {
+    display: none;
+}
+
+.control .gotop.show.over {
+    display: block;
+}
+
+/*----- gotop -----*/
 
 /*----- file-item -----*/
 
@@ -175,10 +195,10 @@
     box-shadow: var(--boxShadow);
 }
 
-    /* .file-image-block.over {
+    .file-image-block.over {
         position: sticky;
-        z-index: 25000;
-    } */
+        z-index: 15000;
+    }
 
 /*----- file-image-block -----*/
 
@@ -191,7 +211,7 @@
     word-break: break-all;
 }
 
-.file-navbar.freeze {
+.file-navbar.sticky {
     position: sticky;
     top: 0px;
     z-index: 10000;
@@ -200,13 +220,13 @@
 .file-navbar.over {
     position: sticky;
     top: 0px;
-    z-index: 50000;
+    z-index: 20000;
 }
 
 .file-navbar .start {
     display: flex;
     align-items: center;
-    max-width: calc(100% - 2rem - 20px);
+    max-width: calc(100% - 1.2rem - 10px);
 }
 
 .file-navbar .end {
@@ -214,8 +234,16 @@
     align-items: center;
 }
 
+.file-navbar .end .fa-fw {
+    width: 1.2em;
+}
+
 .file-navbar-btn {
     padding: 0px 5px;
+}
+
+.file-navbar-btn-text {
+    font-size: 0.8rem;
 }
 
 /* .file-navbar-title {
@@ -275,7 +303,69 @@
     line-height: 1.5;
     cursor: pointer;
     font-weight: bold;
-    z-index: 50001;
+    z-index: 25000;
 }
 
 /*----- file-navbar -----*/
+
+/*----- file-navbar-expand -----*/
+
+.file-navbar-expand {
+    display: none;
+    justify-content: space-between;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.file-navbar-expand.open {
+    display: flex;
+}
+
+.file-navbar-expand .fa-fw {
+    width: 1.2em;
+}
+
+.file-navbar-expand .start {
+    display: flex;
+    align-items: center;
+}
+
+.file-navbar-expand .end {
+    display: flex;
+    align-items: center;
+}
+
+.file-navbar-expand-title {
+    font-size: 0.9rem;
+    padding: 0px 10px;
+}
+
+/*----- file-navbar-expand -----*/
+
+/*----- file-navbar-expand-btn -----*/
+
+.file-navbar-expand-btn .up{
+    display: none;
+}
+
+.file-navbar-expand-btn.open .up {
+    display: inline;
+}
+
+.file-navbar-expand-btn .down {
+    display: inline;
+}
+
+.file-navbar-expand-btn.open .down {
+    display: none;
+}
+
+/*----- file-navbar-expand-btn -----*/
+
+/*----- file-navbar-expand-btn -----*/
+
+.file-navbar-gotop {
+    display: none;
+}
+
+/*----- file-navbar-expand-btn -----*/

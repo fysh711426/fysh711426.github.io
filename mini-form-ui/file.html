@@ -35,7 +35,7 @@
 <body>
     <script>checkTheme()</script>
     <div class="layout">
-        <div class="header sticky">
+        <div class="header">
             <div class="header-inner">
                 <div class="start">
                     <a href="">
@@ -71,7 +71,7 @@
         <div class="container">
             <div class="main">
                 <div class="main-inner">
-                    <div class="board file-navbar">
+                    <div class="board file-navbar sticky">
                         <div class="start">
                             <div class="file-navbar-btn">
                                 <a href="javascript:void(0)">
@@ -79,11 +79,39 @@
                                 </a>
                             </div>
                             <div class="file-navbar-title-warp">
-                                <div class="file-navbar-title" onmouseover="onFileNavbarOver()">Title</div>
+                                <div class="file-navbar-title" onmouseover="onNavbarOver()">Title</div>
                                 <div class="file-navbar-title-over-warp">
-                                    <div class="file-navbar-title-over" onmouseleave="onFileNavbarLeave()">Title</div>
+                                    <div class="file-navbar-title-over" onmouseleave="onNavbarLeave()">Title</div>
                                 </div>
                             </div>
+                        </div>
+                        <div></div>
+                        <div class="end">
+                            <div class="file-navbar-btn file-navbar-expand-btn" onclick="toggleNavbarExpand()">
+                                <a href="javascript:void(0)">
+                                    <div>
+                                        <span class="up">
+                                            <i class="fa-solid fa-angle-up fa-fw"></i>
+                                        </span>
+                                        <span class="down">
+                                            <i class="fa-solid fa-angle-down fa-fw"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="file-navbar-btn file-navbar-gotop" onclick="onGotop()">
+                                <a href="javascript:void(0)">
+                                    <div>
+                                        <i class="fa-regular fa-circle-up fa-fw"></i>
+                                        <!-- <i class="fa-solid fa-angle-up fa-fw"></i> -->
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block file-navbar-expand">
+                        <div class="start">
+                            <!-- <div class="file-navbar-expand-title">Files</div> -->
                         </div>
                         <div></div>
                         <div class="end">
@@ -94,9 +122,10 @@
                             </div>
                             <div class="file-navbar-btn">
                                 <a href="javascript:void(0)">
-                                    <span class="file-navbar-tooltip" data-content="Sort by name">
+                                    <div>
                                         <i class="fa-solid fa-down-long fa-fw"></i>
-                                    </span>
+                                        <span class="file-navbar-btn-text">Name</span>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -157,9 +186,29 @@
                                 </div>
                             </div>
                         </a>
-                        <div class="file-image-block over">
+                        <div class="file-image-block over" onclick="toggleNavbarOver()">
                             <div>
-                                <img src="demo/file.jpg" />
+                                <img src="demo/file1.jpg" />
+                            </div>
+                        </div>
+                        <div class="file-image-block over" onclick="toggleNavbarOver()">
+                            <div>
+                                <img src="demo/file2.png" />
+                            </div>
+                        </div>
+                        <div class="file-image-block over" onclick="toggleNavbarOver()">
+                            <div>
+                                <img src="demo/file3.jpg" />
+                            </div>
+                        </div>
+                        <div class="file-image-block over" onclick="toggleNavbarOver()">
+                            <div>
+                                <img src="demo/file4.jpg" />
+                            </div>
+                        </div>
+                        <div class="file-image-block over" onclick="toggleNavbarOver()">
+                            <div>
+                                <img src="demo/file5.jpg" />
                             </div>
                         </div>
                     </div>
@@ -182,8 +231,13 @@
             <div class="tooltip-inner">__data-content__</div>
         </div>
     </div>
+    <div class="control">
+        <a class="button gotop" href="javascript:void(0)">
+            <i class="fa-solid fa-angle-up"></i>
+        </a>
+    </div>
     <script>
-        // tooltip('.file-navbar-tooltip');
+        gotop('.gotop');
         spinner('.spinner');
         progress.start();
         setTimeout(function() {
@@ -204,15 +258,52 @@
             board.className = board.className + ' active';
             selected = id;
         }
-        var navbar = document.querySelector('.file-navbar-title-warp');
-        function onFileNavbarOver() {
-            if (navbar.className.indexOf('hover') === -1) {
-                navbar.className = navbar.className + ' hover';
+        var navbarTitle = document.querySelector('.file-navbar-title-warp');
+        function onNavbarOver() {
+            if (navbarTitle.className.indexOf('hover') === -1) {
+                navbarTitle.className = navbarTitle.className + ' hover';
             }
         }
-        function onFileNavbarLeave() {
-            navbar.className = navbar.className.replace(' hover', '');
+        function onNavbarLeave() {
+            navbarTitle.className = navbarTitle.className.replace(' hover', '');
         }
+        var expandBtn = document.querySelector('.file-navbar-expand-btn');
+        var expandBlock = document.querySelector('.file-navbar-expand');
+        function toggleNavbarExpand() {
+            if (expandBtn.className.indexOf('open') === -1) {
+                expandBtn.className = expandBtn.className + ' open';
+                expandBlock.className = expandBlock.className + ' open';
+            }
+            else {
+                expandBtn.className = expandBtn.className.replace(' open', '');
+                expandBlock.className = expandBlock.className.replace(' open', '');
+            }
+        }
+        var gotop = document.querySelector('.gotop');
+        function onGotop() {
+            gotop.click();
+        }
+        var navbar = document.querySelector('.file-navbar');
+        function toggleNavbarOver() {
+            if (navbar.className.indexOf('over') === -1) {
+                navbar.className = navbar.className + ' over';
+            }
+            else {
+                navbar.className = navbar.className.replace(' over', '');
+            }
+        }
+        var gotopBtn = document.querySelector('.file-navbar-gotop');
+        onScroll(function () {
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (scrollTop > 75) {
+                expandBtn.style.display = 'none';
+                gotopBtn.style.display = 'block';
+            }
+            else {
+                expandBtn.style.display = 'block';
+                gotopBtn.style.display = 'none';
+            }
+        }, 50);
         var theme = 'dark';
         if (document.body.className.indexOf('dark') === -1) {
             theme = 'light';
