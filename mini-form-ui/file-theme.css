@@ -1,0 +1,129 @@
+body.light {
+    --fileIconColor: hsl(0, 0%, 31%);
+    --fileIconHoverColor: hsl(0, 0%, 31%);
+    --fileDescriptionColor: #7e7e7e;
+    --fileImageBlockShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileItemActiveColor: #d2d3d5;
+    --fileItemActiveBgColor: rgba(48, 48, 48, .95);
+    --fileItemActiveIconColor: hsl(216, 4%, 78%);
+    --fileItemActiveDescriptionColor: #aaa;
+    /* --fileItemActiveColor: #262626;
+    --fileItemActiveBgColor: rgba(179, 179, 179, .3);
+    --fileItemActiveIconColor: hsl(0, 0%, 31%);
+    --fileItemActiveDescriptionColor: #7e7e7e; */
+    --fileNavbarBgColor: #fff;
+    --fileNavbarBorderColor: #e6e6e6;
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHover: #7a7a7a;
+}
+
+body.dark {
+    --fileIconColor: hsl(216, 4%, 78%);
+    --fileIconHoverColor: hsl(216, 4%, 78%);
+    --fileDescriptionColor: #aaa;
+    --fileImageBlockShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    --fileItemActiveColor: #262626;
+    --fileItemActiveBgColor: rgba(255, 255, 255, .85);
+    --fileItemActiveIconColor: hsl(0, 0%, 31%);
+    --fileItemActiveDescriptionColor: #7e7e7e;
+    /* --fileItemActiveColor: #d2d3d5;
+    --fileItemActiveBgColor: rgba(179, 179, 179, .3);
+    --fileItemActiveIconColor: hsl(216, 4%, 78%);
+    --fileItemActiveDescriptionColor: #aaa; */
+    --fileNavbarBgColor: #404040;
+    --fileNavbarBorderColor: #454545;
+    --fileNavbarShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    --fileNavbarLinkHover: #fff;
+}
+
+/*----- file-item -----*/
+
+a .file-item-icon {
+    color: var(--fileIconColor);
+}
+
+a:hover .file-item-icon {
+    color: var(--fileIconHoverColor);
+}
+
+.file-item-description {
+    color: var(--fileDescriptionColor);
+}
+
+.file-item.board.active {
+    color: var(--fileItemActiveColor);
+    background-color: var(--fileItemActiveBgColor);
+}
+
+.file-item.board.active .file-item-icon {
+    color: var(--fileItemActiveIconColor);
+}
+
+.file-item.board.active .file-item-description {
+    color: var(--fileItemActiveDescriptionColor);
+}
+
+.file-item.board.active.hover:hover {
+    color: var(--fileItemActiveColor);
+    background-color: var(--fileItemActiveBgColor);
+}
+
+.file-item.board.active.hover:hover .file-item-icon {
+    color: var(--fileItemActiveIconColor);
+}
+
+.file-item.board.active.hover:hover .file-item-description {
+    color: var(--fileItemActiveDescriptionColor);
+}
+
+/*----- file-item -----*/
+
+/*----- file-image-item -----*/
+
+.file-image-item-description {
+    color: var(--fileDescriptionColor);
+}
+
+.file-image-item.board.active {
+    color: var(--fileItemActiveColor);
+    background-color: var(--fileItemActiveBgColor);
+}
+
+.file-image-item.board.active .file-image-item-description {
+    color: var(--fileItemActiveDescriptionColor);
+}
+
+.file-image-item.board.active.hover:hover {
+    color: var(--fileItemActiveColor);
+    background-color: var(--fileItemActiveBgColor);
+}
+
+.file-image-item.board.active.hover:hover .file-image-item-description {
+    color: var(--fileItemActiveDescriptionColor);
+}
+
+/*----- file-image-item -----*/
+
+/*----- file-image-block -----*/
+
+.file-image-block {
+    box-shadow: var(--fileImageBlockShadow);
+}
+
+/*----- file-image-block -----*/
+
+/*----- file-navbar -----*/
+
+@media screen and (min-width: 1025px) {
+    .file-navbar a:hover {
+        color: var(--fileNavbarLinkHover);
+    }
+}
+
+.file-navbar-title-warp.hover .file-navbar-title-over {
+    background-color: var(--fileNavbarBgColor);
+    border-color: var(--fileNavbarBorderColor);
+    box-shadow: var(--fileNavbarShadow);
+}
+
+/*----- file-navbar -----*/

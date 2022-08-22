@@ -43,9 +43,11 @@
                     <!-- <div class="nav-logo cicle">
                         <img src="" />
                     </div> -->
-                    <div class="nav-title nologo">
-                        <span>Mini</span>
-                    </div>
+                    <a href="">
+                        <div class="nav-title nologo">
+                            <span>Mini</span>
+                        </div>
+                    </a>
                 </div>
                 <div></div>
                 <div class="end">
@@ -74,11 +76,8 @@
         <div class="container">
             <div class="left-menu active">
                 <div class="left-menu-inner">
-                    <a href="" select-val="Item1" class="left-menu-item">Item1</a>
-                    <a href="" select-val="Item2" class="left-menu-item">Item2</a>
-                    <a href="" select-val="Item3" class="left-menu-item">Item3</a>
-                    <a href="" select-val="Item4" class="left-menu-item">Item4</a>
-                    <a href="" select-val="Item5" class="left-menu-item">Item5</a>
+                    <a href="" select-val="Main" class="left-menu-item">Main</a>
+                    <a href="" select-val="File" class="left-menu-item">File</a>
                 </div>
             </div>
             <div class="left-menu-mask" onclick="onNavClose()"></div>
@@ -318,7 +317,7 @@
         </a>
     </div>
     <script>
-        selectMenu('Item1');
+        selectMenu('Main');
         selectSubMenu('Item1');
         tooltip('.header-tooltip');
         tooltip('.video-tooltip', {

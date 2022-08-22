@@ -3,7 +3,12 @@ body.light {
 }
 
 body.dark {
-    --videoWarpBgColor: rgb(185, 185, 185);
+    /* --videoWarpBgColor: rgb(185, 185, 185); */
+    --videoWarpBgColor: rgb(204, 204, 204);
+}
+
+body.dark .video-warp img {
+    filter: brightness(1);
 }
 
 .rank {

@@ -62,7 +62,7 @@ function checkTheme() {
         document.body.className = document.body.className + ' ' + theme;
     }
     var theme = localStorage.getItem('THEME');
-    if (theme === '') {
+    if (!theme) {
         var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
         theme = darkQuery.matches ? "dark" : "light";
     }
