@@ -4,6 +4,7 @@ z-index
     file-navbar.over = 20000
     file-image-block.over = 15000
     file-navbar-title = 25000
+    file-video < 1024px = 30000
 */
 
 /*----- font-awesome -----*/
@@ -242,15 +243,12 @@ z-index
     font-size: 0.8rem;
 }
 
-/* .file-navbar-title {
+.file-navbar-title {
     font-weight: bold;
     padding: 0px 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: calc(100% - 1rem - 10px);
-    cursor: pointer;
-} */
+    word-wrap: break-word;
+    word-break: break-all;
+}
 
 .file-navbar-title-warp {
     max-width: calc(100% - 1rem - 10px);
@@ -377,3 +375,23 @@ z-index
 }
 
 /*----- file-navbar-gotop -----*/
+
+/*----- file-video-warp -----*/
+
+.file-video-warp {
+    margin: 0px auto;
+    max-width: 1317px;
+}
+
+@media screen and (max-width: 1024px) {
+    .file-video-warp {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        z-index: 30000;
+    }
+}
+
+/*----- file-video-warp -----*/
