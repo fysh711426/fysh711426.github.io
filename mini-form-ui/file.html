@@ -21,15 +21,7 @@
     <script src="progress.js"></script>
     <script src="spinner.js"></script>
     <script src="layout.js"></script>
-    
-    <script>
-        var errorImage = 'images/default-head-176x176.png';
-        function imgError(e) {
-            if (errorImage) {
-                e.target.src = errorImage;
-            }
-        }
-    </script>
+    <script src="file.js"></script>
 </head>
 
 <body>
@@ -87,24 +79,19 @@
                         </div>
                         <div></div>
                         <div class="end">
-                            <div class="file-navbar-btn file-navbar-expand-btn" onclick="toggleNavbarExpand()">
+                            <div class="file-navbar-btn file-navbar-toggle show">
                                 <a href="javascript:void(0)">
-                                    <div>
-                                        <span class="up">
-                                            <i class="fa-solid fa-angle-up fa-fw"></i>
-                                        </span>
-                                        <span class="down">
-                                            <i class="fa-solid fa-angle-down fa-fw"></i>
-                                        </span>
-                                    </div>
+                                    <span class="up">
+                                        <i class="fa-solid fa-angle-up fa-fw"></i>
+                                    </span>
+                                    <span class="down">
+                                        <i class="fa-solid fa-angle-down fa-fw"></i>
+                                    </span>
                                 </a>
                             </div>
-                            <div class="file-navbar-btn file-navbar-gotop" onclick="onGotop()">
+                            <div class="file-navbar-btn file-navbar-gotop">
                                 <a href="javascript:void(0)">
-                                    <div>
-                                        <i class="fa-regular fa-circle-up fa-fw"></i>
-                                        <!-- <i class="fa-solid fa-angle-up fa-fw"></i> -->
-                                    </div>
+                                    <i class="fa-regular fa-circle-up fa-fw"></i>
                                 </a>
                             </div>
                         </div>
@@ -187,29 +174,19 @@
                             </div>
                         </a>
                         <div class="file-image-block over" onclick="toggleNavbarOver()">
-                            <div>
-                                <img src="demo/file1.jpg" />
-                            </div>
+                            <img src="demo/file1.jpg" />
                         </div>
                         <div class="file-image-block over" onclick="toggleNavbarOver()">
-                            <div>
-                                <img src="demo/file2.png" />
-                            </div>
+                            <img src="demo/file2.png" />
                         </div>
                         <div class="file-image-block over" onclick="toggleNavbarOver()">
-                            <div>
-                                <img src="demo/file3.jpg" />
-                            </div>
+                            <img src="demo/file3.jpg" />
                         </div>
                         <div class="file-image-block over" onclick="toggleNavbarOver()">
-                            <div>
-                                <img src="demo/file4.jpg" />
-                            </div>
+                            <img src="demo/file4.jpg" />
                         </div>
                         <div class="file-image-block over" onclick="toggleNavbarOver()">
-                            <div>
-                                <img src="demo/file5.jpg" />
-                            </div>
+                            <img src="demo/file5.jpg" />
                         </div>
                     </div>
                     <div class="spinner-block">
@@ -267,22 +244,7 @@
         function onNavbarLeave() {
             navbarTitle.className = navbarTitle.className.replace(' hover', '');
         }
-        var expandBtn = document.querySelector('.file-navbar-expand-btn');
-        var expandBlock = document.querySelector('.file-navbar-expand');
-        function toggleNavbarExpand() {
-            if (expandBtn.className.indexOf('open') === -1) {
-                expandBtn.className = expandBtn.className + ' open';
-                expandBlock.className = expandBlock.className + ' open';
-            }
-            else {
-                expandBtn.className = expandBtn.className.replace(' open', '');
-                expandBlock.className = expandBlock.className.replace(' open', '');
-            }
-        }
-        var gotop = document.querySelector('.gotop');
-        function onGotop() {
-            gotop.click();
-        }
+        fileNavbar();
         var navbar = document.querySelector('.file-navbar');
         function toggleNavbarOver() {
             if (navbar.className.indexOf('over') === -1) {
@@ -292,18 +254,6 @@
                 navbar.className = navbar.className.replace(' over', '');
             }
         }
-        var gotopBtn = document.querySelector('.file-navbar-gotop');
-        onScroll(function () {
-            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            if (scrollTop > 75) {
-                expandBtn.style.display = 'none';
-                gotopBtn.style.display = 'block';
-            }
-            else {
-                expandBtn.style.display = 'block';
-                gotopBtn.style.display = 'none';
-            }
-        }, 50);
         var theme = 'dark';
         if (document.body.className.indexOf('dark') === -1) {
             theme = 'light';

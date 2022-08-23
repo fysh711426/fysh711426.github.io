@@ -20,10 +20,6 @@ z-index
     display: none;
 }
 
-.control .gotop.show.over {
-    display: block;
-}
-
 /*----- gotop -----*/
 
 /*----- file-item -----*/
@@ -342,30 +338,42 @@ z-index
 
 /*----- file-navbar-expand -----*/
 
-/*----- file-navbar-expand-btn -----*/
+/*----- file-navbar-toggle -----*/
 
-.file-navbar-expand-btn .up{
+.file-navbar-toggle {
     display: none;
 }
 
-.file-navbar-expand-btn.open .up {
-    display: inline;
+.file-navbar-toggle.show {
+    display: block;
 }
 
-.file-navbar-expand-btn .down {
-    display: inline;
-}
-
-.file-navbar-expand-btn.open .down {
+.file-navbar-toggle .up{
     display: none;
 }
 
-/*----- file-navbar-expand-btn -----*/
+.file-navbar-toggle.open .up {
+    display: inline;
+}
 
-/*----- file-navbar-expand-btn -----*/
+.file-navbar-toggle .down {
+    display: inline;
+}
+
+.file-navbar-toggle.open .down {
+    display: none;
+}
+
+/*----- file-navbar-toggle -----*/
+
+/*----- file-navbar-gotop -----*/
 
 .file-navbar-gotop {
     display: none;
 }
 
-/*----- file-navbar-expand-btn -----*/
+.file-navbar-gotop.show {
+    display: block;
+}
+
+/*----- file-navbar-gotop -----*/
