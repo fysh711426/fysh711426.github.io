@@ -462,6 +462,10 @@ a {
     cursor: pointer;
 }
 
+.board-title {
+    font-weight: bold;
+}
+
 /*----- board -----*/
 
 /*----- block -----*/
