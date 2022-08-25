@@ -1,14 +1,14 @@
 body.light {
     --formFieldDescriptionColor: #525252;
     --inputColor: #474747;
-    --inputBgColor: #f9f9f9;
+    --inputBgColor: #fcfcfc;
     --inputBorderColor: #c4c6c9;
     --inputBorderFocusColor: #040405;
     --inputPlaceholderColor: #bfbfbf;
     --checkboxMarkColor: #72767d;
     --checkboxMarkCheckedColor: #f9f9f9;
     --checkboxMarkCheckedBgColor: #474747;
-    --checkboxWarpColor: #f9f9f9;
+    --checkboxWarpColor: #fcfcfc;
     --checkboxWarpBorderColor: #c4c6c9;
     --themeCircleBoardColor: #474747;
     --themeCircleShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);;
@@ -98,3 +98,11 @@ input::placeholder {
 }
 
 /*----- theme-circle -----*/
+
+/*----- theme-sample-text -----*/
+
+.theme-sample-text {
+    border-color: var(--themeCircleBoardColor);
+}
+
+/*----- theme-sample-text -----*/

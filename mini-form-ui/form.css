@@ -1,5 +1,9 @@
 /*----- form -----*/
 
+.form {
+    font-family: "Segoe UI", "Microsoft JhengHei";
+}
+
 .form-field {
     margin: 25px 0px 10px 0px;
 }
@@ -17,7 +21,7 @@
 }
 
 .form-field-description {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     margin-top: 5px;
 }
 
@@ -82,7 +86,7 @@ input::placeholder {
 
 .checkbox-text {
     padding: 0 10px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 }
 
 .checkbox-warp {
@@ -163,3 +167,70 @@ input::placeholder {
 }
 
 /*----- theme-circle -----*/
+
+/*----- theme-sample-text -----*/
+
+.theme-sample-text {
+    display: none;
+    padding: 15px;
+    border-radius: 0.35rem;
+    margin-top: 25px;
+    border-width: 1px;
+    border-style: solid;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.theme-sample-text.show {
+    display: block;
+}
+
+.theme-sample-text.dark {
+    color: #c4c6c9;
+    /* background-color: #242424; */
+    background-color: hsl(0, 0%, 14%)
+}
+
+.theme-sample-text.dark-blue {
+    color: #c9d1d9;
+    /* background-color: #18202a; */
+    background-color: hsl(213, 27%, 13%)
+}
+
+.theme-sample-text.light {
+    color: #474747;
+    /* background-color: #fafafa; */
+    background-color: hsl(0, 0%, 98%)
+}
+
+.theme-sample-text.gray {
+    color: #474747;
+    /* background-color: #dadae2; */
+    background-color: hsl(240, 13%, 87%)
+}
+
+.theme-sample-text.yellow {
+    color: #474747;
+    /* background-color: #fef6dd; */
+    background-color: hsl(47, 92%, 93%)
+}
+
+.theme-sample-text.orange {
+    color: #474747;
+    /* background-color: #fef1dd; */
+    background-color: hsl(37, 92%, 93%)
+}
+
+.theme-sample-text.blue {
+    color: #474747;
+    /* background-color: #e1f0f9; */
+    background-color: hsl(202, 67%, 93%)
+}
+
+.theme-sample-text.green {
+    color: #474747;
+    /* background-color: #e1f4e9; */
+    background-color: hsl(146, 47%, 92%)
+}
+
+/*----- theme-sample-text -----*/

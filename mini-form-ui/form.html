@@ -97,6 +97,7 @@
                                     <i class="fa-solid fa-check dark"></i>
                                 </div>
                             </div>
+                            <div class="theme-sample-text">Text</div>
                         </div>
                         <div class="form-field">
                             <div class="form-field-title-warp">
@@ -113,7 +114,7 @@
                                             </g>
                                         </svg>
                                     </div>
-                                    <div class="checkbox-text">啟用</div>
+                                    <div class="checkbox-text">Enable</div>
                                 </div>
                             </div>
                         </div>
@@ -174,16 +175,20 @@
             }
         }
         function onThemeChecked(element) {
+            var sample = document.querySelector('.theme-sample-text');
             var circles = document.querySelectorAll('.theme-circle');
             for (var i = 0; i < circles.length; i++) {
                 var item = circles[i];
-                if (item.getAttribute('data-val') == element.getAttribute('data-val')) {
+                var val = element.getAttribute('data-val');
+                if (item.getAttribute('data-val') === val) {
                     if (item.className.indexOf('checked') === -1) {
                         element.className = element.className + ' checked';
-                        continue;
+                        sample.className = 'theme-sample-text show ' + val;
                     }
                 }
-                item.className = item.className.replace(' checked', '');
+                else {
+                    item.className = item.className.replace(' checked', '');
+                }
             }
         }
     </script>
