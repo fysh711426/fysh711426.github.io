@@ -53,4 +53,39 @@ function fileNavbar(setting) {
             }
         });
     }
+
+    // hover
+    var enableHover = setting.enableHover || false;
+    if (enableHover) {
+        var warp = document.querySelector('.file-navbar-title-warp');
+        var navbarTitle = document.querySelector('.file-navbar-title');
+        var navbarTitleOver = document.querySelector('.file-navbar-title-over');
+        navbarTitle.addEventListener('mouseover', function() {
+            if (warp.className.indexOf('hover') === -1) {
+                warp.className = warp.className + ' hover';
+            }
+        });
+        navbarTitleOver.addEventListener('mouseleave', function() {
+            warp.className = warp.className.replace(' hover', '');
+        });
+    }
+
+    // image over
+    var enableImageOver = setting.enableImageOver || false;
+    if (enableImageOver) {
+        var navbar = document.querySelector('.file-navbar');
+        var images = document.querySelectorAll('.file-image-block');
+        for(var i=0; i < images.length; i++) {
+            var item = images[i];
+            item.className = item.className + ' over';
+            item.addEventListener('click', function() {
+                if (navbar.className.indexOf('over') === -1) {
+                    navbar.className = navbar.className + ' over';
+                }
+                else {
+                    navbar.className = navbar.className.replace(' over', '');
+                }
+            });
+        }
+    }
 }

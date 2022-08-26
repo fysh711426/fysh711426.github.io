@@ -72,9 +72,9 @@
                                 </a>
                             </div>
                             <div class="file-navbar-title-warp">
-                                <div class="file-navbar-title" onmouseover="onNavbarOver()">Title</div>
+                                <div class="file-navbar-title">Title</div>
                                 <div class="file-navbar-title-over-warp">
-                                    <div class="file-navbar-title-over" onmouseleave="onNavbarLeave()">Title</div>
+                                    <div class="file-navbar-title-over">Title</div>
                                 </div>
                             </div>
                         </div>
@@ -174,19 +174,19 @@
                                 </div>
                             </div>
                         </a>
-                        <div class="file-image-block over" onclick="toggleNavbarOver()">
+                        <div class="file-image-block">
                             <img src="demo/file1.jpg" />
                         </div>
-                        <div class="file-image-block over" onclick="toggleNavbarOver()">
+                        <div class="file-image-block">
                             <img src="demo/file2.png" />
                         </div>
-                        <div class="file-image-block over" onclick="toggleNavbarOver()">
+                        <div class="file-image-block">
                             <img src="demo/file3.jpg" />
                         </div>
-                        <div class="file-image-block over" onclick="toggleNavbarOver()">
+                        <div class="file-image-block">
                             <img src="demo/file4.jpg" />
                         </div>
-                        <div class="file-image-block over" onclick="toggleNavbarOver()">
+                        <div class="file-image-block">
                             <img src="demo/file5.jpg" />
                         </div>
                     </div>
@@ -236,25 +236,10 @@
             board.className = board.className + ' active';
             selected = id;
         }
-        var navbarTitle = document.querySelector('.file-navbar-title-warp');
-        function onNavbarOver() {
-            if (navbarTitle.className.indexOf('hover') === -1) {
-                navbarTitle.className = navbarTitle.className + ' hover';
-            }
-        }
-        function onNavbarLeave() {
-            navbarTitle.className = navbarTitle.className.replace(' hover', '');
-        }
-        fileNavbar();
-        var navbar = document.querySelector('.file-navbar');
-        function toggleNavbarOver() {
-            if (navbar.className.indexOf('over') === -1) {
-                navbar.className = navbar.className + ' over';
-            }
-            else {
-                navbar.className = navbar.className.replace(' over', '');
-            }
-        }
+        fileNavbar({
+            enableHover: true,
+            enableImageOver:true
+        });
         var theme = 'dark';
         if (document.body.className.indexOf('dark') === -1) {
             theme = 'light';
