@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="layout-theme.css">
     <link rel="stylesheet" href="form.css">
     <link rel="stylesheet" href="form-theme.css">
+    <script src="theme.js"></script>
     <script src="scroll.js"></script>
     <script src="tooltip.js"></script>
     <script src="progress.js"></script>
@@ -142,11 +143,6 @@
             </div>
         </div>
     </div>
-    <div class="tooltip-template">
-        <div class="tooltip-block">
-            <div class="tooltip-inner">__data-content__</div>
-        </div>
-    </div>
     <script>
         progress.start();
         setTimeout(function() {
@@ -156,11 +152,11 @@
         if (document.body.className.indexOf('dark') === -1) {
             theme = 'light';
         }
-        changeThemeButton(theme);
+        onThemeButtonChange(theme);
         function toggleTheme() {
             theme = theme === 'light' ? 'dark' : 'light';
-            changeThemeButton(theme);
-            changeTheme(theme);
+            onThemeButtonChange(theme);
+            onThemeChange(theme);
         }
         function onChecked(element) {
             var checkbox = element.querySelector('input');

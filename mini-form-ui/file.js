@@ -5,7 +5,7 @@ function fileNavbar(setting) {
     var toggle = document.querySelector('.file-navbar-toggle');
     var expand = document.querySelector('.file-navbar-expand');
     if (toggle && expand) {
-        toggle.addEventListener('click', function() {
+        toggle.addEventListener('click', function () {
             if (toggle.className.indexOf('open') === -1) {
                 toggle.className = toggle.className + ' open';
                 expand.className = expand.className + ' open';
@@ -16,13 +16,13 @@ function fileNavbar(setting) {
             }
         });
     }
-    
+
     // gotop
     function getScrollTop() {
         return document.documentElement.scrollTop || document.body.scrollTop;
     }
     function showHide(element, isShow) {
-        if(element) {
+        if (element) {
             if (isShow) {
                 if (element.className.indexOf('show') === -1) {
                     element.className = element.className + ' show';
@@ -46,7 +46,7 @@ function fileNavbar(setting) {
                 showHide(toggle, true);
             }
         }, 50);
-        gotop.addEventListener('click', function() {
+        gotop.addEventListener('click', function () {
             var _gotop = document.querySelector('.gotop');
             if (_gotop) {
                 _gotop.click();
@@ -60,12 +60,12 @@ function fileNavbar(setting) {
         var warp = document.querySelector('.file-navbar-title-warp');
         var navbarTitle = document.querySelector('.file-navbar-title');
         var navbarTitleOver = document.querySelector('.file-navbar-title-over');
-        navbarTitle.addEventListener('mouseover', function() {
+        navbarTitle.addEventListener('mouseover', function () {
             if (warp.className.indexOf('hover') === -1) {
                 warp.className = warp.className + ' hover';
             }
         });
-        navbarTitleOver.addEventListener('mouseleave', function() {
+        navbarTitleOver.addEventListener('mouseleave', function () {
             warp.className = warp.className.replace(' hover', '');
         });
     }
@@ -75,10 +75,10 @@ function fileNavbar(setting) {
     if (enableImageOver) {
         var navbar = document.querySelector('.file-navbar');
         var images = document.querySelectorAll('.file-image-block');
-        for(var i=0; i < images.length; i++) {
+        for (var i = 0; i < images.length; i++) {
             var item = images[i];
             item.className = item.className + ' over';
-            item.addEventListener('click', function() {
+            item.addEventListener('click', function () {
                 if (navbar.className.indexOf('over') === -1) {
                     navbar.className = navbar.className + ' over';
                 }
@@ -87,5 +87,21 @@ function fileNavbar(setting) {
                 }
             });
         }
+    }
+
+    // text over
+    var enableTextOver = setting.enableTextOver || false;
+    if (enableTextOver) {
+        var navbar = document.querySelector('.file-navbar');
+        var text = document.querySelector('.file-text-content');
+        text.className = text.className + ' over';
+        text.addEventListener('click', function () {
+            if (navbar.className.indexOf('over') === -1) {
+                navbar.className = navbar.className + ' over';
+            }
+            else {
+                navbar.className = navbar.className.replace(' over', '');
+            }
+        });
     }
 }

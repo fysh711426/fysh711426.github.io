@@ -54,29 +54,7 @@ function selectSubMenu(val) {
     }
 }
 
-var changeTheme = null;
-function checkTheme() {
-    function setTheme(theme) {
-        document.body.className = document.body.className
-            .replace(' light', '').replace(' dark', '');
-        document.body.className = document.body.className + ' ' + theme;
-    }
-    var theme = localStorage.getItem('THEME');
-    if (!theme) {
-        var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
-        theme = darkQuery.matches ? "dark" : "light";
-    }
-    setTheme(theme);
-    changeTheme = function(newTheme) {
-        var theme = localStorage.getItem('THEME');
-        if (newTheme !== theme) {
-            localStorage.setItem('THEME', newTheme);
-        }
-        setTheme(newTheme);
-    };
-}
-
-function changeThemeButton(newTheme) {
+function onThemeButtonChange(newTheme) {
     var light = document.querySelector('.theme-button-light');
     var dark = document.querySelector('.theme-button-dark');
     if (newTheme === 'light') {

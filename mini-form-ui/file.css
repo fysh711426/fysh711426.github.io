@@ -3,6 +3,7 @@ z-index
     file-navbar.sticky = 10000
     file-navbar.over = 20000
     file-image-block.over = 15000
+    file-text-content.over = 15000
     file-navbar-title = 25000
     file-video < 1024px = 30000
 */
@@ -395,3 +396,31 @@ z-index
 }
 
 /*----- file-video-warp -----*/
+
+/*----- file-text-content -----*/
+
+.file-text-content {
+    white-space: pre-line;
+    font-weight: 600;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+@media screen and (max-width: 1024px) {
+    .file-text-content {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .file-text-content {
+        font-size: 1.35em;
+    }
+}
+
+.file-text-content.over {
+    position: sticky;
+    z-index: 15000;
+}
+
+/*----- file-text-content -----*/

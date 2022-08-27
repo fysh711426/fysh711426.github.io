@@ -16,6 +16,7 @@ body.light {
     --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     --fileNavbarLinkHover: #7a7a7a;
     --fileNavbarExpandTitleColor: #7a7a7a;
+    --fileTextContentBgColor: #f5f5f5;
 }
 
 body.dark {
@@ -36,6 +37,7 @@ body.dark {
     --fileNavbarShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
     --fileNavbarLinkHover: #fff;
     --fileNavbarExpandTitleColor: #aaa;
+    --fileTextContentBgColor: #181818;
 }
 
 /*----- file-item -----*/
@@ -137,3 +139,12 @@ a:hover .file-item-icon {
 }
 
 /*----- file-navbar-expand -----*/
+
+/*----- file-text-content -----*/
+
+.file-text-content {
+    box-shadow: 10px 0 0 0 var(--fileTextContentBgColor), -10px 0 0 0 var(--fileTextContentBgColor);
+    background-color: var(--fileTextContentBgColor);
+}
+
+/*----- file-text-content -----*/

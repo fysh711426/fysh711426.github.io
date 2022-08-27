@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="file-theme.css">
     <link rel="stylesheet" href="file-video-player.css">
     <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+    <script src="theme.js"></script>
     <script src="scroll.js"></script>
     <script src="tooltip.js"></script>
     <script src="progress.js"></script>
@@ -91,16 +92,6 @@
             </div>
         </div>
     </div>
-    <div class="tooltip-template">
-        <div class="tooltip-block">
-            <div class="tooltip-inner">__data-content__</div>
-        </div>
-    </div>
-    <div class="control">
-        <a class="button gotop" href="javascript:void(0)">
-            <i class="fa-solid fa-angle-up"></i>
-        </a>
-    </div>
     <script>
         progress.start();
         setTimeout(function() {
@@ -120,11 +111,11 @@
         if (document.body.className.indexOf('dark') === -1) {
             theme = 'light';
         }
-        changeThemeButton(theme);
+        onThemeButtonChange(theme);
         function toggleTheme() {
             theme = theme === 'light' ? 'dark' : 'light';
-            changeThemeButton(theme);
-            changeTheme(theme);
+            onThemeButtonChange(theme);
+            onThemeChange(theme);
         }
     </script>
 </body>
