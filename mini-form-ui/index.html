@@ -332,10 +332,7 @@
         setTimeout(function() {
             progress.done();
         }, 1000);
-        var theme = 'dark';
-        if (document.body.className.indexOf('dark') === -1) {
-            theme = 'light';
-        }
+        var theme = document.body.getAttribute('theme');
         onThemeButtonChange(theme);
         function toggleTheme() {
             theme = theme === 'light' ? 'dark' : 'light';

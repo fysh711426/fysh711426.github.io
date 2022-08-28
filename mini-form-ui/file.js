@@ -71,6 +71,14 @@ function fileNavbar(setting) {
     }
 
     // image over
+    function onToggle() {
+        if (navbar.className.indexOf('over') === -1) {
+            navbar.className = navbar.className + ' over';
+        }
+        else {
+            navbar.className = navbar.className.replace(' over', '');
+        }
+    }
     var enableImageOver = setting.enableImageOver || false;
     if (enableImageOver) {
         var navbar = document.querySelector('.file-navbar');
@@ -78,14 +86,7 @@ function fileNavbar(setting) {
         for (var i = 0; i < images.length; i++) {
             var item = images[i];
             item.className = item.className + ' over';
-            item.addEventListener('click', function () {
-                if (navbar.className.indexOf('over') === -1) {
-                    navbar.className = navbar.className + ' over';
-                }
-                else {
-                    navbar.className = navbar.className.replace(' over', '');
-                }
-            });
+            item.addEventListener('click', onToggle);
         }
     }
 
@@ -95,13 +96,19 @@ function fileNavbar(setting) {
         var navbar = document.querySelector('.file-navbar');
         var text = document.querySelector('.file-text-content');
         text.className = text.className + ' over';
-        text.addEventListener('click', function () {
-            if (navbar.className.indexOf('over') === -1) {
-                navbar.className = navbar.className + ' over';
-            }
-            else {
-                navbar.className = navbar.className.replace(' over', '');
-            }
-        });
+        onToggle();
+        text.addEventListener('click', onToggle);
     }
 }
+
+var onTextThemeButtonChange = (function() {
+    var prev = null;
+    return function(newTheme) {
+        var themeButton = document.querySelector('.text-theme-button');
+        if (prev) {
+            themeButton.className = themeButton.className.replace(' ' + prev, '');
+        }
+        themeButton.className = themeButton.className + ' ' + newTheme;
+        prev = newTheme;
+    };
+})();

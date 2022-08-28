@@ -5,6 +5,7 @@ function checkTheme() {
         if (prev) {
             document.body.className = document.body.className.replace(' ' + prev, '');
         }
+        document.body.setAttribute('theme', theme);
         document.body.className = document.body.className + ' ' + theme;
         prev = theme;
     }
@@ -30,6 +31,7 @@ function checkTextTheme() {
         if (prev) {
             document.body.className = document.body.className.replace(' ' + prev, '');
         }
+        document.body.setAttribute('text-theme', theme);
         document.body.className = document.body.className + ' ' + theme;
         prev = theme;
     }

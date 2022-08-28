@@ -424,3 +424,26 @@ z-index
 }
 
 /*----- file-text-content -----*/
+
+/*----- text-theme-button -----*/
+
+.text-theme-button {
+    border-width: 3px;
+    border-style: solid;
+    display: block;
+    align-self: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50%;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    outline: 0;
+}
+
+.header .text-theme-button {
+    margin-right: 15px;
+}
+
+/*----- text-theme-button -----*/
