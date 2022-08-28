@@ -1,0 +1,199 @@
+body.text-dark {
+    --bgColor: hsl(0, 0%, 14%);
+    --fontColor: hsl(220, 3%, 83%);
+    --linkColor: hsl(216, 4%, 78%);
+    --linkHoverColor: hsl(0, 0%, 100%);
+    --boxShadow: 0 12px 15px 0 rgb(23 23 23 / 24%), 0 17px 50px 0 rgb(23 23 23 / 19%);
+    --boardColor: hsl(0, 0%, 21%);
+    --boardShadow: 0 12px 15px 0 rgb(23 23 23 / 24%), 0 17px 50px 0 rgb(23 23 23 / 19%);
+    --footerFontColor: hsl(0, 0%, 67%);
+    --fileNavbarBgColor: hsl(0, 0%, 27%);
+    --fileNavbarBorderColor: hsl(0, 0%, 29%);
+    --fileNavbarShadow: 0 12px 15px 0 rgb(23 23 23 / 24%), 0 17px 50px 0 rgb(23 23 23 / 19%);
+    --fileNavbarLinkHover: hsl(0, 0%, 100%);
+    --fileTextContentColor: hsl(216, 4%, 78%);
+    --fileTextContentBgColor: hsl(0, 0%, 14%);
+}
+
+body.text-dark-blue {
+    --bgColor: hsl(213, 27%, 13%);
+    --fontColor: hsl(210, 17%, 87%);
+    --linkColor: hsl(210, 17%, 82%);
+    --linkHoverColor: hsl(210, 17%, 99%);
+    --boxShadow: 0 12px 15px 0 rgb(17 22 29 / 24%), 0 17px 50px 0 rgb(17 22 29 / 19%);
+    --boardColor: hsl(213, 27%, 18%);
+    --boardShadow: 0 12px 15px 0 rgb(17 22 29 / 24%), 0 17px 50px 0 rgb(17 22 29 / 19%);
+    --footerFontColor: hsl(210, 17%, 67%);
+    --fileNavbarBgColor: hsl(210, 17%, 25%);
+    --fileNavbarBorderColor: hsl(210, 17%, 28%);
+    --fileNavbarShadow: 0 12px 15px 0 rgb(17 22 29 / 24%), 0 17px 50px 0 rgb(17 22 29 / 19%);
+    --fileNavbarLinkHover: hsl(210, 17%, 99%);
+    --fileTextContentColor: hsl(210, 17%, 82%);
+    --fileTextContentBgColor: hsl(213, 27%, 13%);
+}
+
+body.text-light {
+    --bgColor: hsl(0, 0%, 96%);
+    --fontColor: hsl(0, 0%, 15%);
+    --linkColor: hsl(0, 0%, 14%);
+    --linkHoverColor: hsl(0, 0%, 48%);
+    --boxShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --boardColor: hsl(0, 0%, 100%);
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --footerFontColor: hsl(0, 0%, 60%);
+    --fileNavbarBgColor: hsl(0, 0%, 100%);
+    --fileNavbarBorderColor: hsl(0, 0%, 90%);
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHover: hsl(0, 0%, 48%);
+    --fileTextContentColor: hsl(0, 0%, 28%);
+    --fileTextContentBgColor: hsl(0, 0%, 96%);
+}
+
+body.text-gray {
+    --bgColor: hsl(240, 13%, 87%);
+    --fontColor: hsl(240, 13%, 15%);
+    --linkColor: hsl(240, 13%, 14%);
+    --linkHoverColor: hsl(240, 13%, 48%);
+    --boxShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --boardColor: hsl(240, 13%, 91%);
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --footerFontColor: hsl(240, 13%, 60%);
+    --fileNavbarBgColor: hsl(240, 13%, 91%);
+    --fileNavbarBorderColor: hsl(240, 13%, 81%);
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHover: hsl(240, 13%, 48%);
+    --fileTextContentColor: hsl(0, 0%, 28%);
+    --fileTextContentBgColor: hsl(240, 13%, 87%);
+}
+
+body.text-yellow {
+    --bgColor: hsl(47, 92%, 93%);
+    --fontColor: hsl(0, 0%, 15%);
+    --linkColor: hsl(0, 0%, 14%);
+    --linkHoverColor: hsl(0, 0%, 48%);
+    --boxShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --boardColor: hsl(47, 92%, 95%);
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --footerFontColor: hsl(0, 0%, 60%);
+    --fileNavbarBgColor: hsl(47, 92%, 95%);
+    --fileNavbarBorderColor: hsla(0, 0%, 90%, .7);
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHover: hsl(0, 0%, 48%);
+    --fileTextContentColor: hsl(0, 0%, 28%);
+    --fileTextContentBgColor: hsl(47, 92%, 93%);
+}
+
+body.text-orange {
+    --bgColor: hsl(37, 92%, 93%);
+    --fontColor: hsl(0, 0%, 15%);
+    --linkColor: hsl(0, 0%, 14%);
+    --linkHoverColor: hsl(0, 0%, 48%);
+    --boxShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --boardColor: hsl(37, 92%, 95%);
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --footerFontColor: hsl(0, 0%, 60%);
+    --fileNavbarBgColor: hsl(37, 92%, 95%);
+    --fileNavbarBorderColor: hsla(0, 0%, 90%, .5);
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHover: hsl(0, 0%, 48%);
+    --fileTextContentColor: hsl(0, 0%, 28%);
+    --fileTextContentBgColor: hsl(37, 92%, 93%);
+}
+
+body.text-blue {
+    --bgColor: hsl(202, 67%, 93%);
+    --fontColor: hsl(0, 0%, 15%);
+    --linkColor: hsl(0, 0%, 14%);
+    --linkHoverColor: hsl(0, 0%, 48%);
+    --boxShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --boardColor: hsl(202, 67%, 95%);
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --footerFontColor: hsl(0, 0%, 60%);
+    --fileNavbarBgColor: hsl(202, 67%, 95%);
+    --fileNavbarBorderColor: hsla(0, 0%, 90%, .5);
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHover: hsl(0, 0%, 48%);
+    --fileTextContentColor: hsl(0, 0%, 28%);
+    --fileTextContentBgColor: hsl(202, 67%, 93%);
+}
+
+body.text-green {
+    --bgColor: hsl(146, 47%, 92%);
+    --fontColor: hsl(0, 0%, 15%);
+    --linkColor: hsl(0, 0%, 14%);
+    --linkHoverColor: hsl(0, 0%, 48%);
+    --boxShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --boardColor: hsl(146, 47%, 94%);
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --footerFontColor: hsl(0, 0%, 60%);
+    --fileNavbarBgColor: hsl(146, 47%, 94%);
+    --fileNavbarBorderColor: hsla(0, 0%, 90%, .5);
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHover: hsl(0, 0%, 48%);
+    --fileTextContentColor: hsl(0, 0%, 28%);
+    --fileTextContentBgColor: hsl(146, 47%, 92%);
+}
+
+/*----- text-theme-button -----*/
+
+.text-theme-button.text-dark {
+    background-color: hsl(0, 0%, 20%);
+    border-color: #c4c6c9;
+}
+
+.text-theme-button.text-dark-blue {
+    background-color: hsl(213, 27%, 17%);
+    border-color: #c4c6c9;
+}
+
+.text-theme-button.text-light {
+    background-color: hsl(0, 0%, 98%);
+    border-color: #474747;
+}
+
+.text-theme-button.text-gray {
+    background-color: hsl(240, 13%, 89%);
+    border-color: #474747;
+}
+
+.text-theme-button.text-yellow {
+    background-color: hsl(47, 92%, 93%);
+    border-color: #474747;
+}
+
+.text-theme-button.text-orange {
+    background-color: hsl(37, 92%, 93%);
+    border-color: #474747;
+}
+
+.text-theme-button.text-blue {
+    background-color: hsl(202, 67%, 93%);
+    border-color: #474747;
+}
+
+.text-theme-button.text-green {
+    background-color: hsl(146, 47%, 92%);
+    border-color: #474747;
+}
+
+/*----- text-theme-button -----*/
+
+/*----- file-navbar -----*/
+
+body.text-yellow .file-navbar {
+    border-top-color: hsl(47, 92%, 95%);
+}
+
+body.text-orange .file-navbar {
+    border-top-color: hsl(37, 92%, 95%);
+}
+
+body.text-blue .file-navbar {
+    border-top-color: hsl(202, 67%, 95%);
+}
+
+body.text-green .file-navbar {
+    border-top-color: hsl(146, 47%, 94%);
+}
+
+/*----- file-navbar -----*/
