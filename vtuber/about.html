@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="index-theme.css" />
     <!-- <script src="https://cdn.statically.io/gh/fysh711426/MiniFormUI/master/layout.js" crossorigin="anonymous"></script> -->
+    <script src="https://fysh711426.github.io/mini-form-ui/theme.js" crossorigin="anonymous"></script>
     <script src="https://fysh711426.github.io/mini-form-ui/layout.js" crossorigin="anonymous"></script>
     <script src="functions.js"></script>
     
@@ -143,15 +144,12 @@
         </div>
     </div>
     <script>
-        var theme = 'dark';
-        if (document.body.className.indexOf('dark') === -1) {
-            theme = 'light';
-        }
-        changeThemeButton(theme);
+        var theme = document.body.getAttribute('theme');
+        onThemeButtonChange(theme);
         function toggleTheme() {
             theme = theme === 'light' ? 'dark' : 'light';
-            changeThemeButton(theme);
-            changeTheme(theme);
+            onThemeButtonChange(theme);
+            onThemeChange(theme);
         }
         var layout = document.querySelector('.layout');
         layout.style.opacity = 1;

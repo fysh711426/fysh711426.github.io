@@ -31,11 +31,8 @@ var vm = new Vue({
             // if (this.menu === 'popular' || this.menu === 'subscribe') {
             //     this.showRankVar = true;
             // }
-            this.theme = 'dark';
-            if (document.body.className.indexOf('dark') === -1) {
-                this.theme = 'light';
-            }
-            changeThemeButton(this.theme);
+            this.theme = document.body.getAttribute('theme');
+            onThemeButtonChange(this.theme);
             progress.start();
             selectMenu(this.menu);
             selectSubMenu(this.submenu);
@@ -69,8 +66,8 @@ var vm = new Vue({
         },
         toggleTheme: function() {
             this.theme = this.theme === 'light' ? 'dark' : 'light';
-            changeThemeButton(this.theme);
-            changeTheme(this.theme);
+            onThemeButtonChange(this.theme);
+            onThemeChange(this.theme);
         },
         onScrollEnd: function() {
             if (!this.isLoadMore) {
