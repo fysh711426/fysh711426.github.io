@@ -159,6 +159,10 @@ a {
     padding-left: 10px;
 }
 
+.nav-title.nonav {
+    padding-left: 15px;
+}
+
 .header .end {
     display: flex;
     align-items: center;
