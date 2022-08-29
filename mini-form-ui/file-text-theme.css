@@ -7,10 +7,12 @@ body.text-dark {
     --boardColor: hsl(0, 0%, 21%);
     --boardShadow: 0 12px 15px 0 rgb(23 23 23 / 24%), 0 17px 50px 0 rgb(23 23 23 / 19%);
     --footerFontColor: hsl(0, 0%, 67%);
-    --fileNavbarBgColor: hsl(0, 0%, 27%);
-    --fileNavbarBorderColor: hsl(0, 0%, 29%);
+    --fileNavbarBgColor: hsl(0, 0%, 21%);
     --fileNavbarShadow: 0 12px 15px 0 rgb(23 23 23 / 24%), 0 17px 50px 0 rgb(23 23 23 / 19%);
-    --fileNavbarLinkHover: hsl(0, 0%, 100%);
+    --fileNavbarOverBgColor: hsl(0, 0%, 27%);
+    --fileNavbarOverBorderColor: hsl(0, 0%, 29%);
+    --fileNavbarOverShadow: 0 12px 15px 0 rgb(23 23 23 / 24%), 0 17px 50px 0 rgb(23 23 23 / 19%);
+    --fileNavbarLinkHoverColor: hsl(0, 0%, 100%);
     --fileTextContentColor: hsl(216, 4%, 78%);
     --fileTextContentBgColor: hsl(0, 0%, 14%);
 }
@@ -24,10 +26,12 @@ body.text-dark-blue {
     --boardColor: hsl(213, 27%, 18%);
     --boardShadow: 0 12px 15px 0 rgb(17 22 29 / 24%), 0 17px 50px 0 rgb(17 22 29 / 19%);
     --footerFontColor: hsl(210, 17%, 67%);
-    --fileNavbarBgColor: hsl(210, 17%, 25%);
-    --fileNavbarBorderColor: hsl(210, 17%, 28%);
+    --fileNavbarBgColor: hsl(213, 27%, 18%);
     --fileNavbarShadow: 0 12px 15px 0 rgb(17 22 29 / 24%), 0 17px 50px 0 rgb(17 22 29 / 19%);
-    --fileNavbarLinkHover: hsl(210, 17%, 99%);
+    --fileNavbarOverBgColor: hsl(210, 17%, 25%);
+    --fileNavbarOverBorderColor: hsl(210, 17%, 28%);
+    --fileNavbarOverShadow: 0 12px 15px 0 rgb(17 22 29 / 24%), 0 17px 50px 0 rgb(17 22 29 / 19%);
+    --fileNavbarLinkHoverColor: hsl(210, 17%, 99%);
     --fileTextContentColor: hsl(210, 17%, 82%);
     --fileTextContentBgColor: hsl(213, 27%, 13%);
 }
@@ -42,9 +46,11 @@ body.text-light {
     --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     --footerFontColor: hsl(0, 0%, 60%);
     --fileNavbarBgColor: hsl(0, 0%, 100%);
-    --fileNavbarBorderColor: hsl(0, 0%, 90%);
     --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
-    --fileNavbarLinkHover: hsl(0, 0%, 48%);
+    --fileNavbarOverBgColor: hsl(0, 0%, 100%);
+    --fileNavbarOverBorderColor: hsl(0, 0%, 90%);
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
     --fileTextContentColor: hsl(0, 0%, 28%);
     --fileTextContentBgColor: hsl(0, 0%, 96%);
 }
@@ -59,9 +65,11 @@ body.text-gray {
     --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     --footerFontColor: hsl(240, 13%, 60%);
     --fileNavbarBgColor: hsl(240, 13%, 91%);
-    --fileNavbarBorderColor: hsl(240, 13%, 81%);
     --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
-    --fileNavbarLinkHover: hsl(240, 13%, 48%);
+    --fileNavbarOverBgColor: hsl(240, 13%, 91%);
+    --fileNavbarOverBorderColor: hsl(240, 13%, 81%);
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: hsl(240, 13%, 48%);
     --fileTextContentColor: hsl(0, 0%, 28%);
     --fileTextContentBgColor: hsl(240, 13%, 87%);
 }
@@ -76,9 +84,11 @@ body.text-yellow {
     --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     --footerFontColor: hsl(0, 0%, 60%);
     --fileNavbarBgColor: hsl(47, 92%, 95%);
-    --fileNavbarBorderColor: hsla(0, 0%, 90%, .7);
     --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
-    --fileNavbarLinkHover: hsl(0, 0%, 48%);
+    --fileNavbarOverBgColor: hsl(47, 92%, 95%);
+    --fileNavbarOverBorderColor: hsla(0, 0%, 90%, .7);
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
     --fileTextContentColor: hsl(0, 0%, 28%);
     --fileTextContentBgColor: hsl(47, 92%, 93%);
 }
@@ -93,9 +103,11 @@ body.text-orange {
     --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     --footerFontColor: hsl(0, 0%, 60%);
     --fileNavbarBgColor: hsl(37, 92%, 95%);
-    --fileNavbarBorderColor: hsla(0, 0%, 90%, .5);
     --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
-    --fileNavbarLinkHover: hsl(0, 0%, 48%);
+    --fileNavbarOverBgColor: hsl(37, 92%, 95%);
+    --fileNavbarOverBorderColor: hsla(0, 0%, 90%, .5);
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
     --fileTextContentColor: hsl(0, 0%, 28%);
     --fileTextContentBgColor: hsl(37, 92%, 93%);
 }
@@ -110,9 +122,11 @@ body.text-blue {
     --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     --footerFontColor: hsl(0, 0%, 60%);
     --fileNavbarBgColor: hsl(202, 67%, 95%);
-    --fileNavbarBorderColor: hsla(0, 0%, 90%, .5);
     --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
-    --fileNavbarLinkHover: hsl(0, 0%, 48%);
+    --fileNavbarOverBgColor: hsl(202, 67%, 95%);
+    --fileNavbarOverBorderColor: hsla(0, 0%, 90%, .5);
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
     --fileTextContentColor: hsl(0, 0%, 28%);
     --fileTextContentBgColor: hsl(202, 67%, 93%);
 }
@@ -127,9 +141,11 @@ body.text-green {
     --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     --footerFontColor: hsl(0, 0%, 60%);
     --fileNavbarBgColor: hsl(146, 47%, 94%);
-    --fileNavbarBorderColor: hsla(0, 0%, 90%, .5);
     --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
-    --fileNavbarLinkHover: hsl(0, 0%, 48%);
+    --fileNavbarOverBgColor: hsl(146, 47%, 94%);
+    --fileNavbarOverBorderColor: hsla(0, 0%, 90%, .5);
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
     --fileTextContentColor: hsl(0, 0%, 28%);
     --fileTextContentBgColor: hsl(146, 47%, 92%);
 }

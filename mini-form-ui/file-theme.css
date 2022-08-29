@@ -12,9 +12,11 @@ body.light {
     --fileItemActiveIconColor: hsl(0, 0%, 31%);
     --fileItemActiveDescriptionColor: #7e7e7e; */
     --fileNavbarBgColor: #fff;
-    --fileNavbarBorderColor: #e6e6e6;
     --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
-    --fileNavbarLinkHover: #7a7a7a;
+    --fileNavbarOverBgColor: #fff;
+    --fileNavbarOverBorderColor: #e6e6e6;
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: #7a7a7a;
     --fileNavbarExpandTitleColor: #7a7a7a;
     --fileTextContentColor: #262626;
     --fileTextContentBgColor: #f5f5f5;
@@ -33,10 +35,12 @@ body.dark {
     --fileItemActiveBgColor: rgba(179, 179, 179, .3);
     --fileItemActiveIconColor: hsl(216, 4%, 78%);
     --fileItemActiveDescriptionColor: #aaa; */
-    --fileNavbarBgColor: #404040;
-    --fileNavbarBorderColor: #454545;
+    --fileNavbarBgColor: #303030;
     --fileNavbarShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
-    --fileNavbarLinkHover: #fff;
+    --fileNavbarOverBgColor: #404040;
+    --fileNavbarOverBorderColor: #454545;
+    --fileNavbarOverShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    --fileNavbarLinkHoverColor: #fff;
     --fileNavbarExpandTitleColor: #aaa;
     --fileTextContentColor: #d2d3d5;
     --fileTextContentBgColor: #181818;
@@ -120,16 +124,21 @@ a:hover .file-item-icon {
 
 /*----- file-navbar -----*/
 
+.file-navbar {
+    background-color: var(--fileNavbarBgColor);
+    box-shadow: var(--fileNavbarShadow);
+}
+
 @media screen and (min-width: 1025px) {
     .file-navbar-btn a:hover {
-        color: var(--fileNavbarLinkHover);
+        color: var(--fileNavbarLinkHoverColor);
     }
 }
 
 .file-navbar-title-warp.hover .file-navbar-title-over {
-    background-color: var(--fileNavbarBgColor);
-    border-color: var(--fileNavbarBorderColor);
-    box-shadow: var(--fileNavbarShadow);
+    background-color: var(--fileNavbarOverBgColor);
+    border-color: var(--fileNavbarOverBorderColor);
+    box-shadow: var(--fileNavbarOverShadow);
 }
 
 /*----- file-navbar -----*/

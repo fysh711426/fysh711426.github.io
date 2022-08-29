@@ -208,6 +208,10 @@ z-index
     justify-content: space-between;
     word-wrap: break-word;
     word-break: break-all;
+    margin: 15px auto;
+    padding: 15px 15px;
+    border-radius: 0.35rem;
+    border-top: 1px solid rgb(60, 60, 60, .12);
 }
 
 .file-navbar.sticky {
@@ -225,16 +229,12 @@ z-index
 .file-navbar .start {
     display: flex;
     align-items: center;
-    max-width: calc(100% - 1.2rem - 10px);
+    max-width: 100%;
 }
 
 .file-navbar .end {
     display: flex;
     align-items: center;
-}
-
-.file-navbar .end .fa-fw {
-    width: 1.2em;
 }
 
 .file-navbar-btn {
@@ -259,7 +259,7 @@ z-index
 }
 
 .file-navbar-title-warp {
-    max-width: calc(100% - 1rem - 10px);
+    max-width: 100%;
 }
 
 .file-navbar-title-warp .file-navbar-title {
@@ -267,7 +267,6 @@ z-index
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    cursor: pointer;
     font-weight: bold;
     padding: 0px 10px;
 }
@@ -306,6 +305,10 @@ z-index
     cursor: pointer;
     font-weight: bold;
     z-index: 25000;
+}
+
+.file-navbar .mw-1x {
+    max-width: calc(100% - 1rem - 10px);
 }
 
 /*----- file-navbar -----*/
