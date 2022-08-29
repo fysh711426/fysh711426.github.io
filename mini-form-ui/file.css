@@ -123,6 +123,7 @@ z-index
     flex-shrink: 0;
     position: relative;
     border-radius: 0.15rem;
+    overflow: hidden;
 }
 
     .file-image-item-icon img {
@@ -240,8 +241,14 @@ z-index
     padding: 0px 5px;
 }
 
+.file-navbar-btn-warp {
+    display: flex;
+    align-items: center;
+}
+
 .file-navbar-btn-text {
     font-size: 0.8rem;
+    padding-left: 5px;
 }
 
 .file-navbar-title {
