@@ -209,9 +209,20 @@ z-index
     word-wrap: break-word;
     word-break: break-all;
     margin: 15px auto;
-    padding: 15px 15px;
     border-radius: 0.35rem;
     border-top: 1px solid rgb(60, 60, 60, .12);
+}
+
+@media screen and (max-width: 640px) {
+    .file-navbar {
+        padding: 15px 5px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .file-navbar {
+        padding: 15px 10px;
+    }
 }
 
 .file-navbar.sticky {
@@ -307,8 +318,12 @@ z-index
     z-index: 25000;
 }
 
+.file-navbar .fa-fw {
+    width: 1.35em;
+}
+
 .file-navbar .mw-1x {
-    max-width: calc(100% - 1rem - 10px);
+    max-width: calc(100% - 1.35em - 10px);
 }
 
 /*----- file-navbar -----*/
