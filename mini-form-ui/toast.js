@@ -36,7 +36,7 @@ var toast = (function () {
                             remove(global);
                             element = null;
                         }
-                    }, 30000);
+                    }, 3000);
                 }, 1);
             })(element);
         }
