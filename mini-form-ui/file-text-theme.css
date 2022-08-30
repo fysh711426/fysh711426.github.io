@@ -15,6 +15,9 @@ body.text-dark {
     --fileNavbarLinkHoverColor: hsl(0, 0%, 100%);
     --fileTextContentColor: hsl(216, 4%, 78%);
     --fileTextContentBgColor: hsl(0, 0%, 14%);
+    --themeButtonBgColor: #f9f9f9;
+    --themeButtonFontColor: #181818;
+    
 }
 
 body.text-dark-blue {
@@ -34,6 +37,8 @@ body.text-dark-blue {
     --fileNavbarLinkHoverColor: hsl(210, 17%, 99%);
     --fileTextContentColor: hsl(210, 17%, 82%);
     --fileTextContentBgColor: hsl(213, 27%, 13%);
+    --themeButtonBgColor: #f9f9f9;
+    --themeButtonFontColor: #181818;
 }
 
 body.text-light {
@@ -53,6 +58,8 @@ body.text-light {
     --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
     --fileTextContentColor: hsl(0, 0%, 28%);
     --fileTextContentBgColor: hsl(0, 0%, 96%);
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
 }
 
 body.text-gray {
@@ -72,6 +79,8 @@ body.text-gray {
     --fileNavbarLinkHoverColor: hsl(240, 13%, 48%);
     --fileTextContentColor: hsl(0, 0%, 28%);
     --fileTextContentBgColor: hsl(240, 13%, 87%);
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
 }
 
 body.text-yellow {
@@ -91,6 +100,8 @@ body.text-yellow {
     --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
     --fileTextContentColor: hsl(0, 0%, 28%);
     --fileTextContentBgColor: hsl(47, 92%, 93%);
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
 }
 
 body.text-orange {
@@ -110,6 +121,8 @@ body.text-orange {
     --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
     --fileTextContentColor: hsl(0, 0%, 28%);
     --fileTextContentBgColor: hsl(37, 92%, 93%);
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
 }
 
 body.text-blue {
@@ -129,6 +142,8 @@ body.text-blue {
     --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
     --fileTextContentColor: hsl(0, 0%, 28%);
     --fileTextContentBgColor: hsl(202, 67%, 93%);
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
 }
 
 body.text-green {
@@ -148,51 +163,9 @@ body.text-green {
     --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
     --fileTextContentColor: hsl(0, 0%, 28%);
     --fileTextContentBgColor: hsl(146, 47%, 92%);
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
 }
-
-/*----- text-theme-button -----*/
-
-.text-theme-button.text-dark {
-    background-color: hsl(0, 0%, 20%);
-    border-color: #c4c6c9;
-}
-
-.text-theme-button.text-dark-blue {
-    background-color: hsl(213, 27%, 17%);
-    border-color: #c4c6c9;
-}
-
-.text-theme-button.text-light {
-    background-color: hsl(0, 0%, 98%);
-    border-color: #474747;
-}
-
-.text-theme-button.text-gray {
-    background-color: hsl(240, 13%, 89%);
-    border-color: #474747;
-}
-
-.text-theme-button.text-yellow {
-    background-color: hsl(47, 92%, 93%);
-    border-color: #474747;
-}
-
-.text-theme-button.text-orange {
-    background-color: hsl(37, 92%, 93%);
-    border-color: #474747;
-}
-
-.text-theme-button.text-blue {
-    background-color: hsl(202, 67%, 93%);
-    border-color: #474747;
-}
-
-.text-theme-button.text-green {
-    background-color: hsl(146, 47%, 92%);
-    border-color: #474747;
-}
-
-/*----- text-theme-button -----*/
 
 /*----- file-navbar -----*/
 

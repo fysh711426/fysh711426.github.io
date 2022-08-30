@@ -452,23 +452,14 @@ z-index
 
 /*----- text-theme-button -----*/
 
-.text-theme-button {
-    border-width: 3px;
-    border-style: solid;
-    display: block;
-    align-self: center;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 50%;
-    text-align: center;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    outline: 0;
+.text-theme-button-icon {
+    width: 1.2rem;
+    height: 1.2rem;
 }
 
-.header .text-theme-button {
-    margin-right: 15px;
+.text-theme-button-icon svg {
+    width: 1.2rem;
+    height: 1.2rem;
 }
 
 /*----- text-theme-button -----*/
