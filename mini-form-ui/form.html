@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="tooltip.css">
     <link rel="stylesheet" href="progress.css">
     <link rel="stylesheet" href="spinner.css">
+    <link rel="stylesheet" href="toast.css">
     <link rel="stylesheet" href="demo.css">
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="layout-theme.css">
@@ -21,6 +22,7 @@
     <script src="tooltip.js"></script>
     <script src="progress.js"></script>
     <script src="spinner.js"></script>
+    <script src="toast.js"></script>
     <script src="layout.js"></script>
 </head>
 
@@ -128,7 +130,7 @@
                                 </div>
                             </div>
                             <div>
-                                <input type="text" id="deepLinkPackage" value="" placeholder="com.mxtech.videoplayer.ad" />
+                                <input type="text" id="deepLinkPackage" value="" placeholder="com.mxtech.videoplayer.ad" onblur="onBlur()" />
                             </div>
                         </div>
                     </div>
@@ -171,6 +173,10 @@
                 checkbox.removeAttribute('checked');
                 mark.className = mark.className.replace('checked', '');;
             }
+            toast.show('Saved');
+        }
+        function onBlur(element) {
+            toast.show('Saved');
         }
         function onThemeChecked(element) {
             var sample = document.querySelector('.theme-sample-text');
