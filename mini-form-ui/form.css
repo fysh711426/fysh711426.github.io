@@ -12,6 +12,10 @@
     margin-top: 0px;
 }
 
+.form-field.last {
+    margin-bottom: 0px;
+}
+
 .form-field-title-warp {
     margin-bottom: 15px;
 }
@@ -23,6 +27,12 @@
 .form-field-description {
     font-size: 0.8rem;
     margin-top: 5px;
+}
+
+.form .hr {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    margin: 15px 0px;
 }
 
 /*----- form -----*/
