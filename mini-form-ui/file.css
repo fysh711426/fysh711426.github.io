@@ -27,17 +27,7 @@ z-index
 /*----- file-main-inner -----*/
 
 @media screen and (max-width: 1330px) {
-    .file-main-inner .file-navbar {
-        margin-left: 3px;
-        margin-right: 3px;
-    }
-    
-    .file-main-inner .file-item {
-        margin-left: 3px;
-        margin-right: 3px;
-    }
-    
-    .file-main-inner .file-image-item {
+    .file-main-inner .board {
         margin-left: 3px;
         margin-right: 3px;
     }
