@@ -19,7 +19,6 @@ body.dark {
 
 .toast-block {
     position: fixed;
-    margin: 15px;
     border-radius: 0.45rem;
     outline: 0;
     box-sizing: border-box;
@@ -30,18 +29,19 @@ body.dark {
     font-size: 1.1rem;
     line-height: 1.5;
     font-weight: normal;
-    padding: 10px 15px 10px 15px;
+    padding: 15px 20px 15px 20px;
     word-wrap: break-word;
     word-break: break-all;
 }
 
 .toast-block.show {
     transform: translateY(0%);
-    transition: 0.5s ease-in-out;
+    transition: 0.35s ease-in-out;
 }
 
 @media screen and (max-width: 640px) {
     .toast-block {
+        margin: 10px;
         bottom: 0px;
         left: 0px;
         right: 0px;
@@ -50,6 +50,7 @@ body.dark {
 
 @media screen and (min-width: 641px) {
     .toast-block {
+        margin: 15px;
         bottom: 0px;
         left: 0px;
         max-width: 320px;

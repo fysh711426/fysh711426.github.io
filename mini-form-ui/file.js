@@ -86,6 +86,7 @@ function fileNavbar(setting) {
         for (var i = 0; i < images.length; i++) {
             var item = images[i];
             item.className = item.className + ' over';
+            onToggle();
             item.addEventListener('click', onToggle);
         }
     }
