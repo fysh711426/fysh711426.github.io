@@ -24,6 +24,27 @@ z-index
 
 /*----- gotop -----*/
 
+/*----- file-main-inner -----*/
+
+@media screen and (max-width: 1330px) {
+    .file-main-inner .file-navbar {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    
+    .file-main-inner .file-item {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    
+    .file-main-inner .file-image-item {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+}
+
+/*----- file-main-inner -----*/
+
 /*----- file-item -----*/
 
 .file-item {
@@ -434,12 +455,14 @@ z-index
 @media screen and (max-width: 1024px) {
     .file-text-content {
         font-size: 1.25rem;
+        padding: 15px 10px;
     }
 }
 
 @media screen and (min-width: 1025px) {
     .file-text-content {
         font-size: 1.35em;
+        padding: 15px 15px;
     }
 }
 
