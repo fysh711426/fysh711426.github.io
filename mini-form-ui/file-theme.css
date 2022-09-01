@@ -27,7 +27,8 @@ body.dark {
     --fileIconHoverColor: hsl(216, 4%, 78%);
     --fileDescriptionColor: #aaa;
     --fileImageBlockShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
-    --fileItemActiveColor: #262626;
+    /* --fileItemActiveColor: #262626; */
+    --fileItemActiveColor: #404040;
     --fileItemActiveBgColor: rgba(255, 255, 255, .85);
     --fileItemActiveIconColor: hsl(0, 0%, 31%);
     --fileItemActiveDescriptionColor: #7e7e7e;
