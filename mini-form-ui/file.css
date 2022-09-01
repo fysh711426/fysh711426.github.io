@@ -24,16 +24,21 @@ z-index
 
 /*----- gotop -----*/
 
-/*----- file-main-inner -----*/
+/*----- file-main -----*/
 
 @media screen and (max-width: 1330px) {
-    .file-main-inner .board {
+    .file-main .file-item {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .file-main .file-image-item {
         margin-left: 3px;
         margin-right: 3px;
     }
 }
 
-/*----- file-main-inner -----*/
+/*----- file-main -----*/
 
 /*----- file-item -----*/
 
