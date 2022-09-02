@@ -144,13 +144,13 @@ z-index
     overflow: hidden;
 }
 
-    .file-image-item-icon img {
-        display: block;
-        align-self: center;
-        height: auto;
-        width: auto;
-        margin: auto;
-    }
+.file-image-item-icon img {
+    display: block;
+    align-self: center;
+    height: auto;
+    width: auto;
+    margin: auto;
+}
 
 @media screen and (max-width: 640px) {
     .file-image-item-icon {
@@ -158,10 +158,10 @@ z-index
         height: 90px;
     }
 
-        .file-image-item-icon img {
-            max-width: 120px;
-            max-height: 90px;
-        }
+    .file-image-item-icon img {
+        max-width: 120px;
+        max-height: 90px;
+    }
 }
 
 @media screen and (min-width: 641px) {
@@ -170,10 +170,10 @@ z-index
         height: 115px;
     }
 
-        .file-image-item-icon img {
-            max-width: 150px;
-            max-height: 115px;
-        }
+    .file-image-item-icon img {
+        max-width: 150px;
+        max-height: 115px;
+    }
 }
 
 @media screen and (min-width: 1025px) {
@@ -182,10 +182,10 @@ z-index
         height: 150px;
     }
 
-        .file-image-item-icon img {
-            max-width: 200px;
-            max-height: 150px;
-        }
+    .file-image-item-icon img {
+        max-width: 200px;
+        max-height: 150px;
+    }
 }
 
 .file-image-item-title {
@@ -212,10 +212,10 @@ z-index
     box-shadow: var(--boxShadow);
 }
 
-    .file-image-block.over {
-        position: sticky;
-        z-index: 15000;
-    }
+.file-image-block.over {
+    position: sticky;
+    z-index: 15000;
+}
 
 /*----- file-image-block -----*/
 
@@ -336,6 +336,10 @@ z-index
     z-index: 25000;
 }
 
+.file-navbar-title-warp.hover .file-navbar-title {
+    visibility: hidden;
+}
+
 .file-navbar .fa-fw {
     width: 1.35em;
 }
@@ -390,7 +394,7 @@ z-index
     display: block;
 }
 
-.file-navbar-toggle .up{
+.file-navbar-toggle .up {
     display: none;
 }
 
@@ -497,9 +501,9 @@ z-index
         left: 0px;
         right: 0px;
         margin: 0px 0px 0px 0px;
-        background-color: rgba(23, 23, 23, .65);
         border-radius: 0px;
-        border: 0px;
+        background-color: rgba(23, 23, 23, .65);
+        border: 1px solid rgba(23, 23, 23, 0);
         box-shadow: none;
         color: #d2d3d5;
     }
@@ -508,13 +512,9 @@ z-index
         color: #d2d3d5;
     }
 
-    .file-image-page .file-navbar-title-warp.hover .file-navbar-title {
-        visibility: hidden;
-    }
-
     .file-image-page .file-navbar-title-warp.hover .file-navbar-title-over {
         background-color: rgba(23, 23, 23, .45);
-        border: 0px;
+        border: 1px solid rgba(23, 23, 23, 0);
         box-shadow: none;
     }
 }
@@ -531,13 +531,30 @@ z-index
     .file-image-content {
         display: flex;
         align-items: center;
+        justify-content: center;
         position: absolute;
         top: 0px;
-        bottom: 0px;
         left: 0px;
-        right: 0px;
         background-color: #181818;
         z-index: 15000;
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        margin: auto;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+
+    .file-image-content img {
+        display: block;
+        align-self: center;
+        height: auto;
+        width: auto;
+        margin: auto;
+        max-width: 100vw;
+        max-height: 100vh;
     }
 }
 
@@ -562,19 +579,26 @@ z-index
 }
 
 .file-image-nav-button {
-    display: none;
+    visibility: hidden;
     color: #d2d3d5;
     background-color: rgba(0, 0, 0, .55);
     text-decoration: none;
     cursor: pointer;
     border-radius: 50%;
     text-align: center;
-    margin: 0px 10px 0px 10px;
     outline: 0;
 }
 
+.file-image-nav.prev .file-image-nav-button {
+    margin: 0px 20px 0px 10px;
+}
+
+.file-image-nav.next .file-image-nav-button {
+    margin: 0px 10px 0px 20px;
+}
+
 .file-image-nav.show .file-image-nav-button {
-    display: block;
+    visibility: visible;
 }
 
 @media screen and (max-width: 640px) {
