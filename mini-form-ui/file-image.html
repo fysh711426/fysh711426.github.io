@@ -88,13 +88,13 @@
                         </div>
                     </div>
                     <div class="file-image-content">
-                        <div class="file-image-nav prev show" onclick="onPrevNext()">
-                            <div class="file-image-nav-button">
+                        <div class="file-image-control prev show" onclick="onPrevNext()">
+                            <div class="file-image-control-button">
                                 <i class="fa-solid fa-angle-left"></i>
                             </div>
                         </div>
-                        <div class="file-image-nav next show" onclick="onPrevNext()">
-                            <div class="file-image-nav-button">
+                        <div class="file-image-control next show" onclick="onPrevNext()">
+                            <div class="file-image-control-button">
                                 <i class="fa-solid fa-angle-right"></i>
                             </div>
                         </div>
@@ -124,9 +124,9 @@
             progress.done();
         }, 1000);
         function onToggle() {
-            var imageNavs = document.querySelectorAll('.file-image-nav');
-            for (var i = 0; i < imageNavs.length; i++) {
-                var item = imageNavs[i];
+            var controls = document.querySelectorAll('.file-image-control');
+            for (var i = 0; i < controls.length; i++) {
+                var item = controls[i];
                 if (item.className.indexOf('show') === -1) {
                     item.className = item.className + ' show';
                 }

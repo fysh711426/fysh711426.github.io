@@ -490,29 +490,37 @@ z-index
 
 /*----- image-main -----*/
 
-@media screen and (max-width: 1024px) {
-    .image-main .file-navbar {
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        margin: 0px 0px 0px 0px;
-        border-radius: 0px;
-        background-color: rgba(23, 23, 23, .65);
-        border: 1px solid rgba(23, 23, 23, 0);
-        box-shadow: none;
-        color: #d2d3d5;
-    }
+.image-main .file-navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 0px;
+    background-color: rgba(23, 23, 23, .65);
+    border: 1px solid rgba(23, 23, 23, 0);
+    box-shadow: none;
+    color: #d2d3d5;
+}
 
-    .image-main .file-navbar a {
-        color: #d2d3d5;
-    }
+.image-main .file-navbar-btn a {
+    color: #d2d3d5;
+}
 
-    .image-main .file-navbar-title-warp.hover .file-navbar-title-over {
-        background-color: rgba(23, 23, 23, .45);
-        border: 1px solid rgba(23, 23, 23, 0);
-        box-shadow: none;
+@media screen and (min-width: 1025px) {
+    .image-main .file-navbar-btn a:hover {
+        color: #fff;
     }
+}
+
+.image-main .file-navbar-title-warp.hover .file-navbar-title-over {
+    background-color: rgba(23, 23, 23, .75);
+    border: 1px solid rgba(23, 23, 23, 0);
+    box-shadow: none;
+}
+
+.image-main .file-image-block {
+    max-width: 1319px;
 }
 
 /*----- image-main -----*/
@@ -520,61 +528,56 @@ z-index
 /*----- file-image-content -----*/
 
 .file-image-content {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #181818;
+    z-index: 15000;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    margin: auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
-@media screen and (max-width: 1024px) {
-    .file-image-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        background-color: #181818;
-        z-index: 15000;
-        width: 100%;
-        max-width: 100%;
-        min-height: 100vh;
-        margin: auto;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -o-user-select: none;
-        user-select: none;
-    }
-
-    .file-image-content img {
-        display: block;
-        align-self: center;
-        height: auto;
-        width: auto;
-        margin: auto;
-        max-width: 100vw;
-        max-height: 100vh;
-    }
+.file-image-content img {
+    display: block;
+    align-self: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    max-width: 100vw;
+    max-height: 100vh;
 }
 
 /*----- file-image-content -----*/
 
-/*----- file-image-nav -----*/
+/*----- file-image-control -----*/
 
-.file-image-nav {
+.file-image-control {
     display: flex;
+    position: absolute;
     align-items: center;
     top: 0px;
     bottom: 0px;
     z-index: 16000;
 }
 
-.file-image-nav.prev {
+.file-image-control.prev {
     left: 0px;
 }
 
-.file-image-nav.next {
+.file-image-control.next {
     right: 0px;
 }
 
-.file-image-nav-button {
+.file-image-control-button {
     visibility: hidden;
     color: #d2d3d5;
     background-color: rgba(0, 0, 0, .55);
@@ -585,24 +588,20 @@ z-index
     outline: 0;
 }
 
-.file-image-nav.prev .file-image-nav-button {
+.file-image-control.prev .file-image-control-button {
     margin: 0px 20px 0px 10px;
 }
 
-.file-image-nav.next .file-image-nav-button {
+.file-image-control.next .file-image-control-button {
     margin: 0px 10px 0px 20px;
 }
 
-.file-image-nav.show .file-image-nav-button {
+.file-image-control.show .file-image-control-button {
     visibility: visible;
 }
 
 @media screen and (max-width: 640px) {
-    .file-image-nav {
-        position: fixed;
-    }
-
-    .file-image-nav-button {
+    .file-image-control-button {
         font-size: 20px;
         width: 40px;
         height: 40px;
@@ -611,11 +610,7 @@ z-index
 }
 
 @media screen and (min-width: 641px) {
-    .file-image-nav {
-        position: fixed;
-    }
-
-    .file-image-nav-button {
+    .file-image-control-button {
         font-size: 25px;
         width: 50px;
         height: 50px;
@@ -624,16 +619,16 @@ z-index
 }
 
 @media screen and (min-width: 1025px) {
-    .file-image-nav {
-        position: absolute;
-    }
-
-    .file-image-nav-button {
+    .file-image-control-button {
         font-size: 30px;
         width: 60px;
         height: 60px;
         line-height: 60px;
     }
+
+    .file-image-control-button:hover {
+        color: #fff;
+    }
 }
 
-/*----- file-image-nav -----*/
+/*----- file-image-control -----*/
