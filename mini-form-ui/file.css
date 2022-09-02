@@ -514,7 +514,7 @@ z-index
 }
 
 .image-main .file-navbar-title-warp.hover .file-navbar-title-over {
-    background-color: rgba(23, 23, 23, .75);
+    background-color: rgba(23, 23, 23, .65);
     border: 1px solid rgba(23, 23, 23, 0);
     box-shadow: none;
 }
