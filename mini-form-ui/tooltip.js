@@ -13,6 +13,11 @@ var tooltip = (function () {
     }
     function getPosition(placement, item, element) {
         var rect = item.getBoundingClientRect();
+        if (placement === 'top') {
+            var top = rect.top - element.offsetHeight - 5;
+            var left = rect.left + rect.width / 2 - element.offsetWidth / 2 - 1;
+            return [left, top];
+        }
         if (placement === 'bottom') {
             var top = rect.top + rect.height + 5;
             var left = rect.left + rect.width / 2 - element.offsetWidth / 2 - 1;
@@ -21,6 +26,11 @@ var tooltip = (function () {
         if (placement === 'left') {
             var top = rect.top - (element.offsetHeight - rect.height) / 2 - 1;
             var left = rect.left - element.offsetWidth - 5;
+            return [left, top];
+        }
+        if (placement === 'right') {
+            var top = rect.top - (element.offsetHeight - rect.height) / 2 - 1;
+            var left = rect.right + 5;
             return [left, top];
         }
     }
