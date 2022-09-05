@@ -110,6 +110,7 @@ z-index
 }
 
 .file-image-item-text {
+    flex: 1 0 0;
     align-self: center;
 }
 
