@@ -116,11 +116,11 @@ z-index
 
 @media screen and (max-width: 640px) {
     .file-image-item {
-        padding: 15px 5px;
+        padding: 15px 10px;
     }
 
     .file-image-item-text {
-        padding: 0px 5px;
+        padding: 0px 10px;
     }
 }
 
