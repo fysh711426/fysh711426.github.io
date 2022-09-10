@@ -286,6 +286,65 @@ body.dark {
         opacity: 0;
     }
 }
+body.light {
+    --toastColor: #f5f5f5;
+    --toastBgColor: #181818;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
+    
+}
+
+body.dark {
+    --toastColor: #262626;
+    --toastBgColor: #f9f9f9;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
+}
+
+.toast-block {
+    color: var(--toastColor);
+    background-color: var(--toastBgColor);
+    box-shadow: var(--toastShadow);
+}
+
+.toast-block {
+    position: fixed;
+    border-radius: 0.45rem;
+    outline: 0;
+    box-sizing: border-box;
+    transform: translateY(150%);
+}
+
+.toast-inner {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: normal;
+    padding: 15px 20px 15px 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.toast-block.show {
+    transform: translateY(0%);
+    transition: 0.35s ease-in-out;
+}
+
+@media screen and (max-width: 640px) {
+    .toast-block {
+        margin: 10px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .toast-block {
+        margin: 15px;
+        bottom: 0px;
+        left: 0px;
+        max-width: 320px;
+        width: 320px;
+    }
+}
 /*  
 z-index
     alert = 7000
