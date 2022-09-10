@@ -1,0 +1,2267 @@
+body.light {
+    --tooltipBgColor: #fff;
+    --tooltipBorderColor: #e6e6e6;
+    --tooltipShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+}
+
+body.dark {
+    --tooltipBgColor: #404040;
+    --tooltipBorderColor: #454545;
+    --tooltipShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+}
+
+.tooltip-inner {
+    background-color: var(--tooltipBgColor);
+    border-color: var(--tooltipBorderColor);
+    box-shadow: var(--tooltipShadow);
+}
+
+.tooltip-template {
+    display: none;
+}
+
+.tooltip-block {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.tooltip-inner {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 10px 15px 10px 15px;
+    max-width: 250px;
+    border-radius: 0.35rem;
+    border-width: 1px;
+    border-style: solid;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    z-index: 2147483647;
+    background: #0076ff;
+}
+body.light {
+    /* color: #454545; */
+    --spinnerColor: #5e5e5e;
+}
+
+body.dark {
+    --spinnerColor: #c4c6c9;
+}
+
+.spinner-layer {
+    color: var(--spinnerColor);
+}
+
+.spinner {
+    display: inline-block;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    font-size: 0;
+}
+
+.spinner-inner {
+    width: 100%;
+    height: 100%;
+    direction: ltr;
+    animation: container-rotate 1568ms linear infinite;
+}
+
+.spinner-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    animation-duration: 5332ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-iteration-count: infinite;
+    opacity: 1;
+}
+
+.spinner-layer::after {
+    content: "";
+    left: 45%;
+    width: 10%;
+    border-top-style: solid;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    border-width: 3px;
+    border-radius: 50%;
+}
+
+.spinner-circle {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.spinner-circle-inner {
+    animation-duration: 1333ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-iteration-count: infinite;
+    bottom: 0;
+    width: 200%;
+    border-style: solid;
+    border-bottom-color: transparent !important;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    border-width: 3px;
+    border-radius: 50%;
+}
+
+.spinner-circle.left .spinner-circle-inner {
+    animation-name: left-spin;
+    left: 0;
+    border-right-color: transparent !important;
+    transform: rotate(129deg);
+}
+
+.spinner-circle.right .spinner-circle-inner {
+    animation-name: right-spin;
+    left: -100%;
+    border-left-color: transparent !important;
+    transform: rotate(-129deg);
+}
+
+.spinner-layer.layer-1 {
+    animation-name: fill-unfill-rotate, layer-1-fade-in-out;
+}
+
+.spinner-layer.layer-2 {
+    animation-name: fill-unfill-rotate, layer-2-fade-in-out;
+}
+
+.spinner-layer.layer-3 {
+    animation-name: fill-unfill-rotate, layer-3-fade-in-out;
+}
+
+.spinner-layer.layer-4 {
+    animation-name: fill-unfill-rotate, layer-4-fade-in-out;
+}
+
+@keyframes container-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes left-spin {
+    0% {
+        transform: rotate(130deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(130deg);
+    }
+}
+
+@keyframes right-spin {
+    0% {
+        transform: rotate(-130deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-130deg);
+    }
+}
+
+@keyframes fill-unfill-rotate {
+    12.5% {
+        transform: rotate(135deg);
+    }
+    25% {
+        transform: rotate(270deg);
+    }
+    37.5% {
+        transform: rotate(405deg);
+    }
+    50% {
+        transform: rotate(540deg);
+    }
+    62.5% {
+        transform: rotate(675deg);
+    }
+    75% {
+        transform: rotate(810deg);
+    }
+    87.5% {
+        transform: rotate(945deg);
+    }
+    100% {
+        transform: rotate(1080deg);
+    }
+}
+
+@keyframes layer-1-fade-in-out {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    26% {
+        opacity: 0;
+    }
+    89% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes layer-2-fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    51% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes layer-3-fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    76% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes layer-4-fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    65% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/*  
+z-index
+    alert = 7000
+    dropdown = 6200
+    timepick = 6100
+    header = 5300
+    left-menu = 5200
+    left-menu.fixed = 5500
+    sub-menu = 5100
+*/
+
+/*----- scrollbar -----*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 20px;
+}
+
+/*----- scrollbar -----*/
+
+/*----- layout -----*/
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    min-width: 100%;
+}
+
+html,
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+    text-size-adjust: 100%;
+    font-family: "Microsoft JhengHei", "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
+
+/*----- layout -----*/
+
+/*----- header -----*/
+
+.header {
+    position: relative;
+    z-index: 5300;
+    font-size: 0;
+    margin: 0px 0px 0px 0px;
+    /* border-radius: 0.35rem; */
+}
+
+.header.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    max-width: 1324px;
+    margin: 0 auto;
+}
+
+.header .start {
+    display: flex;
+    align-items: center;
+}
+
+.header .nav-button {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    align-self: center;
+}
+
+.header .nav-button button {
+    vertical-align: middle;
+    color: inherit;
+    outline: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+    line-height: 0;
+    cursor: pointer;
+}
+
+.nav-button-d {
+    display: block;
+}
+
+.nav-button-m {
+    display: none;
+}
+
+@media screen and (max-width: 1330px) {
+    .nav-button-d {
+        display: none;
+    }
+
+    .nav-button-m {
+        display: block;
+    }
+}
+
+.nav-logo {
+    height: 40px;
+    margin: 10px 10px;
+}
+
+.nav-logo img {
+    height: 100%;
+    width: auto;
+    align-self: center;
+}
+
+.nav-logo.cicle img {
+    border-radius: 50%;
+}
+
+.nav-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-self: center;
+}
+
+.nav-logo-warp {
+    display: flex;
+    align-items: center;
+}
+
+.nav-title.nologo {
+    padding-left: 10px;
+}
+
+.header .end {
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.nav-link {
+    font-size: 1rem;
+    align-self: center;
+}
+
+.nav-link-c {
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    align-self: center;
+}
+
+.theme-button-light {
+    display: none;
+}
+
+.theme-button-dark {
+    display: none;
+}
+
+.theme-button-icon {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.theme-button-icon svg {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.theme-button-text {
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 640px) {
+    .nav-link-c {
+        padding: 5px 5px;
+    }
+
+    .theme-button {
+        margin-right: 10px;
+    }
+
+    .theme-button-text {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .nav-link-c {
+        padding: 5px 15px;
+    }
+
+    .theme-button {
+        margin-right: 15px;
+    }
+    
+    .theme-button-text {
+        display: block;
+    }
+}
+
+/*----- header -----*/
+
+/*----- container -----*/
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1324px;
+    margin: 0 auto;
+}
+
+/*----- container -----*/
+
+/*----- left-menu -----*/
+
+.left-menu {
+    display: block;
+    position: sticky;
+    top: 75px;
+    z-index: 5200;
+    align-self: start;
+    width: 240px;
+    min-width: 240px;
+    margin: 15px 15px 15px 0px;
+    border-radius: 0.35rem;
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.left-menu {
+    display: none;
+}
+
+@media screen and (min-width: 1331px) {
+    .left-menu.active {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1330px) {
+    .left-menu.open {
+        display: block;
+        position: fixed;
+        z-index: 5500;
+        top: 60px;
+        left: 0;
+        height: 100vh;
+        margin: 0 0 0 0;
+        border-radius: 0px;
+    }
+
+    .left-menu-mask.open {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 5199;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.left-menu hr {
+    height: 0px;
+    border: 0px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.left-menu-inner {
+    padding: 15px 15px 15px 15px;
+}
+
+.left-menu-item {
+    display: block;
+    padding: 10px;
+    font-size: 1rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-left: 3px solid rgba(0, 0, 0, 0);
+}
+
+.left-menu-item.active {
+    border-left-width: 3px;
+    border-left-style: solid;
+}
+
+.left-menu-item i {
+    margin-right: 5px;
+    color: #ccc;
+}
+
+.left-menu-item.active i {
+    color: inherit;
+}
+
+@media screen and (min-width: 1025px) {
+    .left-menu-item:hover i {
+        color: inherit;
+    }
+}
+
+/*----- left-menu -----*/
+
+/*----- sub-menu -----*/
+
+.sub-menu {
+    position: relative;
+    z-index: 5100;
+    margin: 15px 0px 15px 0px;
+    border-radius: 0.35rem;
+    border-top: 1px solid rgb(60, 60, 60, .12);
+}
+
+.sub-menu.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.sub-menu-inner {
+    display: flex;
+    justify-content: center;
+    padding: 0px 15px 0px 15px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.sub-menu-item {
+    display: block;
+    padding: 10px 15px 7px 15px;
+    font-size: 1rem;
+}
+
+.sub-menu-item.active {
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+}
+
+/*----- sub-menu -----*/
+
+/*----- main -----*/
+
+.main {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1319px;
+}
+
+.main.active {
+    max-width: 1084px;
+}
+
+.main-inner {
+    /* https://css-tricks.com/couple-takes-sticky-footer/ */
+    /* screen - header - footer - content */
+    min-height: calc(100vh - 75px - 35px - 1rem);
+    margin: 0px 0px 15px 0px;
+}
+
+/*----- main -----*/
+
+/*----- footer -----*/
+
+.footer {
+    font-size: 0.8rem;
+    margin: 15px 0px 15px 0px;
+    text-align: center;
+}
+
+.footer-inner {
+    padding: 0px 0px 0px 0px;
+}
+
+.copyright-divider {
+    margin: 0 0.3rem;
+}
+
+/*----- footer -----*/
+
+/*----- board -----*/
+
+.board {
+    margin: 15px auto;
+    padding: 15px 15px;
+    border-radius: 0.35rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-top: 1px solid rgb(60, 60, 60, .12);
+}
+
+.board.fw {
+    padding: 15px 15px;
+}
+
+@media screen and (max-width: 640px) {
+    .board {
+        padding: 15px 5px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .board {
+        padding: 15px 10px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .board {
+        padding: 15px 15px;
+    }
+}
+
+.board-header {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.35rem;
+    line-height: 1.35rem;
+    padding: 15px 15px 15px 15px;
+    margin: 0 0 15px 0;
+}
+
+.board-header i {
+    padding-right: 0.5rem;
+}
+
+.board-header-title {
+    display: flex;
+    align-items: center;
+}
+
+.board-header .description {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    cursor: pointer;
+}
+
+.board-title {
+    font-weight: bold;
+}
+
+/*----- board -----*/
+
+/*----- block -----*/
+
+.block {
+    margin: 15px auto;
+    padding: 15px 15px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+@media screen and (max-width: 640px) {
+    .block {
+        padding: 15px 5px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .block {
+        padding: 15px 10px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .block {
+        padding: 15px 15px;
+    }
+}
+
+/*----- block -----*/
+
+/*----- table -----*/
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 0;
+    text-align: center;
+}
+
+table th {
+    font-weight: normal;
+}
+
+table th,
+table td {
+    border-top-width: 1px;
+    border-top-style: solid;
+    padding: 15px 15px;
+}
+
+@media screen and (max-width: 640px) {
+
+    table th,
+    table td {
+        padding: 15px 5px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+
+    table th,
+    table td {
+        padding: 15px 10px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    table th,
+    table td {
+        padding: 15px 15px;
+    }
+}
+
+.tag {
+    display: inline-block;
+    color: #7e7e7e;
+    background: #f1f1f1;
+    padding: 5px;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+}
+
+.tag-o {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.row-empty {
+    padding: 30px 15px;
+    font-size: 0.9rem;
+}
+
+/*----- table -----*/
+
+/*----- button-round -----*/
+
+.button-round {
+    display: flex;
+    font-size: 0.9rem;
+    justify-content: center;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.button-round.left {
+    padding: 5px 10px 5px 15px;
+    border-radius: 3.5rem 0 0 3.5rem;
+    margin-left: auto;
+}
+
+.button-round.right {
+    padding: 5px 15px 5px 10px;
+    border-radius: 0 3.5rem 3.5rem 0;
+    border-left: none;
+}
+
+/*----- button-round -----*/
+
+/*----- control -----*/
+
+.control {
+    position: fixed;
+    z-index: 100000;
+}
+
+.control .button {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 50%;
+    text-align: center;
+    margin-top: 15px;
+    outline: 0;
+    box-shadow: 0 6px 10px -5px rgb(0 0 0 / 50%);
+}
+
+@media screen and (min-width: 0px) {
+    .control {
+        bottom: 25px;
+        right: 25px;
+    }
+
+    .control .button {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .control {
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .control .button {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+    }
+}
+
+/*----- control -----*/
+
+/*----- gotop -----*/
+
+.control .gotop {
+    display: none;
+}
+
+.control .gotop.show {
+    display: block;
+}
+
+/*----- gotop -----*/
+
+/*----- spinner-block -----*/
+
+.spinner-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 15px auto;
+}
+
+/*----- spinner-block -----*/
+body.light {
+    /* background-color: #f9f9f9; */
+    --bgColor: #f5f5f5;
+    --boardColor: #fff;
+    /* box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.5); */
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    /* color: #474747; */
+    --fontColor: #262626;
+    --linkColor: #242424;
+    --linkHoverColor: #7a7a7a;
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
+    --menuActive: #f1f1f1;
+    --menuHover: #f5f5f5;
+    --menuSelected: #505050;
+    --leftMenuBorderTop: rgb(60, 60, 60, .12);
+    --leftMenuOpenBorderTop: rgb(60, 60, 60, .12);
+    --boardActiveColor: #f1f1f1;
+    --boardHoverColor: #f5f5f5;
+    --footerFontColor: #999;
+    --tagOColor: #7e7e7e;
+    --tagOBorderColor: #e6e6e6;
+    --controlBgColor: #454545;
+    --controlFontColor: #f5f5f5;
+    --controlHoverColor: #5e5e5e;
+    /* background: #ffb600; */
+    /* background: #28C8C8; */
+    --progressColor: #454545;
+    --hrColor: #e6e6e6;
+    --buttonRound: #e6e6e6;
+    --buttonRoundActive: #f1f1f1;
+    --buttonRoundHover: #f5f5f5;
+}
+
+body.dark {
+    --bgColor: #181818;
+    --boardColor: #303030;
+    --boardShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    --fontColor: #d2d3d5;
+    --linkColor: #d2d3d5;
+    --linkHoverColor: #fff;
+    --themeButtonBgColor: #f9f9f9;
+    --themeButtonFontColor: #181818;
+    --menuActive: #454545;
+    --menuHover: #404040;
+    --menuSelected: #ccc;
+    --leftMenuBorderTop: rgb(60, 60, 60, .12);
+    --leftMenuOpenBorderTop: rgb(255, 255, 255, .1);
+    --boardActiveColor: #454545;
+    --boardHoverColor: #404040;
+    --footerFontColor: #aaa;
+    --tagOColor: #aaa;
+    --tagOBorderColor: #4d4d4d;
+    --controlBgColor: #f9f9f9;
+    --controlFontColor: #333333;
+    --controlHoverColor: #ccc;
+    --progressColor: #ccc;
+    --hrColor: #4d4d4d;
+    --buttonRound: #4d4d4d;
+    --buttonRoundActive: #454545;
+    --buttonRoundHover: #404040;
+}
+
+body.dark img {
+    filter: brightness(0.9);
+}
+
+/*----- layout -----*/
+
+html,
+body {
+    color: var(--fontColor);
+    background-color: var(--bgColor);
+}
+
+a {
+    color: var(--linkColor);
+}
+
+a:link,
+a:visited,
+a:active {
+    color: var(--linkColor);
+}
+
+/*----- layout -----*/
+
+/*----- progress -----*/
+
+.progress {
+    background: var(--progressColor);
+}
+
+/*----- progress -----*/
+
+/*----- header -----*/
+
+.header {
+    background-color: var(--boardColor);
+    box-shadow: var(--boardShadow);
+}
+
+@media screen and (min-width: 1025px) {
+    .header .nav-button:hover {
+        color: var(--linkHoverColor);
+    }
+}
+
+
+@media screen and (min-width: 1025px) {
+    .nav-link:hover {
+        color: var(--linkHoverColor);
+    }
+
+    a.nav-link:hover {
+        color: var(--linkHoverColor);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .nav-link-c {
+        color: var(--linkColor);
+    }
+
+    a.nav-link-c {
+        color: var(--linkColor);
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .nav-link-c {
+        color: var(--themeButtonFontColor);
+        background-color: var(--themeButtonBgColor);
+    }
+
+    a.nav-link-c {
+        color: var(--themeButtonFontColor);
+        background-color: var(--themeButtonBgColor);
+    }
+}
+
+/*----- header -----*/
+
+/*----- left-menu -----*/
+
+.left-menu {
+    background-color: var(--boardColor);
+    box-shadow: var(--boardShadow);
+    border-top-color: var(--leftMenuBorderTop);
+}
+
+@media screen and (max-width: 1330px) {
+    .left-menu.open {
+        border-top-color: var(--leftMenuOpenBorderTop);
+    }
+}
+
+.left-menu-item.active {
+    background-color: var(--menuActive);
+    border-left-color: var(--menuSelected);
+}
+
+@media screen and (min-width: 1025px) {
+    .left-menu-item.active:hover {
+        background-color: var(--menuActive);
+    }
+
+    .left-menu-item:hover {
+        background-color: var(--menuHover);
+    }
+}
+
+/*----- left-menu -----*/
+
+/*----- sub-menu -----*/
+
+.sub-menu {
+    background-color: var(--boardColor);
+    box-shadow: var(--boardShadow);
+}
+
+.sub-menu-item.active {
+    border-bottom-color: var(--menuSelected);
+}
+
+@media screen and (min-width: 1025px) {
+    /* .sub-menu-item.active:hover {
+        background-color: #f1f1f1;
+    } */
+
+    .sub-menu-item:hover {
+        background-color: var(--menuHover);
+    }
+}
+
+/*----- sub-menu -----*/
+
+/*----- footer -----*/
+
+.footer {
+    color: var(--footerFontColor);
+}
+
+/*----- footer -----*/
+
+/*----- board -----*/
+
+.board {
+    background-color: var(--boardColor);
+    box-shadow: var(--boardShadow);
+}
+
+.board.active {
+    background-color: var(--boardActiveColor);
+}
+
+.board.hover:hover {
+    background-color: var(--boardHoverColor);
+}
+
+.board.active.hover:hover {
+    background-color: var(--boardActiveColor);
+}
+
+/*----- board -----*/
+
+/*----- table -----*/
+
+table th,
+table td {
+    border-top-color: var(--hrColor);
+}
+
+.tag-o {
+    color: var(--tagOColor);
+    border-color: var(--tagOBorderColor);
+}
+
+/*----- table -----*/
+
+/*----- button-round -----*/
+
+.button-round {
+    border-color: var(--buttonRound);
+}
+
+.button-round.active {
+    background-color: var(--buttonRoundActive);
+}
+
+@media screen and (min-width: 1025px) {
+    .button-round.active:hover {
+        background-color: var(--buttonRoundActive);
+    }
+
+    .button-round:hover {
+        background-color: var(--buttonRoundHover);
+    }
+}
+
+/*----- button-round -----*/
+
+/*----- control -----*/
+
+.control a.button:link,
+.control a.button:visited,
+.control a.button:active {
+    color: var(--controlFontColor);
+    background-color: var(--controlBgColor);
+}
+
+@media screen and (min-width: 1025px) {
+    .control a.button:hover {
+        background-color: var(--controlHoverColor);
+    }
+}
+
+/*----- control -----*/
+/*  
+z-index
+    file-navbar.sticky = 10000
+    file-navbar.over = 20000
+    file-image-block.over = 15000
+    file-text-content.over = 15000
+    file-navbar-title = 25000
+    file-video < 1024px = 30000
+    file-image-nav = 16000
+    file-image-content < 1024px = 15000
+*/
+
+/*----- font-awesome -----*/
+
+.fa-fw {
+    width: 1em;
+}
+
+/*----- font-awesome -----*/
+
+/*----- gotop -----*/
+
+.control .gotop.show {
+    display: none;
+}
+
+/*----- gotop -----*/
+
+/*----- file-main -----*/
+
+@media screen and (max-width: 1330px) {
+    .file-main .file-item {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .file-main .file-image-item {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+}
+
+/*----- file-main -----*/
+
+/*----- file-item -----*/
+
+.file-item {
+    display: flex;
+    align-items: center;
+    border-top: none;
+}
+
+.file-item-icon {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    flex-shrink: 0;
+}
+
+.file-item-text {
+    align-self: center;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+@media screen and (max-width: 640px) {
+    .file-item {
+        padding: 15px 15px;
+    }
+
+    .file-item-text {
+        padding: 0px 15px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .file-item {
+        padding: 15px 20px;
+    }
+
+    .file-item-text {
+        padding: 0px 20px;
+    }
+}
+
+.file-item-title {
+    align-self: center;
+    padding: 0px;
+    font-weight: bold;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.file-item-description {
+    align-self: center;
+    padding-top: 5px;
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    font-weight: 500;
+}
+
+/*----- file-item -----*/
+
+/*----- file-image-item -----*/
+
+.file-image-item {
+    display: flex;
+    align-items: center;
+    border-top: none;
+}
+
+.file-image-item-text {
+    flex: 1 0 0;
+    align-self: center;
+}
+
+@media screen and (max-width: 640px) {
+    .file-image-item {
+        padding: 10px 10px;
+    }
+
+    .file-image-item-text {
+        padding: 0px 10px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .file-image-item {
+        padding: 15px 15px;
+    }
+
+    .file-image-item-text {
+        padding: 0px 15px;
+    }
+}
+
+.file-image-item-icon {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    background-color: #181818;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 0.15rem;
+    overflow: hidden;
+}
+
+.file-image-item-icon img {
+    display: block;
+    align-self: center;
+    height: auto;
+    width: auto;
+    margin: auto;
+}
+
+.file-image-item-icon video {
+    display: block;
+    align-self: center;
+    height: auto;
+    width: auto;
+    margin: auto;
+}
+
+@media screen and (max-width: 640px) {
+    .file-image-item-icon {
+        width: 120px;
+        height: 90px;
+    }
+
+    .file-image-item-icon img {
+        max-width: 120px;
+        max-height: 90px;
+    }
+
+    .file-image-item-icon video {
+        max-width: 120px;
+        max-height: 90px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .file-image-item-icon {
+        width: 150px;
+        height: 115px;
+    }
+
+    .file-image-item-icon img {
+        max-width: 150px;
+        max-height: 115px;
+    }
+
+    .file-image-item-icon video {
+        max-width: 150px;
+        max-height: 115px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .file-image-item-icon {
+        width: 200px;
+        height: 150px;
+    }
+
+    .file-image-item-icon img {
+        max-width: 200px;
+        max-height: 150px;
+    }
+
+    .file-image-item-icon video {
+        max-width: 200px;
+        max-height: 150px;
+    }
+}
+
+.file-image-item-title {
+    align-self: center;
+    padding: 0px;
+    font-weight: bold;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.file-image-item-description {
+    align-self: center;
+    padding-top: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/*----- file-image-item -----*/
+
+/*----- file-image-block -----*/
+
+.file-image-block {
+    background-color: #fff;
+    box-shadow: var(--boxShadow);
+}
+
+.file-image-block.over {
+    position: sticky;
+    z-index: 15000;
+}
+
+/*----- file-image-block -----*/
+
+/*----- file-navbar -----*/
+
+.file-navbar {
+    display: flex;
+    justify-content: space-between;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin: 15px auto;
+    border-radius: 0.35rem;
+    border-top: 1px solid rgb(60, 60, 60, .12);
+}
+
+@media screen and (max-width: 640px) {
+    .file-navbar {
+        padding: 15px 5px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .file-navbar {
+        padding: 15px 10px;
+    }
+}
+
+.file-navbar.sticky {
+    position: sticky;
+    top: 0px;
+    z-index: 10000;
+}
+
+.file-navbar.over {
+    position: sticky;
+    top: 0px;
+    z-index: 20000;
+}
+
+.file-navbar .start {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+
+.file-navbar .end {
+    display: flex;
+    align-items: center;
+}
+
+.file-navbar-btn {
+    padding: 0px 5px;
+}
+
+.file-navbar-btn-warp {
+    display: flex;
+    align-items: center;
+}
+
+.file-navbar-btn-text {
+    font-size: 0.8rem;
+    padding-left: 5px;
+}
+
+.file-navbar-title {
+    font-weight: bold;
+    padding: 0px 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.file-navbar-title-warp {
+    max-width: 100%;
+}
+
+.file-navbar-title-warp .file-navbar-title {
+    line-height: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    padding: 0px 10px;
+}
+
+.file-navbar-title-over {
+    display: none;
+}
+
+.file-navbar-title-over-warp {
+    display: none;
+}
+
+.file-navbar-title-warp.hover {
+    position: relative;
+}
+
+.file-navbar-title-warp.hover .file-navbar-title-over-warp {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 2px);
+}
+
+.file-navbar-title-warp.hover .file-navbar-title-over {
+    display: block;
+    position: absolute;
+    top: -7px;
+    left: -1px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 0.35rem;
+    border-width: 1px;
+    border-style: solid;
+    max-width: 100%;
+    line-height: 1.5;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 25000;
+}
+
+.file-navbar-title-warp.hover .file-navbar-title {
+    visibility: hidden;
+}
+
+.file-navbar .fa-fw {
+    width: 1.35em;
+}
+
+.file-navbar .mw-1x {
+    max-width: calc(100% - 1.35em - 10px);
+}
+
+/*----- file-navbar -----*/
+
+/*----- file-navbar-expand -----*/
+
+.file-navbar-expand {
+    display: none;
+    justify-content: space-between;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.file-navbar-expand.open {
+    display: flex;
+}
+
+.file-navbar-expand .fa-fw {
+    width: 1.2em;
+}
+
+.file-navbar-expand .start {
+    display: flex;
+    align-items: center;
+}
+
+.file-navbar-expand .end {
+    display: flex;
+    align-items: center;
+}
+
+.file-navbar-expand-title {
+    font-size: 0.9rem;
+    padding: 0px 10px;
+}
+
+/*----- file-navbar-expand -----*/
+
+/*----- file-navbar-toggle -----*/
+
+.file-navbar-toggle {
+    display: none;
+}
+
+.file-navbar-toggle.show {
+    display: block;
+}
+
+.file-navbar-toggle .up {
+    display: none;
+}
+
+.file-navbar-toggle.open .up {
+    display: inline;
+}
+
+.file-navbar-toggle .down {
+    display: inline;
+}
+
+.file-navbar-toggle.open .down {
+    display: none;
+}
+
+/*----- file-navbar-toggle -----*/
+
+/*----- file-navbar-gotop -----*/
+
+.file-navbar-gotop {
+    display: none;
+}
+
+.file-navbar-gotop.show {
+    display: block;
+}
+
+/*----- file-navbar-gotop -----*/
+
+/*----- file-video-warp -----*/
+
+.file-video-warp {
+    margin: 0px auto;
+    max-width: 1317px;
+}
+
+@media screen and (max-width: 1024px) {
+    .file-video-warp {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        z-index: 30000;
+    }
+}
+
+/*----- file-video-warp -----*/
+
+/*----- file-text-content -----*/
+
+.file-text-content {
+    white-space: pre-line;
+    font-weight: 600;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+@media screen and (max-width: 1024px) {
+    .file-text-content {
+        font-size: 1.25rem;
+        padding: 15px 10px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .file-text-content {
+        font-size: 1.35em;
+        padding: 15px 15px;
+    }
+}
+
+.file-text-content.over {
+    position: sticky;
+    z-index: 15000;
+}
+
+/*----- file-text-content -----*/
+
+/*----- text-theme-button -----*/
+
+.text-theme-button-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.text-theme-button-icon svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+/*----- text-theme-button -----*/
+
+/*----- image-main -----*/
+
+.image-main .file-navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 0px;
+    background-color: rgba(23, 23, 23, .65);
+    border: 1px solid rgba(23, 23, 23, 0);
+    box-shadow: none;
+    color: #d2d3d5;
+}
+
+.image-main .file-navbar-btn a {
+    color: #d2d3d5;
+}
+
+@media screen and (min-width: 1025px) {
+    .image-main .file-navbar-btn a:hover {
+        color: #fff;
+    }
+}
+
+.image-main .file-navbar-title-warp.hover .file-navbar-title-over {
+    background-color: rgba(23, 23, 23, .65);
+    border: 1px solid rgba(23, 23, 23, 0);
+    box-shadow: none;
+}
+
+.image-main .file-image-block {
+    max-width: 1319px;
+}
+
+/*----- image-main -----*/
+
+/*----- file-image-content -----*/
+
+.file-image-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #181818;
+    z-index: 15000;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    margin: auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.file-image-content img {
+    display: block;
+    align-self: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+/*----- file-image-content -----*/
+
+/*----- file-image-control -----*/
+
+.file-image-control {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: 0px;
+    bottom: 0px;
+    z-index: 16000;
+}
+
+.file-image-control.prev {
+    left: 0px;
+}
+
+.file-image-control.next {
+    right: 0px;
+}
+
+.file-image-control-button {
+    visibility: hidden;
+    color: #d2d3d5;
+    background-color: rgba(0, 0, 0, .55);
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50%;
+    text-align: center;
+    outline: 0;
+}
+
+.file-image-control.prev .file-image-control-button {
+    margin: 0px 20px 0px 10px;
+}
+
+.file-image-control.next .file-image-control-button {
+    margin: 0px 10px 0px 20px;
+}
+
+.file-image-control.show .file-image-control-button {
+    visibility: visible;
+}
+
+@media screen and (max-width: 640px) {
+    .file-image-control-button {
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .file-image-control-button {
+        font-size: 25px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .file-image-control-button {
+        font-size: 30px;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+    }
+
+    .file-image-control-button:hover {
+        color: #fff;
+    }
+}
+
+/*----- file-image-control -----*/
+body.light {
+    --fileIconColor: hsl(0, 0%, 31%);
+    --fileIconHoverColor: hsl(0, 0%, 31%);
+    --fileDescriptionColor: #7e7e7e;
+    --fileImageBlockShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileItemActiveColor: #d2d3d5;
+    --fileItemActiveBgColor: rgba(48, 48, 48, .95);
+    --fileItemActiveIconColor: hsl(216, 4%, 78%);
+    --fileItemActiveDescriptionColor: #aaa;
+    /* --fileItemActiveColor: #262626;
+    --fileItemActiveBgColor: rgba(179, 179, 179, .3);
+    --fileItemActiveIconColor: hsl(0, 0%, 31%);
+    --fileItemActiveDescriptionColor: #7e7e7e; */
+    --fileNavbarBgColor: #fff;
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarOverBgColor: #fff;
+    --fileNavbarOverBorderColor: #e6e6e6;
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: #7a7a7a;
+    --fileNavbarExpandTitleColor: #7a7a7a;
+    --fileTextContentColor: #262626;
+    --fileTextContentBgColor: #f5f5f5;
+}
+
+body.dark {
+    --fileIconColor: hsl(216, 4%, 78%);
+    --fileIconHoverColor: hsl(216, 4%, 78%);
+    --fileDescriptionColor: #aaa;
+    --fileImageBlockShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    /* --fileItemActiveColor: #262626; */
+    --fileItemActiveColor: #333333;
+    --fileItemActiveBgColor: rgba(255, 255, 255, .85);
+    --fileItemActiveIconColor: hsl(0, 0%, 31%);
+    --fileItemActiveDescriptionColor: #7e7e7e;
+    /* --fileItemActiveColor: #d2d3d5;
+    --fileItemActiveBgColor: rgba(179, 179, 179, .3);
+    --fileItemActiveIconColor: hsl(216, 4%, 78%);
+    --fileItemActiveDescriptionColor: #aaa; */
+    --fileNavbarBgColor: #303030;
+    --fileNavbarShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    --fileNavbarOverBgColor: #404040;
+    --fileNavbarOverBorderColor: #454545;
+    --fileNavbarOverShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    --fileNavbarLinkHoverColor: #fff;
+    --fileNavbarExpandTitleColor: #aaa;
+    --fileTextContentColor: #d2d3d5;
+    --fileTextContentBgColor: #181818;
+}
+
+/*----- file-item -----*/
+
+a .file-item-icon {
+    color: var(--fileIconColor);
+}
+
+a:hover .file-item-icon {
+    color: var(--fileIconHoverColor);
+}
+
+.file-item-description {
+    color: var(--fileDescriptionColor);
+}
+
+.file-item.board.active {
+    color: var(--fileItemActiveColor);
+    background-color: var(--fileItemActiveBgColor);
+}
+
+.file-item.board.active .file-item-icon {
+    color: var(--fileItemActiveIconColor);
+}
+
+.file-item.board.active .file-item-description {
+    color: var(--fileItemActiveDescriptionColor);
+}
+
+.file-item.board.active.hover:hover {
+    color: var(--fileItemActiveColor);
+    background-color: var(--fileItemActiveBgColor);
+}
+
+.file-item.board.active.hover:hover .file-item-icon {
+    color: var(--fileItemActiveIconColor);
+}
+
+.file-item.board.active.hover:hover .file-item-description {
+    color: var(--fileItemActiveDescriptionColor);
+}
+
+/*----- file-item -----*/
+
+/*----- file-image-item -----*/
+
+.file-image-item-description {
+    color: var(--fileDescriptionColor);
+}
+
+.file-image-item.board.active {
+    color: var(--fileItemActiveColor);
+    background-color: var(--fileItemActiveBgColor);
+}
+
+.file-image-item.board.active .file-image-item-description {
+    color: var(--fileItemActiveDescriptionColor);
+}
+
+.file-image-item.board.active.hover:hover {
+    color: var(--fileItemActiveColor);
+    background-color: var(--fileItemActiveBgColor);
+}
+
+.file-image-item.board.active.hover:hover .file-image-item-description {
+    color: var(--fileItemActiveDescriptionColor);
+}
+
+/*----- file-image-item -----*/
+
+/*----- file-image-block -----*/
+
+.file-image-block {
+    box-shadow: var(--fileImageBlockShadow);
+}
+
+/*----- file-image-block -----*/
+
+/*----- file-navbar -----*/
+
+.file-navbar {
+    background-color: var(--fileNavbarBgColor);
+    box-shadow: var(--fileNavbarShadow);
+}
+
+@media screen and (min-width: 1025px) {
+    .file-navbar-btn a:hover {
+        color: var(--fileNavbarLinkHoverColor);
+    }
+}
+
+.file-navbar-title-warp.hover .file-navbar-title-over {
+    background-color: var(--fileNavbarOverBgColor);
+    border-color: var(--fileNavbarOverBorderColor);
+    box-shadow: var(--fileNavbarOverShadow);
+}
+
+/*----- file-navbar -----*/
+
+/*----- file-navbar-expand -----*/
+
+.file-navbar-expand-title {
+    color: var(--fileNavbarExpandTitleColor);
+}
+
+/*----- file-navbar-expand -----*/
+
+/*----- file-text-content -----*/
+
+.file-text-content {
+    box-shadow: 10px 0 0 0 var(--fileTextContentBgColor), -10px 0 0 0 var(--fileTextContentBgColor);
+    background-color: var(--fileTextContentBgColor);
+    color: var(--fileTextContentColor);
+}
+
+/*----- file-text-content -----*/
+.video-js.vjs-16-9 {
+    height: inherit;
+}
+
+@media screen and (max-width: 1024px) {
+    .video-js {
+        min-height: 100vh;
+    }
+
+    .video-js.vjs-16-9 {
+        padding-top: inherit;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .video-js {
+        min-height: inherit;
+    }
+
+    .video-js.vjs-16-9 {
+        padding-top: 56.25%;
+    }
+}
+body.text-dark {
+    --bgColor: hsl(0, 0%, 14%);
+    --fontColor: hsl(220, 3%, 83%);
+    --linkColor: hsl(216, 4%, 78%);
+    --linkHoverColor: hsl(0, 0%, 100%);
+    --boxShadow: 0 12px 15px 0 rgb(23 23 23 / 24%), 0 17px 50px 0 rgb(23 23 23 / 19%);
+    --boardColor: hsl(0, 0%, 21%);
+    --boardShadow: 0 12px 15px 0 rgb(23 23 23 / 24%), 0 17px 50px 0 rgb(23 23 23 / 19%);
+    --footerFontColor: hsl(0, 0%, 67%);
+    --fileNavbarBgColor: hsl(0, 0%, 21%);
+    --fileNavbarShadow: 0 12px 15px 0 rgb(23 23 23 / 24%), 0 17px 50px 0 rgb(23 23 23 / 19%);
+    --fileNavbarOverBgColor: hsl(0, 0%, 27%);
+    --fileNavbarOverBorderColor: hsl(0, 0%, 29%);
+    --fileNavbarOverShadow: 0 12px 15px 0 rgb(23 23 23 / 24%), 0 17px 50px 0 rgb(23 23 23 / 19%);
+    --fileNavbarLinkHoverColor: hsl(0, 0%, 100%);
+    --fileTextContentColor: hsl(216, 4%, 78%);
+    --fileTextContentBgColor: hsl(0, 0%, 14%);
+    --themeButtonBgColor: #f9f9f9;
+    --themeButtonFontColor: #181818;
+    
+}
+
+body.text-dark-blue {
+    --bgColor: hsl(213, 27%, 13%);
+    --fontColor: hsl(210, 17%, 87%);
+    --linkColor: hsl(210, 17%, 82%);
+    --linkHoverColor: hsl(210, 17%, 99%);
+    --boxShadow: 0 12px 15px 0 rgb(17 22 29 / 24%), 0 17px 50px 0 rgb(17 22 29 / 19%);
+    --boardColor: hsl(213, 27%, 18%);
+    --boardShadow: 0 12px 15px 0 rgb(17 22 29 / 24%), 0 17px 50px 0 rgb(17 22 29 / 19%);
+    --footerFontColor: hsl(210, 17%, 67%);
+    --fileNavbarBgColor: hsl(213, 27%, 18%);
+    --fileNavbarShadow: 0 12px 15px 0 rgb(17 22 29 / 24%), 0 17px 50px 0 rgb(17 22 29 / 19%);
+    --fileNavbarOverBgColor: hsl(210, 17%, 25%);
+    --fileNavbarOverBorderColor: hsl(210, 17%, 28%);
+    --fileNavbarOverShadow: 0 12px 15px 0 rgb(17 22 29 / 24%), 0 17px 50px 0 rgb(17 22 29 / 19%);
+    --fileNavbarLinkHoverColor: hsl(210, 17%, 99%);
+    --fileTextContentColor: hsl(210, 17%, 82%);
+    --fileTextContentBgColor: hsl(213, 27%, 13%);
+    --themeButtonBgColor: #f9f9f9;
+    --themeButtonFontColor: #181818;
+}
+
+body.text-light {
+    --bgColor: hsl(0, 0%, 96%);
+    --fontColor: hsl(0, 0%, 15%);
+    --linkColor: hsl(0, 0%, 14%);
+    --linkHoverColor: hsl(0, 0%, 48%);
+    --boxShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --boardColor: hsl(0, 0%, 100%);
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --footerFontColor: hsl(0, 0%, 60%);
+    --fileNavbarBgColor: hsl(0, 0%, 100%);
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarOverBgColor: hsl(0, 0%, 100%);
+    --fileNavbarOverBorderColor: hsl(0, 0%, 90%);
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
+    --fileTextContentColor: hsl(0, 0%, 28%);
+    --fileTextContentBgColor: hsl(0, 0%, 96%);
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
+}
+
+body.text-gray {
+    --bgColor: hsl(240, 13%, 87%);
+    --fontColor: hsl(240, 13%, 15%);
+    --linkColor: hsl(240, 13%, 14%);
+    --linkHoverColor: hsl(240, 13%, 48%);
+    --boxShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --boardColor: hsl(240, 13%, 91%);
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --footerFontColor: hsl(240, 13%, 60%);
+    --fileNavbarBgColor: hsl(240, 13%, 91%);
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarOverBgColor: hsl(240, 13%, 91%);
+    --fileNavbarOverBorderColor: hsl(240, 13%, 81%);
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: hsl(240, 13%, 48%);
+    --fileTextContentColor: hsl(0, 0%, 28%);
+    --fileTextContentBgColor: hsl(240, 13%, 87%);
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
+}
+
+body.text-yellow {
+    --bgColor: hsl(47, 92%, 93%);
+    --fontColor: hsl(0, 0%, 15%);
+    --linkColor: hsl(0, 0%, 14%);
+    --linkHoverColor: hsl(0, 0%, 48%);
+    --boxShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --boardColor: hsl(47, 92%, 95%);
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --footerFontColor: hsl(0, 0%, 60%);
+    --fileNavbarBgColor: hsl(47, 92%, 95%);
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarOverBgColor: hsl(47, 92%, 95%);
+    --fileNavbarOverBorderColor: hsla(0, 0%, 90%, .7);
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
+    --fileTextContentColor: hsl(0, 0%, 28%);
+    --fileTextContentBgColor: hsl(47, 92%, 93%);
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
+}
+
+body.text-orange {
+    --bgColor: hsl(37, 92%, 93%);
+    --fontColor: hsl(0, 0%, 15%);
+    --linkColor: hsl(0, 0%, 14%);
+    --linkHoverColor: hsl(0, 0%, 48%);
+    --boxShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --boardColor: hsl(37, 92%, 95%);
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --footerFontColor: hsl(0, 0%, 60%);
+    --fileNavbarBgColor: hsl(37, 92%, 95%);
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarOverBgColor: hsl(37, 92%, 95%);
+    --fileNavbarOverBorderColor: hsla(0, 0%, 90%, .5);
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
+    --fileTextContentColor: hsl(0, 0%, 28%);
+    --fileTextContentBgColor: hsl(37, 92%, 93%);
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
+}
+
+body.text-blue {
+    --bgColor: hsl(202, 67%, 93%);
+    --fontColor: hsl(0, 0%, 15%);
+    --linkColor: hsl(0, 0%, 14%);
+    --linkHoverColor: hsl(0, 0%, 48%);
+    --boxShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --boardColor: hsl(202, 67%, 95%);
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --footerFontColor: hsl(0, 0%, 60%);
+    --fileNavbarBgColor: hsl(202, 67%, 95%);
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarOverBgColor: hsl(202, 67%, 95%);
+    --fileNavbarOverBorderColor: hsla(0, 0%, 90%, .5);
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
+    --fileTextContentColor: hsl(0, 0%, 28%);
+    --fileTextContentBgColor: hsl(202, 67%, 93%);
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
+}
+
+body.text-green {
+    --bgColor: hsl(146, 47%, 92%);
+    --fontColor: hsl(0, 0%, 15%);
+    --linkColor: hsl(0, 0%, 14%);
+    --linkHoverColor: hsl(0, 0%, 48%);
+    --boxShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --boardColor: hsl(146, 47%, 94%);
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --footerFontColor: hsl(0, 0%, 60%);
+    --fileNavbarBgColor: hsl(146, 47%, 94%);
+    --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarOverBgColor: hsl(146, 47%, 94%);
+    --fileNavbarOverBorderColor: hsla(0, 0%, 90%, .5);
+    --fileNavbarOverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileNavbarLinkHoverColor: hsl(0, 0%, 48%);
+    --fileTextContentColor: hsl(0, 0%, 28%);
+    --fileTextContentBgColor: hsl(146, 47%, 92%);
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
+}
+
+/*----- file-navbar -----*/
+
+body.text-yellow .file-navbar {
+    border-top-color: hsl(47, 92%, 95%);
+}
+
+body.text-orange .file-navbar {
+    border-top-color: hsl(37, 92%, 95%);
+}
+
+body.text-blue .file-navbar {
+    border-top-color: hsl(202, 67%, 95%);
+}
+
+body.text-green .file-navbar {
+    border-top-color: hsl(146, 47%, 94%);
+}
+
+/*----- file-navbar -----*/

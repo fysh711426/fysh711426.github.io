@@ -1,0 +1,39 @@
+body.light {
+    --tooltipBgColor: #fff;
+    --tooltipBorderColor: #e6e6e6;
+    --tooltipShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+}
+
+body.dark {
+    --tooltipBgColor: #404040;
+    --tooltipBorderColor: #454545;
+    --tooltipShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+}
+
+.tooltip-inner {
+    background-color: var(--tooltipBgColor);
+    border-color: var(--tooltipBorderColor);
+    box-shadow: var(--tooltipShadow);
+}
+
+.tooltip-template {
+    display: none;
+}
+
+.tooltip-block {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.tooltip-inner {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 10px 15px 10px 15px;
+    max-width: 250px;
+    border-radius: 0.35rem;
+    border-width: 1px;
+    border-style: solid;
+    word-wrap: break-word;
+    word-break: break-all;
+}

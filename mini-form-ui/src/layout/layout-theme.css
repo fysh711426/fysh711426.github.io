@@ -1,0 +1,278 @@
+body.light {
+    /* background-color: #f9f9f9; */
+    --bgColor: #f5f5f5;
+    --boardColor: #fff;
+    /* box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.5); */
+    --boardShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    /* color: #474747; */
+    --fontColor: #262626;
+    --linkColor: #242424;
+    --linkHoverColor: #7a7a7a;
+    --themeButtonBgColor: #404040;
+    --themeButtonFontColor: #fff;
+    --menuActive: #f1f1f1;
+    --menuHover: #f5f5f5;
+    --menuSelected: #505050;
+    --leftMenuBorderTop: rgb(60, 60, 60, .12);
+    --leftMenuOpenBorderTop: rgb(60, 60, 60, .12);
+    --boardActiveColor: #f1f1f1;
+    --boardHoverColor: #f5f5f5;
+    --footerFontColor: #999;
+    --tagOColor: #7e7e7e;
+    --tagOBorderColor: #e6e6e6;
+    --controlBgColor: #454545;
+    --controlFontColor: #f5f5f5;
+    --controlHoverColor: #5e5e5e;
+    /* background: #ffb600; */
+    /* background: #28C8C8; */
+    --progressColor: #454545;
+    --hrColor: #e6e6e6;
+    --buttonRound: #e6e6e6;
+    --buttonRoundActive: #f1f1f1;
+    --buttonRoundHover: #f5f5f5;
+}
+
+body.dark {
+    --bgColor: #181818;
+    --boardColor: #303030;
+    --boardShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    --fontColor: #d2d3d5;
+    --linkColor: #d2d3d5;
+    --linkHoverColor: #fff;
+    --themeButtonBgColor: #f9f9f9;
+    --themeButtonFontColor: #181818;
+    --menuActive: #454545;
+    --menuHover: #404040;
+    --menuSelected: #ccc;
+    --leftMenuBorderTop: rgb(60, 60, 60, .12);
+    --leftMenuOpenBorderTop: rgb(255, 255, 255, .1);
+    --boardActiveColor: #454545;
+    --boardHoverColor: #404040;
+    --footerFontColor: #aaa;
+    --tagOColor: #aaa;
+    --tagOBorderColor: #4d4d4d;
+    --controlBgColor: #f9f9f9;
+    --controlFontColor: #333333;
+    --controlHoverColor: #ccc;
+    --progressColor: #ccc;
+    --hrColor: #4d4d4d;
+    --buttonRound: #4d4d4d;
+    --buttonRoundActive: #454545;
+    --buttonRoundHover: #404040;
+}
+
+body.dark img {
+    filter: brightness(0.9);
+}
+
+/*----- layout -----*/
+
+html,
+body {
+    color: var(--fontColor);
+    background-color: var(--bgColor);
+}
+
+a {
+    color: var(--linkColor);
+}
+
+a:link,
+a:visited,
+a:active {
+    color: var(--linkColor);
+}
+
+/*----- layout -----*/
+
+/*----- progress -----*/
+
+.progress {
+    background: var(--progressColor);
+}
+
+/*----- progress -----*/
+
+/*----- header -----*/
+
+.header {
+    background-color: var(--boardColor);
+    box-shadow: var(--boardShadow);
+}
+
+@media screen and (min-width: 1025px) {
+    .header .nav-button:hover {
+        color: var(--linkHoverColor);
+    }
+}
+
+
+@media screen and (min-width: 1025px) {
+    .nav-link:hover {
+        color: var(--linkHoverColor);
+    }
+
+    a.nav-link:hover {
+        color: var(--linkHoverColor);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .nav-link-c {
+        color: var(--linkColor);
+    }
+
+    a.nav-link-c {
+        color: var(--linkColor);
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .nav-link-c {
+        color: var(--themeButtonFontColor);
+        background-color: var(--themeButtonBgColor);
+    }
+
+    a.nav-link-c {
+        color: var(--themeButtonFontColor);
+        background-color: var(--themeButtonBgColor);
+    }
+}
+
+/*----- header -----*/
+
+/*----- left-menu -----*/
+
+.left-menu {
+    background-color: var(--boardColor);
+    box-shadow: var(--boardShadow);
+    border-top-color: var(--leftMenuBorderTop);
+}
+
+@media screen and (max-width: 1330px) {
+    .left-menu.open {
+        border-top-color: var(--leftMenuOpenBorderTop);
+    }
+}
+
+.left-menu-item.active {
+    background-color: var(--menuActive);
+    border-left-color: var(--menuSelected);
+}
+
+@media screen and (min-width: 1025px) {
+    .left-menu-item.active:hover {
+        background-color: var(--menuActive);
+    }
+
+    .left-menu-item:hover {
+        background-color: var(--menuHover);
+    }
+}
+
+/*----- left-menu -----*/
+
+/*----- sub-menu -----*/
+
+.sub-menu {
+    background-color: var(--boardColor);
+    box-shadow: var(--boardShadow);
+}
+
+.sub-menu-item.active {
+    border-bottom-color: var(--menuSelected);
+}
+
+@media screen and (min-width: 1025px) {
+    /* .sub-menu-item.active:hover {
+        background-color: #f1f1f1;
+    } */
+
+    .sub-menu-item:hover {
+        background-color: var(--menuHover);
+    }
+}
+
+/*----- sub-menu -----*/
+
+/*----- footer -----*/
+
+.footer {
+    color: var(--footerFontColor);
+}
+
+/*----- footer -----*/
+
+/*----- board -----*/
+
+.board {
+    background-color: var(--boardColor);
+    box-shadow: var(--boardShadow);
+}
+
+.board.active {
+    background-color: var(--boardActiveColor);
+}
+
+.board.hover:hover {
+    background-color: var(--boardHoverColor);
+}
+
+.board.active.hover:hover {
+    background-color: var(--boardActiveColor);
+}
+
+/*----- board -----*/
+
+/*----- table -----*/
+
+table th,
+table td {
+    border-top-color: var(--hrColor);
+}
+
+.tag-o {
+    color: var(--tagOColor);
+    border-color: var(--tagOBorderColor);
+}
+
+/*----- table -----*/
+
+/*----- button-round -----*/
+
+.button-round {
+    border-color: var(--buttonRound);
+}
+
+.button-round.active {
+    background-color: var(--buttonRoundActive);
+}
+
+@media screen and (min-width: 1025px) {
+    .button-round.active:hover {
+        background-color: var(--buttonRoundActive);
+    }
+
+    .button-round:hover {
+        background-color: var(--buttonRoundHover);
+    }
+}
+
+/*----- button-round -----*/
+
+/*----- control -----*/
+
+.control a.button:link,
+.control a.button:visited,
+.control a.button:active {
+    color: var(--controlFontColor);
+    background-color: var(--controlBgColor);
+}
+
+@media screen and (min-width: 1025px) {
+    .control a.button:hover {
+        background-color: var(--controlHoverColor);
+    }
+}
+
+/*----- control -----*/
