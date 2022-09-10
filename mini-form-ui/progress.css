@@ -1,8 +1,0 @@
-.progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    z-index: 2147483647;
-    background: #0076ff;
-}
