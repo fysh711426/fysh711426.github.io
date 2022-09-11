@@ -13,13 +13,301 @@
     <link rel="stylesheet" href="src/spinner/spinner.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
-    <link rel="stylesheet" href="index.css">
     <script src="src/theme/theme.js"></script>
     <script src="src/scroll/scroll.js"></script>
     <script src="src/tooltip/tooltip.js"></script>
     <script src="src/progress/progress.js"></script>
     <script src="src/spinner/spinner.js"></script>
     <script src="src/layout/layout.js"></script>
+
+    <style>
+        body.light {
+            --videoWarpBgColor: rgb(204, 204, 204);
+        }
+
+        body.dark {
+            /* --videoWarpBgColor: rgb(185, 185, 185); */
+            --videoWarpBgColor: rgb(204, 204, 204);
+        }
+
+        body.dark .video-warp img {
+            filter: brightness(1);
+        }
+
+        .rank {
+            width: 3.5rem;
+        }
+
+        td.rank {
+            font-size: 1.8rem;
+            font-family: Segoe UI;
+        }
+
+        @media screen and (max-width: 640px) {
+            .rank {
+                width: 2.5rem;
+            }
+
+            td.rank {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media screen and (min-width: 641px) {
+            .rank {
+                width: 3rem;
+            }
+
+            td.rank {
+                font-size: 1.7rem;
+            }
+        }
+
+        @media screen and (min-width: 1025px) {
+            .rank {
+                width: 3.5rem;
+            }
+
+            td.rank {
+                font-size: 1.8rem;
+            }
+        }
+
+        .rank-var {
+            font-size: 0.95rem;
+            line-height: 0.95rem;
+        }
+
+        /* .rank-var .symbol{
+            font-weight: bold;
+        } */
+
+        .rank-var.up {
+            color: #4d9612;
+        }
+
+        .rank-var.down {
+            color: #e44141;
+        }
+
+        .rank-var.new {
+            font-size: 0.5rem;
+            line-height: 0.9rem;
+        }
+
+        .logo {
+            width: 4.5rem;
+            padding-right: 1rem;
+        }
+
+        .logo-warp {
+            height: 4.5rem;
+            width: 4.5rem;
+        }
+
+        .logo-warp img {
+            height: 100%;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        @media screen and (max-width: 640px) {
+            .logo {
+                width: 3.5rem;
+            }
+
+            .logo-warp {
+                height: 3.5rem;
+                width: 3.5rem;
+            }
+        }
+
+        @media screen and (min-width: 641px) {
+            .logo {
+                width: 4rem;
+            }
+
+            .logo-warp {
+                height: 4rem;
+                width: 4rem;
+            }
+        }
+
+        @media screen and (min-width: 1025px) {
+            .logo {
+                width: 4.5rem;
+            }
+
+            .logo-warp {
+                height: 4.5rem;
+                width: 4.5rem;
+            }
+        }
+
+        .name {
+            text-align: left;
+            width: 35%;
+        }
+
+        .name-warp span {
+            display: inline-block;
+            max-width: 100%;
+            line-height: inherit;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .score {
+            width: 25%;
+        }
+
+        .video {
+            width: 8.9rem;
+        }
+
+        .video-warp {
+            height: 5rem;
+            width: 8.9rem;
+            overflow: hidden;
+            position: relative;
+            border-radius: 0.35rem;
+            margin: 0 auto;
+            background-color: var(--videoWarpBgColor);
+        }
+
+        .video-warp img {
+            height: 100%;
+            width: auto;
+            margin: auto;
+            transition: all 2000ms cubic-bezier(.19, 1, .22, 1) 0ms;
+        }
+
+        .video-warp:hover img {
+            transform: scale(1.12);
+        }
+
+        .video-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(rgba(0, 0, 0, .05) 65%, rgba(0, 0, 0, .5));
+        }
+
+        .video-view {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            font-size: 0.8rem;
+            line-height: 0.8rem;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .video-link {
+            cursor: pointer;
+        }
+
+        .video-link-icon {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            font-size: 1rem;
+            line-height: 1rem;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 640px) {
+            .video {
+                width: 3rem;
+            }
+
+            .video-warp {
+                display: none;
+            }
+
+            .video-link {
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 641px) {
+            .video {
+                width: 11rem;
+                max-width: 176px;
+            }
+
+            .video-warp {
+                display: block;
+                height: 6.18rem;
+                width: 11rem;
+                max-height: 99px;
+                max-width: 176px;
+            }
+
+            .video-link {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 1025px) {
+            .video {
+                width: 14rem;
+                max-width: 224px;
+            }
+
+            .video-warp {
+                display: block;
+                height: 7.87rem;
+                width: 14rem;
+                max-height: 126px;
+                max-width: 224px;
+            }
+
+            .video-link {
+                display: none;
+            }
+        }
+
+        .video-tooltip-template .tooltip-block {
+            display: none;
+        }
+
+        .video-tooltip-block {
+            font-weight: bold;
+        }
+
+        .video-tooltip-inner {
+            padding: 10px;
+        }
+
+        .video-tooltip-inner .video-warp {
+            margin-bottom: 5px;
+            width: 250px;
+            height: 140px;
+            max-width: none;
+            max-height: none;
+        }
+
+        .video-tooltip-inner .video-title {
+            padding: 0px 5px 0px 5px;
+        }
+
+        @media screen and (max-width: 640px) {
+            .video-tooltip-inner .video-warp {
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 641px) {
+            .video-tooltip-inner .video-warp {
+                display: none;
+            }
+        }
+    </style>
 
     <script>
         var errorImage = 'images/default-head-176x176.png';
