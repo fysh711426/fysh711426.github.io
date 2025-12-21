@@ -51,11 +51,3 @@ Vtuber 資料來源於下列網站。
 [# Youtube](https://www.youtube.com/channel/UC-nyIVHa8aV9y5EmGtwwY8A)  
 [# Github](https://github.com/fysh711426)  
 [# iThelp](https://ithelp.ithome.com.tw/users/20106865/profile)  
-
----  
-
-### 未來更新  
-
-未來如果用的人多，會新增同接數和直播時間表等功能，人少的話就隨緣了。  
-
-最後如果這個專案有幫助到你，請記得給我一顆星星，感謝大家。  

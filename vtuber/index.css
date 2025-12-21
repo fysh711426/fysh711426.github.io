@@ -30,7 +30,7 @@
     margin: 10px 0px 10px 0px;
 }
 
-.nav-logo-warp {
+.nav-logo-wrap {
     margin-left: -5px;
 }
 
@@ -108,12 +108,12 @@ td.rank  {
     padding-right: 1rem;
 }
 
-.logo-warp {
+.logo-wrap {
     height: 4.5rem;
     width: 4.5rem;
 }
 
-.logo-warp img {
+.logo-wrap img {
     height: 100%;
     width: auto;
     border-radius: 50%;
@@ -124,7 +124,7 @@ td.rank  {
         width: 3.5rem;
     }
 
-    .logo-warp {
+    .logo-wrap {
         height: 3.5rem;
         width: 3.5rem;
     }
@@ -135,7 +135,7 @@ td.rank  {
         width: 4rem;
     }
 
-    .logo-warp {
+    .logo-wrap {
         height: 4rem;
         width: 4rem;
     }
@@ -146,7 +146,7 @@ td.rank  {
         width: 4.5rem;
     }
 
-    .logo-warp {
+    .logo-wrap {
         height: 4.5rem;
         width: 4.5rem;
     }
@@ -157,7 +157,7 @@ td.rank  {
     width: 35%;
 }
 
-.name-warp .name-text {
+.name-wrap .name-text {
     display: inline-block;
     max-width: 100%;
     line-height: inherit;
@@ -170,15 +170,15 @@ td.rank  {
     display: none;
 }
 
-.name-over-warp {
+.name-over-wrap {
     display: none;
 }
 
-.name-warp.hover {
+.name-wrap.hover {
     position: relative;
 }
 
-.name-warp.hover .name-over-warp {
+.name-wrap.hover .name-over-wrap {
     display: block;
     position: absolute;
     top: 0;
@@ -186,7 +186,7 @@ td.rank  {
     width: 180%;
 }
 
-.name-warp.hover .name-over {
+.name-wrap.hover .name-over {
     display: block;
     position: absolute;
     top: -7px;
@@ -212,7 +212,7 @@ td.score  {
     width: 8.9rem;
 }
 
-.video-warp {
+.video-wrap {
     height: 5rem;
     width: 8.9rem;
     overflow: hidden;
@@ -221,14 +221,14 @@ td.score  {
     margin: 0 auto;
 }
 
-.video-warp img {
+.video-wrap img {
     height: 100%;
     width: auto;
     margin: auto;
     transition: all 2000ms cubic-bezier(.19,1,.22,1) 0ms;
 }
 
-.video-warp:hover img {
+.video-wrap:hover img {
     transform: scale(1.12);
 }
 
@@ -270,7 +270,7 @@ td.score  {
         width: 2rem;
     }
 
-    .video-warp {
+    .video-wrap {
         display: none;
     }
 
@@ -285,7 +285,7 @@ td.score  {
         max-width: 176px;
     }
 
-    .video-warp {
+    .video-wrap {
         display: block;
         height: 6.18rem;
         width: 11rem;
@@ -304,7 +304,7 @@ td.score  {
         max-width: 224px;
     }
 
-    .video-warp {
+    .video-wrap {
         display: block;
         height: 7.87rem;
         width: 14rem;
@@ -329,7 +329,7 @@ td.score  {
     padding: 10px;
 }
 
-.video-tooltip-inner .video-warp {
+.video-tooltip-inner .video-wrap {
     margin-bottom: 5px;
     width: 250px;
     height: 140px;
@@ -342,13 +342,13 @@ td.score  {
 }
 
 @media screen and (max-width: 640px) {
-    .video-tooltip-inner .video-warp {
+    .video-tooltip-inner .video-wrap {
         display: block;
     }
 }
 
 @media screen and (min-width: 641px) {
-    .video-tooltip-inner .video-warp {
+    .video-tooltip-inner .video-wrap {
         display: none;
     }
 }
