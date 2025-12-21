@@ -8,8 +8,8 @@ body.light {
     --checkboxMarkColor: #72767d;
     --checkboxMarkCheckedColor: #f9f9f9;
     --checkboxMarkCheckedBgColor: #474747;
-    --checkboxWarpColor: #fcfcfc;
-    --checkboxWarpBorderColor: #c4c6c9;
+    --checkboxWrapColor: #fcfcfc;
+    --checkboxWrapBorderColor: #c4c6c9;
     --themeCircleBoardColor: #474747;
     --themeCircleShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);;
     --themeCircleLightColor: #f9f9f9;
@@ -27,8 +27,8 @@ body.dark {
     --checkboxMarkColor: #72767d;
     --checkboxMarkCheckedColor: #242424;
     --checkboxMarkCheckedBgColor:#c4c6c9;
-    --checkboxWarpColor: #242424;
-    --checkboxWarpBorderColor: #040405;
+    --checkboxWrapColor: #242424;
+    --checkboxWrapBorderColor: #040405;
     --themeCircleBoardColor: #c4c6c9;
     --themeCircleShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);;
     --themeCircleLightColor: #c4c6c9;
@@ -81,9 +81,9 @@ input::placeholder {
     stroke: var(--checkboxMarkCheckedColor);
 }
 
-.checkbox-warp {
-    background-color: var(--checkboxWarpColor);
-    border-color: var(--checkboxWarpBorderColor);
+.checkbox-wrap {
+    background-color: var(--checkboxWrapColor);
+    border-color: var(--checkboxWrapBorderColor);
 }
 
 /*----- checkbox -----*/

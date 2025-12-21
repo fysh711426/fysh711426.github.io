@@ -58,16 +58,14 @@
         <div class="container">
             <div class="main file-main">
                 <div class="main-inner">
-                    <div class="board file-navbar sticky">
+                    <div class="board file-navbar sticky over">
                         <div class="start mw-1x">
-                            <div class="file-navbar-btn">
-                                <a href="file.html">
-                                    <i class="fa-solid fa-arrow-left fa-fw"></i>
-                                </a>
-                            </div>
-                            <div class="file-navbar-title-warp">
+                            <a href="file.html" class="file-navbar-btn">
+                                <i class="fa-solid fa-arrow-left fa-fw"></i>
+                            </a>
+                            <div class="file-navbar-title-wrap">
                                 <div class="file-navbar-title">Text.txt</div>
-                                <div class="file-navbar-title-over-warp">
+                                <div class="file-navbar-title-over-wrap">
                                     <div class="file-navbar-title-over">Text.txt</div>
                                 </div>
                             </div>
@@ -107,10 +105,8 @@
         setTimeout(function () {
             progress.done();
         }, 1000);
-        fileNavbar({
-            enableHover: true,
-            enableTextOver: true
-        });
+        fileNavbar.enableHover();
+        fileNavbar.enableTextOver();
         var themes = [
             'text-dark', 'text-dark-blue',
             'text-light', 'text-gray', 'text-yellow',

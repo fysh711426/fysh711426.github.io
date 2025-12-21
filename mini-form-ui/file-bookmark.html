@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Mini Form UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/mini-form-ui/">
+    <link rel="shortcut icon" href="icon/favicon.ico" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="src/button/button.css">
+    <link rel="stylesheet" href="src/alert/alert.css">
+    <link rel="stylesheet" href="src/tooltip/tooltip.css">
+    <link rel="stylesheet" href="src/progress/progress.css">
+    <link rel="stylesheet" href="src/spinner/spinner.css">
+    <link rel="stylesheet" href="src/toast/toast.css">
+    <link rel="stylesheet" href="src/popover/popover.css">
+    <link rel="stylesheet" href="src/modal/modal.css">
+    <link rel="stylesheet" href="src/layout/layout.css">
+    <link rel="stylesheet" href="src/layout/layout-theme.css">
+    <link rel="stylesheet" href="src/file/file.css">
+    <link rel="stylesheet" href="src/file/file-theme.css">
+    <link rel="stylesheet" href="src/form/form.css">
+    <link rel="stylesheet" href="src/form/form-theme.css">
+    <link rel="stylesheet" href="src/file/file-bookmark.css">
+    <script src="src/theme/theme.js"></script>
+    <script src="src/scroll/scroll.js"></script>
+    <script src="src/tooltip/tooltip.js"></script>
+    <script src="src/progress/progress.js"></script>
+    <script src="src/spinner/spinner.js"></script>
+    <script src="src/toast/toast.js"></script>
+    <script src="src/popover/popover.js"></script>
+    <script src="src/modal/modal.js"></script>
+    <script src="src/layout/layout.js"></script>
+    <script src="src/file/file.js"></script>
+</head>
+
+<body>
+    <script>checkTheme()</script>
+    <div class="layout">
+        <div class="header">
+            <div class="header-inner">
+                <div class="start">
+                    <a href="">
+                        <div class="nav-title nologo">
+                            <span>Mini</span>
+                        </div>
+                    </a>
+                </div>
+                <div></div>
+                <div class="end">
+                    <a href="javascript:void(0)" class="nav-link-c theme-button theme-button-light" onclick="toggleTheme()">
+                        <span class="theme-button-icon">
+                            <!-- https://gist.github.com/leMaur/d2131aa3bddf9c8ccd220df0a5c15bce -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-button-text">light</span>
+                    </a>
+                    <a href="javascript:void(0)" class="nav-link-c theme-button theme-button-dark" onclick="toggleTheme()">
+                        <span class="theme-button-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20.354 15.354l.928.373a1 1 0 00-1.3-1.3l.372.927zM8.646 3.646l.928.373a1 1 0 00-1.301-1.301l.373.928zm11.335 10.78c-.92.37-1.925.574-2.981.574v2a9.976 9.976 0 003.727-.718l-.746-1.856zM17 15a8 8 0 01-8-8H7c0 5.523 4.477 10 10 10v-2zM9 7c0-1.056.204-2.061.574-2.981l-1.856-.746A9.975 9.975 0 007 7h2zm-5 5a8.003 8.003 0 015.019-7.426l-.746-1.856A10.003 10.003 0 002 12h2zm8 8a8 8 0 01-8-8H2c0 5.523 4.477 10 10 10v-2zm7.426-5.019A8.003 8.003 0 0112 20.001v2c4.207 0 7.805-2.599 9.282-6.274l-1.856-.746z" fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-button-text">dark</span>
+                    </a>
+                    <a href="file.html" class="nav-link">
+                        Setting
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main file-main">
+                <div class="main-inner">
+                    <div class="board fw">
+                        <div class="board-title">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                            <span>Bookmark</span>
+                        </div>
+                    </div>
+                    
+                    <div class="board fw">
+                        <div class="board-toolbar">
+                            <div class="start">
+                                <button class="button" type="button" onclick="onButtonClick()">
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                    <span>Create Group</span>
+                                </button>
+                            </div>
+                            <div class="end">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="board fw bookmark-group open">
+                        <div class="bookmark-group-title">
+                            <div class="start">
+                                <span class="expand">
+                                    <i class="fa-solid fa-angle-down fa-fw"></i>
+                                </span>
+                                <span class="collapse">
+                                    <i class="fa-solid fa-angle-right fa-fw"></i>
+                                </span>
+                                <a class="bookmark-group-title-text" href="javascript:void(0)" onclick="onBookmarkGroupClick(this)">
+                                    <span>Other</span>
+                                </a>
+                            </div>
+                            <div class="end">
+                                <a class="bookmark-group-nav-button" href="javascript:void(0)" data-content="Tooltip Popover">
+                                    <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bookmark-group-children">
+                            <div onclick="onBookmarkClick(this)">
+                                <div id="bookmark1" class="bookmark-item hover first">
+                                    <div class="bookmark-item-icon">
+                                        <i class="fa-solid fa-folder fa-2x fa-fw"></i>
+                                    </div>
+                                    <div class="bookmark-item-text">
+                                        <div class="bookmark-item-title">Bookmark01</div>
+                                        <div class="bookmark-item-sub-title">
+                                            <span class="bookmark-item-sub-title-icon">
+                                                <i class="fa-solid fa-tag fa-fw"></i>
+                                            </span>
+                                            <span>test/bookmark/01</span>
+                                        </div>
+                                    </div>
+                                    <a class="bookmark-item-link" href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+                                        <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
+                                    </a>
+                                    <a class="bookmark-item-nav-button" href="javascript:void(0)"
+                                       data-content="bookmark01" data-index="1">
+                                        <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div onclick="onBookmarkClick(this)">
+                                <div id="bookmark2" class="bookmark-item hover">
+                                    <div class="bookmark-item-icon">
+                                        <i class="fa-solid fa-folder fa-2x fa-fw"></i>
+                                    </div>
+                                    <div class="bookmark-item-text">
+                                        <div class="bookmark-item-title">Bookmark02</div>
+                                        <div class="bookmark-item-sub-title">
+                                            <span class="bookmark-item-sub-title-icon">
+                                                <i class="fa-solid fa-tag fa-fw"></i>
+                                            </span>
+                                            <span>test/bookmark/02</span>
+                                        </div>
+                                    </div>
+                                    <a class="bookmark-item-link" href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+                                        <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
+                                    </a>
+                                    <a class="bookmark-item-nav-button" href="javascript:void(0)"
+                                       data-content="bookmark02" data-index="2">
+                                        <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div onclick="onBookmarkClick(this)">
+                                <div id="bookmark3" class="bookmark-item hover last">
+                                    <div class="bookmark-item-icon">
+                                        <i class="fa-solid fa-folder fa-2x fa-fw"></i>
+                                    </div>
+                                    <div class="bookmark-item-text">
+                                        <div class="bookmark-item-title">Bookmark03</div>
+                                        <div class="bookmark-item-sub-title">
+                                            <span class="bookmark-item-sub-title-icon">
+                                                <i class="fa-solid fa-tag fa-fw"></i>
+                                            </span>
+                                            <span>test/bookmark/03</span>
+                                        </div>
+                                    </div>
+                                    <a class="bookmark-item-link" href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+                                        <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
+                                    </a>
+                                    <a class="bookmark-item-nav-button" href="javascript:void(0)"
+                                       data-content="bookmark03" data-index="3">
+                                        <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-inner">
+                        <span>Copyright © 2022</span>
+                        <span class="copyright-divider">|</span>
+                        <span>小碼農米爾</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popover-template tooltip-style">
+        <div class="popover-block">
+            <div class="popover-inner">__data-content__</div>
+        </div>
+    </div>
+    <div class="popover-template popover-menu-style">
+        <div class="popover-block">
+            <div class="popover-menu" data-index="__data-index__">
+                <div class="popover-menu-item selected" onclick="onEdit(this)">
+                    <span class="popover-menu-item-icon">
+                        <i class="fa-solid fa-pen fa-fw"></i>
+                    </span>
+                    <span class="popover-menu-item-text">Edit</span>
+                    <span class="popover-menu-item-trailing">
+                        <i class="fa-solid fa-check fa-fw"></i>
+                    </span>
+                </div>
+                <div class="separator"></div>
+                <div class="popover-menu-item danger" onclick="onDelete(this)">
+                    <span class="popover-menu-item-icon">
+                        <i class="fa-solid fa-trash fa-fw"></i>
+                    </span>
+                    <span class="popover-menu-item-text">Delete</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toast-template">
+        <div class="toast-block">
+            <div class="toast-inner">__data-content__</div>
+        </div>
+    </div>
+    <div class="modal-template main">
+        <div class="modal-backdrop">
+            <div class="modal">
+                <div class="modal-block">
+                    <div class="modal-header">
+                        <div class="start">
+                            <div class="modal-header-title">Edit</div>
+                        </div>
+                        <div class="end">
+                            <button type="button" class="modal-icon-button round setting-button">
+                                <i class="fa-solid fa-gear fa-fw"></i>
+                            </button>
+                            <button type="button" data-dismiss="true" class="modal-icon-button square">
+                                <i class="fa-solid fa-xmark fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-scrollable">
+                        <div class="modal-body">
+                            <span>Edit item.</span>
+                            <div class="alert light">
+                                <span class="alert-icon">
+                                    <i class="fa-regular fa-lightbulb fa-fw"></i>
+                                </span>
+                                <span class="alert-text">
+                                    Simple light alert.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="modal-footer">
+                            <button type="button" data-dismiss="true" class="modal-button light">Cancel</button>
+                            <button type="button" class="modal-button dark" onclick="onSubmit()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popover-template modal-popover-template">
+        <div class="popover-block modal-popover">
+            <div class="popover-inner">Modal Popover</div>
+        </div>
+    </div>
+    <div class="modal-template sub">
+        <div class="modal-backdrop">
+            <div class="modal">
+                <div class="modal-block">
+                    <div class="modal-header">
+                        <div class="start">
+                            <div class="modal-header-title">Confirm submission</div>
+                        </div>
+                        <div class="end">
+                            <button type="button" class="modal-icon-button round setting-button">
+                                <i class="fa-solid fa-gear fa-fw"></i>
+                            </button>
+                            <button type="button" data-dismiss="true" class="modal-icon-button square">
+                                <i class="fa-solid fa-xmark fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-scrollable">
+                        <div class="modal-body">
+                            Are you sure you want to submit?
+                        </div>
+                        <div class="separator"></div>
+                        <div class="modal-footer">
+                            <button type="button" data-dismiss="true" class="modal-button dark">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var theme = document.body.getAttribute('theme');
+        onThemeButtonChange(theme);
+        function toggleTheme() {
+            theme = theme === 'light' ? 'dark' : 'light';
+            onThemeButtonChange(theme);
+            onThemeChange(theme);
+        }
+        function onBookmarkGroupClick(ele) {
+            var group = ele.closest('.bookmark-group');
+            group.classList.toggle('open');
+        }
+        var selected = null;
+        function onBookmarkClick(ele) {
+            var board = ele.querySelector('.bookmark-item');
+            var id = board.getAttribute('id');
+            if (selected) {
+                var prev = document.querySelector('#' + selected);
+                prev.classList.remove('active');
+            }
+            if (id === selected) {
+                selected = null;
+                return;
+            }
+            board.classList.add('active');
+            selected = id;
+        }
+        var groupNav = document.querySelector('.bookmark-group-nav-button');
+        popover(groupNav, {
+            template: '.popover-template.tooltip-style',
+            placement: 'bottom'
+        });
+        var popovers = new Map();
+        var bookmarkNavs = document.querySelectorAll('.bookmark-item-nav-button');
+        for(var item of bookmarkNavs) {
+            var pop = popover(item, {
+                template: '.popover-template.popover-menu-style',
+                placement: 'left',
+                stopPropagation: true
+            });
+            var index = item.getAttribute('data-index');
+            popovers.set(index, pop);
+        }
+        function onEdit(ele) {
+            var index = ele
+                .closest('.popover-menu').getAttribute('data-index');
+            var pop = popovers.get(index);
+            if (pop) {
+                pop.close();
+                var dialog = modal(document.querySelector('.modal-template.main'));
+                dialog.onOpened = function(ele) {
+                    var setting = ele.querySelector('.setting-button');
+                    popover(setting, {
+                        template: '.popover-template.modal-popover-template',
+                        placement: 'bottom'
+                    });
+                }
+                dialog.onClosed = function(ele) {
+                }
+                dialog.open();
+            }
+        }
+        function onDelete(ele) {
+            var index = ele
+                .closest('.popover-menu').getAttribute('data-index');
+            var pop = popovers.get(index);
+            if (pop) {
+                // pop.close();
+            }
+        }
+        function onButtonClick() {
+            toast.show('Show Toast');
+        }
+        function onSubmit() {
+            var dialog = modal(document.querySelector('.modal-template.sub'));
+            dialog.onOpened = function(ele) {
+                var setting = ele.querySelector('.setting-button');
+                popover(setting, {
+                    template: '.popover-template.modal-popover-template',
+                    placement: 'bottom'
+                });
+            }
+            dialog.open();
+        }
+    </script>
+</body>
+
+</html>

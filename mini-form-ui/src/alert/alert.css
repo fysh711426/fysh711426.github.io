@@ -1,0 +1,33 @@
+body.light {
+    --alertLightColor: #5d5d5d;
+    --alertLightBgColor: #f3f3f3;
+}
+
+body.dark {
+    --alertLightColor: #f3f3f3;
+    --alertLightBgColor: #414141;
+}
+
+.alert.light {
+    color: var(--alertLightColor);
+    background-color: var(--alertLightBgColor);
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    border-radius: .75rem;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.alert-icon {
+    display: inline-flex;
+    margin-right: 12px;
+}
+
+.alert-text {
+    text-wrap: pretty;
+    font-size: .8rem;
+    line-height: 1.5;
+}

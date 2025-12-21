@@ -37,9 +37,9 @@ var tooltip = (function () {
     var global = null;
     return function (selector, _settings) {
         var setting = {};
-        _settings = _settings || {};
-        setting.template = _settings.template || '.tooltip-template';
-        setting.placement = _settings.placement || 'bottom';
+        _settings = _settings ?? {};
+        setting.template = _settings.template ?? '.tooltip-template';
+        setting.placement = _settings.placement ?? 'bottom';
         var templateHTML = document.querySelector(setting.template).innerHTML;
         var items = document.querySelectorAll(selector);
         for (var i = 0; i < items.length; i++) {
@@ -68,8 +68,8 @@ var tooltip = (function () {
                             mouseleave();
                         });
                         var position = getPosition(setting.placement, item, element);
-                        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                        var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+                        var scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+                        var scrollLeft = window.scrollX || document.documentElement.scrollLeft || document.body.scrollLeft;
                         element.style.transform = 'translate3d(' + (position[0] + scrollLeft) + 'px, ' + (position[1] + scrollTop) + 'px, 0px)';
                     }
                     if (global != null && global != element)

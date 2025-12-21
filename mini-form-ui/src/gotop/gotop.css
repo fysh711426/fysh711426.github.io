@@ -1,0 +1,11 @@
+/*----- control gotop -----*/
+
+.control .button.gotop {
+    display: none;
+}
+
+.control .button.gotop.show {
+    display: block;
+}
+
+/*----- control gotop -----*/

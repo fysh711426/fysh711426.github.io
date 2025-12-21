@@ -16,7 +16,7 @@
     margin-bottom: 0px;
 }
 
-.form-field-title-warp {
+.form-field-title-wrap {
     margin-bottom: 15px;
 }
 
@@ -99,7 +99,7 @@ input::placeholder {
     font-size: 0.85rem;
 }
 
-.checkbox-warp {
+.checkbox-wrap {
     padding: 10px;
     border-radius: 5px;
     border-style: solid;

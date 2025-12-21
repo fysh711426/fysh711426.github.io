@@ -13,30 +13,32 @@ var toast = (function () {
     }
     var global = null;
     return {
-        show: function(text) {
-            text = text || '';
-            var templateHTML = `
-                <div class="toast-block">
-                    <div class="toast-inner">__data-content__</div>
-                </div>
-            `;
+        show: function(text, _settings) {
+            var setting = {};
+            _settings = _settings ?? {};
+            setting.template = _settings.template ?? '.toast-template';
+            setting.delay = _settings.delay ?? 3000;
+            
+            text = text ?? '';
+            var templateHTML = document.querySelector(setting.template).innerHTML;
             var html = templateHTML;
             html = html.replace('__data-content__', text);
             if (global) {
                 remove(global);
             }
             var element = createElement(html);
+
             document.body.appendChild(element);
             global = element;
             (function(element) {
                 setTimeout(function() {
-                    element.className = element.className + ' show';
+                    element.classList.add('show');
                     setTimeout(function() {
                         if (element === global) {
                             remove(global);
                             element = null;
                         }
-                    }, 3000);
+                    }, setting.delay);
                 }, 1);
             })(element);
         }

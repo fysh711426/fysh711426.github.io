@@ -1,0 +1,49 @@
+body.light {
+    /*--buttonBgColor: #f2f2f2;*/
+    --buttonBgColor: #f5f5f5;
+    --buttonHoverBgColor: #e6e6e6;
+    --buttonActiveBgColor: #cecece;
+    /* --buttonActiveBgColor: #f6f6f6; */
+}
+
+body.dark {
+    --buttonBgColor: #3d3d3d;
+    --buttonHoverBgColor: #535353;
+    --buttonActiveBgColor: #656565;
+    /* --buttonActiveBgColor: #2a2a2a; */
+}
+
+.button {
+    color: var(--linkColor);
+    background: var(--buttonBgColor);
+}
+
+    .button:hover {
+        background: var(--buttonHoverBgColor);
+    }
+
+    .button:active {
+        background: var(--buttonActiveBgColor);
+    }
+
+.button {
+    display: inline-block;
+    font-weight: 700;
+    line-height: 2;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline-width: 0;
+    font-family: inherit;
+}
+
+.button.disabled {
+
+}

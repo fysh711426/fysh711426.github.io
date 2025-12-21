@@ -71,16 +71,14 @@
         <div class="container">
             <div class="main image-main">
                 <div class="main-inner">
-                    <div class="board file-navbar sticky">
+                    <div class="board file-navbar sticky over">
                         <div class="start mw-1x">
-                            <div class="file-navbar-btn">
-                                <a href="file.html">
-                                    <i class="fa-solid fa-arrow-left fa-fw"></i>
-                                </a>
-                            </div>
-                            <div class="file-navbar-title-warp">
+                            <a href="file.html" class="file-navbar-btn">
+                                <i class="fa-solid fa-arrow-left fa-fw"></i>
+                            </a>
+                            <div class="file-navbar-title-wrap">
                                 <div class="file-navbar-title">Image.jpg</div>
-                                <div class="file-navbar-title-over-warp">
+                                <div class="file-navbar-title-over-wrap">
                                     <div class="file-navbar-title-over">Image.jpg</div>
                                 </div>
                             </div>
@@ -124,32 +122,23 @@
         }, 1000);
         function onToggle() {
             var controls = document.querySelectorAll('.file-image-control');
-            for (var i = 0; i < controls.length; i++) {
-                var item = controls[i];
-                if (item.className.indexOf('show') === -1) {
-                    item.className = item.className + ' show';
-                }
-                else {
-                    item.className = item.className.replace(' show', '');
-                }
+            for (var item of controls) {
+                item.classList.toggle('show');
             }
         }
         var index = 1;
         function onPrevNext() {
             index = (index + 1) % 2;
             var images = document.querySelectorAll('.file-image-block');
-            for (var i = 0; i < images.length; i++) {
-                var item = images[i];
+            for (var item of images) {
                 item.style.display = 'none';
             }
             var image = document.querySelector('#file' + (index + 1));
             image.style.display = 'block';
         }
         onPrevNext();
-        fileNavbar({
-            enableHover: true,
-            enableImageOver: true
-        });
+        fileNavbar.enableHover();
+        fileNavbar.enableImageOver();
         var theme = document.body.getAttribute('theme');
         onThemeButtonChange(theme);
         function toggleTheme() {

@@ -1,0 +1,276 @@
+body.light {
+    --modalColor: #262626;
+    --modalBgColor: #fff;
+    --modalShadow: 0px 8px 12px 0px #00000014,0px 0px 1px 0px #0000009e;
+    --modalBackdropBgColor: rgba(255, 255, 255, .5);
+    --modalIconButtonColor: #262626;
+    --modalIconButtonBgColor: #0000;
+    --modalIconButtonHoverBgColor: #f5f5f5;
+    --modalIconButtonActiveBgColor: #f0f0f0;
+    --modalDarkButtonColor: #fff;
+    --modalDarkButtonBgColor: #3b3b3b;
+    --modalDarkButtonHoverBgColor: rgba(48,48,48,.85);
+    --modalDarkButtonActiveBgColor: rgba(48,48,48,.75);
+    --modalLightButtonColor: #262626;
+    --modalLightButtonBgColor: #f5f5f5;
+    --modalLightButtonHoverBgColor: #e6e6e6;
+    --modalLightButtonActiveBgColor: #f0f0f0;
+    --modalSeparatorBgColor: #0d0d0d1a;
+}
+
+body.dark {
+    --modalColor: #d2d3d5;
+    --modalBgColor: #212121;
+    --modalShadow: 0px 8px 16px 0px #00000052,inset 0px 0px 1px 0px #fff3,0px 0px 1px 0px #0000009e;
+    --modalBackdropBgColor: rgba(0, 0, 0, .5);
+    --modalIconButtonColor: #d2d3d5;
+    --modalIconButtonBgColor: #0000;
+    --modalIconButtonHoverBgColor: #383838;
+    --modalIconButtonActiveBgColor: #2c2c2c;
+    /* --modalIconButtonHoverBgColor: #4a4a4a;
+    --modalIconButtonActiveBgColor: #3f3f3f; */
+    --modalDarkButtonColor: #181818;
+    --modalDarkButtonBgColor: #ececec;
+    --modalDarkButtonHoverBgColor: rgba(255, 255, 255, .85);
+    --modalDarkButtonActiveBgColor: rgba(255, 255, 255, .75);
+    --modalLightButtonColor: #d2d3d5;
+    --modalLightButtonBgColor: #2c2c2c;
+    --modalLightButtonHoverBgColor: #3d3d3d;
+    --modalLightButtonActiveBgColor: #353535;
+    --modalSeparatorBgColor: #ffffff26;
+}
+
+.modal-backdrop {
+    background-color: var(--modalBackdropBgColor);
+}
+
+.modal-block{
+    color: var(--modalColor);
+    background-color: var(--modalBgColor);
+    box-shadow: var(--modalShadow);
+}
+
+.modal-scrollable {
+    scrollbar-color: var(--scrollbarColor) transparent;
+}
+
+.modal-scrollable:hover {
+    scrollbar-color: var(--scrollbarHoverColor) transparent;
+}
+
+.modal-icon-button {
+    color: var(--modalIconButtonColor);
+    background-color: var(--modalIconButtonBgColor);
+}
+
+.modal-icon-button:hover {
+    background-color: var(--modalIconButtonHoverBgColor);
+}
+
+.modal-icon-button:active {
+    background-color: var(--modalIconButtonActiveBgColor);
+}
+
+.modal-button.dark {
+    color: var(--modalDarkButtonColor);
+    background-color: var(--modalDarkButtonBgColor);
+}
+
+.modal-button.dark:hover {
+    background-color: var(--modalDarkButtonHoverBgColor);
+}
+
+.modal-button.dark:active {
+    background-color: var(--modalDarkButtonActiveBgColor);
+}
+
+.modal-button.light {
+    color: var(--modalLightButtonColor);
+    background-color: var(--modalLightButtonBgColor);
+}
+
+.modal-button.light:hover {
+    background-color: var(--modalLightButtonHoverBgColor);
+}
+
+.modal-button.light:active {
+    background-color: var(--modalLightButtonActiveBgColor);
+}
+
+.modal-block .separator {
+    background-color: var(--modalSeparatorBgColor);
+}
+
+.modal-template {
+    display: none;
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    outline: 0;
+    /* pointer-events: none; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(1px);
+    z-index: 50000;
+}
+
+.modal {
+    display: grid;
+    grid-template-columns: 10px 1fr 10px;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 640px) {
+    .modal {
+        grid-template-rows: minmax(10px, 1fr) auto minmax(10px, 1fr);
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .modal {
+        grid-template-rows: minmax(20px, 0.8fr) auto minmax(20px, 1fr);
+    }
+}
+
+.modal-popover {
+    z-index: 50000;
+}
+
+.modal-block {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    pointer-events: auto;
+    border: 0 solid;
+    max-width: 32rem;
+    width: 100%;
+    grid-row: auto;
+    grid-column: auto;
+    grid-row-start: 2;
+    grid-column-start: 2;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* @media screen and (max-width: 640px) {
+    .modal-block {
+        margin: 10px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .modal-block {
+        margin: 20px;
+    }
+} */
+
+.modal-scrollable {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 15px 20px; */
+    padding: 15px 20px 15px 20px;
+}
+
+.modal-header .start {
+    display: flex;
+    align-items: center;
+}
+
+.modal-header .end {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-header-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.modal-body {
+    padding: 0px 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px 20px;
+    gap: 10px;
+}
+
+.modal-icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+    width: 43px;
+    height: 43px;
+    border: 0 solid;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.modal-icon-button.round {
+    border-radius: 50rem;
+}
+
+.modal-icon-button.square {
+    border-radius: .5rem;
+}
+
+.modal-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 0 solid;
+    font-size: 0.9rem;
+    line-height: 2;
+    font-weight: 700;
+    padding: 0 15px;
+    border-radius: 50rem;
+    height: 45px;
+    border: 0px solid;
+}
+
+.modal-block .separator {
+    height: 1px;
+    /* margin: 5px 20px;
+    transform: scaleY(1.2); */
+    margin: 5px 15px;
+    transform: scaleY(1.5);
+}
+
+.modal-backdrop {
+    animation: .25s cubic-bezier(.4, 0, .2, 1) modalSlideDownAndFade;
+}
+
+@keyframes modalSlideDownAndFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-1px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="src/tooltip/tooltip.css">
     <link rel="stylesheet" href="src/progress/progress.css">
     <link rel="stylesheet" href="src/spinner/spinner.css">
+    <link rel="stylesheet" href="src/gotop/gotop.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
     <link rel="stylesheet" href="index.css">
@@ -19,6 +20,7 @@
     <script src="src/tooltip/tooltip.js"></script>
     <script src="src/progress/progress.js"></script>
     <script src="src/spinner/spinner.js"></script>
+    <script src="src/gotop/gotop.js"></script>
     <script src="src/layout/layout.js"></script>
 
     <script>
@@ -84,9 +86,27 @@
         <div class="container">
             <div class="left-menu active">
                 <div class="left-menu-inner">
-                    <a href="" select-val="Main" class="left-menu-item">Main</a>
-                    <a href="form.html" select-val="Form" class="left-menu-item">Form</a>
-                    <a href="file.html" select-val="File" class="left-menu-item">File</a>
+                    <a href="" select-val="Main" class="left-menu-item round">Main</a>
+                    <a href="form.html" select-val="Form" class="left-menu-item round">Form</a>
+                    <a href="file.html" select-val="File" class="left-menu-item round">File</a>
+                    <div class="separator"></div>
+                    <div class="left-menu-group open">
+                        <a class="left-menu-group-title" href="javascript:void(0)">
+                            <span>Group</span>
+                            <span class="left-menu-group-toggle expand">
+                                <i class="fa-solid fa-angle-down fa-fw"></i>
+                            </span>
+                            <span class="left-menu-group-toggle collapse">
+                                <i class="fa-solid fa-angle-right fa-fw"></i>
+                            </span>
+                        </a>
+                        <div class="left-menu-group-children">
+                            <a href="file-bookmark.html" select-val="Bookmark" class="left-menu-item round">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                                <span>Bookmark</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="left-menu-mask" onclick="onNavClose()"></div>
@@ -94,10 +114,10 @@
                 <div class="main-inner">
                     <div class="sub-menu">
                         <div class="sub-menu-inner">
-                            <a href="" select-val="Item1" class="sub-menu-item">Item1</a>
-                            <a href="" select-val="Item2" class="sub-menu-item">Item2</a>
-                            <a href="" select-val="Item3" class="sub-menu-item">Item3</a>
-                            <a href="" select-val="Item4" class="sub-menu-item">Item4</a>
+                            <a href="" select-val="Item1" class="sub-menu-item round">Item1</a>
+                            <a href="" select-val="Item2" class="sub-menu-item round">Item2</a>
+                            <a href="" select-val="Item3" class="sub-menu-item round">Item3</a>
+                            <a href="" select-val="Item4" class="sub-menu-item round">Item4</a>
                         </div>
                     </div>
                     <div class="board">
@@ -135,12 +155,12 @@
                                         </div>
                                     </td>
                                     <td class="logo">
-                                        <div class="logo-warp">
+                                        <div class="logo-wrap">
                                             <img src="demo/logo1.jpg" />
                                         </div>
                                     </td>
                                     <td class="name">
-                                        <div class="name-warp">
+                                        <div class="name-wrap">
                                             <span>噶嗚·古拉</span>
                                         </div>
                                         <div class="tag-o"># 4.11M</div>
@@ -149,7 +169,7 @@
                                     <td class="video">
                                         <div class="video-tooltip" data-content="【MINECRAFT】wow! what this game?"
                                             data-view="81K" data-thumbnail="demo/video1.jpg" data-src="src">
-                                            <div class="video-warp">
+                                            <div class="video-wrap">
                                                 <img src="demo/video1.jpg" />
                                                 <div class="video-mask"></div>
                                                 <div class="video-view">
@@ -172,12 +192,12 @@
                                         </div>
                                     </td>
                                     <td class="logo">
-                                        <div class="logo-warp">
+                                        <div class="logo-wrap">
                                             <img src="demo/logo2.jpg" />
                                         </div>
                                     </td>
                                     <td class="name">
-                                        <div class="name-warp">
+                                        <div class="name-wrap">
                                             <span>兔田佩克拉</span>
                                         </div>
                                         <div class="tag-o"># 2.01M</div>
@@ -187,7 +207,7 @@
                                         <div class="video-tooltip"
                                             data-content="【料理】伝説の料理「龍の髭」を作るぞ！！！！！！！ぺこ！【ホロライブ/兎田ぺこら】" data-view="83K"
                                             data-thumbnail="demo/video2.jpg" data-src="src">
-                                            <div class="video-warp">
+                                            <div class="video-wrap">
                                                 <img src="demo/video2.jpg" />
                                                 <div class="video-mask"></div>
                                                 <div class="video-view">
@@ -209,12 +229,12 @@
                                         </div>
                                     </td>
                                     <td class="logo">
-                                        <div class="logo-warp">
+                                        <div class="logo-wrap">
                                             <img src="demo/logo3.jpg" />
                                         </div>
                                     </td>
                                     <td class="name">
-                                        <div class="name-warp">
+                                        <div class="name-wrap">
                                             <span>姬森璐娜</span>
                                         </div>
                                         <div class="tag-o"># 833K</div>
@@ -224,7 +244,7 @@
                                         <div class="video-tooltip"
                                             data-content="【シン・クロニクル】戻れない…一度きりの選択肢で進めるゲームで遊ぶのら！#ホロとシンクロ【姫森ルーナ/ホロライブ】"
                                             data-view="53K" data-thumbnail="demo/video3.jpg" data-src="src">
-                                            <div class="video-warp">
+                                            <div class="video-wrap">
                                                 <img src="demo/video3.jpg" />
                                                 <div class="video-mask"></div>
                                                 <div class="video-view">
@@ -246,12 +266,12 @@
                                         </div>
                                     </td>
                                     <td class="logo">
-                                        <div class="logo-warp">
+                                        <div class="logo-wrap">
                                             <img src="" onerror="imgError(event)" />
                                         </div>
                                     </td>
                                     <td class="name">
-                                        <div class="name-warp">
+                                        <div class="name-wrap">
                                             <span>xxx</span>
                                         </div>
                                     </td>
@@ -260,7 +280,7 @@
                                         <div class="video-tooltip" data-content="..." data-view="53K"
                                             data-thumbnail="https://i.ytimg.com/vi/D_mhJlWgsY/hqdefault.jpg"
                                             data-src="src">
-                                            <div class="video-warp">
+                                            <div class="video-wrap">
                                                 <img src="https://i.ytimg.com/vi/D_mhJlWgsY/hqdefault.jpg" />
                                                 <div class="video-mask"></div>
                                                 <div class="video-view">
@@ -299,7 +319,7 @@
     <div class="video-tooltip-template">
         <div class="tooltip-block video-tooltip-block">
             <div class="tooltip-inner video-tooltip-inner">
-                <div class="video-warp">
+                <div class="video-wrap">
                     <img __data-src__="__data-thumbnail__" />
                     <div class="video-mask"></div>
                     <div class="video-view">
@@ -319,6 +339,7 @@
     <script>
         selectMenu('Main');
         selectSubMenu('Item1');
+        enableMenuGroup();
         tooltip('.header-tooltip');
         tooltip('.video-tooltip', {
             template: '.video-tooltip-template',

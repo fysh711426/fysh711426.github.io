@@ -3,10 +3,10 @@ function checkTheme() {
     var prev = null;
     function setTheme(theme) {
         if (prev) {
-            document.body.className = document.body.className.replace(' ' + prev, '');
+            document.body.classList.remove(prev);
         }
         document.body.setAttribute('theme', theme);
-        document.body.className = document.body.className + ' ' + theme;
+        document.body.classList.add(theme);
         prev = theme;
     }
     var theme = localStorage.getItem('THEME');
@@ -29,10 +29,10 @@ function checkTextTheme() {
     var prev = null;
     function setTheme(theme) {
         if (prev) {
-            document.body.className = document.body.className.replace(' ' + prev, '');
+            document.body.classList.remove(prev);
         }
         document.body.setAttribute('text-theme', theme);
-        document.body.className = document.body.className + ' ' + theme;
+        document.body.classList.add(theme);
         prev = theme;
     }
     var theme = localStorage.getItem('TEXT_THEME');

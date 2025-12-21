@@ -1,13 +1,13 @@
 body.light {
-    --videoWarpBgColor: rgb(204, 204, 204);
+    --videoWrapBgColor: rgb(204, 204, 204);
 }
 
 body.dark {
-    /* --videoWarpBgColor: rgb(185, 185, 185); */
-    --videoWarpBgColor: rgb(204, 204, 204);
+    /* --videoWrapBgColor: rgb(185, 185, 185); */
+    --videoWrapBgColor: rgb(204, 204, 204);
 }
 
-body.dark .video-warp img {
+body.dark .video-wrap img {
     filter: brightness(1);
 }
 
@@ -77,12 +77,12 @@ td.rank {
     padding-right: 1rem;
 }
 
-.logo-warp {
+.logo-wrap {
     height: 4.5rem;
     width: 4.5rem;
 }
 
-.logo-warp img {
+.logo-wrap img {
     height: 100%;
     width: auto;
     border-radius: 50%;
@@ -93,7 +93,7 @@ td.rank {
         width: 3.5rem;
     }
 
-    .logo-warp {
+    .logo-wrap {
         height: 3.5rem;
         width: 3.5rem;
     }
@@ -104,7 +104,7 @@ td.rank {
         width: 4rem;
     }
 
-    .logo-warp {
+    .logo-wrap {
         height: 4rem;
         width: 4rem;
     }
@@ -115,7 +115,7 @@ td.rank {
         width: 4.5rem;
     }
 
-    .logo-warp {
+    .logo-wrap {
         height: 4.5rem;
         width: 4.5rem;
     }
@@ -126,7 +126,7 @@ td.rank {
     width: 35%;
 }
 
-.name-warp span {
+.name-wrap span {
     display: inline-block;
     max-width: 100%;
     line-height: inherit;
@@ -143,24 +143,24 @@ td.rank {
     width: 8.9rem;
 }
 
-.video-warp {
+.video-wrap {
     height: 5rem;
     width: 8.9rem;
     overflow: hidden;
     position: relative;
     border-radius: 0.35rem;
     margin: 0 auto;
-    background-color: var(--videoWarpBgColor);
+    background-color: var(--videoWrapBgColor);
 }
 
-.video-warp img {
+.video-wrap img {
     height: 100%;
     width: auto;
     margin: auto;
     transition: all 2000ms cubic-bezier(.19, 1, .22, 1) 0ms;
 }
 
-.video-warp:hover img {
+.video-wrap:hover img {
     transform: scale(1.12);
 }
 
@@ -202,7 +202,7 @@ td.rank {
         width: 3rem;
     }
 
-    .video-warp {
+    .video-wrap {
         display: none;
     }
 
@@ -217,7 +217,7 @@ td.rank {
         max-width: 176px;
     }
 
-    .video-warp {
+    .video-wrap {
         display: block;
         height: 6.18rem;
         width: 11rem;
@@ -236,7 +236,7 @@ td.rank {
         max-width: 224px;
     }
 
-    .video-warp {
+    .video-wrap {
         display: block;
         height: 7.87rem;
         width: 14rem;
@@ -261,7 +261,7 @@ td.rank {
     padding: 10px;
 }
 
-.video-tooltip-inner .video-warp {
+.video-tooltip-inner .video-wrap {
     margin-bottom: 5px;
     width: 250px;
     height: 140px;
@@ -274,13 +274,13 @@ td.rank {
 }
 
 @media screen and (max-width: 640px) {
-    .video-tooltip-inner .video-warp {
+    .video-tooltip-inner .video-wrap {
         display: block;
     }
 }
 
 @media screen and (min-width: 641px) {
-    .video-tooltip-inner .video-warp {
+    .video-tooltip-inner .video-wrap {
         display: none;
     }
 }

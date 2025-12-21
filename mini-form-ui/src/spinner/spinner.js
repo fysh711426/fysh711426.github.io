@@ -38,12 +38,9 @@ var spinner = (function() {
 
     return function(selector) {
         var items = document.querySelectorAll(selector);
-        for (var i = 0; i < items.length; i++) {
-            var item = items[i];
+        for (var item of items) {
             item.innerHTML = innerHTML;
-            if (item.className.indexOf('spinner') === -1) {
-                item.className = item.className + ' spinner';
-            }
+            item.classList.add('spinner');
         }
     }
 })();
