@@ -8,6 +8,8 @@ z-index
     file-video < 1024px = 30000
     file-image-nav = 16000
     file-image-content < 1024px = 15000
+    control = 100000
+    modal = 50000
 */
 
 /*----- font-awesome -----*/
@@ -17,14 +19,6 @@ z-index
 }
 
 /*----- font-awesome -----*/
-
-/*----- gotop -----*/
-
-.control .gotop.show {
-    display: none;
-}
-
-/*----- gotop -----*/
 
 /*----- file-main -----*/
 
@@ -291,17 +285,15 @@ z-index
 }
 
 .file-navbar-btn {
-    padding: 0px 5px;
-}
-
-.file-navbar-btn-warp {
     display: flex;
     align-items: center;
+    padding: 0px 5px;
 }
 
 .file-navbar-btn-text {
     font-size: 0.8rem;
     padding-left: 5px;
+    padding-right: 7px;
 }
 
 .file-navbar-title {
@@ -311,11 +303,11 @@ z-index
     word-break: break-all;
 }
 
-.file-navbar-title-warp {
+.file-navbar-title-wrap {
     max-width: 100%;
 }
 
-.file-navbar-title-warp .file-navbar-title {
+.file-navbar-title-wrap .file-navbar-title {
     line-height: inherit;
     white-space: nowrap;
     overflow: hidden;
@@ -328,15 +320,15 @@ z-index
     display: none;
 }
 
-.file-navbar-title-over-warp {
+.file-navbar-title-over-wrap {
     display: none;
 }
 
-.file-navbar-title-warp.hover {
+.file-navbar-title-wrap.hover {
     position: relative;
 }
 
-.file-navbar-title-warp.hover .file-navbar-title-over-warp {
+.file-navbar-title-wrap.hover .file-navbar-title-over-wrap {
     display: block;
     position: absolute;
     top: 0;
@@ -344,7 +336,7 @@ z-index
     width: calc(100% + 2px);
 }
 
-.file-navbar-title-warp.hover .file-navbar-title-over {
+.file-navbar-title-wrap.hover .file-navbar-title-over {
     display: block;
     position: absolute;
     top: -7px;
@@ -360,7 +352,7 @@ z-index
     z-index: 25000;
 }
 
-.file-navbar-title-warp.hover .file-navbar-title {
+.file-navbar-title-wrap.hover .file-navbar-title {
     visibility: hidden;
 }
 
@@ -408,55 +400,51 @@ z-index
 
 /*----- file-navbar-expand -----*/
 
-/*----- file-navbar-toggle -----*/
+/*----- file-navbar-gotop-wrap -----*/
 
-.file-navbar-toggle {
-    display: none;
-}
-
-.file-navbar-toggle.show {
+.file-navbar-gotop-wrap .file-navbar-toggle {
     display: block;
 }
 
-.file-navbar-toggle .up {
+.file-navbar-gotop-wrap.show .file-navbar-toggle {
     display: none;
 }
 
-.file-navbar-toggle.open .up {
-    display: inline;
-}
-
-.file-navbar-toggle .down {
-    display: inline;
-}
-
-.file-navbar-toggle.open .down {
+.file-navbar-gotop-wrap .file-navbar-gotop {
     display: none;
 }
 
-/*----- file-navbar-toggle -----*/
-
-/*----- file-navbar-gotop -----*/
-
-.file-navbar-gotop {
-    display: none;
-}
-
-.file-navbar-gotop.show {
+.file-navbar-gotop-wrap.show .file-navbar-gotop {
     display: block;
 }
 
-/*----- file-navbar-gotop -----*/
+.file-navbar-toggle .collapse {
+    display: none;
+}
 
-/*----- file-video-warp -----*/
+.file-navbar-toggle.open .collapse {
+    display: inline;
+}
 
-.file-video-warp {
+.file-navbar-toggle .expand {
+    display: inline;
+}
+
+.file-navbar-toggle.open .expand {
+    display: none;
+}
+
+/*----- file-navbar-gotop-wrap -----*/
+
+/*----- file-video-wrap -----*/
+
+.file-video-wrap {
     margin: 0px auto;
     max-width: 1317px;
 }
 
 @media screen and (max-width: 1024px) {
-    .file-video-warp {
+    .file-video-wrap {
         position: absolute;
         top: 0px;
         left: 0px;
@@ -466,7 +454,7 @@ z-index
     }
 }
 
-/*----- file-video-warp -----*/
+/*----- file-video-wrap -----*/
 
 /*----- file-text-content -----*/
 
@@ -527,17 +515,17 @@ z-index
     color: #d2d3d5;
 }
 
-.image-main .file-navbar-btn a {
+.image-main .file-navbar-btn {
     color: #d2d3d5;
 }
 
 @media screen and (min-width: 1025px) {
-    .image-main .file-navbar-btn a:hover {
+    .image-main .file-navbar-btn:hover {
         color: #fff;
     }
 }
 
-.image-main .file-navbar-title-warp.hover .file-navbar-title-over {
+.image-main .file-navbar-title-wrap.hover .file-navbar-title-over {
     background-color: rgba(23, 23, 23, .65);
     border: 1px solid rgba(23, 23, 23, 0);
     box-shadow: none;
@@ -789,12 +777,12 @@ a:hover .file-item-icon {
 }
 
 @media screen and (min-width: 1025px) {
-    .file-navbar-btn a:hover {
+    .file-navbar-btn:hover {
         color: var(--fileNavbarLinkHoverColor);
     }
 }
 
-.file-navbar-title-warp.hover .file-navbar-title-over {
+.file-navbar-title-wrap.hover .file-navbar-title-over {
     background-color: var(--fileNavbarOverBgColor);
     border-color: var(--fileNavbarOverBorderColor);
     box-shadow: var(--fileNavbarOverShadow);
@@ -1030,3 +1018,302 @@ body.text-green .file-navbar {
 }
 
 /*----- file-navbar -----*/
+body.light {
+    --fileItemActiveHoverColor: #fff;
+}
+
+body.dark {
+    --fileItemActiveHoverColor: #7a7a7a;
+}
+
+/*----- bookmark-item -----*/
+
+@media screen and (min-width: 1025px) {
+    .bookmark-group a:hover {
+        color: var(--linkHoverColor)
+    }
+
+    a.bookmark-group-title-text:hover {
+        color: var(--linkHoverColor)
+    }
+}
+
+/*----- bookmark-item -----*/
+
+/*----- bookmark-item -----*/
+
+.bookmark-item {
+    background-color: var(--checkboxWrapColor);
+    border-color: var(--checkboxWrapBorderColor);
+}
+
+/*.bookmark-item-description {
+    color: var(--fileDescriptionColor)
+}*/
+
+    .bookmark-item.hover:hover {
+        background-color: var(--boardHoverColor)
+    }
+
+    .bookmark-item.active,
+    .bookmark-item.active.hover:hover {
+        background-color: var(--fileItemActiveBgColor)
+    }
+
+    .bookmark-item.active {
+        color: var(--fileItemActiveColor)
+    }
+
+        .bookmark-item.active .bookmark-item-icon {
+            color: var(--fileItemActiveIconColor)
+        }
+
+        /*.bookmark-item.active .bookmark-item-description {
+            color: var(--fileItemActiveDescriptionColor)
+        }*/
+
+        .bookmark-item.active.hover:hover {
+            color: var(--fileItemActiveColor)
+        }
+
+            .bookmark-item.active.hover:hover .bookmark-item-icon {
+                color: var(--fileItemActiveIconColor)
+            }
+
+            /*.bookmark-item.active.hover:hover .bookmark-item-description {
+                color: var(--fileItemActiveDescriptionColor)
+            }*/
+
+a .bookmark-item-icon,
+div .bookmark-item-icon {
+    color: var(--fileIconColor)
+}
+
+a:hover .bookmark-item-icon,
+div:hover .bookmark-item-icon {
+    color: var(--fileIconHoverColor)
+}
+
+.bookmark-item-sub-title {
+    color: var(--fileDescriptionColor);
+}
+
+.bookmark-item.active .bookmark-item-sub-title {
+    color: var(--fileItemActiveDescriptionColor)
+}
+
+.bookmark-item.active.hover:hover .bookmark-item-sub-title {
+    color: var(--fileItemActiveDescriptionColor)
+}
+
+.bookmark-item.active a {
+    color: var(--fileItemActiveColor)
+}
+
+.bookmark-item.active.hover:hover a {
+    color: var(--fileItemActiveColor)
+}
+
+.bookmark-item.active a:hover {
+    color: var(--fileItemActiveHoverColor)
+}
+
+.bookmark-item.active.hover:hover a:hover {
+    color: var(--fileItemActiveHoverColor)
+}
+
+/*----- bookmark-item -----*/
+
+/*----- bookmark-group -----*/
+
+.bookmark-group-title {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+    .bookmark-group-title .start {
+        display: flex;
+        align-items: center;
+    }
+
+    .bookmark-group-title .end {
+        display: flex;
+        align-items: center;
+    }
+
+@media screen and (max-width: 640px) {
+    .bookmark-group-title .end {
+        padding-right: 10px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .bookmark-group-title .end {
+        padding-right: 15px;
+    }
+}
+
+.bookmark-group-title-text {
+    font-weight: 700;
+    padding: 0 10px;
+}
+
+.bookmark-group-title-text,
+.bookmark-item-text {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.bookmark-group-children {
+    /*padding-top: 5px;*/
+    padding-top: 15px;
+}
+
+.bookmark-group .bookmark-group-children {
+    display: none;
+}
+
+.bookmark-group.open .bookmark-group-children {
+    display: block;
+}
+
+.bookmark-group .expand {
+    display: none;
+}
+
+.bookmark-group.open .expand {
+    display: inline;
+}
+
+.bookmark-group .collapse {
+    display: inline;
+}
+
+.bookmark-group.open .collapse {
+    display: none;
+}
+
+/*----- bookmark-group -----*/
+
+/*----- bookmark-item -----*/
+
+.bookmark-item {
+    display: flex;
+    align-items: center;
+    border-radius: .35rem;
+    /*border-radius: 5px;*/ 
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+    .bookmark-item.first {
+        margin-top: 0px;
+    }
+
+    .bookmark-item.last {
+        margin-bottom: 0px;
+    }
+
+.bookmark-item-icon {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    flex-shrink: 0;
+}
+
+.bookmark-item-text {
+    align-self: center;
+}
+
+@media screen and (max-width: 640px) {
+    .bookmark-item {
+        padding: 10px;
+    }
+
+    .bookmark-item-text {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .bookmark-item {
+        padding: 10px 15px;
+    }
+
+    .bookmark-item-text {
+        padding: 0 15px;
+    }
+}
+
+.bookmark-item-title {
+    align-self: center;
+    padding: 0;
+    font-weight: 700;
+}
+
+.bookmark-item-sub-title {
+    display: block;
+    align-items: center;
+    align-self: center;
+    font-size: .8rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.bookmark-item-sub-title-icon {
+    margin-right: 5px;
+}
+
+.bookmark-item-link {
+    margin-left: auto;
+}
+
+.bookmark-item-nav-button {
+    margin-left: 15px;
+}
+
+/*----- bookmark-item -----*/
+
+/*----- board-toolbar -----*/
+
+.board-toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+    .board-toolbar .button {
+        margin-right: 10px;
+        font-size: .9rem;
+    }
+
+    .board-toolbar .start {
+        display: flex;
+        align-items: center;
+    }
+
+    .board-toolbar .end {
+        display: flex;
+        align-items: center;
+    }
+
+/*----- board-toolbar -----*/
+
+.bookmark-group-children {
+    animation: .2s cubic-bezier(.16, 1, .3, 1) bookmarkSlideDownAndFade;
+}
+
+@keyframes bookmarkSlideDownAndFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-1px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
