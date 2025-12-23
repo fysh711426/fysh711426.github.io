@@ -27,51 +27,49 @@ body.dark {
     border-color: var(--checkboxWrapBorderColor);
 }
 
-/*.bookmark-item-description {
-    color: var(--fileDescriptionColor)
-}*/
+.bookmark-item.hover:hover {
+    background-color: var(--boardHoverColor)
+}
 
-    .bookmark-item.hover:hover {
-        background-color: var(--boardHoverColor)
-    }
+.bookmark-item.active,
+.bookmark-item.active.hover:hover {
+    background-color: var(--fileItemActiveBgColor)
+}
 
-    .bookmark-item.active,
-    .bookmark-item.active.hover:hover {
-        background-color: var(--fileItemActiveBgColor)
-    }
+.bookmark-item.active {
+    color: var(--fileItemActiveColor)
+}
 
-    .bookmark-item.active {
-        color: var(--fileItemActiveColor)
-    }
+.bookmark-item.active.hover:hover {
+    color: var(--fileItemActiveColor)
+}
 
-        .bookmark-item.active .bookmark-item-icon {
-            color: var(--fileItemActiveIconColor)
-        }
-
-        /*.bookmark-item.active .bookmark-item-description {
-            color: var(--fileItemActiveDescriptionColor)
-        }*/
-
-        .bookmark-item.active.hover:hover {
-            color: var(--fileItemActiveColor)
-        }
-
-            .bookmark-item.active.hover:hover .bookmark-item-icon {
-                color: var(--fileItemActiveIconColor)
-            }
-
-            /*.bookmark-item.active.hover:hover .bookmark-item-description {
-                color: var(--fileItemActiveDescriptionColor)
-            }*/
-
-a .bookmark-item-icon,
-div .bookmark-item-icon {
+.bookmark-item .bookmark-item-icon {
     color: var(--fileIconColor)
 }
 
-a:hover .bookmark-item-icon,
-div:hover .bookmark-item-icon {
+.bookmark-item:hover .bookmark-item-icon {
     color: var(--fileIconHoverColor)
+}
+
+.bookmark-item.active .bookmark-item-icon {
+    color: var(--fileItemActiveIconColor)
+}
+
+.bookmark-item.active.hover:hover .bookmark-item-icon {
+    color: var(--fileItemActiveIconColor)
+}
+
+.bookmark-item-description {
+    color: var(--fileDescriptionColor)
+}
+
+.bookmark-item.active .bookmark-item-description {
+    color: var(--fileItemActiveDescriptionColor)
+}
+
+.bookmark-item.active.hover:hover .bookmark-item-description {
+    color: var(--fileItemActiveDescriptionColor)
 }
 
 .bookmark-item-sub-title {
@@ -112,15 +110,15 @@ div:hover .bookmark-item-icon {
     margin: auto;
 }
 
-    .bookmark-group-title .start {
-        display: flex;
-        align-items: center;
-    }
+.bookmark-group-title .start {
+    display: flex;
+    align-items: center;
+}
 
-    .bookmark-group-title .end {
-        display: flex;
-        align-items: center;
-    }
+.bookmark-group-title .end {
+    display: flex;
+    align-items: center;
+}
 
 @media screen and (max-width: 640px) {
     .bookmark-group-title .end {
@@ -190,13 +188,13 @@ div:hover .bookmark-item-icon {
     cursor: pointer;
 }
 
-    .bookmark-item.first {
-        margin-top: 0px;
-    }
+.bookmark-item.first {
+    margin-top: 0px;
+}
 
-    .bookmark-item.last {
-        margin-bottom: 0px;
-    }
+.bookmark-item.last {
+    margin-bottom: 0px;
+}
 
 .bookmark-item-icon {
     display: flex;
@@ -242,10 +240,24 @@ div:hover .bookmark-item-icon {
     font-size: .8rem;
     line-height: 1.5;
     font-weight: 700;
+    padding-top: 0px;
 }
 
 .bookmark-item-sub-title-icon {
-    margin-right: 5px;
+    margin-right: 3px;
+}
+
+.bookmark-item-description {
+    align-self: center;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-weight: 500;
+    padding-top: 0px;
+}
+
+.bookmark-item-description {
+    display: flex;
+    align-items: center;
 }
 
 .bookmark-item-link {
@@ -263,23 +275,22 @@ div:hover .bookmark-item-icon {
 .board-toolbar {
     display: flex;
     justify-content: space-between;
-    margin: auto;
 }
 
-    .board-toolbar .button {
-        margin-right: 10px;
-        font-size: .9rem;
-    }
+.board-toolbar .start {
+    display: flex;
+    align-items: center;
+}
 
-    .board-toolbar .start {
-        display: flex;
-        align-items: center;
-    }
+.board-toolbar .end {
+    display: flex;
+    align-items: center;
+}
 
-    .board-toolbar .end {
-        display: flex;
-        align-items: center;
-    }
+.board-toolbar .button {
+    margin-right: 10px;
+    font-size: .9rem;
+}
 
 /*----- board-toolbar -----*/
 

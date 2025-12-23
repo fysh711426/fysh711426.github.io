@@ -24,7 +24,7 @@ var onScrollEnd = (function () {
                 callback.call(this);
             }
         }, delay);
-    }
+    };
 })();
 
 var onScroll = function (callback, delay) {

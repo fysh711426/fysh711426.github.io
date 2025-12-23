@@ -99,5 +99,5 @@ var tooltip = (function () {
                 });
             })();
         }
-    }
+    };
 })();

@@ -3,6 +3,7 @@ body.light {
     --fileIconHoverColor: hsl(0, 0%, 31%);
     --fileDescriptionColor: #7e7e7e;
     --fileImageBlockShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --fileImageBlockShadowOffset: 0 5px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     --fileItemActiveColor: #d2d3d5;
     --fileItemActiveBgColor: rgba(48, 48, 48, .95);
     --fileItemActiveIconColor: hsl(216, 4%, 78%);
@@ -27,6 +28,7 @@ body.dark {
     --fileIconHoverColor: hsl(216, 4%, 78%);
     --fileDescriptionColor: #aaa;
     --fileImageBlockShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    --fileImageBlockShadowOffset: 0 15px 15px 0 rgb(0 0 0 / 24%), 0 50px 50px 0 rgb(0 0 0 / 19%);
     /* --fileItemActiveColor: #262626; */
     --fileItemActiveColor: #333333;
     --fileItemActiveBgColor: rgba(255, 255, 255, .85);
@@ -89,35 +91,23 @@ a:hover .file-item-icon {
 
 /*----- file-item -----*/
 
-/*----- file-image-item -----*/
-
-.file-image-item-description {
-    color: var(--fileDescriptionColor);
-}
-
-.file-image-item.board.active {
-    color: var(--fileItemActiveColor);
-    background-color: var(--fileItemActiveBgColor);
-}
-
-.file-image-item.board.active .file-image-item-description {
-    color: var(--fileItemActiveDescriptionColor);
-}
-
-.file-image-item.board.active.hover:hover {
-    color: var(--fileItemActiveColor);
-    background-color: var(--fileItemActiveBgColor);
-}
-
-.file-image-item.board.active.hover:hover .file-image-item-description {
-    color: var(--fileItemActiveDescriptionColor);
-}
-
-/*----- file-image-item -----*/
-
 /*----- file-image-block -----*/
 
 .file-image-block {
+    /* box-shadow: var(--fileImageBlockShadow); */
+    background-color: var(--bgColor);
+    box-shadow: 10px 0 0 0 var(--bgColor), -10px 0 0 0 var(--bgColor);
+}
+
+.file-image-block .image-wrap {
+    box-shadow: var(--fileImageBlockShadowOffset);
+}
+
+.file-image-block .image-wrap.hide {
+    box-shadow: var(--fileImageBlockShadow);
+}
+
+.file-image-block .image-wrap.first {
     box-shadow: var(--fileImageBlockShadow);
 }
 

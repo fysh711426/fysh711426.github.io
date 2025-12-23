@@ -32,5 +32,5 @@ var gotop = (function () {
                 gotop.classList.remove('show');
             }
         }, setting.delay);
-    }
+    };
 })();

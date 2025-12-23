@@ -111,5 +111,5 @@ var progress = (function () {
         set: set,
         done: done,
         config: config
-    }
+    };
 })();

@@ -75,5 +75,5 @@ var modal = (function () {
             }
         }
         return ref;
-    }
+    };
 })();

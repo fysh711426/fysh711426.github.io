@@ -142,5 +142,5 @@ var popover = (function () {
         return {
             close: close
         };
-    }
+    };
 })();

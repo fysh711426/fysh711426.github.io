@@ -1,0 +1,110 @@
+/*----- mark -----*/
+
+.mark {
+    /*border: rgba(255, 255, 0, 1);
+    background-color: rgba(255, 255, 0, 0.5);*/
+    /*border: var(--markBorderColor);
+    background-color: var(--markBgColor);*/
+    border-color: rgba(255, 218, 106, 1);
+    background-color: rgba(255, 218, 106, 0.5);
+}
+
+/*----- mark -----*/
+
+/*----- file-item-sub-title -----*/
+
+.file-item-sub-title {
+    color: var(--fileDescriptionColor);
+}
+
+.file-image-item-sub-title {
+    color: var(--fileDescriptionColor);
+}
+
+.file-item.board.active .file-item-sub-title {
+    color: var(--fileItemActiveDescriptionColor)
+}
+
+.file-image-item.board.active .file-image-item-sub-title {
+    color: var(--fileItemActiveDescriptionColor)
+}
+
+.file-item.board.active.hover:hover .file-item-sub-title {
+    color: var(--fileItemActiveDescriptionColor)
+}
+
+.file-image-item.board.active.hover:hover .file-image-item-sub-title {
+    color: var(--fileItemActiveDescriptionColor)
+}
+
+/*----- file-item-sub-title -----*/
+
+/*----- mark -----*/
+
+.mark {
+    display: inline-flex;
+    padding: 0px 2px;
+    /*border-radius: 5px;*/
+    border-radius: 0.375rem;
+    /*border: 1px solid;*/
+    border: 0;
+}
+
+/*----- mark -----*/
+
+/*----- file-item-sub-title -----*/
+
+.file-item-sub-title {
+    display: block;
+    align-items: center;
+    align-self: center;
+    font-size: .8rem;
+    line-height: 1.5;
+    font-weight: 700;
+    /* padding-top: 8px;
+    padding-bottom: 3px; */
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+.file-image-item-sub-title {
+    display: block;
+    align-items: center;
+    align-self: center;
+    font-size: .8rem;
+    line-height: 1.5;
+    font-weight: 700;
+    /* padding-top: 8px;
+    padding-bottom: 3px; */
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+.file-item-sub-title-icon {
+    margin-right: 3px;
+}
+
+.file-image-item-sub-title-icon {
+    margin-right: 3px;
+}
+
+/*----- file-item-sub-title -----*/
+
+/*----- board-infobar -----*/
+
+.board-infobar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.board-infobar .start {
+    display: flex;
+    align-items: center;
+}
+
+.board-infobar .end {
+    display: flex;
+    align-items: center;
+}
+
+/*----- board-infobar -----*/

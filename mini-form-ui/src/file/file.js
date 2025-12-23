@@ -59,7 +59,7 @@ var fileNavbar = (function() {
         enableExpand: enableExpand,
         enableImageOver: enableImageOver,
         enableTextOver: enableTextOver
-    }
+    };
 })();
 
 var onTextThemeButtonChange = (function() {

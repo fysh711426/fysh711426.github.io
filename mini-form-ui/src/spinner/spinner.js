@@ -42,5 +42,5 @@ var spinner = (function() {
             item.innerHTML = innerHTML;
             item.classList.add('spinner');
         }
-    }
+    };
 })();

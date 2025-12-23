@@ -8,21 +8,27 @@
     <link rel="shortcut icon" href="icon/favicon.ico" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="src/badge/badge.css">
     <link rel="stylesheet" href="src/tooltip/tooltip.css">
     <link rel="stylesheet" href="src/progress/progress.css">
     <link rel="stylesheet" href="src/spinner/spinner.css">
+    <link rel="stylesheet" href="src/toast/toast.css">
     <link rel="stylesheet" href="src/gotop/gotop.css">
+    <link rel="stylesheet" href="src/search/search.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
     <link rel="stylesheet" href="src/file/file.css">
     <link rel="stylesheet" href="src/file/file-theme.css">
     <link rel="stylesheet" href="src/file/file-image-item.css">
+    <link rel="stylesheet" href="src/file/file-search.css">
     <script src="src/theme/theme.js"></script>
     <script src="src/scroll/scroll.js"></script>
     <script src="src/tooltip/tooltip.js"></script>
     <script src="src/progress/progress.js"></script>
     <script src="src/spinner/spinner.js"></script>
+    <script src="src/toast/toast.js"></script>
     <script src="src/gotop/gotop.js"></script>
+    <script src="src/search/search.js"></script>
     <script src="src/layout/layout.js"></script>
     <script src="src/file/file.js"></script>
 </head>
@@ -39,7 +45,30 @@
                         </div>
                     </a>
                 </div>
-                <div></div>
+                <div class="center">
+                    <div class="search-box-block">
+                        <div class="search-box">
+                            <a href="javascript:void(0)" class="nav-link search-back-button">
+                                <i class="fa-solid fa-angle-left fa-fw"></i>
+                            </a>
+                            <div class="search-input-box">
+                                <input class="search-input" name="search" type="text" placeholder="Search"
+                                       autocomplete="off" autocorrect="off" spellcheck="false" />
+                                <a href="javascript:void(0)" class="search-clear-button">
+                                    <i class="fa-solid fa-xmark fa-fw"></i>
+                                </a>
+                            </div>
+                            <a href="javascript:void(0)" class="search-button">
+                                <div class="search-button-wrap">
+                                    <i class="fa-solid fa-magnifying-glass fa-fw"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="javascript:void(0)" class="nav-link search-toggle-button"">
+                            <i class="fa-solid fa-magnifying-glass fa-fw"></i>
+                        </a>
+                    </div>
+                </div>
                 <div class="end">
                     <a href="javascript:void(0)" class="nav-link-c theme-button theme-button-light" onclick="toggleTheme()">
                         <span class="theme-button-icon">
@@ -67,15 +96,35 @@
         <div class="container">
             <div class="main file-main">
                 <div class="main-inner">
+
+                    <div class="board fw board-infobar">
+                        <div class="start">
+                            <span class="badge">
+                                <span>Results :</span>
+                                <span v-if="isOverResultLimit">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </span>
+                                <span>1</span>
+                                <span>items</span>
+                            </span>
+                            <span v-if="isOverResultLimit" class="badge">
+                                <i class="fa-solid fa-circle-exclamation fa-fw"></i>
+                                <span>{{local.overResultLimitErrorMessage}}</span>
+                            </span>
+                        </div>
+                        <div class="end">
+                        </div>
+                    </div>
+
                     <div class="board file-navbar sticky over">
                         <div class="start mw-1x">
                             <a href="javascript:void(0)" class="file-navbar-btn">
                                 <i class="fa-solid fa-arrow-left fa-fw"></i>
                             </a>
                             <div class="file-navbar-title-wrap mw-1x">
-                                <div class="file-navbar-title">Title</div>
+                                <div class="file-navbar-title">Search : aaa (Title)</div>
                                 <div class="file-navbar-title-over-wrap">
-                                    <div class="file-navbar-title-over">Title</div>
+                                    <div class="file-navbar-title-over">Search : aaa (Title)</div>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +147,6 @@
                     </div>
                     <div class="block file-navbar-expand">
                         <div class="start">
-                            <!-- <div class="file-navbar-expand-title">Files</div> -->
                         </div>
                         <div></div>
                         <div class="end">
@@ -107,8 +155,8 @@
                                 <span class="file-navbar-btn-text">Save</span>
                             </a>
                             <a href="javascript:void(0)" class="file-navbar-btn">
-                                <i class="fa-solid fa-eye fa-fw"></i>
-                                <span class="file-navbar-btn-text">Browse</span>
+                                <i class="fa-solid fa-table-list fa-fw"></i>
+                                <span class="file-navbar-btn-text">Thumb</span>
                             </a>
                             <a href="javascript:void(0)" class="file-navbar-btn">
                                 <i class="fa-solid fa-image fa-fw"></i>
@@ -123,7 +171,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="view-mode">
+                    <div>
                         <a href="javascript:void(0)" onclick="onSelected(this)">
                             <div id="file1" class="board hover file-item">
                                 <div class="file-item-icon">
@@ -131,28 +179,46 @@
                                 </div>
                                 <div class="file-item-text">
                                     <div class="file-item-title">Folder</div>
+                                    <div class="file-item-sub-title">
+                                        <span class="file-item-sub-title-icon">
+                                            <i class="fa-solid fa-tag fa-fw"></i>
+                                        </span>
+                                        <span>shared (root)</span>
+                                    </div>
                                     <div class="file-item-description">5 Items</div>
                                 </div>
                             </div>
                         </a>
-                        <a href="file-video.html">
+                        <a href="javascript:void(0)" onclick="onSelected(this)">
                             <div id="file2" class="board hover file-image-item">
                                 <div class="file-image-item-icon">
                                     <img src="demo/video.png" />
                                 </div>
                                 <div class="file-image-item-text">
-                                    <div class="file-image-item-title">Video.mp4</div>
+                                    <div class="file-image-item-title">Vid<span class="mark">aaa</span>eo.mp4</div>
+                                    <div class="file-image-item-sub-title">
+                                        <span class="file-image-item-sub-title-icon">
+                                            <i class="fa-solid fa-tag fa-fw"></i>
+                                        </span>
+                                        <span>Folder (root/shared)</span>
+                                    </div>
                                     <div class="file-image-item-description">1.22 GB</div>
                                 </div>
                             </div>
                         </a>
-                        <a href="file-image.html">
+                        <a href="javascript:void(0)" onclick="onSelected(this)">
                             <div id="file3" class="board hover file-image-item">
                                 <div class="file-image-item-icon">
                                     <img src="demo/image1.jpg" />
                                 </div>
                                 <div class="file-image-item-text">
                                     <div class="file-image-item-title">Image.jpg</div>
+                                    <div class="file-image-item-sub-title">
+                                        <span class="file-image-item-sub-title-icon">
+                                            <i class="fa-solid fa-tag fa-fw"></i>
+                                        </span>
+                                        <span>Folder (root/shared)</span>
+                                    </div>
                                     <div class="file-image-item-description">439 KB</div>
                                 </div>
                             </div>
@@ -163,18 +229,30 @@
                                 <i class="fa-solid fa-file-audio fa-3x fa-fw"></i>
                                 </div>
                                 <div class="file-item-text">
-                                    <div class="file-item-title">Audio.mp3</div>
+                                    <div class="file-item-title">Audio<span class="mark">aaa</span>.mp3</div>
+                                    <div class="file-item-sub-title">
+                                        <span class="file-item-sub-title-icon">
+                                            <i class="fa-solid fa-tag fa-fw"></i>
+                                        </span>
+                                        <span>Folder (root/shared)</span>
+                                    </div>
                                     <div class="file-item-description">1.52 MB</div>
                                 </div>
                             </div>
                         </a>
-                        <a href="file-text.html">
+                        <a href="javascript:void(0)" onclick="onSelected(this)">
                             <div id="file5" class="board hover file-item">
                                 <div class="file-item-icon">
                                 <i class="fa-solid fa-file-lines fa-3x fa-fw"></i>
                                 </div>
                                 <div class="file-item-text">
                                     <div class="file-item-title">Text.txt</div>
+                                    <div class="file-item-sub-title">
+                                        <span class="file-item-sub-title-icon">
+                                            <i class="fa-solid fa-tag fa-fw"></i>
+                                        </span>
+                                        <span>Folder (root/shared)</span>
+                                    </div>
                                     <div class="file-item-description">6.55 KB</div>
                                 </div>
                             </div>
@@ -186,28 +264,16 @@
                                 </div>
                                 <div class="file-item-text">
                                     <div class="file-item-title">Other</div>
+                                    <div class="file-item-sub-title">
+                                        <span class="file-item-sub-title-icon">
+                                            <i class="fa-solid fa-tag fa-fw"></i>
+                                        </span>
+                                        <span>Folder (root/shared)</span>
+                                    </div>
                                     <div class="file-item-description">1 KB</div>
                                 </div>
                             </div>
                         </a>
-                        <div class="file-image-block">
-                            <img src="demo/file1.jpg" />
-                        </div>
-                        <div class="file-image-block">
-                            <img src="demo/file2.jpg" />
-                        </div>
-                        <div class="file-image-block">
-                            <img src="demo/file3.jpg" />
-                        </div>
-                        <div class="file-image-block">
-                            <img src="demo/file4.jpg" />
-                        </div>
-                        <div class="file-image-block">
-                            <img src="demo/file5.jpg" />
-                        </div>
-                    </div>
-                    <div class="spinner-block">
-                        <div class="spinner"></div>
                     </div>
                 </div>
                 <div class="footer">
@@ -220,9 +286,13 @@
             </div>
         </div>
     </div>
+    <div class="toast-template">
+        <div class="toast-block">
+            <div class="toast-inner">__data-content__</div>
+        </div>
+    </div>
     <script>
         gotop('.file-navbar-gotop-wrap');
-        spinner('.spinner');
         progress.start();
         setTimeout(function() {
             progress.done();
@@ -251,6 +321,14 @@
             theme = theme === 'light' ? 'dark' : 'light';
             onThemeButtonChange(theme);
             onThemeChange(theme);
+        }
+        var search = searchBar('.search-box-block');
+        search.init('', false);
+        search.onToggle = function(isOpen) {
+            toast.show('onToggle: ' + isOpen);
+        }
+        search.onSearch= function(text) {
+            toast.show('onSearch: ' + text);
         }
     </script>
 </body>
