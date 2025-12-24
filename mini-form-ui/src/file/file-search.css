@@ -1,3 +1,13 @@
+/* body.light {
+    --markBorderColor: #ffe69c;
+    --markBgColor: #fff3cd;
+} */
+
+/* body.dark {
+    --markBorderColor: #997404;
+    --markBgColor: #332701;
+} */
+
 /*----- mark -----*/
 
 .mark {
@@ -11,34 +21,6 @@
 
 /*----- mark -----*/
 
-/*----- file-item-sub-title -----*/
-
-.file-item-sub-title {
-    color: var(--fileDescriptionColor);
-}
-
-.file-image-item-sub-title {
-    color: var(--fileDescriptionColor);
-}
-
-.file-item.board.active .file-item-sub-title {
-    color: var(--fileItemActiveDescriptionColor)
-}
-
-.file-image-item.board.active .file-image-item-sub-title {
-    color: var(--fileItemActiveDescriptionColor)
-}
-
-.file-item.board.active.hover:hover .file-item-sub-title {
-    color: var(--fileItemActiveDescriptionColor)
-}
-
-.file-image-item.board.active.hover:hover .file-image-item-sub-title {
-    color: var(--fileItemActiveDescriptionColor)
-}
-
-/*----- file-item-sub-title -----*/
-
 /*----- mark -----*/
 
 .mark {
@@ -51,44 +33,6 @@
 }
 
 /*----- mark -----*/
-
-/*----- file-item-sub-title -----*/
-
-.file-item-sub-title {
-    display: block;
-    align-items: center;
-    align-self: center;
-    font-size: .8rem;
-    line-height: 1.5;
-    font-weight: 700;
-    /* padding-top: 8px;
-    padding-bottom: 3px; */
-    padding-top: 5px;
-    padding-bottom: 0px;
-}
-
-.file-image-item-sub-title {
-    display: block;
-    align-items: center;
-    align-self: center;
-    font-size: .8rem;
-    line-height: 1.5;
-    font-weight: 700;
-    /* padding-top: 8px;
-    padding-bottom: 3px; */
-    padding-top: 5px;
-    padding-bottom: 0px;
-}
-
-.file-item-sub-title-icon {
-    margin-right: 3px;
-}
-
-.file-image-item-sub-title-icon {
-    margin-right: 3px;
-}
-
-/*----- file-item-sub-title -----*/
 
 /*----- board-infobar -----*/
 
@@ -105,6 +49,14 @@
 .board-infobar .end {
     display: flex;
     align-items: center;
+}
+
+.board-infobar .start .badge {
+    margin-right: 10px;
+}
+
+.board-infobar .end .badge {
+    margin-left: 10px;
 }
 
 /*----- board-infobar -----*/

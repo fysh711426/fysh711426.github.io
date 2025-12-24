@@ -12,6 +12,7 @@ body.light {
     --fileItemActiveBgColor: rgba(179, 179, 179, .3);
     --fileItemActiveIconColor: hsl(0, 0%, 31%);
     --fileItemActiveDescriptionColor: #7e7e7e; */
+    --fileItemActiveLinkHoverColor: #fff;
     --fileNavbarBgColor: #fff;
     --fileNavbarShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     --fileNavbarOverBgColor: #fff;
@@ -38,6 +39,7 @@ body.dark {
     --fileItemActiveBgColor: rgba(179, 179, 179, .3);
     --fileItemActiveIconColor: hsl(216, 4%, 78%);
     --fileItemActiveDescriptionColor: #aaa; */
+    --fileItemActiveLinkHoverColor: #7a7a7a;
     --fileNavbarBgColor: #303030;
     --fileNavbarShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
     --fileNavbarOverBgColor: #404040;
@@ -48,48 +50,6 @@ body.dark {
     --fileTextContentColor: #d2d3d5;
     --fileTextContentBgColor: #181818;
 }
-
-/*----- file-item -----*/
-
-a .file-item-icon {
-    color: var(--fileIconColor);
-}
-
-a:hover .file-item-icon {
-    color: var(--fileIconHoverColor);
-}
-
-.file-item-description {
-    color: var(--fileDescriptionColor);
-}
-
-.file-item.board.active {
-    color: var(--fileItemActiveColor);
-    background-color: var(--fileItemActiveBgColor);
-}
-
-.file-item.board.active .file-item-icon {
-    color: var(--fileItemActiveIconColor);
-}
-
-.file-item.board.active .file-item-description {
-    color: var(--fileItemActiveDescriptionColor);
-}
-
-.file-item.board.active.hover:hover {
-    color: var(--fileItemActiveColor);
-    background-color: var(--fileItemActiveBgColor);
-}
-
-.file-item.board.active.hover:hover .file-item-icon {
-    color: var(--fileItemActiveIconColor);
-}
-
-.file-item.board.active.hover:hover .file-item-description {
-    color: var(--fileItemActiveDescriptionColor);
-}
-
-/*----- file-item -----*/
 
 /*----- file-image-block -----*/
 

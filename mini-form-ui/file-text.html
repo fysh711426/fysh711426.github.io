@@ -8,11 +8,13 @@
     <link rel="shortcut icon" href="icon/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="https://vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/button/button.css">
     <link rel="stylesheet" href="src/tooltip/tooltip.css">
     <link rel="stylesheet" href="src/progress/progress.css">
     <link rel="stylesheet" href="src/spinner/spinner.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
+    <link rel="stylesheet" href="src/layout/layout-nav-link.css">
     <link rel="stylesheet" href="src/file/file.css">
     <link rel="stylesheet" href="src/file/file-theme.css">
     <link rel="stylesheet" href="src/file/file-video-player.css">
@@ -41,16 +43,22 @@
                 </div>
                 <div></div>
                 <div class="end">
-                    <a href="javascript:void(0)" class="nav-link-c theme-button text-theme-button" onclick="toggleTextTheme()">
-                        <span class="text-theme-button-icon">
+                    <a href="javascript:void(0)" class="nav-link-button toggle text-theme-button" onclick="toggleTextTheme()">
+                        <!-- <span class="nav-link-button-icon svg">
                             <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                             </svg>                           
+                        </span> -->
+                        <span class="nav-link-button-icon">
+                            <i class="fa-solid fa-brush fa-fw"></i>                           
                         </span>
-                        <span class="theme-button-text">theme</span>
+                        <span class="nav-link-button-text">theme</span>
                     </a>
-                    <a href="javascript:void(0)" class="nav-link">
-                        Setting
+                    <a href="javascript:void(0)" class="nav-link toggle icon-hidden">
+                        <span class="nav-link-icon">
+                            <i class="fa-solid fa-gear fa-fw"></i>
+                        </span>
+                        <span class="nav-link-text">Setting</span>
                     </a>
                 </div>
             </div>

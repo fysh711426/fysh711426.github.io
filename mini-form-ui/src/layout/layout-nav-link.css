@@ -1,0 +1,113 @@
+/*----- nav-link -----*/
+
+@media screen and (min-width: 1025px) {
+    .nav-link:hover,
+    a.nav-link:hover {
+        color: var(--linkHoverColor);
+    }
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    align-self: center;
+    white-space: nowrap;
+}
+
+.nav-link-icon {
+    margin-right: 5px;
+}
+
+.nav-link-button-icon.svg,
+.nav-link-button-icon svg {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+@media screen and (max-width: 640px) {
+    .nav-link.toggle {
+        padding: 5px 5px;
+    }
+
+    .nav-link.toggle .nav-link-icon {
+        /* display: inline-flex; */
+        margin-right: 0px;
+    }
+
+    .nav-link.toggle .nav-link-text {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .nav-link.toggle.icon-hidden .nav-link-icon {
+        display: none;
+    }
+}
+
+/*----- nav-link -----*/
+
+/*----- nav-link-button -----*/
+
+.nav-link-button,
+a.nav-link-button,
+a.nav-link-button:link,
+a.nav-link-button:visited,
+a.nav-link-button:active {
+    color: var(--themeButtonFontColor);
+    background-color: var(--themeButtonBgColor);
+}
+
+@media screen and (max-width: 640px) {
+    .nav-link-button.toggle,
+    a.nav-link-button.toggle,
+    a.nav-link-button.toggle:link,
+    a.nav-link-button.toggle:visited,
+    a.nav-link-button.toggle:active {
+        color: var(--linkColor);
+        background-color: inherit;
+    }
+}
+
+.nav-link-button {
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    font-size: 1rem;
+    align-self: center;
+    padding: 5px 15px;
+}
+
+.nav-link-button-icon {
+    margin-right: 5px;
+}
+
+.nav-link-button-icon.svg,
+.nav-link-button-icon svg {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+@media screen and (max-width: 640px) {
+    .nav-link-button.toggle {
+        padding: 5px 5px;
+    }
+
+    .nav-link-button.toggle .nav-link-button-icon {
+        /* display: inline-flex; */
+        margin-right: 0px;
+    }
+
+    .nav-link-button.toggle .nav-link-button-text {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .nav-link-button.toggle.icon-hidden .nav-link-button-icon {
+        display: none;
+    }
+}
+
+/*----- nav-link-button -----*/

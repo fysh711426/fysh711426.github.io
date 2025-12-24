@@ -10,6 +10,7 @@ body.light {
     --fontColor: #262626;
     --linkColor: #242424;
     --linkHoverColor: #7a7a7a;
+    --linkDefaultColor: #0094ff;
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
     --menuActive: #f1f1f1;
@@ -49,6 +50,7 @@ body.dark {
     --fontColor: #d2d3d5;
     --linkColor: #d2d3d5;
     --linkHoverColor: #fff;
+    --linkDefaultColor: #33aaff;
     --themeButtonBgColor: #f9f9f9;
     --themeButtonFontColor: #181818;
     --menuActive: #454545;
@@ -99,6 +101,13 @@ a:active {
     color: var(--linkColor);
 }
 
+a.link-default,
+a.link-default:link,
+a.link-default:visited,
+a.link-default:active {
+    color: var(--linkDefaultColor);
+}
+
 /*----- layout -----*/
 
 /*----- progress -----*/
@@ -119,39 +128,6 @@ a:active {
 @media screen and (min-width: 1025px) {
     .header .nav-button:hover {
         color: var(--linkHoverColor);
-    }
-}
-
-
-@media screen and (min-width: 1025px) {
-    .nav-link:hover {
-        color: var(--linkHoverColor);
-    }
-
-    a.nav-link:hover {
-        color: var(--linkHoverColor);
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .nav-link-c {
-        color: var(--linkColor);
-    }
-
-    a.nav-link-c {
-        color: var(--linkColor);
-    }
-}
-
-@media screen and (min-width: 641px) {
-    .nav-link-c {
-        color: var(--themeButtonFontColor);
-        background-color: var(--themeButtonBgColor);
-    }
-
-    a.nav-link-c {
-        color: var(--themeButtonFontColor);
-        background-color: var(--themeButtonBgColor);
     }
 }
 

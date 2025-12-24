@@ -1,11 +1,3 @@
-body.light {
-    --fileItemActiveHoverColor: #fff;
-}
-
-body.dark {
-    --fileItemActiveHoverColor: #7a7a7a;
-}
-
 /*----- bookmark-item -----*/
 
 @media screen and (min-width: 1025px) {
@@ -93,11 +85,11 @@ body.dark {
 }
 
 .bookmark-item.active a:hover {
-    color: var(--fileItemActiveHoverColor)
+    color: var(--fileItemActiveLinkHoverColor)
 }
 
 .bookmark-item.active.hover:hover a:hover {
-    color: var(--fileItemActiveHoverColor)
+    color: var(--fileItemActiveLinkHoverColor)
 }
 
 /*----- bookmark-item -----*/
@@ -249,7 +241,7 @@ body.dark {
 
 .bookmark-item-description {
     align-self: center;
-    font-size: 0.9rem;
+    font-size: .9rem;
     line-height: 1.5;
     font-weight: 500;
     padding-top: 0px;
@@ -258,6 +250,11 @@ body.dark {
 .bookmark-item-description {
     display: flex;
     align-items: center;
+}
+
+.bookmark-item-description.sm {
+    font-size: .8rem;
+    font-weight: 700;
 }
 
 .bookmark-item-link {
@@ -288,8 +285,15 @@ body.dark {
 }
 
 .board-toolbar .button {
-    margin-right: 10px;
     font-size: .9rem;
+}
+
+.board-toolbar .start .button {
+    margin-right: 10px;
+}
+
+.board-toolbar .end .button {
+    margin-left: 10px;
 }
 
 /*----- board-toolbar -----*/

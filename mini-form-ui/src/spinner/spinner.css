@@ -11,6 +11,13 @@ body.dark {
     color: var(--spinnerColor);
 }
 
+.spinner-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 15px auto;
+}
+
 .spinner {
     display: inline-block;
     position: relative;

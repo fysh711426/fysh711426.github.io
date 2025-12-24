@@ -1,0 +1,64 @@
+body.light {
+    --badgeColor: #d2d3d5;
+    --badgeBgColor: rgba(48, 48, 48, .95);
+    --badgeActiveColor: #333333;
+    --badgeActiveBgColor: rgba(255, 255, 255, .85);
+}
+
+body.dark {
+    --badgeColor: #333333;
+    --badgeBgColor: rgba(255, 255, 255, .85);
+    --badgeActiveColor: #d2d3d5;
+    --badgeActiveBgColor: rgba(48, 48, 48, .95);
+}
+
+.badge {
+    color: var(--badgeColor);
+    background-color: var(--badgeBgColor);
+}
+
+.board.active .badge {
+    color: var(--badgeActiveColor);
+    background-color: var(--badgeActiveBgColor);
+}
+
+.badge {
+    display: inline-block;
+    align-self: center;
+    box-sizing: border-box;
+    line-height: 1;
+    font-size: .75em;
+    font-weight: 700;
+    /* padding: .2em .6em .3em .6em;
+    font-size: .8em; */
+    /* border-radius: .25rem; */
+    /* padding: 5px 10px; */
+    padding: .35em .65em;
+    border-radius: .375rem;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+.badge.round { 
+    border-radius: 50rem;
+}
+
+
+
+
+/* .folder-history.badge {
+    padding: .35em .52em;
+    border-radius: 50rem;
+    line-height: .9;
+    letter-spacing: .02em;
+    font-family: var(--badgeFont);
+} */
+
+/*.board .file-history {
+    color: var(--linkColor);
+}
+
+.board.active .file-history {
+    color: var(--fileItemActiveColor);
+}*/

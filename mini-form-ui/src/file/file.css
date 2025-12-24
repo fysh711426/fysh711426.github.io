@@ -36,71 +36,6 @@ z-index
 
 /*----- file-main -----*/
 
-/*----- file-item -----*/
-
-.file-item {
-    display: flex;
-    align-items: center;
-    border-top: none;
-}
-
-.file-item-icon {
-    display: flex;
-    align-items: center;
-    align-self: center;
-    flex-shrink: 0;
-}
-
-.file-item-text {
-    align-self: center;
-    word-wrap: break-word;
-    word-break: break-all;
-}
-
-@media screen and (max-width: 640px) {
-    .file-item {
-        padding: 15px 15px;
-    }
-
-    .file-item-text {
-        padding: 0px 15px;
-    }
-}
-
-@media screen and (min-width: 641px) {
-    .file-item {
-        padding: 15px 20px;
-    }
-
-    .file-item-text {
-        padding: 0px 20px;
-    }
-}
-
-.file-item-title {
-    align-self: center;
-    padding: 0px;
-    font-weight: bold;
-    word-wrap: break-word;
-    word-break: break-all;
-}
-
-.file-item-description {
-    align-self: center;
-    padding-top: 5px;
-    font-size: 0.9rem;
-    /* line-height: 0.9rem; */
-    line-height: 1.5;
-    font-weight: 500;
-}
-
-.file-item-description {
-    display: flex;
-    align-items: center;
-}
-
-/*----- file-item -----*/
-
 /*----- file-image-block -----*/
 
 .file-image-block.over {
@@ -395,12 +330,8 @@ z-index
 
 /*----- text-theme-button -----*/
 
-.text-theme-button-icon {
-    width: 1.2rem;
-    height: 1.2rem;
-}
-
-.text-theme-button-icon svg {
+.text-theme-button .nav-link-button-icon.svg,
+.text-theme-button .nav-link-button-icon svg {
     width: 1.2rem;
     height: 1.2rem;
 }

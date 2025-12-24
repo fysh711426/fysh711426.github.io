@@ -32,17 +32,9 @@ body {
 
 /*----- file-image-item -----*/
 
-.file-image-item-description {
-    color: var(--fileDescriptionColor);
-}
-
 .file-image-item.board.active {
     color: var(--fileItemActiveColor);
     background-color: var(--fileItemActiveBgColor);
-}
-
-.file-image-item.board.active .file-image-item-description {
-    color: var(--fileItemActiveDescriptionColor);
 }
 
 .file-image-item.board.active.hover:hover {
@@ -50,9 +42,37 @@ body {
     background-color: var(--fileItemActiveBgColor);
 }
 
+/*----- file-image-item-description -----*/
+
+.file-image-item-description {
+    color: var(--fileDescriptionColor);
+}
+
+.file-image-item.board.active .file-image-item-description {
+    color: var(--fileItemActiveDescriptionColor);
+}
+
 .file-image-item.board.active.hover:hover .file-image-item-description {
     color: var(--fileItemActiveDescriptionColor);
 }
+
+/*----- file-image-item-description -----*/
+
+/*----- file-image-item-sub-title -----*/
+
+.file-image-item-sub-title {
+    color: var(--fileDescriptionColor);
+}
+
+.file-image-item.board.active .file-image-item-sub-title {
+    color: var(--fileItemActiveDescriptionColor)
+}
+
+.file-image-item.board.active.hover:hover .file-image-item-sub-title {
+    color: var(--fileItemActiveDescriptionColor)
+}
+
+/*----- file-image-item-sub-title -----*/
 
 /*----- file-image-item -----*/
 
@@ -256,6 +276,28 @@ body {
 .file-image-item-description {
     display: flex;
     align-items: center;
+}
+
+.file-image-item-description.sm {
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.file-image-item-sub-title {
+    display: block;
+    align-items: center;
+    align-self: center;
+    font-size: .8rem;
+    line-height: 1.5;
+    font-weight: 700;
+    /* padding-top: 8px;
+    padding-bottom: 3px; */
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+.file-image-item-sub-title-icon {
+    margin-right: 3px;
 }
 
 /*----- file-image-item -----*/
