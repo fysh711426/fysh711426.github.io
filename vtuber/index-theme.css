@@ -3,12 +3,9 @@ body.light {
     --logoColor: #28C8C8;
     --videoWrapBgColor: rgb(204, 204, 204);
     --aboutHrColor: #e6e6e6;
-    --aboutLinkColor: #0094ff;
     --nameBgColor: #fff;
     --nameBorderColor: #e6e6e6;
     --nameShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
-    
-
 }
 
 body.dark {
@@ -17,11 +14,9 @@ body.dark {
     --logoColor: #28C8C8;
     --videoWrapBgColor: rgb(204, 204, 204);
     --aboutHrColor: #4d4d4d;
-    --aboutLinkColor: #33aaff;
     --nameBgColor: #404040;
     --nameBorderColor: #454545;
     --nameShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
-    
 }
 
 body.dark .nav-logo img {
@@ -56,11 +51,4 @@ body.dark .video-wrap img {
 
 .about-content p.hr {
     border-bottom-color: var(--aboutHrColor);
-}
-
-.about-content a,
-.about-content a:link,
-.about-content a:visited,
-.about-content a:active {
-    color: var(--aboutLinkColor);
 }
