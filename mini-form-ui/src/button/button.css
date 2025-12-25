@@ -1,35 +1,46 @@
 body.light {
-    /*----- button -----*/
-    /*--buttonBgColor: #f2f2f2;*/
-    --buttonBgColor: #f5f5f5;
-    --buttonHoverBgColor: #e6e6e6;
-    --buttonActiveBgColor: #cecece;
-    /* --buttonActiveBgColor: #f6f6f6; */
-    /*----- button -----*/
+    --buttonLightColor: #242424;
+    /*--buttonLightBgColor: #f2f2f2;*/
+    --buttonLightBgColor: #f5f5f5;
+    --buttonLightHoverBgColor: #e6e6e6;
+    --buttonLightActiveBgColor: #cecece;
+    /* --buttonLightActiveBgColor: #f6f6f6; */
+    /* --buttonDisabledColor: #fff;
+    --buttonDisabledBgColor: #0d0d0d80; */
+    --buttonDisabledColor: #505050;
+    --buttonDisabledBgColor: #ccc;
 }
 
 body.dark {
-    /*----- button -----*/
-    --buttonBgColor: #3d3d3d;
-    --buttonHoverBgColor: #535353;
-    --buttonActiveBgColor: #656565;
-    /* --buttonActiveBgColor: #2a2a2a; */
-    /*----- button -----*/
+    --buttonLightColor: #d2d3d5;
+    --buttonLightBgColor: #3d3d3d;
+    --buttonLightHoverBgColor: #535353;
+    --buttonLightActiveBgColor: #656565;
+    /* --buttonLightActiveBgColor: #2a2a2a; */
+    --buttonDisabledColor: #fff;
+    --buttonDisabledBgColor: #f9f9f980;
 }
 
-/*----- button -----*/
-
-.button {
-    color: var(--linkColor);
-    background: var(--buttonBgColor);
+.button.light {
+    /* color: var(--linkColor); */
+    color: var(--buttonLightColor);
+    background: var(--buttonLightBgColor);
 }
 
-.button:hover {
-    background: var(--buttonHoverBgColor);
+.button.light:hover {
+    background: var(--buttonLightHoverBgColor);
 }
 
-.button:active {
-    background: var(--buttonActiveBgColor);
+.button.light:active {
+    background: var(--buttonLightActiveBgColor);
+}
+
+.button.disabled,
+.button:disabled,
+.button.light.disabled,
+.button.light:disabled {
+    color: var(--buttonDisabledColor);
+    background: var(--buttonDisabledBgColor);
 }
 
 .button {
@@ -50,8 +61,9 @@ body.dark {
     font-family: inherit;
 }
 
-/* .button.disabled {
-
-} */
-
-/*----- button -----*/
+.button.disabled,
+.button:disabled,
+.button.light.disabled,
+.button.light:disabled {
+    opacity: .5;
+}

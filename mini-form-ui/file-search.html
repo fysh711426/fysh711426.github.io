@@ -107,15 +107,15 @@
                         <div class="start">
                             <span class="badge">
                                 <span>Results :</span>
-                                <span v-if="isOverResultLimit">
+                                <span>
                                     <i class="fa-solid fa-angle-right"></i>
                                 </span>
-                                <span>1</span>
+                                <span>100</span>
                                 <span>items</span>
                             </span>
-                            <span v-if="isOverResultLimit" class="badge round">
+                            <span class="badge round">
                                 <i class="fa-solid fa-circle-exclamation fa-fw"></i>
-                                <span>{{local.overResultLimitErrorMessage}}</span>
+                                <span>Limit exceeded</span>
                             </span>
                         </div>
                         <div class="end">

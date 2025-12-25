@@ -15,6 +15,10 @@ body.light {
     --modalLightButtonBgColor: #f5f5f5;
     --modalLightButtonHoverBgColor: #e6e6e6;
     --modalLightButtonActiveBgColor: #f0f0f0;
+    /* --modalButtonDisabledColor: #fff;
+    --modalButtonDisabledBgColor: #0d0d0d80; */
+    --modalButtonDisabledColor: #505050;
+    --modalButtonDisabledBgColor: #ccc;
     --modalSeparatorBgColor: #0d0d0d1a;
 }
 
@@ -37,6 +41,8 @@ body.dark {
     --modalLightButtonBgColor: #2c2c2c;
     --modalLightButtonHoverBgColor: #3d3d3d;
     --modalLightButtonActiveBgColor: #353535;
+    --modalButtonDisabledColor: #fff;
+    --modalButtonDisabledBgColor: #f9f9f980;
     --modalSeparatorBgColor: #ffffff26;
 }
 
@@ -99,6 +105,16 @@ body.dark {
 
 .modal-block .separator {
     background-color: var(--modalSeparatorBgColor);
+}
+
+.modal-button.disabled,
+.modal-button:disabled,
+.modal-button.dark.disabled,
+.modal-button.dark:disabled,
+.modal-button.light.disabled,
+.modal-button.light:disabled {
+    color: var(--modalButtonDisabledColor);
+    background-color: var(--modalButtonDisabledBgColor);
 }
 
 .modal-template {
@@ -250,6 +266,15 @@ body.dark {
     border-radius: 50rem;
     height: 45px;
     border: 0px solid;
+}
+
+.modal-button.disabled,
+.modal-button:disabled,
+.modal-button.dark.disabled,
+.modal-button.dark:disabled,
+.modal-button.light.disabled,
+.modal-button.light:disabled {
+    opacity: .5;
 }
 
 .modal-block .separator {
