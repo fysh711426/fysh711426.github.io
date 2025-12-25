@@ -22,6 +22,34 @@ body.dark {
     background-color: var(--badgeActiveBgColor);
 }
 
+/*----- badge-number -----*/
+
+.badge-number {
+    color: var(--badgeColor);
+    background-color: var(--badgeBgColor);
+}
+
+.board.active .badge-number {
+    color: var(--badgeActiveColor);
+    background-color: var(--badgeActiveBgColor);
+}
+
+/*----- badge-number -----*/
+
+/*----- badge-checked -----*/
+
+.badge-checked {
+    color: var(--badgeColor);
+    background-color: var(--badgeBgColor);
+}
+
+.board.active .badge-checked {
+    color: var(--badgeActiveColor);
+    background-color: var(--badgeActiveBgColor);
+}
+
+/*----- badge-checked -----*/
+
 .badge {
     display: inline-block;
     align-self: center;
@@ -44,21 +72,57 @@ body.dark {
     border-radius: 50rem;
 }
 
+/*----- badge-number -----*/
 
-
-
-/* .folder-history.badge {
-    padding: .35em .52em;
+.badge-number {
+    display: inline-block;
+    align-self: center;
+    box-sizing: border-box;
+    line-height: 1;
+    font-size: .75em;
+    font-weight: 700;
+    padding: .3em .51em;
     border-radius: 50rem;
-    line-height: .9;
     letter-spacing: .02em;
-    font-family: var(--badgeFont);
-} */
-
-/*.board .file-history {
-    color: var(--linkColor);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.board.active .file-history {
-    color: var(--fileItemActiveColor);
-}*/
+.badge-number.sm {
+    padding: .28em .49em;
+    font-size: .65em;
+}
+
+/*----- badge-number -----*/
+
+/*----- badge-checked -----*/
+
+.badge-checked {
+    display: inline-block;
+    align-self: center;
+    box-sizing: border-box;
+    line-height: 1;
+    font-size: .75em;
+    font-weight: 700;
+    padding: .3em .3em;
+    border-radius: 50rem;
+    letter-spacing: .02em;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+.badge-checked.sm {
+    padding: .18em .3em;
+}
+
+.badge-checked.sm i {
+    /* .fa-xs */
+    font-size: .75em;
+    line-height: .08333em;
+    vertical-align: .125em;
+}
+
+/*----- badge-checked -----*/

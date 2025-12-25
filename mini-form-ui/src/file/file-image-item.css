@@ -30,6 +30,20 @@ body {
     /*--fileImageItemOverHeight_L: 240px;*/
 }
 
+body.light {
+    --fileImageItemFloatingBadgeColor: #fff;
+    --fileImageItemFloatingBadgeBgColor: #00000099;
+    --fileImageItemFloatingBadgeActiveColor: #000;
+    --fileImageItemFloatingBadgeActiveBgColor: #ffffff99;
+}
+
+body.dark {
+    --fileImageItemFloatingBadgeColor: #000;
+    --fileImageItemFloatingBadgeBgColor: #ffffff99;
+    --fileImageItemFloatingBadgeActiveColor: #fff;
+    --fileImageItemFloatingBadgeActiveBgColor: #00000099;
+}
+
 /*----- file-image-item -----*/
 
 .file-image-item.board.active {
@@ -65,16 +79,44 @@ body {
 }
 
 .file-image-item.board.active .file-image-item-sub-title {
-    color: var(--fileItemActiveDescriptionColor)
+    color: var(--fileItemActiveDescriptionColor);
 }
 
 .file-image-item.board.active.hover:hover .file-image-item-sub-title {
-    color: var(--fileItemActiveDescriptionColor)
+    color: var(--fileItemActiveDescriptionColor);
 }
 
 /*----- file-image-item-sub-title -----*/
 
+.file-image-item-trailing .badge-checked {
+    color: var(--badgeActiveColor);
+    background-color: inherit;
+}
+
+.board.active .file-image-item-trailing .badge-checked {
+    color: var(--badgeColor);
+    background-color: inherit;
+}
+
 /*----- file-image-item -----*/
+
+/*----- view-mode -----*/
+
+@media screen and (max-width: 640px) {
+    .view-mode .file-image-item-floating .badge-number,
+    .view-mode .file-image-item-floating .badge-checked {
+        /* color: var(--fileImageItemFloatingBadgeColor); */
+        background-color: var(--fileImageItemFloatingBadgeBgColor);
+    }
+
+    .view-mode .board.active .file-image-item-floating .badge-number,
+    .view-mode .board.active .file-image-item-floating .badge-checked {
+        /* color: var(--fileImageItemFloatingBadgeActiveColor); */
+        background-color: var(--fileImageItemFloatingBadgeActiveBgColor);
+    }
+}
+
+/*----- view-mode -----*/
 
 /*----- file-image-item -----*/
 
@@ -300,6 +342,50 @@ body {
     margin-right: 3px;
 }
 
+.file-image-item-trailing {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* .file-image-item-container {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    flex: 1 0 0;
+} */
+
+.file-image-item-floating {
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    /*----- .badge-number.sm -----*/
+    .file-image-item-trailing .badge-number,
+    .file-image-item-floating .badge-number {
+        padding: .28em .49em;
+        font-size: .65em;
+    }
+    /*----- .badge-number.sm -----*/
+
+    /*----- .badge-checked.sm -----*/
+    .file-image-item-trailing .badge-checked,
+    .file-image-item-floating .badge-checked {
+        padding: .18em .3em;
+    }
+
+    .file-image-item-trailing .badge-checked i,
+    .file-image-item-floating .badge-checked i {
+        /* .fa-xs */
+        font-size: .75em;
+        line-height: .08333em;
+        vertical-align: .125em;
+    }
+    /*----- .badge-checked.sm -----*/
+}
+
 /*----- file-image-item -----*/
 
 /*----- view-mode -----*/
@@ -364,6 +450,17 @@ body {
     .view-mode .file-image-item-text {
         align-self: start;
         padding: 10px 5px 0px 5px;
+    }
+
+    .view-mode .file-image-item-trailing {
+        display: none;
+    }
+
+    .view-mode .file-image-item-floating {
+        display: flex;
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
     }
 }
 

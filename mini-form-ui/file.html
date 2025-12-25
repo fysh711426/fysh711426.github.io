@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="src/button/button.css">
+    <link rel="stylesheet" href="src/badge/badge.css">
     <link rel="stylesheet" href="src/tooltip/tooltip.css">
     <link rel="stylesheet" href="src/progress/progress.css">
     <link rel="stylesheet" href="src/spinner/spinner.css">
@@ -139,16 +140,31 @@
                                     <div class="file-item-title">Folder</div>
                                     <div class="file-item-description">5 Items</div>
                                 </div>
+                                <div class="file-item-trailing">
+                                    <span class="badge-number">
+                                        <span>1</span>
+                                    </span>
+                                </div>
                             </div>
                         </a>
                         <a href="file-video.html">
                             <div id="file2" class="board hover file-image-item">
                                 <div class="file-image-item-icon">
                                     <img src="demo/video.png" />
+                                    <div class="file-image-item-floating">
+                                        <span class="badge-checked">
+                                            <i class="fa-solid fa-check fa-fw"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="file-image-item-text">
                                     <div class="file-image-item-title">Video.mp4</div>
                                     <div class="file-image-item-description">1.22 GB</div>
+                                </div>
+                                <div class="file-image-item-trailing">
+                                    <span class="badge-checked">
+                                        <i class="fa-solid fa-check fa-fw"></i>
+                                    </span>
                                 </div>
                             </div>
                         </a>
@@ -156,17 +172,27 @@
                             <div id="file3" class="board hover file-image-item">
                                 <div class="file-image-item-icon">
                                     <img src="demo/image1.jpg" />
+                                    <div class="file-image-item-floating">
+                                        <span class="badge-checked">
+                                            <i class="fa-solid fa-check fa-fw"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="file-image-item-text">
                                     <div class="file-image-item-title">Image.jpg</div>
                                     <div class="file-image-item-description">439 KB</div>
+                                </div>
+                                <div class="file-image-item-trailing">
+                                    <span class="badge-checked">
+                                        <i class="fa-solid fa-check fa-fw"></i>
+                                    </span>
                                 </div>
                             </div>
                         </a>
                         <a href="javascript:void(0)" onclick="onSelected(this)">
                             <div id="file4" class="board hover file-item">
                                 <div class="file-item-icon">
-                                <i class="fa-solid fa-file-audio fa-3x fa-fw"></i>
+                                    <i class="fa-solid fa-file-audio fa-3x fa-fw"></i>
                                 </div>
                                 <div class="file-item-text">
                                     <div class="file-item-title">Audio.mp3</div>
@@ -177,7 +203,7 @@
                         <a href="file-text.html">
                             <div id="file5" class="board hover file-item">
                                 <div class="file-item-icon">
-                                <i class="fa-solid fa-file-lines fa-3x fa-fw"></i>
+                                    <i class="fa-solid fa-file-lines fa-3x fa-fw"></i>
                                 </div>
                                 <div class="file-item-text">
                                     <div class="file-item-title">Text.txt</div>
@@ -188,7 +214,7 @@
                         <a href="javascript:void(0)" onclick="onSelected(this)">
                             <div id="file6" class="board hover file-item">
                                 <div class="file-item-icon">
-                                <i class="fa-solid fa-file fa-3x fa-fw"></i>
+                                    <i class="fa-solid fa-file fa-3x fa-fw"></i>
                                 </div>
                                 <div class="file-item-text">
                                     <div class="file-item-title">Other</div>

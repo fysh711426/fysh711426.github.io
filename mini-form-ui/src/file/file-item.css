@@ -53,14 +53,24 @@ a:hover .file-item-icon {
 }
 
 .file-item.board.active .file-item-sub-title {
-    color: var(--fileItemActiveDescriptionColor)
+    color: var(--fileItemActiveDescriptionColor);
 }
 
 .file-item.board.active.hover:hover .file-item-sub-title {
-    color: var(--fileItemActiveDescriptionColor)
+    color: var(--fileItemActiveDescriptionColor);
 }
 
 /*----- file-item-sub-title -----*/
+
+.file-item-trailing .badge-checked {
+    color: var(--badgeActiveColor);
+    background-color: inherit;
+}
+
+.board.active .file-item-trailing .badge-checked {
+    color: var(--badgeColor);
+    background-color: inherit;
+}
 
 /*----- file-item -----*/
 
@@ -83,25 +93,30 @@ a:hover .file-item-icon {
     align-self: center;
     word-wrap: break-word;
     word-break: break-all;
+    flex: 1 0 0;
 }
 
 @media screen and (max-width: 640px) {
     .file-item {
         padding: 15px 15px;
+        padding-right: 10px;
     }
 
     .file-item-text {
         padding: 0px 15px;
+        padding-right: 10px;
     }
 }
 
 @media screen and (min-width: 641px) {
     .file-item {
         padding: 15px 20px;
+        padding-right: 10px;
     }
 
     .file-item-text {
         padding: 0px 20px;
+        padding-right: 15px;
     }
 }
 
@@ -147,6 +162,43 @@ a:hover .file-item-icon {
 
 .file-item-sub-title-icon {
     margin-right: 3px;
+}
+
+.file-item-trailing {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* .file-item-container {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    flex: 1 0 0;
+} */
+
+@media screen and (max-width: 480px) {
+    /*----- .badge-number.sm -----*/
+    .file-item-trailing .badge-number {
+        padding: .28em .49em;
+        font-size: .65em;
+    }
+    /*----- .badge-number.sm -----*/
+
+    /*----- .badge-checked.sm -----*/
+    .file-item-trailing .badge-checked {
+        padding: .18em .3em;
+    }
+
+    .file-item-trailing .badge-checked i {
+        /* .fa-xs */
+        font-size: .75em;
+        line-height: .08333em;
+        vertical-align: .125em;
+    }
+    /*----- .badge-checked.sm -----*/
 }
 
 /*----- file-item -----*/
