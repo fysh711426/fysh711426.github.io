@@ -133,53 +133,6 @@ a.link-default:active {
 
 /*----- header -----*/
 
-/*----- left-menu -----*/
-
-.left-menu {
-    background-color: var(--boardColor);
-    box-shadow: var(--boardShadow);
-    border-top-color: var(--leftMenuBorderTop);
-}
-
-.left-menu .separator {
-    background-color: var(--leftMenuSeparatorBgColor);
-}
-
-@media screen and (max-width: 1330px) {
-    .left-menu.open {
-        border-top-color: var(--leftMenuOpenBorderTop);
-    }
-}
-
-.left-menu-item i {
-    color: var(--leftMenuItemIColor);
-}
-
-.left-menu-item.active {
-    background-color: var(--menuActive);
-    border-left-color: var(--menuSelected);
-}
-
-@media screen and (min-width: 1025px) {
-    .left-menu-item.active:hover {
-        background-color: var(--menuActive);
-    }
-
-    .left-menu-item:hover {
-        background-color: var(--menuHover);
-    }
-}
-
-.left-menu .left-menu-group-title {
-    color: var(--leftMenuGroupTitleColor);
-}
-
-.left-menu .left-menu-group-title:hover {
-    color: var(--leftMenuGroupTitleHoverColor);
-}
-
-/*----- left-menu -----*/
-
 /*----- sub-menu -----*/
 
 .sub-menu {

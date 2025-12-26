@@ -19,9 +19,11 @@ var onNavOpen = (function() {
         if (leftMenu.classList.contains('open')) {
             leftMenu.classList.remove('open');
             leftMenuMask.classList.remove('open');
+            bodyScroll.unlock();
         } else {
             leftMenu.classList.add('open');
             leftMenuMask.classList.add('open');
+            bodyScroll.lock();
         }
     };
 })();
@@ -31,6 +33,23 @@ var onNavClose = (function() {
         onNavOpen();
     };
 })();
+
+var enableNavResizeListener = (function() {
+    return function() {
+        onResize(function() {
+            var leftMenu = document.querySelector('.left-menu');
+            if (leftMenu.classList.contains('open')) {
+                if (window.innerWidth <= 1330) {
+                    bodyScroll.lock();
+                }
+                else {
+                    bodyScroll.unlock();
+                }
+            }
+        });
+    };
+})();
+enableNavResizeListener();
 
 var selectMenu = (function() {
     return function(val, _settings) {

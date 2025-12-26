@@ -11,24 +11,6 @@ var modal = (function () {
             document.body.removeChild(element);
         } catch { }
     }
-    var scrollY = 0;
-    function lock() {
-        scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
-        var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-        if (scrollbarWidth) {
-            document.body.style.paddingRight = `${scrollbarWidth}px`;
-        }
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${scrollY}px`;
-        document.body.style.minWidth  = `calc(100% - ${scrollbarWidth}px)`;
-    }
-    function unlock() {
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.minWidth = '';
-        document.body.style.paddingRight = '';
-        window.scrollTo({ top: scrollY });
-    }
     return function(template, _settings) {
         var setting = {};
         _settings = _settings ?? {};
@@ -47,7 +29,7 @@ var modal = (function () {
                 element = createElement(html);
                 document.body.appendChild(element);
                 template.innerHTML = '';
-                lock();
+                bodyScroll.lock();
                 bindDismiss();
                 if (ref.onOpened) {
                     ref.onOpened(element);
@@ -60,7 +42,7 @@ var modal = (function () {
                 remove(element);
                 element = null;
                 template.innerHTML = html;
-                unlock();
+                bodyScroll.unlock();
                 if (ref.onClosed) {
                     ref.onClosed(element);
                 }

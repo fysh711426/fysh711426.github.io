@@ -40,3 +40,35 @@ var onScroll = function (callback, delay) {
         }
     });
 }
+
+var bodyScroll = (function () {
+    var scrollY = 0;
+    var isLocked = false;
+    function lock() {
+        if (!isLocked) {
+            scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+            var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+            if (scrollbarWidth) {
+                document.body.style.paddingRight = `${scrollbarWidth}px`;
+            }
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.minWidth  = `calc(100% - ${scrollbarWidth}px)`;
+        }
+        isLocked = true;
+    }
+    function unlock() {
+        if (isLocked) {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.minWidth = '';
+            document.body.style.paddingRight = '';
+            window.scrollTo({ top: scrollY });
+        }
+        isLocked = false;
+    }
+    return {
+        lock: lock,
+        unlock: unlock
+    };
+})();

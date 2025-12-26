@@ -16,9 +16,11 @@
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
     <link rel="stylesheet" href="src/layout/layout-nav-link.css">
+    <link rel="stylesheet" href="src/layout/layout-left-menu.css">
     <link rel="stylesheet" href="index.css">
     <script src="src/theme/theme.js"></script>
     <script src="src/scroll/scroll.js"></script>
+    <script src="src/scroll/resize.js"></script>
     <script src="src/tooltip/tooltip.js"></script>
     <script src="src/progress/progress.js"></script>
     <script src="src/spinner/spinner.js"></script>
@@ -87,32 +89,34 @@
         </div>
         <div class="container">
             <div class="left-menu active">
-                <div class="left-menu-inner">
-                    <a href="" select-val="Main" class="left-menu-item round">Main</a>
-                    <a href="form.html" select-val="Form" class="left-menu-item round">Form</a>
-                    <a href="file.html" select-val="File" class="left-menu-item round">File</a>
-                    <div class="separator"></div>
-                    <div class="left-menu-group open">
-                        <a class="left-menu-group-title" href="javascript:void(0)">
-                            <span>Group</span>
-                            <span class="left-menu-group-toggle expand">
-                                <i class="fa-solid fa-angle-down fa-fw"></i>
-                                 <!-- <i class="fa-solid fa-caret-down fa-fw"></i> -->
-                            </span>
-                            <span class="left-menu-group-toggle collapse">
-                                <i class="fa-solid fa-angle-right fa-fw"></i>
-                                 <!-- <i class="fa-solid fa-caret-right fa-fw"></i> -->
-                            </span>
-                        </a>
-                        <div class="left-menu-group-children">
-                            <a href="file-search.html" select-val="Search" class="left-menu-item round">
-                                <i class="fa-solid fa-magnifying-glass fa-fw"></i>
-                                <span>Search</span>
+                <div class="left-menu-scrollable">
+                    <div class="left-menu-inner">
+                        <a href="" select-val="Main" class="left-menu-item round">Main</a>
+                        <a href="form.html" select-val="Form" class="left-menu-item round">Form</a>
+                        <a href="file.html" select-val="File" class="left-menu-item round">File</a>
+                        <div class="separator"></div>
+                        <div class="left-menu-group open">
+                            <a class="left-menu-group-title" href="javascript:void(0)">
+                                <span>Group</span>
+                                <span class="left-menu-group-toggle expand">
+                                    <i class="fa-solid fa-angle-down fa-fw"></i>
+                                     <!-- <i class="fa-solid fa-caret-down fa-fw"></i> -->
+                                </span>
+                                <span class="left-menu-group-toggle collapse">
+                                    <i class="fa-solid fa-angle-right fa-fw"></i>
+                                     <!-- <i class="fa-solid fa-caret-right fa-fw"></i> -->
+                                </span>
                             </a>
-                            <a href="file-bookmark.html" select-val="Bookmark" class="left-menu-item round">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                                <span>Bookmark</span>
-                            </a>
+                            <div class="left-menu-group-children">
+                                <a href="file-search.html" select-val="Search" class="left-menu-item round">
+                                    <i class="fa-solid fa-magnifying-glass fa-fw"></i>
+                                    <span>Search</span>
+                                </a>
+                                <a href="file-bookmark.html" select-val="Bookmark" class="left-menu-item round">
+                                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                                    <span>Bookmark</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
