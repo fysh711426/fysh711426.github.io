@@ -89,6 +89,7 @@ z-index
     margin: 15px auto;
     border-radius: 0.35rem;
     border-top: 1px solid rgb(60, 60, 60, .12);
+    margin-bottom: 0px;
 }
 
 @media screen and (max-width: 640px) {
@@ -136,6 +137,7 @@ z-index
     font-size: 0.8rem;
     padding-left: 5px;
     padding-right: 7px;
+    white-space: nowrap;
 }
 
 .file-navbar-title {
@@ -215,6 +217,8 @@ z-index
     justify-content: space-between;
     padding-top: 0px;
     padding-bottom: 0px;
+    margin-top: 15px;
+    margin-bottom: 0px;
 }
 
 .file-navbar-expand.open {
@@ -238,6 +242,13 @@ z-index
 .file-navbar-expand-title {
     font-size: 0.9rem;
     padding: 0px 10px;
+}
+
+.file-navbar-expand-scrollable {
+    overflow: hidden;
+    margin: 0px 5px;
+    overflow-x: auto;
+    scrollbar-width: none;
 }
 
 /*----- file-navbar-expand -----*/
@@ -283,6 +294,7 @@ z-index
 .file-video-wrap {
     margin: 0px auto;
     max-width: 1317px;
+    margin-top: 15px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -293,6 +305,7 @@ z-index
         bottom: 0px;
         right: 0px;
         z-index: 30000;
+        margin-top: 0px;
     }
 }
 

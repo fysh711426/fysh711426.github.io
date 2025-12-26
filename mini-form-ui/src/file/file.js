@@ -13,21 +13,64 @@ var fileNavbar = (function() {
     }
 
     // expand
+    // var enableExpand = function() {
+    //     var toggle = document.querySelector('.file-navbar-toggle');
+    //     var expand = document.querySelector('.file-navbar-expand');
+    //     if (toggle && expand) {
+    //         toggle.addEventListener('click', function (e) {
+    //             e.stopPropagation();
+    //             if (!toggle.classList.contains('open')) {
+    //                 toggle.classList.add('open');
+    //                 expand.classList.add('open');
+    //             }
+    //             else {
+    //                 toggle.classList.remove('open');
+    //                 expand.classList.remove('open');
+    //             }
+    //         });
+    //     }
+    // }
     var enableExpand = function() {
         var toggle = document.querySelector('.file-navbar-toggle');
         var expand = document.querySelector('.file-navbar-expand');
+        var scrollable = document.querySelector('.file-navbar-expand-scrollable');
         if (toggle && expand) {
-            toggle.addEventListener('click', function (e) {
-                e.stopPropagation();
-                if (!toggle.classList.contains('open')) {
-                    toggle.classList.add('open');
-                    expand.classList.add('open');
-                }
-                else {
-                    toggle.classList.remove('open');
-                    expand.classList.remove('open');
-                }
-            });
+            if (scrollable) {
+                var _collapse = collapse(scrollable);
+                expand.classList.add('open');
+                toggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    _collapse.toggle();
+                    if (_collapse.getIsShow()) {
+                        toggle.classList.add('open');
+                    }
+                    else {
+                        toggle.classList.remove('open');
+                    }
+                });
+                scrollable.addEventListener('wheel', function (e) {
+                    e.preventDefault();
+                    // scrollable.scrollLeft += e.deltaY;
+                    // scrollable.scrollBy({
+                    //     left: e.deltaY,
+                    //     behavior: 'smooth'
+                    // });
+                // }, { passive: false });
+                });
+            }
+            else {
+                toggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    if (!toggle.classList.contains('open')) {
+                        toggle.classList.add('open');
+                        expand.classList.add('open');
+                    }
+                    else {
+                        toggle.classList.remove('open');
+                        expand.classList.remove('open');
+                    }
+                });
+            }
         }
     }
     

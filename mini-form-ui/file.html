@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="src/progress/progress.css">
     <link rel="stylesheet" href="src/spinner/spinner.css">
     <link rel="stylesheet" href="src/gotop/gotop.css">
+    <link rel="stylesheet" href="src/collapse/collapse.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
     <link rel="stylesheet" href="src/layout/layout-nav-link.css">
@@ -23,10 +24,12 @@
     <link rel="stylesheet" href="src/file/file-image-item.css">
     <script src="src/theme/theme.js"></script>
     <script src="src/scroll/scroll.js"></script>
+    <script src="src/scroll/resize.js"></script>
     <script src="src/tooltip/tooltip.js"></script>
     <script src="src/progress/progress.js"></script>
     <script src="src/spinner/spinner.js"></script>
     <script src="src/gotop/gotop.js"></script>
+    <script src="src/collapse/collapse.js"></script>
     <script src="src/layout/layout.js"></script>
     <script src="src/file/file.js"></script>
 </head>
@@ -103,31 +106,33 @@
                             </div>
                         </div>
                     </div>
-                    <div class="block file-navbar-expand">
-                        <div class="start">
-                            <!-- <div class="file-navbar-expand-title">Files</div> -->
-                        </div>
-                        <div></div>
-                        <div class="end">
-                            <a href="javascript:void(0)" class="file-navbar-btn">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                                <span class="file-navbar-btn-text">Save</span>
-                            </a>
-                            <a href="javascript:void(0)" class="file-navbar-btn">
-                                <i class="fa-solid fa-eye fa-fw"></i>
-                                <span class="file-navbar-btn-text">Browse</span>
-                            </a>
-                            <a href="javascript:void(0)" class="file-navbar-btn">
-                                <i class="fa-solid fa-image fa-fw"></i>
-                                <span class="file-navbar-btn-text">100%</span>
-                            </a>
-                            <a href="javascript:void(0)" class="file-navbar-btn">
-                                <i class="fa-solid fa-pen fa-fw"></i>
-                                <span class="file-navbar-btn-text">Name</span>
-                            </a>
-                            <a href="javascript:void(0)" class="file-navbar-btn">
-                                <i class="fa-solid fa-arrow-down-short-wide fa-fw"></i>
-                            </a>
+                    <div class="file-navbar-expand-scrollable">
+                        <div class="block file-navbar-expand">
+                            <div class="start">
+                                <!-- <div class="file-navbar-expand-title">Files</div> -->
+                            </div>
+                            <div></div>
+                            <div class="end">
+                                <a href="javascript:void(0)" class="file-navbar-btn">
+                                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                                    <span class="file-navbar-btn-text">Save</span>
+                                </a>
+                                <a href="javascript:void(0)" class="file-navbar-btn">
+                                    <i class="fa-solid fa-eye fa-fw"></i>
+                                    <span class="file-navbar-btn-text">Browse</span>
+                                </a>
+                                <a href="javascript:void(0)" class="file-navbar-btn">
+                                    <i class="fa-solid fa-image fa-fw"></i>
+                                    <span class="file-navbar-btn-text">100%</span>
+                                </a>
+                                <a href="javascript:void(0)" class="file-navbar-btn">
+                                    <i class="fa-solid fa-pen fa-fw"></i>
+                                    <span class="file-navbar-btn-text">Name</span>
+                                </a>
+                                <a href="javascript:void(0)" class="file-navbar-btn">
+                                    <i class="fa-solid fa-arrow-down-short-wide fa-fw"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="view-mode">
