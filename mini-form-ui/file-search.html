@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="src/button/button.css">
+    <link rel="stylesheet" href="src/alert/alert.css">
     <link rel="stylesheet" href="src/badge/badge.css">
     <link rel="stylesheet" href="src/tooltip/tooltip.css">
     <link rel="stylesheet" href="src/progress/progress.css">
@@ -313,9 +314,25 @@
             </div>
         </div>
     </div>
-    <div class="toast-template">
+    <!-- <div class="toast-template">
         <div class="toast-block">
             <div class="toast-inner">__data-content__</div>
+        </div>
+    </div> -->
+    <div class="toast-template search-input-toast">
+        <div class="toast-block">
+            <div class="toast-inner search-input-error">
+                <span class="search-input-error-icon">
+                    <!-- <i class="fa-regular fa-lightbulb fa-fw"></i> -->
+                    <i class="fa-solid fa-circle-exclamation fa-fw"></i>
+                </span>
+                <span>__data-content__</span>
+                <div class="alert light center">
+                    <span class="alert-text">
+                        &#92; &#47; &#58; &#42; &#63; &quot; &lt; &gt; &#124;
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
     <script>
@@ -352,10 +369,11 @@
         var search = searchBar('.search-box-block');
         search.init('', false);
         search.onToggle = function(isOpen) {
-            toast.show('onToggle: ' + isOpen);
         }
         search.onSearch= function(text) {
-            toast.show('onSearch: ' + text);
+            toast.show('Cannot contain any of :', {
+                template: '.search-input-toast'
+            });
         }
     </script>
 </body>

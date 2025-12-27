@@ -60,3 +60,24 @@
 }
 
 /*----- board-infobar -----*/
+
+/*----- search-input-error -----*/
+
+.search-input-error {
+    text-align: center;
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.search-input-error-icon {
+    display: inline-flex;
+    margin-right: 5px;
+}
+
+.search-input-error .alert {
+    margin-top: 5px;
+    padding: 5px 15px;
+    border-radius: .55rem;
+}
+
+/*----- search-input-error -----*/
