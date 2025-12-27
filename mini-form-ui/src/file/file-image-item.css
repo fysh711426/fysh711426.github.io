@@ -126,6 +126,10 @@ body.dark {
     border-top: none;
 }
 
+.file-image-item.first {
+    margin-top: 0px;
+}
+
 .file-image-item-text {
     flex: 1 0 0;
     align-self: center;

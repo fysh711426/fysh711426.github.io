@@ -82,6 +82,10 @@ a:hover .file-item-icon {
     border-top: none;
 }
 
+.file-item.first {
+    margin-top: 0px;
+}
+
 .file-item-icon {
     display: flex;
     align-items: center;

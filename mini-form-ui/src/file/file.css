@@ -218,7 +218,7 @@ z-index
     padding-top: 0px;
     padding-bottom: 0px;
     margin-top: 15px;
-    margin-bottom: 0px;
+    margin-bottom: 15px;
 }
 
 .file-navbar-expand.open {
@@ -249,6 +249,15 @@ z-index
     margin: 0px 5px;
     overflow-x: auto;
     scrollbar-width: none;
+}
+
+.file-navbar-expand-scrollable.collapse:not(.show) {
+    display: block;
+    height: 15px;
+}
+
+.file-navbar-expand-scrollable.collapsing {
+    height: 15px;
 }
 
 /*----- file-navbar-expand -----*/

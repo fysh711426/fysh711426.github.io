@@ -1,5 +1,9 @@
 var collapse = (function () {
-    return function(element) {
+    return function(element, _settings) {
+        var setting = {};
+        _settings = _settings ?? {};
+        setting.initHeight = _settings.initHeight ?? '0px';
+
         var isAnimating = false;
         var isShow = element.classList.contains('show');
         element.classList.add('collapse');
@@ -25,7 +29,8 @@ var collapse = (function () {
                 isAnimating = true;
                 element.classList.remove('collapse');
                 element.classList.add('collapsing');
-                element.style.height = '0px';
+                // element.style.height = '0px';
+                element.style.height = setting.initHeight;
                 var scrollHeight = element.scrollHeight;
                 // 觸發瀏覽器重繪
                 element.offsetHeight;
@@ -51,7 +56,8 @@ var collapse = (function () {
                 element.offsetHeight;
                 element.classList.remove('collapse', 'show');
                 element.classList.add('collapsing');
-                element.style.height = '0px';
+                // element.style.height = '0px';
+                element.style.height = setting.initHeight;
                 var handler = function () {
                     element.classList.remove('collapsing');
                     element.classList.add('collapse');

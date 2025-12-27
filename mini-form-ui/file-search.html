@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="src/spinner/spinner.css">
     <link rel="stylesheet" href="src/toast/toast.css">
     <link rel="stylesheet" href="src/gotop/gotop.css">
+    <link rel="stylesheet" href="src/collapse/collapse.css">
     <link rel="stylesheet" href="src/search/search.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
@@ -33,6 +34,7 @@
     <script src="src/spinner/spinner.js"></script>
     <script src="src/toast/toast.js"></script>
     <script src="src/gotop/gotop.js"></script>
+    <script src="src/collapse/collapse.js"></script>
     <script src="src/search/search.js"></script>
     <script src="src/layout/layout.js"></script>
     <script src="src/file/file.js"></script>
@@ -153,35 +155,37 @@
                             </div>
                         </div>
                     </div>
-                    <div class="block file-navbar-expand">
-                        <div class="start">
-                        </div>
-                        <div></div>
-                        <div class="end">
-                            <a href="javascript:void(0)" class="file-navbar-btn">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                                <span class="file-navbar-btn-text">Save</span>
-                            </a>
-                            <a href="javascript:void(0)" class="file-navbar-btn">
-                                <i class="fa-solid fa-table-list fa-fw"></i>
-                                <span class="file-navbar-btn-text">Thumb</span>
-                            </a>
-                            <a href="javascript:void(0)" class="file-navbar-btn">
-                                <i class="fa-solid fa-image fa-fw"></i>
-                                <span class="file-navbar-btn-text">100%</span>
-                            </a>
-                            <a href="javascript:void(0)" class="file-navbar-btn">
-                                <i class="fa-solid fa-pen fa-fw"></i>
-                                <span class="file-navbar-btn-text">Name</span>
-                            </a>
-                            <a href="javascript:void(0)" class="file-navbar-btn">
-                                <i class="fa-solid fa-arrow-down-short-wide fa-fw"></i>
-                            </a>
+                    <div class="file-navbar-expand-scrollable">
+                        <div class="block file-navbar-expand open">
+                            <div class="start">
+                            </div>
+                            <div></div>
+                            <div class="end">
+                                <a href="javascript:void(0)" class="file-navbar-btn">
+                                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                                    <span class="file-navbar-btn-text">Save</span>
+                                </a>
+                                <a href="javascript:void(0)" class="file-navbar-btn">
+                                    <i class="fa-solid fa-table-list fa-fw"></i>
+                                    <span class="file-navbar-btn-text">Thumb</span>
+                                </a>
+                                <a href="javascript:void(0)" class="file-navbar-btn">
+                                    <i class="fa-solid fa-image fa-fw"></i>
+                                    <span class="file-navbar-btn-text">100%</span>
+                                </a>
+                                <a href="javascript:void(0)" class="file-navbar-btn">
+                                    <i class="fa-solid fa-pen fa-fw"></i>
+                                    <span class="file-navbar-btn-text">Name</span>
+                                </a>
+                                <a href="javascript:void(0)" class="file-navbar-btn">
+                                    <i class="fa-solid fa-arrow-down-short-wide fa-fw"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div>
                         <a href="javascript:void(0)" onclick="onSelected(this)">
-                            <div id="file1" class="board hover file-item">
+                            <div id="file1" class="board hover file-item first">
                                 <div class="file-item-icon">
                                     <i class="fa-solid fa-folder fa-3x fa-fw"></i>
                                 </div>
@@ -372,7 +376,8 @@
         }
         search.onSearch= function(text) {
             toast.show('Cannot contain any of :', {
-                template: '.search-input-toast'
+                template: '.search-input-toast',
+                // delay: 100000
             });
         }
     </script>
