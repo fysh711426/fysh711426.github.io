@@ -38,12 +38,14 @@ var enableNavResizeListener = (function() {
     return function() {
         onResize(function() {
             var leftMenu = document.querySelector('.left-menu');
-            if (leftMenu.classList.contains('open')) {
-                if (window.innerWidth <= 1330) {
-                    bodyScroll.lock();
-                }
-                else {
-                    bodyScroll.unlock();
+            if (leftMenu) {
+                if (leftMenu.classList.contains('open')) {
+                    if (window.innerWidth <= 1330) {
+                        bodyScroll.lock();
+                    }
+                    else {
+                        bodyScroll.unlock();
+                    }
                 }
             }
         });

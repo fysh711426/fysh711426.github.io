@@ -249,6 +249,7 @@ z-index
     margin: 0px 5px;
     overflow-x: auto;
     scrollbar-width: none;
+    scroll-behavior: auto;
 }
 
 .file-navbar-expand-scrollable.collapse:not(.show) {
