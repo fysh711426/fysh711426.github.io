@@ -38,20 +38,17 @@ var enableNavResizeListener = (function() {
     return function() {
         onResize(function() {
             var leftMenu = document.querySelector('.left-menu');
-            if (leftMenu) {
-                if (leftMenu.classList.contains('open')) {
-                    if (window.innerWidth <= 1330) {
-                        bodyScroll.lock();
-                    }
-                    else {
-                        bodyScroll.unlock();
-                    }
+            if (leftMenu.classList.contains('open')) {
+                if (window.innerWidth <= 1330) {
+                    bodyScroll.lock();
+                }
+                else {
+                    bodyScroll.unlock();
                 }
             }
         });
     };
 })();
-enableNavResizeListener();
 
 var selectMenu = (function() {
     return function(val, _settings) {
@@ -78,6 +75,18 @@ var selectMenu = (function() {
     };
 })();
 
+var enableMenuGroup = (function() {
+    return function() {
+        var groups = document.querySelectorAll('.left-menu-group');
+        for (let item of groups) {
+            var title = item.querySelector('.left-menu-group-title');
+            title.addEventListener('click', function() {
+                item.classList.toggle('open');
+            });
+        }
+    };
+})();
+
 var selectSubMenu = (function() {
     return function(val) {
         var items = document.querySelectorAll('.sub-menu-item');
@@ -93,15 +102,10 @@ var selectSubMenu = (function() {
     };
 })();
 
-var enableMenuGroup = (function() {
+var enableSubMenuScrollbar = (function() {
     return function() {
-        var groups = document.querySelectorAll('.left-menu-group');
-        for (let item of groups) {
-            var title = item.querySelector('.left-menu-group-title');
-            title.addEventListener('click', function() {
-                item.classList.toggle('open');
-            });
-        }
+        var scrollable = document.querySelector('.sub-menu-scrollable');
+        scrollbar(scrollable);
     };
 })();
 

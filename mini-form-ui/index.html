@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="src/progress/progress.css">
     <link rel="stylesheet" href="src/spinner/spinner.css">
     <link rel="stylesheet" href="src/gotop/gotop.css">
+    <link rel="stylesheet" href="src/scrollbar/scrollbar.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
     <link rel="stylesheet" href="src/layout/layout-nav-link.css">
@@ -25,6 +26,7 @@
     <script src="src/progress/progress.js"></script>
     <script src="src/spinner/spinner.js"></script>
     <script src="src/gotop/gotop.js"></script>
+    <script src="src/scrollbar/scrollbar.js"></script>
     <script src="src/layout/layout.js"></script>
 
     <script>
@@ -122,14 +124,20 @@
                 </div>
             </div>
             <div class="left-menu-mask" onclick="onNavClose()"></div>
-            <div class="main">
+            <div class="main active">
                 <div class="main-inner">
                     <div class="sub-menu">
-                        <div class="sub-menu-inner">
-                            <a href="" select-val="Item1" class="sub-menu-item round">Item1</a>
-                            <a href="" select-val="Item2" class="sub-menu-item round">Item2</a>
-                            <a href="" select-val="Item3" class="sub-menu-item round">Item3</a>
-                            <a href="" select-val="Item4" class="sub-menu-item round">Item4</a>
+                        <div class="sub-menu-scrollable">
+                            <div></div>
+                            <div class="center">
+                                <div class="sub-menu-inner">
+                                    <a href="" select-val="Item1" class="sub-menu-item round">Item1</a>
+                                    <a href="" select-val="Item2" class="sub-menu-item round">Item2</a>
+                                    <a href="" select-val="Item3" class="sub-menu-item round">Item3</a>
+                                    <a href="" select-val="Item4" class="sub-menu-item round">Item4</a>
+                                </div>
+                            </div>
+                            <div></div>
                         </div>
                     </div>
                     <div class="board">
@@ -352,6 +360,8 @@
         selectMenu('Main');
         selectSubMenu('Item1');
         enableMenuGroup();
+        enableNavResizeListener();
+        enableSubMenuScrollbar();
         tooltip('.header-tooltip');
         tooltip('.video-tooltip', {
             template: '.video-tooltip-template',
