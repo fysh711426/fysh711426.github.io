@@ -32,7 +32,7 @@ var collapse = (function () {
                 // element.style.height = '0px';
                 element.style.height = setting.initHeight;
                 var scrollHeight = element.scrollHeight;
-                // 觸發瀏覽器重繪
+                /*! 觸發瀏覽器重繪 */
                 element.offsetHeight;
                 element.style.height = scrollHeight + 'px';
                 var handler = function () {
@@ -52,7 +52,7 @@ var collapse = (function () {
             if (isShow) {
                 isAnimating = true;
                 element.style.height = element.scrollHeight + 'px';
-                // 觸發瀏覽器重繪
+                /*! 觸發瀏覽器重繪 */
                 element.offsetHeight;
                 element.classList.remove('collapse', 'show');
                 element.classList.add('collapsing');

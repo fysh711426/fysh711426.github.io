@@ -19,7 +19,7 @@ var onNavClose = null;
             mask.classList.add('opening');
             mask.style.opacity = '0';
         }
-        // 觸發瀏覽器重繪
+        /*! 觸發瀏覽器重繪 */
         element.offsetHeight;
         element.style.height = scrollHeight + 'px';
         element.style.width = scrollWidth + 'px';
@@ -62,7 +62,7 @@ var onNavClose = null;
         if (type === 'open') {
             mask.style.opacity = '1';
         }
-        // 觸發瀏覽器重繪
+        /*! 觸發瀏覽器重繪 */
         element.offsetHeight;
         element.classList.remove(type);
         element.classList.add(ingClass);

@@ -79,7 +79,7 @@ var onScrollEnd = (function () {
                 callback.call(this);
             }
         }, delay);
-    }
+    };
 })();
 
 var onScroll = function (callback, delay) {
@@ -93,6 +93,47 @@ var onScroll = function (callback, delay) {
                 scheduled = false;
             }, delay);
         }
+    });
+}
+
+var bodyScroll = (function () {
+    var scrollY = 0;
+    var isLocked = false;
+    function lock() {
+        if (!isLocked) {
+            scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+            var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+            if (scrollbarWidth) {
+                document.body.style.paddingRight = `${scrollbarWidth}px`;
+            }
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.minWidth  = `calc(100% - ${scrollbarWidth}px)`;
+        }
+        isLocked = true;
+    }
+    function unlock() {
+        if (isLocked) {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.minWidth = '';
+            document.body.style.paddingRight = '';
+            window.scrollTo({ top: scrollY });
+        }
+        isLocked = false;
+    }
+    return {
+        lock: lock,
+        unlock: unlock
+    };
+})();
+var onResize = function (callback, delay = 200) {
+    var timer = null;
+    window.addEventListener('resize', function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            callback.call(this);
+        }, delay);
     });
 }
 var tooltip = (function () {
@@ -196,7 +237,7 @@ var tooltip = (function () {
                 });
             })();
         }
-    }
+    };
 })();
 var progress = (function () {
     var settings = {};
@@ -311,7 +352,7 @@ var progress = (function () {
         set: set,
         done: done,
         config: config
-    }
+    };
 })();
 var spinner = (function() {
     var innerHTML = `
@@ -357,7 +398,7 @@ var spinner = (function() {
             item.innerHTML = innerHTML;
             item.classList.add('spinner');
         }
-    }
+    };
 })();
 var toast = (function () {
     function createElement(html) {
@@ -549,7 +590,7 @@ var popover = (function () {
         return {
             close: close
         };
-    }
+    };
 })();
 var modal = (function () {
     function createElement(html) {
@@ -563,24 +604,6 @@ var modal = (function () {
         try {
             document.body.removeChild(element);
         } catch { }
-    }
-    var scrollY = 0;
-    function lock() {
-        scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
-        var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-        if (scrollbarWidth) {
-            document.body.style.paddingRight = `${scrollbarWidth}px`;
-        }
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${scrollY}px`;
-        document.body.style.minWidth  = `calc(100% - ${scrollbarWidth}px)`;
-    }
-    function unlock() {
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.minWidth = '';
-        document.body.style.paddingRight = '';
-        window.scrollTo({ top: scrollY });
     }
     return function(template, _settings) {
         var setting = {};
@@ -600,7 +623,7 @@ var modal = (function () {
                 element = createElement(html);
                 document.body.appendChild(element);
                 template.innerHTML = '';
-                lock();
+                bodyScroll.lock();
                 bindDismiss();
                 if (ref.onOpened) {
                     ref.onOpened(element);
@@ -613,7 +636,7 @@ var modal = (function () {
                 remove(element);
                 element = null;
                 template.innerHTML = html;
-                unlock();
+                bodyScroll.unlock();
                 if (ref.onClosed) {
                     ref.onClosed(element);
                 }
@@ -628,7 +651,7 @@ var modal = (function () {
             }
         }
         return ref;
-    }
+    };
 })();
 var gotop = (function () {
     function getScrollTop() {
@@ -664,39 +687,369 @@ var gotop = (function () {
                 gotop.classList.remove('show');
             }
         }, setting.delay);
+    };
+})();
+var collapse = (function () {
+    return function(element, _settings) {
+        var setting = {};
+        _settings = _settings ?? {};
+        setting.initHeight = _settings.initHeight ?? '0px';
+
+        var isAnimating = false;
+        var isShow = element.classList.contains('show');
+        element.classList.add('collapse');
+        function getIsShow() {
+            return isShow;
+        }
+        function getIsAnimating() {
+            return isAnimating;
+        }
+        function toggle() {
+            if (isAnimating) 
+                return;
+            if (isShow) {
+                hide();
+            } else {
+                show();
+            }
+        }
+        function show() {
+            if (isAnimating) 
+                return;
+            if (!isShow) {
+                isAnimating = true;
+                element.classList.remove('collapse');
+                element.classList.add('collapsing');
+                // element.style.height = '0px';
+                element.style.height = setting.initHeight;
+                var scrollHeight = element.scrollHeight;
+                // 觸發瀏覽器重繪
+                element.offsetHeight;
+                element.style.height = scrollHeight + 'px';
+                var handler = function () {
+                    element.classList.remove('collapsing');
+                    element.classList.add('collapse', 'show');
+                    element.style.height = '';
+                    element.removeEventListener('transitionend', handler);
+                    isAnimating = false;
+                }
+                element.addEventListener('transitionend', handler);
+            }
+            isShow = true;
+        }
+        function hide() {
+            if (isAnimating) 
+                return;
+            if (isShow) {
+                isAnimating = true;
+                element.style.height = element.scrollHeight + 'px';
+                // 觸發瀏覽器重繪
+                element.offsetHeight;
+                element.classList.remove('collapse', 'show');
+                element.classList.add('collapsing');
+                // element.style.height = '0px';
+                element.style.height = setting.initHeight;
+                var handler = function () {
+                    element.classList.remove('collapsing');
+                    element.classList.add('collapse');
+                    element.style.height = '';
+                    element.removeEventListener('transitionend', handler);
+                    isAnimating = false;
+                }
+                element.addEventListener('transitionend', handler);
+            }
+            isShow = false;
+        }
+        return {
+            toggle: toggle,
+            show: show,
+            hide: hide,
+            getIsShow: getIsShow,
+            getIsAnimating: getIsAnimating
+        };
+    };
+})();
+var scrollbar = (function () {
+    return function(scrollable) {
+        scrollable.classList.add('scrollbar');
+        var isAnimating = false;
+        var targetScrollLeft = 0;
+        var prev = 0;
+        function smoothScroll() {
+            isAnimating = true;
+            var current = scrollable.scrollLeft;
+            var diff = targetScrollLeft - current;
+            // 差距夠小就停止
+            if (Math.abs(diff) <= 1 || current === prev) {
+                scrollable.scrollLeft = targetScrollLeft;
+                isAnimating = false;
+                return;
+            }
+            // easing 數值越小越滑
+            prev = current;
+            scrollable.scrollLeft = current + diff * 0.15;
+            requestAnimationFrame(smoothScroll);
+        }
+        scrollable.addEventListener('wheel', function (e) {
+            e.preventDefault();
+            // scrollable.scrollLeft += e.deltaY;
+            // var maxDelta = 80;
+            // var delta = Math.max(-maxDelta, Math.min(maxDelta, e.deltaY));
+            // targetScrollLeft += delta * 0.9;
+            targetScrollLeft += e.deltaY;
+            targetScrollLeft = Math.max(0, Math.min(targetScrollLeft,
+                scrollable.scrollWidth - scrollable.clientWidth));
+            if (!isAnimating) {
+                smoothScroll();
+            }
+        }, { passive: false });
+    };
+})();
+var searchBar = (function () {
+    return function(selector) {
+        var block = document.querySelector(selector);
+        var box = block.querySelector('.search-box');
+        var input = block.querySelector('.search-input');
+        var inputBox = block.querySelector('.search-input-box');
+        var backBtn = block.querySelector('.search-back-button');
+        var toggleBtn = block.querySelector('.search-toggle-button');
+        var clearBtn = block.querySelector('.search-clear-button');
+        var searchBtn = block.querySelector('.search-button');
+        
+        var ref = {
+            init: init,
+            onToggle : null,
+            onSearch: null
+        };
+
+        var isOpen = false;
+        function init(_text, _isOpen) {
+            var text = _text ?? '';
+            isOpen = _isOpen ?? false;
+
+            input.value = text;
+            onInput();
+            box.classList.remove('show');
+            if (isOpen) {
+                box.classList.add('show');
+            }
+        }
+        function toggle() {
+            isOpen = !isOpen;
+            if (isOpen) {
+                box.classList.add('show');
+                input.focus();
+            }
+            else {
+                box.classList.remove('show');
+            }
+            if (ref.onToggle) {
+                ref.onToggle(isOpen);
+            }
+        }
+        function clear() {
+            input.value = '';
+            onInput();
+            input.focus();
+        }
+        function search() {
+            if (ref.onSearch) {
+                ref.onSearch(input.value);
+            }
+        }
+
+        var onInput = (function () {
+            var _display  = clearBtn.style.display;
+            return function () {
+                if (input.value) {
+                    clearBtn.style.display = _display;
+                }
+                else {
+                    clearBtn.style.display = 'none';
+                }
+            };
+        })();
+        onInput();
+        
+        // input.addEventListener('focus', () => {
+        //     inputBox.classList.add('focus');
+        // });
+        // input.addEventListener('blur', () => {
+        //     inputBox.classList.remove('focus');
+        // });
+
+        clearBtn.addEventListener('click', () => {
+            clear();
+        });
+        backBtn.addEventListener('click', () => {
+            toggle();
+        });
+        toggleBtn.addEventListener('click', () => {
+            toggle();
+        });
+
+        searchBtn.addEventListener('click', () => {
+            search();
+        });
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                search();
+            }
+        });
+
+        input.addEventListener('input', (e) => {
+            onInput();
+        });
+        return ref;
+    };
+})();
+var onNav = null;
+var onNavOpen = null;
+var onNavClose = null;
+(function() {
+    var isAnimating = false;
+    function show(element, mask, type) {
+        if (isAnimating) 
+            return;
+        isAnimating = true;
+        var ingClass = type === 'open' ? 'opening' : 'activing';
+        element.classList.add(ingClass);
+        // element.classList.add('collapsing');
+        element.style.height = '0px';
+        element.style.width = '0px';
+        element.style.opacity = '0';
+        var scrollHeight = element.scrollHeight;
+        var scrollWidth = element.scrollWidth;
+        if (type === 'open') {
+            mask.classList.add('opening');
+            mask.style.opacity = '0';
+        }
+        // 觸發瀏覽器重繪
+        element.offsetHeight;
+        element.style.height = scrollHeight + 'px';
+        element.style.width = scrollWidth + 'px';
+        element.style.opacity = '1';
+        if (type === 'open') {
+            mask.style.opacity = '1';
+            // mask.classList.add('open');
+            bodyScroll.lock();
+        }
+        else {
+            // var main = document.querySelector('.main');
+            // main.classList.add('active');
+        }
+        var handler = function () {
+            element.classList.remove(ingClass);
+            element.classList.add(type);
+            // element.classList.remove('collapsing');
+            // element.classList.add('show');
+            element.style.height = '';
+            element.style.width = '';
+            element.style.opacity = '';
+            if (type === 'open') {
+                mask.classList.remove('opening');
+                mask.classList.add('open');
+                mask.style.opacity = '';
+            }
+            element.removeEventListener('transitionend', handler);
+            isAnimating = false;
+        }
+        element.addEventListener('transitionend', handler);
     }
-})();
-var onNav = (function() {
-    return function() {
-        var leftMenu = document.querySelector('.left-menu');
-        var main = document.querySelector('.main');
-        if (leftMenu.classList.contains('active')) {
-            leftMenu.classList.remove('active');
-            main.classList.remove('active');
-        } else {
-            leftMenu.classList.add('active');
-            main.classList.add('active');
+    function hide(element, mask, type) {
+        if (isAnimating) 
+            return;
+        isAnimating = true;
+        var ingClass = type === 'open' ? 'opening' : 'activing';
+        element.style.height = element.scrollHeight + 'px';
+        element.style.width = element.scrollWidth + 'px';
+        element.style.opacity = '1';
+        if (type === 'open') {
+            mask.style.opacity = '1';
         }
-    };
+        // 觸發瀏覽器重繪
+        element.offsetHeight;
+        element.classList.remove(type);
+        element.classList.add(ingClass);
+        // element.classList.remove('show');
+        // element.classList.add('collapsing');
+        element.style.height = '0px';
+        element.style.width = '0px';
+        element.style.opacity = '0';
+        if (type === 'open') {
+            mask.classList.remove('open');
+            mask.classList.add('opening');
+            mask.style.opacity = '0';
+            // mask.classList.remove('open');
+            bodyScroll.unlock();
+        }
+        else {
+            // var main = document.querySelector('.main');
+            // main.classList.remove('active');
+        }
+        var handler = function () {
+            element.classList.remove(ingClass);
+            // element.classList.remove('collapsing');
+            element.style.height = '';
+            element.style.width = '';
+            element.style.opacity = '';
+            if (type === 'open') {
+                mask.classList.remove('opening');
+                mask.style.opacity = '';
+            }
+            element.removeEventListener('transitionend', handler);
+            isAnimating = false;
+            // if (type === 'open') {
+            //     var mask = document.querySelector('.left-menu-mask');
+            //     mask.classList.remove('open');
+            // }
+        }
+        element.addEventListener('transitionend', handler);
+    }
+    function _onNav() {
+        if (isAnimating)
+            return;
+        var element = document.querySelector('.left-menu');
+        var isActive = element.classList.contains('active');
+        if (isActive) {
+            hide(element, null, 'active');
+        } else {
+            show(element, null, 'active');
+        }
+    }
+    function _onNavOpen() {
+        if (isAnimating)
+            return;
+        var element = document.querySelector('.left-menu');
+        var mask = document.querySelector('.left-menu-mask');
+        var isOpen = element.classList.contains('open');
+        if (isOpen) {
+            hide(element, mask, 'open');
+        } else {
+            show(element, mask, 'open');
+        }
+    }
+    function _onNavClose() {
+        _onNavOpen();
+    }
+    onNav = _onNav;
+    onNavOpen = _onNavOpen;
+    onNavClose = _onNavClose;
 })();
 
-var onNavOpen = (function() {
+var enableMenuResizeListener = (function() {
     return function() {
-        var leftMenu = document.querySelector('.left-menu');
-        var leftMenuMask = document.querySelector('.left-menu-mask');
-        if (leftMenu.classList.contains('open')) {
-            leftMenu.classList.remove('open');
-            leftMenuMask.classList.remove('open');
-        } else {
-            leftMenu.classList.add('open');
-            leftMenuMask.classList.add('open');
-        }
-    };
-})();
-
-var onNavClose = (function() {
-    return function() {
-        onNavOpen();
+        onResize(function() {
+            var leftMenu = document.querySelector('.left-menu');
+            if (leftMenu.classList.contains('open')) {
+                if (window.innerWidth <= 1330) {
+                    bodyScroll.lock();
+                }
+                else {
+                    bodyScroll.unlock();
+                }
+            }
+        });
     };
 })();
 
@@ -725,6 +1078,18 @@ var selectMenu = (function() {
     };
 })();
 
+var enableMenuGroup = (function() {
+    return function() {
+        var groups = document.querySelectorAll('.left-menu-group');
+        for (let item of groups) {
+            var title = item.querySelector('.left-menu-group-title');
+            title.addEventListener('click', function() {
+                item.classList.toggle('open');
+            });
+        }
+    };
+})();
+
 var selectSubMenu = (function() {
     return function(val) {
         var items = document.querySelectorAll('.sub-menu-item');
@@ -740,15 +1105,10 @@ var selectSubMenu = (function() {
     };
 })();
 
-var enableMenuGroup = (function() {
+var enableSubMenuScrollbar = (function() {
     return function() {
-        var groups = document.querySelectorAll('.left-menu-group');
-        for (let item of groups) {
-            var title = item.querySelector('.left-menu-group-title');
-            title.addEventListener('click', function() {
-                item.classList.toggle('open');
-            });
-        }
+        var scrollable = document.querySelector('.sub-menu-scrollable');
+        scrollbar(scrollable);
     };
 })();
 

@@ -15,19 +15,25 @@ var fileNavbar = (function() {
     // expand
     var enableExpand = function() {
         var toggle = document.querySelector('.file-navbar-toggle');
-        var expand = document.querySelector('.file-navbar-expand');
+        var expand = document.querySelector('.file-navbar-expand-collapse');
+        var scrollable = document.querySelector('.file-navbar-expand-scrollable');
         if (toggle && expand) {
+            var _collapse = collapse(expand, {
+                initHeight: '15px'
+            });
             toggle.addEventListener('click', function (e) {
                 e.stopPropagation();
-                if (!toggle.classList.contains('open')) {
+                _collapse.toggle();
+                if (_collapse.getIsShow()) {
                     toggle.classList.add('open');
-                    expand.classList.add('open');
                 }
                 else {
                     toggle.classList.remove('open');
-                    expand.classList.remove('open');
                 }
             });
+        }
+        if (scrollable) {
+            scrollbar(scrollable);
         }
     }
     
@@ -59,7 +65,7 @@ var fileNavbar = (function() {
         enableExpand: enableExpand,
         enableImageOver: enableImageOver,
         enableTextOver: enableTextOver
-    }
+    };
 })();
 
 var onTextThemeButtonChange = (function() {
