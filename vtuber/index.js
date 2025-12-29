@@ -36,7 +36,7 @@ var vm = new Vue({
             progress.start();
             selectMenu(this.menu);
             selectSubMenu(this.submenu);
-            enableNavResizeListener();
+            enableMenuResizeListener();
             gotop('.gotop');
             onScrollEnd(this.onScrollEnd, 50);
             this.errorImage = await this.loadedErrorImage(

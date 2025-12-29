@@ -71,9 +71,8 @@
         </div>
         <div class="container">
             <div class="left-menu active">
-                <div class="left-menu-scrollable">
-                    <div></div>
-                    <div class="center">
+                <div class="left-menu-container">
+                    <div class="left-menu-scrollable">
                         <div class="left-menu-inner">
                             <a href="index.html?m=popular" select-val="popular" class="left-menu-item">
                                 <!-- <i class="fa-brands fa-hotjar fa-fw"></i></i> -->熱度排行</a>
@@ -87,11 +86,10 @@
                                 <!-- <i class="fa-solid fa-user-group fa-fw"></i> -->本月新人</a>
                         </div>
                     </div>
-                    <div></div>
                 </div>
             </div>
             <div class="left-menu-mask" onclick="onNavClose()"></div>
-            <div class="main active">
+            <div class="main">
                 <div class="main-inner">
                     <div class="board">
                         <div class="about-content">
@@ -148,7 +146,7 @@
         </div>
     </div>
     <script>
-        enableNavResizeListener();
+        enableMenuResizeListener();
         var theme = document.body.getAttribute('theme');
         onThemeButtonChange(theme);
         function toggleTheme() {
