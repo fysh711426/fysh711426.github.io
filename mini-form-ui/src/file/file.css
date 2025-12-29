@@ -245,18 +245,18 @@ z-index
 }
 
 .file-navbar-expand-scrollable {
-    overflow: hidden;
     margin: 0px 5px;
     overflow-x: auto;
     scrollbar-width: none;
 }
 
-.file-navbar-expand-scrollable.collapse:not(.show) {
+.file-navbar-expand-collapse.collapse:not(.show) {
     display: block;
     height: 15px;
+    overflow: hidden;
 }
 
-.file-navbar-expand-scrollable.collapsing {
+.file-navbar-expand-collapse.collapsing {
     height: 15px;
 }
 

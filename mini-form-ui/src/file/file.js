@@ -15,9 +15,10 @@ var fileNavbar = (function() {
     // expand
     var enableExpand = function() {
         var toggle = document.querySelector('.file-navbar-toggle');
+        var expand = document.querySelector('.file-navbar-expand-collapse');
         var scrollable = document.querySelector('.file-navbar-expand-scrollable');
-        if (toggle && scrollable) {
-            var _collapse = collapse(scrollable, {
+        if (toggle && expand) {
+            var _collapse = collapse(expand, {
                 initHeight: '15px'
             });
             toggle.addEventListener('click', function (e) {
@@ -30,6 +31,8 @@ var fileNavbar = (function() {
                     toggle.classList.remove('open');
                 }
             });
+        }
+        if (scrollable) {
             scrollbar(scrollable);
         }
     }
