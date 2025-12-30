@@ -183,24 +183,27 @@ a:hover .file-item-icon {
     flex: 1 0 0;
 } */
 
+.file-item-trailing .badge-checked {
+    line-height: .8em;
+    font-size: .8em;
+}
+
 @media screen and (max-width: 480px) {
     /*----- .badge-number.sm -----*/
     .file-item-trailing .badge-number {
-        padding: .28em .49em;
+        line-height: .65em;
         font-size: .65em;
+        padding-top: 0px;
     }
     /*----- .badge-number.sm -----*/
 
     /*----- .badge-checked.sm -----*/
     .file-item-trailing .badge-checked {
-        padding: .18em .3em;
-    }
-
-    .file-item-trailing .badge-checked i {
-        /* .fa-xs */
-        font-size: .75em;
-        line-height: .08333em;
-        vertical-align: .125em;
+        /* line-height: .65em;
+        font-size: .65em; */
+        line-height: .7em;
+        font-size: .7em;
+        padding-top: 0px;
     }
     /*----- .badge-checked.sm -----*/
 }
