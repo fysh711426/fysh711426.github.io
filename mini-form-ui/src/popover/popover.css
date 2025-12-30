@@ -90,6 +90,7 @@ body.dark {
     position: absolute;
     top: 0px;
     left: 0px;
+    z-index: 140000;
 }
 
 .popover-inner {

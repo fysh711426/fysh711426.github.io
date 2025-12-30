@@ -32,6 +32,7 @@ body.dark {
 .toast-block {
     position: fixed;
     transform: translateY(150%);
+    z-index: 300000;
 }
 
 .toast-inner {

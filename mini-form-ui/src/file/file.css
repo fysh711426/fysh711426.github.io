@@ -9,7 +9,12 @@ z-index
     file-image-nav = 16000
     file-image-content < 1024px = 15000
     control = 100000
-    modal = 50000
+    popover = 140000
+    tooltip = 160000
+    modal = 200000
+    modal-popover = 240000
+    modal-tooltip = 260000
+    toast = 300000
 */
 
 /*----- font-awesome -----*/

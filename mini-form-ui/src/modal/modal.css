@@ -130,7 +130,7 @@ body.dark {
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(1px);
-    z-index: 50000;
+    z-index: 200000;
 }
 
 .modal {
@@ -153,7 +153,11 @@ body.dark {
 }
 
 .modal-popover {
-    z-index: 50000;
+    z-index: 240000;
+}
+
+.modal-tooltip {
+    z-index: 260000;
 }
 
 .modal-block {

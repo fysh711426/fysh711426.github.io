@@ -24,6 +24,7 @@ body.dark {
     position: absolute;
     top: 0px;
     left: 0px;
+    z-index: 160000;
 }
 
 .tooltip-inner {

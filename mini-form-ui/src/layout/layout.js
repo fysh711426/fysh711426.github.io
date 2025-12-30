@@ -1,3 +1,4 @@
+var nav = null;
 var onNav = null;
 var onNavOpen = null;
 var onNavClose = null;
@@ -131,6 +132,9 @@ var onNavClose = null;
     onNav = _onNav;
     onNavOpen = _onNavOpen;
     onNavClose = _onNavClose;
+    nav = {
+        _: _
+    }
 })();
 
 var enableMenuResizeListener = (function() {

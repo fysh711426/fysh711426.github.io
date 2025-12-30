@@ -144,24 +144,28 @@ body.dark {
 /*----- badge-number -----*/
 
 .badge-number {
-    display: inline-block;
-    align-self: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     box-sizing: border-box;
-    line-height: 1;
+    border-radius: 50rem;
+    min-width: 1.5em;
+    height: 1.5em;
+    line-height: .75em;
     font-size: .75em;
     font-weight: 700;
-    padding: .3em .51em;
-    border-radius: 50rem;
+    padding: 0px .45em 0px .45em;
+    padding-top: 1px;
     letter-spacing: .02em;
-    text-align: center;
     white-space: nowrap;
-    vertical-align: baseline;
     font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .badge-number.sm {
-    padding: .28em .49em;
+    line-height: .65em;
     font-size: .65em;
+    padding-top: 0px;
 }
 
 /*----- badge-number -----*/
@@ -169,29 +173,26 @@ body.dark {
 /*----- badge-checked -----*/
 
 .badge-checked {
-    display: inline-block;
-    align-self: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     box-sizing: border-box;
-    line-height: 1;
+    border-radius: 50rem;
+    min-width: 1.5em;
+    height: 1.5em;
+    line-height: .75em;
     font-size: .75em;
     font-weight: 700;
-    padding: .3em .3em;
-    border-radius: 50rem;
-    letter-spacing: .02em;
-    text-align: center;
+    padding: 0;
+    padding-top: 1px;
     white-space: nowrap;
-    vertical-align: baseline;
 }
 
 .badge-checked.sm {
-    padding: .18em .3em;
-}
-
-.badge-checked.sm i {
-    /* .fa-xs */
-    font-size: .75em;
-    line-height: .08333em;
-    vertical-align: .125em;
+    line-height: .65em;
+    font-size: .65em;
+    padding-top: 0px;
 }
 
 /*----- badge-checked -----*/
@@ -973,7 +974,8 @@ body.dark {
 .modal-block {
     display: flex;
     flex-direction: column;
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
+    border-radius: .6rem;
     pointer-events: auto;
     border: 0 solid;
     max-width: 32rem;
@@ -1887,6 +1889,15 @@ table td {
 }
 
 /*----- control -----*/
+
+.main {
+    /* transition: max-width .3s ease; */
+    /* transition-delay: .08s; */
+    /* transition-delay: .1s; */
+
+    /* transition: max-width .4s ease; */
+    transition: max-width .8s ease;
+}
 body.light {
     --scrollbarColor: #0000001a;
     --scrollbarHoverColor: #0003;
@@ -2241,23 +2252,17 @@ a.nav-link-button:active {
 /*----- nav-link-button -----*/
 /*----- left-menu -----*/
 
-.left-menu-container {
+.left-menu {
     background-color: var(--boardColor);
     box-shadow: var(--boardShadow);
     border-top-color: var(--leftMenuBorderTop);
 }
 
 @media screen and (max-width: 1330px) {
-    .left-menu.open .left-menu-container {
+    .left-menu.open {
         border-top-color: var(--leftMenuOpenBorderTop);
     }
 }
-
-/* @media screen and (min-width: 1331px) {
-    .left-menu.activing {
-        box-shadow: var(--boardShadow);
-    }
-} */
 
 .left-menu-scrollable {
     /* scrollbar-color: var(--scrollbarColor) transparent; */
@@ -2307,9 +2312,6 @@ a.nav-link-button:active {
     display: none;
     align-self: start;
     flex: 0 0 auto;
-}
-
-.left-menu-container {
     width: 240px;
     border-top-width: 1px;
     border-top-style: solid;
@@ -2321,16 +2323,13 @@ a.nav-link-button:active {
         position: sticky;
         z-index: 5200;
         top: 75px;
+        border-radius: .35rem;
         margin-top: 15px;
+        margin-right: 15px;
     }
 
     .left-menu.active {
         display: block;
-    }
-
-    .left-menu-container {
-        border-radius: .35rem;
-        margin-right: 15px;
     }
 }
 
@@ -2341,20 +2340,18 @@ a.nav-link-button:active {
         top: 60px;
         left: 0;
         height: 100vh;
+        border-radius: 0px;
     }
 
     .left-menu.open {
         display: block;
-    }
-
-    .left-menu-container {
-        border-radius: 0px;
     }
 }
 
 .left-menu-scrollable {
     overflow-y: auto;
     scrollbar-width: thin;
+    width: 240px;
 }
 
 @media screen and (min-width: 1331px) {
