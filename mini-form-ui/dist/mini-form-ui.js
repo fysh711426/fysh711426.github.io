@@ -723,7 +723,7 @@ var collapse = (function () {
                 // element.style.height = '0px';
                 element.style.height = setting.initHeight;
                 var scrollHeight = element.scrollHeight;
-                // 觸發瀏覽器重繪
+                /*! 觸發瀏覽器重繪 */
                 element.offsetHeight;
                 element.style.height = scrollHeight + 'px';
                 var handler = function () {
@@ -743,7 +743,7 @@ var collapse = (function () {
             if (isShow) {
                 isAnimating = true;
                 element.style.height = element.scrollHeight + 'px';
-                // 觸發瀏覽器重繪
+                /*! 觸發瀏覽器重繪 */
                 element.offsetHeight;
                 element.classList.remove('collapse', 'show');
                 element.classList.add('collapsing');
@@ -924,7 +924,7 @@ var onNavClose = null;
             mask.classList.add('opening');
             mask.style.opacity = '0';
         }
-        // 觸發瀏覽器重繪
+        /*! 觸發瀏覽器重繪 */
         element.offsetHeight;
         element.style.height = scrollHeight + 'px';
         element.style.width = scrollWidth + 'px';
@@ -967,7 +967,7 @@ var onNavClose = null;
         if (type === 'open') {
             mask.style.opacity = '1';
         }
-        // 觸發瀏覽器重繪
+        /*! 觸發瀏覽器重繪 */
         element.offsetHeight;
         element.classList.remove(type);
         element.classList.add(ingClass);

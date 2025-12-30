@@ -572,3 +572,12 @@ table td {
 }
 
 /*----- control -----*/
+
+.main {
+    /* transition: max-width .3s ease; */
+    /* transition-delay: .08s; */
+    /* transition-delay: .1s; */
+
+    /* transition: max-width .4s ease; */
+    transition: max-width .8s ease;
+}

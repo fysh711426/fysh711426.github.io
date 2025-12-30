@@ -1,22 +1,16 @@
 /*----- left-menu -----*/
 
-.left-menu-container {
+.left-menu {
     background-color: var(--boardColor);
     box-shadow: var(--boardShadow);
     border-top-color: var(--leftMenuBorderTop);
 }
 
 @media screen and (max-width: 1330px) {
-    .left-menu.open .left-menu-container {
+    .left-menu.open {
         border-top-color: var(--leftMenuOpenBorderTop);
     }
 }
-
-/* @media screen and (min-width: 1331px) {
-    .left-menu.activing {
-        box-shadow: var(--boardShadow);
-    }
-} */
 
 .left-menu-scrollable {
     /* scrollbar-color: var(--scrollbarColor) transparent; */
@@ -66,9 +60,6 @@
     display: none;
     align-self: start;
     flex: 0 0 auto;
-}
-
-.left-menu-container {
     width: 240px;
     border-top-width: 1px;
     border-top-style: solid;
@@ -80,16 +71,13 @@
         position: sticky;
         z-index: 5200;
         top: 75px;
+        border-radius: .35rem;
         margin-top: 15px;
+        margin-right: 15px;
     }
 
     .left-menu.active {
         display: block;
-    }
-
-    .left-menu-container {
-        border-radius: .35rem;
-        margin-right: 15px;
     }
 }
 
@@ -100,20 +88,18 @@
         top: 60px;
         left: 0;
         height: 100vh;
+        border-radius: 0px;
     }
 
     .left-menu.open {
         display: block;
-    }
-
-    .left-menu-container {
-        border-radius: 0px;
     }
 }
 
 .left-menu-scrollable {
     overflow-y: auto;
     scrollbar-width: thin;
+    width: 240px;
 }
 
 @media screen and (min-width: 1331px) {

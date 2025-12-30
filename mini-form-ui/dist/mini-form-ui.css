@@ -2321,6 +2321,7 @@ a.nav-link-button:active {
         position: sticky;
         z-index: 5200;
         top: 75px;
+        margin-top: 15px;
     }
 
     .left-menu.active {

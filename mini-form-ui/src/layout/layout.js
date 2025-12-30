@@ -2,6 +2,7 @@ var onNav = null;
 var onNavOpen = null;
 var onNavClose = null;
 (function() {
+    var _ = null;
     var isAnimating = false;
     function show(element, mask, type) {
         if (isAnimating) 
@@ -19,8 +20,8 @@ var onNavClose = null;
             mask.classList.add('opening');
             mask.style.opacity = '0';
         }
-        /*! 觸發瀏覽器重繪 */
-        element.offsetHeight;
+        // 觸發瀏覽器重繪
+        _ = element.offsetHeight;
         element.style.height = scrollHeight + 'px';
         element.style.width = scrollWidth + 'px';
         element.style.opacity = '1';
@@ -30,8 +31,8 @@ var onNavClose = null;
             bodyScroll.lock();
         }
         else {
-            // var main = document.querySelector('.main');
-            // main.classList.add('active');
+            var main = document.querySelector('.main');
+            main.classList.add('active');
         }
         var handler = function () {
             element.classList.remove(ingClass);
@@ -62,8 +63,8 @@ var onNavClose = null;
         if (type === 'open') {
             mask.style.opacity = '1';
         }
-        /*! 觸發瀏覽器重繪 */
-        element.offsetHeight;
+        // 觸發瀏覽器重繪
+        _ = element.offsetHeight;
         element.classList.remove(type);
         element.classList.add(ingClass);
         // element.classList.remove('show');
@@ -79,8 +80,8 @@ var onNavClose = null;
             bodyScroll.unlock();
         }
         else {
-            // var main = document.querySelector('.main');
-            // main.classList.remove('active');
+            var main = document.querySelector('.main');
+            main.classList.remove('active');
         }
         var handler = function () {
             element.classList.remove(ingClass);
