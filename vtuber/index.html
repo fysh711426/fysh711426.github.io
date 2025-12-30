@@ -95,11 +95,17 @@
             <div class="main active">
                 <div class="main-inner">
                     <div class="sub-menu">
-                        <div class="sub-menu-inner">
-                            <a :href="'index.html?m='+menu+'&s=tw'" select-val="tw" class="sub-menu-item">台灣</a>
-                            <a :href="'index.html?m='+menu+'&s=hololive'" select-val="hololive" class="sub-menu-item">hololive</a>
-                            <a :href="'index.html?m='+menu+'&s=anycolor'" select-val="anycolor" class="sub-menu-item">彩虹社</a>
-                            <a :href="'index.html?m='+menu+'&s=other'" select-val="other" class="sub-menu-item">其他</a>
+                        <div class="sub-menu-scrollable">
+                            <div></div>
+                            <div class="center">
+                                <div class="sub-menu-inner">
+                                    <a :href="'index.html?m='+menu+'&s=tw'" select-val="tw" class="sub-menu-item">台灣</a>
+                                    <a :href="'index.html?m='+menu+'&s=hololive'" select-val="hololive" class="sub-menu-item">hololive</a>
+                                    <a :href="'index.html?m='+menu+'&s=anycolor'" select-val="anycolor" class="sub-menu-item">彩虹社</a>
+                                    <a :href="'index.html?m='+menu+'&s=other'" select-val="other" class="sub-menu-item">其他</a>
+                                </div>
+                            </div>
+                            <div></div>
                         </div>
                     </div>
                     <div v-if="isLoaded" class="board">
