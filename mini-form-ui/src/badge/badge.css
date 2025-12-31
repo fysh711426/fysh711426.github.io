@@ -22,33 +22,19 @@ body.dark {
     background-color: var(--badgeActiveBgColor);
 }
 
-/*----- badge-number -----*/
+/*----- badge-circle -----*/
 
-.badge-number {
+.badge-circle {
     color: var(--badgeColor);
     background-color: var(--badgeBgColor);
 }
 
-.board.active .badge-number {
+.board.active .badge-circle {
     color: var(--badgeActiveColor);
     background-color: var(--badgeActiveBgColor);
 }
 
-/*----- badge-number -----*/
-
-/*----- badge-checked -----*/
-
-.badge-checked {
-    color: var(--badgeColor);
-    background-color: var(--badgeBgColor);
-}
-
-.board.active .badge-checked {
-    color: var(--badgeActiveColor);
-    background-color: var(--badgeActiveBgColor);
-}
-
-/*----- badge-checked -----*/
+/*----- badge-circle -----*/
 
 .badge {
     display: inline-block;
@@ -72,58 +58,49 @@ body.dark {
     border-radius: 50rem;
 }
 
-/*----- badge-number -----*/
+/*----- badge-circle -----*/
 
-.badge-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.badge-circle {
+    display: inline-block;
     text-align: center;
-    box-sizing: border-box;
+    vertical-align: top;
     border-radius: 50rem;
-    min-width: 1.5em;
-    height: 1.5em;
-    line-height: .75em;
-    font-size: .75em;
+    min-width: 22px;
+    height: 22px;
     font-weight: 700;
-    padding: 0px .45em 0px .45em;
-    padding-top: 1px;
-    letter-spacing: .02em;
     white-space: nowrap;
+    box-sizing: border-box;
+    letter-spacing: .02em;
     font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.badge-number.sm {
-    line-height: .65em;
-    font-size: .65em;
-    padding-top: 0px;
+.badge-circle.sm {
+    min-width: 20px;
+    height: 20px;
 }
 
-/*----- badge-number -----*/
-
-/*----- badge-checked -----*/
-
-.badge-checked {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    box-sizing: border-box;
-    border-radius: 50rem;
-    min-width: 1.5em;
-    height: 1.5em;
-    line-height: .75em;
-    font-size: .75em;
-    font-weight: 700;
-    padding: 0;
-    padding-top: 1px;
-    white-space: nowrap;
+.badge-circle-number {
+    font-size: 15px;
+    line-height: 15px;
+    padding: 4.5px 6px 0px 6px;
 }
 
-.badge-checked.sm {
-    line-height: .65em;
-    font-size: .65em;
-    padding-top: 0px;
+.badge-circle-check {
+    font-size: 15px;
+    line-height: 15px;
+    padding: 4.5px 0px 0px 0px;
 }
 
-/*----- badge-checked -----*/
+.badge-circle-number.sm {
+    font-size: 13px;
+    line-height: 13px;
+    padding-top: 3.3px;
+}
+
+.badge-circle-check.sm {
+    font-size: 13px;
+    line-height: 13px;
+    padding-top: 3.3px;
+}
+
+/*----- badge-circle -----*/

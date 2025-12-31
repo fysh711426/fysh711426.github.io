@@ -88,12 +88,12 @@ body.dark {
 
 /*----- file-image-item-sub-title -----*/
 
-.file-image-item-trailing .badge-checked {
+.file-image-item-trailing .badge-circle-check {
     color: var(--badgeActiveColor);
     background-color: inherit;
 }
 
-.board.active .file-image-item-trailing .badge-checked {
+.board.active .file-image-item-trailing .badge-circle-check {
     color: var(--badgeColor);
     background-color: inherit;
 }
@@ -103,14 +103,14 @@ body.dark {
 /*----- view-mode -----*/
 
 @media screen and (max-width: 640px) {
-    .view-mode .file-image-item-floating .badge-number,
-    .view-mode .file-image-item-floating .badge-checked {
+    .view-mode .file-image-item-floating .badge-circle-number,
+    .view-mode .file-image-item-floating .badge-circle-check {
         /* color: var(--fileImageItemFloatingBadgeColor); */
         background-color: var(--fileImageItemFloatingBadgeBgColor);
     }
 
-    .view-mode .board.active .file-image-item-floating .badge-number,
-    .view-mode .board.active .file-image-item-floating .badge-checked {
+    .view-mode .board.active .file-image-item-floating .badge-circle-number,
+    .view-mode .board.active .file-image-item-floating .badge-circle-check {
         /* color: var(--fileImageItemFloatingBadgeActiveColor); */
         background-color: var(--fileImageItemFloatingBadgeActiveBgColor);
     }
@@ -148,6 +148,8 @@ body.dark {
 @media screen and (min-width: 641px) {
     .file-image-item {
         padding: 10px 10px;
+        /* padding-right: 10px; */
+        padding-right: 15px;
     }
 
     .file-image-item-text {
@@ -365,35 +367,41 @@ body.dark {
     display: none;
 }
 
-.file-image-item-trailing .badge-checked {
-    line-height: .8em;
-    font-size: .8em;
+.file-image-item-trailing .badge-circle-check {
+    font-size: 16px;
+    line-height: 16px;
 }
 
 @media screen and (max-width: 480px) {
-    /*----- .badge-number.sm -----*/
-    .file-image-item-trailing .badge-number,
-    .file-image-item-floating .badge-number {
-        line-height: .65em;
-        font-size: .65em;
-        padding-top: 0px;
+    /*----- .badge-circle.sm -----*/
+    .file-image-item-trailing .badge-circle,
+    .file-image-item-floating .badge-circle {
+        min-width: 20px;
+        height: 20px;
     }
-    /*----- .badge-number.sm -----*/
+    /*----- .badge-circle.sm -----*/
 
-    /*----- .badge-checked.sm -----*/
-    .file-image-item-trailing .badge-checked {
-        /* line-height: .65em;
-        font-size: .65em; */
-        line-height: .7em;
-        font-size: .7em;
-        padding-top: 0px;
+    /*----- .badge-circle-number.sm -----*/
+    .file-image-item-trailing .badge-circle-number,
+    .file-image-item-floating .badge-circle-number {
+        font-size: 13px;
+        line-height: 13px;
+        padding-top: 3.3px;
     }
-    .file-image-item-floating .badge-checked {
-        line-height: .65em;
-        font-size: .65em;
-        padding-top: 0px;
+    /*----- .badge-circle-number.sm -----*/
+
+    /*----- .badge-circle-check.sm -----*/
+    .file-image-item-trailing .badge-circle-check {
+        font-size: 14px;
+        line-height: 14px;
+        padding-top: 3.3px;
     }
-    /*----- .badge-checked.sm -----*/
+    .file-image-item-floating .badge-circle-check {
+        font-size: 13px;
+        line-height: 13px;
+        padding-top: 3.3px;
+    }
+    /*----- .badge-circle-check.sm -----*/
 }
 
 /*----- file-image-item -----*/

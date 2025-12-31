@@ -62,12 +62,12 @@ a:hover .file-item-icon {
 
 /*----- file-item-sub-title -----*/
 
-.file-item-trailing .badge-checked {
+.file-item-trailing .badge-circle-check {
     color: var(--badgeActiveColor);
     background-color: inherit;
 }
 
-.board.active .file-item-trailing .badge-checked {
+.board.active .file-item-trailing .badge-circle-check {
     color: var(--badgeColor);
     background-color: inherit;
 }
@@ -115,7 +115,8 @@ a:hover .file-item-icon {
 @media screen and (min-width: 641px) {
     .file-item {
         padding: 15px 20px;
-        padding-right: 10px;
+        /* padding-right: 10px; */
+        padding-right: 15px;
     }
 
     .file-item-text {
@@ -183,29 +184,34 @@ a:hover .file-item-icon {
     flex: 1 0 0;
 } */
 
-.file-item-trailing .badge-checked {
-    line-height: .8em;
-    font-size: .8em;
+.file-item-trailing .badge-circle-check {
+    font-size: 16px;
+    line-height: 16px;
 }
 
 @media screen and (max-width: 480px) {
-    /*----- .badge-number.sm -----*/
-    .file-item-trailing .badge-number {
-        line-height: .65em;
-        font-size: .65em;
-        padding-top: 0px;
+    /*----- .badge-circle.sm -----*/
+    .file-item-trailing .badge-circle {
+        min-width: 20px;
+        height: 20px;
     }
-    /*----- .badge-number.sm -----*/
+    /*----- .badge-circle.sm -----*/
 
-    /*----- .badge-checked.sm -----*/
-    .file-item-trailing .badge-checked {
-        /* line-height: .65em;
-        font-size: .65em; */
-        line-height: .7em;
-        font-size: .7em;
-        padding-top: 0px;
+    /*----- .badge-circle-number.sm -----*/
+    .file-item-trailing .badge-circle-number {
+        font-size: 13px;
+        line-height: 13px;
+        padding-top: 3.3px;
     }
-    /*----- .badge-checked.sm -----*/
+    /*----- .badge-circle-number.sm -----*/
+
+    /*----- .badge-circle-check.sm -----*/
+    .file-item-trailing .badge-circle-check {
+        font-size: 14px;
+        line-height: 14px;
+        padding-top: 3.3px;
+    }
+    /*----- .badge-circle-check.sm -----*/
 }
 
 /*----- file-item -----*/

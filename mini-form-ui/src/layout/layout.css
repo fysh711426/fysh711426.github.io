@@ -129,6 +129,12 @@ a {
     padding-right: 15px;
 }
 
+@media screen and (max-width: 640px) {
+    .header .end {
+        padding-right: 10px;
+    }
+}
+
 .header .center {
     display: flex;
     align-items: center;
