@@ -690,12 +690,12 @@ var gotop = (function () {
     };
 })();
 var collapse = (function () {
-    var _ = null;
     return function(element, _settings) {
         var setting = {};
         _settings = _settings ?? {};
         setting.initHeight = _settings.initHeight ?? '0px';
 
+        var _ = null;
         var isAnimating = false;
         var isShow = element.classList.contains('show');
         element.classList.add('collapse');
@@ -766,7 +766,8 @@ var collapse = (function () {
             show: show,
             hide: hide,
             getIsShow: getIsShow,
-            getIsAnimating: getIsAnimating
+            getIsAnimating: getIsAnimating,
+            _: _
         };
     };
 })();
@@ -904,6 +905,7 @@ var searchBar = (function () {
         return ref;
     };
 })();
+var nav = null;
 var onNav = null;
 var onNavOpen = null;
 var onNavClose = null;
@@ -1037,6 +1039,9 @@ var onNavClose = null;
     onNav = _onNav;
     onNavOpen = _onNavOpen;
     onNavClose = _onNavClose;
+    nav = {
+        _: _
+    }
 })();
 
 var enableMenuResizeListener = (function() {
