@@ -14,10 +14,10 @@ var actionMenu = (function () {
         </span>`;
     var nameTemplate = `
         <span class="action-menu-item-text">__data-name__</span>`;
-    var trailingTemplate = `
-        <span class="action-menu-item-trailing">
-            <i class="fa-solid fa-check fa-fw"></i>
-        </span>`;
+    // var trailingTemplate = `
+    //     <span class="action-menu-item-trailing">
+    //         <i class="fa-solid fa-check fa-fw"></i>
+    //     </span>`;
     var separatorTemplate = `
         <div class="separator"></div>`;
     return function(button, _settings, items) {
@@ -38,7 +38,7 @@ var actionMenu = (function () {
                 var type = item.type ?? ''
                 var name = item.name ?? '';
                 var icon = item.icon ?? '';
-                var selected = item.selected ?? false;
+                // var selected = item.selected ?? false;
                 var _class = item.class ?? '';
                 var onClick = item.onClick ?? null;
                 
@@ -58,11 +58,11 @@ var actionMenu = (function () {
                         nameTemplate.replace('__data-name__', name));
                     itemElement.appendChild(nameElement);
                 }
-                if (selected) {
-                    var trailingElement = createElement(trailingTemplate);
-                    itemElement.appendChild(trailingElement);
-                    itemElement.classList.add('selected');
-                }
+                // if (selected) {
+                //     var trailingElement = createElement(trailingTemplate);
+                //     itemElement.appendChild(trailingElement);
+                //     itemElement.classList.add('selected');
+                // }
                 if (_class) {
                     itemElement.classList.add(
                         ..._class.trim().split(' '));

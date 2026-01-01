@@ -94,7 +94,6 @@
                             <span>Bookmark</span>
                         </div>
                     </div>
-                    
                     <div class="board fw board-toolbar">
                         <div class="start">
                             <button class="button light" type="button" onclick="onButtonClick()">
@@ -108,7 +107,6 @@
                         <div class="end">
                         </div>
                     </div>
-                    
                     <div class="board fw bookmark-group open">
                         <div class="bookmark-group-title">
                             <div class="start">
@@ -153,7 +151,6 @@
                                     </a>
                                 </div>
                             </div>
-
                             <div onclick="onBookmarkClick(this)">
                                 <div id="bookmark2" class="bookmark-item hover">
                                     <div class="bookmark-item-icon">
@@ -178,7 +175,6 @@
                                     </a>
                                 </div>
                             </div>
-
                             <div onclick="onBookmarkClick(this)">
                                 <div id="bookmark3" class="bookmark-item hover last">
                                     <div class="bookmark-item-icon">
@@ -402,41 +398,33 @@
         // }
         var bookmarkActions = document.querySelectorAll('.bookmark-item-action-button');
         for(var item of bookmarkActions) {
-            var actionItems = [{ 
-                name: 'Edit', 
-                icon: 'fa-solid fa-pen fa-fw', 
-                selected: true, 
-                onClick: onEdit 
-            }, { 
-                type: 'separator' 
-            }, { 
-                name: 'Delete', 
-                icon: 'fa-solid fa-trash fa-fw', 
-                class: 'danger', 
-                onClick: onDelete }
+            var actionItems = [
+                { name: 'Edit', icon: 'fa-solid fa-pen fa-fw', onClick: onEdit }, 
+                { type: 'separator' }, 
+                { name: 'Delete', icon: 'fa-solid fa-trash fa-fw', class: 'danger', onClick: onDelete }
             ];
             var _actionMenu = actionMenu(item, {
                 template: '.action-menu-template',
                 placement: 'left',
                 stopPropagation: true
             }, actionItems);
-            function onEdit(ele) {
-                var index = ele.closest('.action-menu').getAttribute('data-index');
-                var dialog = modal(document.querySelector('.modal-template.main'));
-                dialog.onOpened = function(ele) {
-                    var setting = ele.querySelector('.setting-button');
-                    popover(setting, {
-                        template: '.popover-template.modal-popover-template',
-                        placement: 'bottom'
-                    });
-                }
-                dialog.onClosed = function(ele) {
-                }
-                dialog.open();
+        }
+        function onEdit(ele) {
+            var index = ele.closest('.action-menu').getAttribute('data-index');
+            var dialog = modal(document.querySelector('.modal-template.main'));
+            dialog.onOpened = function(ele) {
+                var setting = ele.querySelector('.setting-button');
+                popover(setting, {
+                    template: '.popover-template.modal-popover-template',
+                    placement: 'bottom'
+                });
             }
-            function onDelete(ele) {
-                var index = ele.closest('.action-menu').getAttribute('data-index');
+            dialog.onClosed = function(ele) {
             }
+            dialog.open();
+        }
+        function onDelete(ele) {
+            var index = ele.closest('.action-menu').getAttribute('data-index');
         }
         function onSubmit() {
             var dialog = modal(document.querySelector('.modal-template.sub'));
