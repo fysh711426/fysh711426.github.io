@@ -96,6 +96,11 @@ var popover = (function () {
         setting.stopPropagation = _settings.stopPropagation ?? false;
         var templateHTML = document.querySelector(setting.template).innerHTML;
 
+        var ref = {
+            close,
+            onInit: null
+        };
+
         var element = null;
         function open() {
             if (!element) {
@@ -113,6 +118,9 @@ var popover = (function () {
                     element: element,
                     close: close
                 };
+                if (ref.onInit) {
+                    ref.onInit(element);
+                }
                 document.body.appendChild(element);
                 var position = getPosition(setting.placement, button, element);
                 
@@ -139,8 +147,6 @@ var popover = (function () {
             }
             close();
         });
-        return {
-            close: close
-        };
+        return ref;
     };
 })();

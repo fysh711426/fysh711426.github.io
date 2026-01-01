@@ -16,8 +16,8 @@ var modal = (function () {
         _settings = _settings ?? {};
 
         var ref = {
-            open: open,
-            close: close,
+            open,
+            close,
             onOpened: null,
             onClosed: null
         };

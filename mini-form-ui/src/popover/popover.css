@@ -4,36 +4,6 @@ body.light {
     --popoverBorderColor: #e6e6e6;
     --popoverShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
     /*----- tooltip-style -----*/
-
-    /*----- popover-menu-style -----*/
-    --popoverMenuColor: #262626;
-    --popoverMenuBgColor: #fff;
-    --popoverMenuShadow: 0px 8px 12px 0px #00000014,0px 0px 1px 0px #0000009e;
-    --popoverMenuHoverBgColor: #f5f5f5;
-    --popoverMenuActiveBgColor: #f0f0f0;
-    --popoverDangerMenuColor: #e02e2a;
-    --popoverDangerMenuHoverBgColor: #e02e2a13;
-    --popoverDangerMenuActiveBgColor: #e02e2a1f;
-    --popoverDangerMenuOpenBgColor: #e02e2a0f;
-    /*----- popover-menu-style -----*/
-
-    --popoverSeparatorBgColor: #0d0d0d1a;
-
-    /*----- popover-menu-style-01 -----*/
-    --popoverMenuColor01: #0d0d0d;
-    --popoverMenuBgColor01: #ffffff;
-    --popoverMenuShadow01: 0px 8px 12px 0px #00000014,0px 0px 1px 0px #0000009e;
-    --popoverMenuHoverBgColor01: #f5f5f5;
-    --popoverMenuActiveBgColor01: #f0f0f0;
-    /*----- popover-menu-style-01 -----*/
-
-    /*----- popover-menu-style-02 -----*/
-    --popoverMenuColor02: #0f0f0f;
-    --popoverMenuBgColor02: #ffffff;
-    --popoverMenuShadow02: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
-    --popoverMenuHoverBgColor02: #f2f2f2;
-    --popoverMenuActiveBgColor02: #d7d7d7;
-    /*----- popover-menu-style-02 -----*/
 }
 
 body.dark {
@@ -42,36 +12,6 @@ body.dark {
     --popoverBorderColor: #454545;
     --popoverShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
     /*----- tooltip-style -----*/
-
-    /*----- popover-menu-style -----*/
-    --popoverMenuColor: #d2d3d5;
-    --popoverMenuBgColor: #353535;
-    --popoverMenuShadow: 0px 8px 16px 0px #00000052,inset 0px 0px 1px 0px #fff3,0px 0px 1px 0px #0000009e;
-    --popoverMenuHoverBgColor: #4a4a4a;
-    --popoverMenuActiveBgColor: #3f3f3f;
-    --popoverDangerMenuColor: #ff8583;
-    --popoverDangerMenuHoverBgColor: #e02e2a23;
-    --popoverDangerMenuActiveBgColor: #e02e2a2f;
-    --popoverDangerMenuOpenBgColor: #e02e2a16;
-    /*----- popover-menu-style -----*/
-
-    --popoverSeparatorBgColor: #ffffff26;
-
-    /*----- popover-menu-style-01 -----*/
-    --popoverMenuColor01: #ffffff;
-    --popoverMenuBgColor01: #353535;
-    --popoverMenuShadow01: 0px 8px 16px 0px #00000052,inset 0px 0px 1px 0px #fff3,0px 0px 1px 0px #0000009e;
-    --popoverMenuHoverBgColor01: #4a4a4a;
-    --popoverMenuActiveBgColor01: #3f3f3f;
-    /*----- popover-menu-style-01 -----*/
-
-    /*----- popover-menu-style-02 -----*/
-    --popoverMenuColor02: #f1f1f1;
-    --popoverMenuBgColor02: #282828;
-    --popoverMenuShadow02: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
-    --popoverMenuHoverBgColor02: #3e3e3e;
-    --popoverMenuActiveBgColor02: #535353;
-    /*----- popover-menu-style-02 -----*/
 }
 
 /*----- tooltip-style -----*/
@@ -107,95 +47,6 @@ body.dark {
 
 /*----- tooltip-style -----*/
 
-/*----- popover-menu-style -----*/
-
-.popover-menu {
-    background-color: var(--popoverMenuBgColor);
-    box-shadow: var(--popoverMenuShadow);
-}
-
-.popover-menu-item {
-    color: var(--popoverMenuColor);
-}
-
-.popover-menu-item:hover {
-    background-color: var(--popoverMenuHoverBgColor);
-}
-
-.popover-menu-item:active {
-    background-color: var(--popoverMenuActiveBgColor);
-}
-
-.popover-menu-item.danger {
-    color: var(--popoverDangerMenuColor);
-}
-
-.popover-menu-item.danger:hover {
-    background-color: var(--popoverDangerMenuHoverBgColor);
-}
-
-.popover-menu-item.danger:active {
-    background-color: var(--popoverDangerMenuActiveBgColor);
-}
-
-.popover-block .separator {
-    background-color: var(--popoverSeparatorBgColor);
-}
-
-.popover-menu {
-    line-height: 1.5;
-    min-width: max-content;
-    outline: none;
-    user-select: none;
-    border-radius: 1rem;
-    padding: 8px 0;
-    border: 0 solid;
-    will-change: opacity, transform;
-}
-
-.popover-menu-item {
-    display: flex;
-    align-items: center;
-    user-select: none;
-    cursor: pointer;
-    border-radius: 10px;
-    margin: 0 8px;
-    padding: 8px 36px 8px 12px;
-    font-size: 0.9rem;
-    font-weight: 700;
-}
-
-.popover-menu-item.selected {
-    padding-right: 12px;
-}
-
-.popover-menu-item-icon {
-    margin-right: 12px;
-    flex: none;
-}
-
-.popover-menu-item-text {
-    flex: 1;
-    flex-basis: 0.000000001px;
-    white-space: nowrap;
-    -webkit-font-smoothing: initial;
-}
-
-.popover-menu-item-trailing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    align-self: stretch;
-    margin-left: 24px;
-}
-
-.popover-block .separator {
-    height: 1px;
-    margin: 5px 20px;
-    transform: scaleY(1.2);
-}
-
 .popover-menu {
     animation: .2s cubic-bezier(.16, 1, .3, 1) popoverSlideDownAndFade;
 }
@@ -210,5 +61,3 @@ body.dark {
         transform: translateY(0);
     }
 }
-
-/*----- popover-menu-style -----*/
