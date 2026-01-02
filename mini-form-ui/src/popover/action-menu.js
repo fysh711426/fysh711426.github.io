@@ -6,20 +6,6 @@ var actionMenu = (function () {
             return div.children[0];
         }
     }
-    var itemTemplate = `
-        <div class="action-menu-item"></div>`;
-    var iconTemplate = `
-        <span class="action-menu-item-icon">
-            <i class="__data-icon__"></i>
-        </span>`;
-    var nameTemplate = `
-        <span class="action-menu-item-text">__data-name__</span>`;
-    // var trailingTemplate = `
-    //     <span class="action-menu-item-trailing">
-    //         <i class="fa-solid fa-check fa-fw"></i>
-    //     </span>`;
-    var separatorTemplate = `
-        <div class="separator"></div>`;
     return function(button, _settings, items) {
         var setting = {};
         _settings = _settings ?? {};
@@ -38,43 +24,35 @@ var actionMenu = (function () {
                 var type = item.type ?? ''
                 var name = item.name ?? '';
                 var icon = item.icon ?? '';
-                // var selected = item.selected ?? false;
-                var _class = item.class ?? '';
-                var onClick = item.onClick ?? null;
+                var className = item.className ?? '';
+                let onClick = item.onClick ?? null;
                 
                 if (type === 'separator') {
-                    var separatorElement = createElement(separatorTemplate);
-                    menu.appendChild(separatorElement);
+                    menu.appendChild(
+                        createElement('<div class="separator"></div>'));
                     continue;
                 }
-                var itemElement = createElement(itemTemplate);
+                var innerHtml = '';
                 if (icon) {
-                    var iconElement = createElement(
-                        iconTemplate.replace('__data-icon__', icon));
-                    itemElement.appendChild(iconElement);
+                    innerHtml += `
+                    <span class="action-menu-item-icon">
+                        <i class="${icon}"></i>
+                    </span>`;
                 }
                 if (true) {
-                    var nameElement = createElement(
-                        nameTemplate.replace('__data-name__', name));
-                    itemElement.appendChild(nameElement);
+                    innerHtml += `
+                    <span class="action-menu-item-text">${name}</span>`;
                 }
-                // if (selected) {
-                //     var trailingElement = createElement(trailingTemplate);
-                //     itemElement.appendChild(trailingElement);
-                //     itemElement.classList.add('selected');
-                // }
-                if (_class) {
-                    itemElement.classList.add(
-                        ..._class.trim().split(' '));
-                }
+                var outerHtml = 
+                `<div class="action-menu-item ${className}">
+                    ${innerHtml}
+                </div>`;
+                var itemElement = createElement(outerHtml);
                 if (onClick) {
-                    (function () {
-                        var _onClick = onClick;
-                        itemElement.addEventListener('click', function() {
-                            _popover.close();
-                            _onClick(itemElement);
-                        });
-                    })();
+                    itemElement.addEventListener('click', function() {
+                        _popover.close();
+                        onClick(itemElement);
+                    });
                 }
                 menu.appendChild(itemElement);
             }
