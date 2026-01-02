@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="src/spinner/spinner.css">
     <link rel="stylesheet" href="src/toast/toast.css">
     <link rel="stylesheet" href="src/popover/popover.css">
-    <link rel="stylesheet" href="src/popover/action-menu.css">
+    <link rel="stylesheet" href="src/dropdown/dropdown-menu.css">
     <link rel="stylesheet" href="src/modal/modal.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
@@ -33,7 +33,7 @@
     <script src="src/spinner/spinner.js"></script>
     <script src="src/toast/toast.js"></script>
     <script src="src/popover/popover.js"></script>
-    <script src="src/popover/action-menu.js"></script>
+    <script src="src/dropdown/dropdown-menu.js"></script>
     <script src="src/modal/modal.js"></script>
     <script src="src/layout/layout.js"></script>
     <script src="src/file/file.js"></script>
@@ -251,12 +251,12 @@
             </div>
         </div>
     </div> -->
-    <div class="action-menu-template">
-        <div class="action-menu-block">
-            <div class="action-menu" data-index="__data-index__">
+    <div class="dropdown-menu-template">
+        <div class="dropdown-menu-block">
+            <div class="dropdown-menu" data-index="__data-index__">
             </div>
         </div>
-    </div> 
+    </div>
     <div class="modal-template main">
         <div class="modal-backdrop">
             <div class="modal">
@@ -398,19 +398,27 @@
         // }
         var bookmarkActions = document.querySelectorAll('.bookmark-item-action-button');
         for(var item of bookmarkActions) {
-            var actionItems = [
-                { name: 'Edit', icon: 'fa-solid fa-pen fa-fw', onClick: onEdit }, 
-                { type: 'separator' }, 
-                { name: 'Delete', icon: 'fa-solid fa-trash fa-fw', className: 'danger', onClick: onDelete }
+            var options = [
+                { text: 'Edit', value: 0, icon: 'fa-solid fa-pen fa-fw' },
+                { text: 'Delete', value: 1, icon: 'fa-solid fa-trash fa-fw', className: 'danger', separator: true }
             ];
-            var _actionMenu = actionMenu(item, {
-                template: '.action-menu-template',
+            var _dropdownMenu = dropdownMenu(item, {
+                template: '.dropdown-menu-template',
                 placement: 'left',
-                stopPropagation: true
-            }, actionItems);
+                stopPropagation: true,
+                enableSelect: false,
+                options: options
+            });
+            _dropdownMenu.onChange = function (ele, val) {
+                if (val === 0) {
+                    onEdit(ele);
+                    return;
+                }
+                onDelete(ele);
+            }
         }
         function onEdit(ele) {
-            var index = ele.closest('.action-menu').getAttribute('data-index');
+            var index = ele.closest('.dropdown-menu').getAttribute('data-index');
             var dialog = modal(document.querySelector('.modal-template.main'));
             dialog.onOpened = function(ele) {
                 var setting = ele.querySelector('.setting-button');
@@ -424,7 +432,7 @@
             dialog.open();
         }
         function onDelete(ele) {
-            var index = ele.closest('.action-menu').getAttribute('data-index');
+            var index = ele.closest('.dropdown-menu').getAttribute('data-index');
         }
         function onSubmit() {
             var dialog = modal(document.querySelector('.modal-template.sub'));

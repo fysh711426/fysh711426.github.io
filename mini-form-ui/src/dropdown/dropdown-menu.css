@@ -1,0 +1,188 @@
+body.light {
+    /*----- dropdown-menu -----*/
+    --dropdownMenuColor: #262626;
+    --dropdownMenuBgColor: #fff;
+    --dropdownMenuShadow: 0px 8px 12px 0px #00000014,0px 0px 1px 0px #0000009e;
+    --dropdownMenuHoverBgColor: #f5f5f5;
+    --dropdownMenuActiveBgColor: #f0f0f0;
+    --dropdownMenuDangerColor: #e02e2a;
+    --dropdownMenuDangerHoverBgColor: #e02e2a13;
+    --dropdownMenuDangerActiveBgColor: #e02e2a1f;
+    --dropdownMenuDangerOpenBgColor: #e02e2a0f;
+    /*----- dropdown-menu -----*/
+
+    --dropdownMenuSeparatorBgColor: #0d0d0d1a;
+
+    /*----- dropdown-menu-01 -----*/
+    --dropdownMenuColor01: #0d0d0d;
+    --dropdownMenuBgColor01: #ffffff;
+    --dropdownMenuShadow01: 0px 8px 12px 0px #00000014,0px 0px 1px 0px #0000009e;
+    --dropdownMenuHoverBgColor01: #f5f5f5;
+    --dropdownMenuActiveBgColor01: #f0f0f0;
+    /*----- dropdown-menu-01 -----*/
+
+    /*----- dropdown-menu-02 -----*/
+    --dropdownMenuColor02: #0f0f0f;
+    --dropdownMenuBgColor02: #ffffff;
+    --dropdownMenuShadow02: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
+    --dropdownMenuHoverBgColor02: #f2f2f2;
+    --dropdownMenuActiveBgColor02: #d7d7d7;
+    /*----- dropdown-menu-02 -----*/
+}
+
+body.dark {
+    /*----- dropdown-menu -----*/
+    --dropdownMenuColor: #d2d3d5;
+    --dropdownMenuBgColor: #353535;
+    --dropdownMenuShadow: 0px 8px 16px 0px #00000052,inset 0px 0px 1px 0px #fff3,0px 0px 1px 0px #0000009e;
+    --dropdownMenuHoverBgColor: #4a4a4a;
+    --dropdownMenuActiveBgColor: #3f3f3f;
+    --dropdownMenuDangerColor: #ff8583;
+    --dropdownMenuDangerHoverBgColor: #e02e2a23;
+    --dropdownMenuDangerActiveBgColor: #e02e2a2f;
+    --dropdownMenuDangerOpenBgColor: #e02e2a16;
+    /*----- dropdown-menu -----*/
+
+    --dropdownMenuSeparatorBgColor: #ffffff26;
+
+    /*----- dropdown-menu-01 -----*/
+    --dropdownMenuColor01: #ffffff;
+    --dropdownMenuBgColor01: #353535;
+    --dropdownMenuShadow01: 0px 8px 16px 0px #00000052,inset 0px 0px 1px 0px #fff3,0px 0px 1px 0px #0000009e;
+    --dropdownMenuHoverBgColor01: #4a4a4a;
+    --dropdownMenuActiveBgColor01: #3f3f3f;
+    /*----- dropdown-menu-01 -----*/
+
+    /*----- dropdown-menu-02 -----*/
+    --dropdownMenuColor02: #f1f1f1;
+    --dropdownMenuBgColor02: #282828;
+    --dropdownMenuShadow02: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
+    --dropdownMenuHoverBgColor02: #3e3e3e;
+    --dropdownMenuActiveBgColor02: #535353;
+    /*----- dropdown-menu-02 -----*/
+}
+
+/*----- dropdown-menu -----*/
+
+.dropdown-menu {
+    background-color: var(--dropdownMenuBgColor);
+    box-shadow: var(--dropdownMenuShadow);
+}
+
+.dropdown-menu-item {
+    color: var(--dropdownMenuColor);
+}
+
+.dropdown-menu-item:hover {
+    background-color: var(--dropdownMenuHoverBgColor);
+}
+
+.dropdown-menu-item:active {
+    background-color: var(--dropdownMenuActiveBgColor);
+}
+
+.dropdown-menu-item.danger {
+    color: var(--dropdownMenuDangerColor);
+}
+
+.dropdown-menu-item.danger:hover {
+    background-color: var(--dropdownMenuDangerHoverBgColor);
+}
+
+.dropdown-menu-item.danger:active {
+    background-color: var(--dropdownMenuDangerActiveBgColor);
+}
+
+.dropdown-menu-block .separator {
+    background-color: var(--dropdownMenuSeparatorBgColor);
+}
+
+/*----- dropdown-menu -----*/
+
+/*----- dropdown-menu -----*/
+
+.dropdown-menu-template {
+    display: none;
+}
+
+.dropdown-menu-block {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 140000;
+}
+
+.dropdown-menu {
+    line-height: 1.5;
+    min-width: max-content;
+    outline: none;
+    user-select: none;
+    border-radius: 1rem;
+    padding: 8px 0;
+    border: 0 solid;
+    will-change: opacity, transform;
+}
+
+.dropdown-menu-item {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0 8px;
+    padding: 8px 36px 8px 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.dropdown-menu-item.selected {
+    padding-right: 12px;
+}
+
+.dropdown-menu-item-icon {
+    margin-right: 12px;
+    flex: none;
+}
+
+.dropdown-menu-item-text {
+    flex: 1;
+    flex-basis: 0.000000001px;
+    white-space: nowrap;
+    -webkit-font-smoothing: initial;
+}
+
+.dropdown-menu-item-trailing {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    align-self: stretch;
+    margin-left: 24px;
+}
+
+.dropdown-menu-item.selected .dropdown-menu-item-trailing {
+    display: flex;
+}
+
+.dropdown-menu-block .separator {
+    height: 1px;
+    margin: 5px 20px;
+    transform: scaleY(1.2);
+}
+
+/*----- dropdown-menu -----*/
+
+.dropdown-menu {
+    animation: .2s cubic-bezier(.16, 1, .3, 1) dropdownMenuSlideDownAndFade;
+}
+
+@keyframes dropdownMenuSlideDownAndFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-1px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
