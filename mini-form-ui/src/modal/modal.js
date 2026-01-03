@@ -11,9 +11,10 @@ var modal = (function () {
             document.body.removeChild(element);
         } catch { }
     }
-    return function(template, _settings) {
-        var setting = {};
-        _settings = _settings ?? {};
+    return function(template, settings) {
+        var _setting = {};
+        settings = settings ?? {};
+        _setting.singleton = settings.singleton ?? true;
 
         var ref = {
             open,
@@ -29,7 +30,9 @@ var modal = (function () {
                 var html = template.innerHTML;
                 element = createElement(html);
                 document.body.appendChild(element);
-                template.innerHTML = '';
+                if (_setting.singleton) {
+                    template.innerHTML = '';
+                }
                 bodyScroll.lock();
                 bindClose();
                 bindClick();
@@ -43,7 +46,9 @@ var modal = (function () {
                 var html = element.outerHTML;
                 remove(element);
                 element = null;
-                template.innerHTML = html;
+                if (_setting.singleton) {
+                    template.innerHTML = html;
+                }
                 bodyScroll.unlock();
                 if (ref.onClosed) {
                     ref.onClosed(element, action);

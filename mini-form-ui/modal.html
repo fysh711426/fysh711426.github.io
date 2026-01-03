@@ -35,6 +35,8 @@
     <script src="src/popover/popover.js"></script>
     <script src="src/dropdown/dropdown-menu.js"></script>
     <script src="src/modal/modal.js"></script>
+    <script src="src/modal/alert-modal.js"></script>
+    <script src="src/modal/confirm-modal.js"></script>
     <script src="src/layout/layout.js"></script>
     <script src="src/file/file.js"></script>
 </head>
@@ -90,10 +92,16 @@
                     <div class="board fw board-toolbar">
                         <div class="start">
                             <button class="button light" type="button" onclick="onModalButtonClick()">
-                                <span>OpenModal</span>
+                                <span>Modal</span>
+                            </button>
+                            <button class="button light" type="button" onclick="onAlertModalButtonClick()">
+                                <span>Alert Modal</span>
+                            </button>
+                            <button class="button light" type="button" onclick="onConfirmModalButtonClick()">
+                                <span>Confirm Modal</span>
                             </button>
                             <button class="button light" type="button" onclick="onToastButtonClick()">
-                                <span>OpenToast</span>
+                                <span>Toast</span>
                             </button>
                         </div>
                         <div class="end">
@@ -122,7 +130,7 @@
     </div>
     <div class="modal-template main">
         <div class="modal-backdrop">
-            <div class="modal">
+            <div class="modal modal-lg">
                 <div class="modal-block">
                     <div class="modal-header">
                         <div class="start">
@@ -214,6 +222,29 @@
                 dialog.open();
             }
             dialog.open();
+        }
+        function onAlertModalButtonClick() {
+            var _alert = alertModal({
+                // title: 'Title',
+                content: 'Content',
+                showSeparator: false,
+                showCloseButton: false
+            });
+            _alert.onClosed = function (ele, action) {
+                console.log(action);
+            }
+            _alert.open();
+        }
+        function onConfirmModalButtonClick() {
+            var _confirm = confirmModal({
+                title: 'Title',
+                content: 'Content',
+                showCloseButton: false
+            });
+            _confirm.onClosed = function (ele, action) {
+                console.log(action);
+            }
+            _confirm.open();
         }
         function onToastButtonClick() {
             toast.show('Show Toast');

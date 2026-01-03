@@ -199,25 +199,30 @@ body.dark {
 .modal-header {
     display: flex;
     justify-content: space-between;
-    /* padding: 15px 20px; */
     padding: 15px 20px 15px 20px;
 }
 
 .modal-header .start {
     display: flex;
     align-items: center;
+    flex: 1;
+    overflow: hidden;
 }
 
 .modal-header .end {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex: 0;
 }
 
 .modal-header-title {
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1.5;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .modal-body {
@@ -226,6 +231,12 @@ body.dark {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 15px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.modal-body.top {
+    margin-top: 15px;
 }
 
 .modal-footer {
