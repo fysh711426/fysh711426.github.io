@@ -50,7 +50,7 @@ body.dark {
     background-color: var(--modalBackdropBgColor);
 }
 
-.modal-block{
+.modal-block {
     color: var(--modalColor);
     background-color: var(--modalBgColor);
     box-shadow: var(--modalShadow);
@@ -167,7 +167,7 @@ body.dark {
     border-radius: .6rem;
     pointer-events: auto;
     border: 0 solid;
-    max-width: 32rem;
+    /* max-width: 32rem; */
     width: 100%;
     grid-row: auto;
     grid-column: auto;
@@ -288,6 +288,26 @@ body.dark {
     transform: scaleY(1.2); */
     margin: 5px 15px;
     transform: scaleY(1.5);
+}
+
+.modal-block {
+    max-width: 640px;
+}
+
+.modal-sm .modal-block {
+    max-width: 480px;
+}
+
+.modal-xs .modal-block {
+    max-width: 360px;
+}
+
+.modal-lg .modal-block {
+    max-width: 720px;
+}
+
+.modal-xl .modal-block {
+    max-width: 1080px;
 }
 
 .modal-backdrop {

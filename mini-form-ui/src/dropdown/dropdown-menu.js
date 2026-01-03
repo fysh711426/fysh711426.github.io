@@ -40,7 +40,7 @@ var dropdownMenu = (function () {
             }
         }
         var _popover = popover(button, setting);
-        _popover.onInit = function(ele) {
+        _popover.onOpen = function(ele) {
             var menu = ele.querySelector('.dropdown-menu');
             for (var item of options) {
                 var text = item.text ?? '';

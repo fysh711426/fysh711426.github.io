@@ -98,7 +98,7 @@ var popover = (function () {
 
         var ref = {
             close,
-            onInit: null
+            onOpen: null
         };
 
         var element = null;
@@ -118,8 +118,8 @@ var popover = (function () {
                     element: element,
                     close: close
                 };
-                if (ref.onInit) {
-                    ref.onInit(element);
+                if (ref.onOpen) {
+                    ref.onOpen(element);
                 }
                 document.body.appendChild(element);
                 var position = getPosition(setting.placement, button, element);

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="src/spinner/spinner.css">
     <link rel="stylesheet" href="src/toast/toast.css">
     <link rel="stylesheet" href="src/popover/popover.css">
-    <link rel="stylesheet" href="src/popover/action-menu.css">
+    <link rel="stylesheet" href="src/dropdown/dropdown-menu.css">
     <link rel="stylesheet" href="src/modal/modal.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
@@ -33,7 +33,7 @@
     <script src="src/spinner/spinner.js"></script>
     <script src="src/toast/toast.js"></script>
     <script src="src/popover/popover.js"></script>
-    <script src="src/popover/action-menu.js"></script>
+    <script src="src/dropdown/dropdown-menu.js"></script>
     <script src="src/modal/modal.js"></script>
     <script src="src/layout/layout.js"></script>
     <script src="src/file/file.js"></script>
@@ -92,6 +92,9 @@
                             <button class="button light" type="button" onclick="onModalButtonClick()">
                                 <span>OpenModal</span>
                             </button>
+                            <button class="button light" type="button" onclick="onToastButtonClick()">
+                                <span>OpenToast</span>
+                            </button>
                         </div>
                         <div class="end">
                         </div>
@@ -105,6 +108,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="toast-template">
+        <div class="toast-block">
+            <div class="toast-inner">__data-content__</div>
         </div>
     </div>
     <div class="popover-template modal-popover-template">
@@ -124,7 +132,7 @@
                             <button type="button" class="modal-icon-button round setting-button">
                                 <i class="fa-solid fa-gear fa-fw"></i>
                             </button>
-                            <button type="button" data-dismiss="true" class="modal-icon-button square">
+                            <button type="button" data-close="cancel" class="modal-icon-button square">
                                 <i class="fa-solid fa-xmark fa-fw"></i>
                             </button>
                         </div>
@@ -143,8 +151,8 @@
                         </div>
                         <div class="separator"></div>
                         <div class="modal-footer">
-                            <button type="button" data-dismiss="true" class="modal-button light">Cancel</button>
-                            <button type="button" class="modal-button dark" onclick="onSubmit()">Submit</button>
+                            <button type="button" data-close="cancel" class="modal-button light">Cancel</button>
+                            <button type="button" data-click="confirm" class="modal-button dark">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -160,7 +168,7 @@
                             <div class="modal-header-title">Confirm</div>
                         </div>
                         <div class="end">
-                            <button type="button" data-dismiss="true" class="modal-icon-button square">
+                            <button type="button" data-close="cancel" class="modal-icon-button square">
                                 <i class="fa-solid fa-xmark fa-fw"></i>
                             </button>
                         </div>
@@ -171,7 +179,7 @@
                         </div>
                         <div class="separator"></div>
                         <div class="modal-footer">
-                            <button type="button" data-dismiss="true" class="modal-button dark">Confirm</button>
+                            <button type="button" data-close="confirm" class="modal-button dark">Confirm</button>
                         </div>
                     </div>
                 </div>
@@ -195,13 +203,20 @@
                     placement: 'bottom'
                 });
             }
-            dialog.onClosed = function(ele) {
+            dialog.onClosed = function(ele, action) {
+                console.log(action);
+            }
+            dialog.onClick = function(ele, action) {
+                var dialog = modal(document.querySelector('.modal-template.sub'));
+                dialog.onClosed = function(ele, action) {
+                    console.log(action);
+                }
+                dialog.open();
             }
             dialog.open();
         }
-        function onSubmit() {
-            var dialog = modal(document.querySelector('.modal-template.sub'));
-            dialog.open();
+        function onToastButtonClick() {
+            toast.show('Show Toast');
         }
     </script>
 </body>

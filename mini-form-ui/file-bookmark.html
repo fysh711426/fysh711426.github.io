@@ -269,7 +269,7 @@
                             <button type="button" class="modal-icon-button round setting-button">
                                 <i class="fa-solid fa-gear fa-fw"></i>
                             </button>
-                            <button type="button" data-dismiss="true" class="modal-icon-button square">
+                            <button type="button" data-close="cancel" class="modal-icon-button square">
                                 <i class="fa-solid fa-xmark fa-fw"></i>
                             </button>
                         </div>
@@ -288,8 +288,8 @@
                         </div>
                         <div class="separator"></div>
                         <div class="modal-footer">
-                            <button type="button" data-dismiss="true" class="modal-button light">Cancel</button>
-                            <button type="button" class="modal-button dark" onclick="onSubmit()">Submit</button>
+                            <button type="button" data-close="cancel" class="modal-button light">Cancel</button>
+                            <button type="button" data-click="confirm" class="modal-button dark">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -308,7 +308,7 @@
                             <button type="button" class="modal-icon-button round setting-button">
                                 <i class="fa-solid fa-gear fa-fw"></i>
                             </button>
-                            <button type="button" data-dismiss="true" class="modal-icon-button square">
+                            <button type="button" data-close="cancel" class="modal-icon-button square">
                                 <i class="fa-solid fa-xmark fa-fw"></i>
                             </button>
                         </div>
@@ -319,7 +319,7 @@
                         </div>
                         <div class="separator"></div>
                         <div class="modal-footer">
-                            <button type="button" data-dismiss="true" class="modal-button dark">Confirm</button>
+                            <button type="button" data-close="confirm" class="modal-button dark">Confirm</button>
                         </div>
                     </div>
                 </div>
@@ -427,23 +427,24 @@
                     placement: 'bottom'
                 });
             }
-            dialog.onClosed = function(ele) {
+            dialog.onClosed = function(ele, action) {
+                console.log(action);
+            }
+            dialog.onClick = function(ele, action) {
+                var dialog = modal(document.querySelector('.modal-template.sub'));
+                dialog.onOpened = function(ele) {
+                    var setting = ele.querySelector('.setting-button');
+                    popover(setting, {
+                        template: '.popover-template.modal-popover-template',
+                        placement: 'bottom'
+                    });
+                }
+                dialog.open();
             }
             dialog.open();
         }
         function onDelete(ele) {
             var index = ele.closest('.dropdown-menu').getAttribute('data-index');
-        }
-        function onSubmit() {
-            var dialog = modal(document.querySelector('.modal-template.sub'));
-            dialog.onOpened = function(ele) {
-                var setting = ele.querySelector('.setting-button');
-                popover(setting, {
-                    template: '.popover-template.modal-popover-template',
-                    placement: 'bottom'
-                });
-            }
-            dialog.open();
         }
         function onButtonClick() {
             toast.show('Show Toast');

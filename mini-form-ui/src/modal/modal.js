@@ -19,7 +19,8 @@ var modal = (function () {
             open,
             close,
             onOpened: null,
-            onClosed: null
+            onClosed: null,
+            onClick: null
         };
 
         var element = null;
@@ -30,13 +31,14 @@ var modal = (function () {
                 document.body.appendChild(element);
                 template.innerHTML = '';
                 bodyScroll.lock();
-                bindDismiss();
+                bindClose();
+                bindClick();
                 if (ref.onOpened) {
                     ref.onOpened(element);
                 }
             }
         }
-        function close() {
+        function close(action = '') {
             if (element) {
                 var html = element.outerHTML;
                 remove(element);
@@ -44,15 +46,32 @@ var modal = (function () {
                 template.innerHTML = html;
                 bodyScroll.unlock();
                 if (ref.onClosed) {
-                    ref.onClosed(element);
+                    ref.onClosed(element, action);
                 }
             }
         }
-        function bindDismiss() {
-            var dismiss = element.querySelectorAll('[data-dismiss]');
-            for(var item of dismiss) {
+        function click(action = '') {
+            if (element) {
+                if (ref.onClick) {
+                    ref.onClick(element, action);
+                }
+            }
+        }
+        function bindClose() {
+            var items = element.querySelectorAll('[data-close]');
+            for(var item of items) {
+                let action = item.getAttribute('data-close');
                 item.addEventListener('click', function (e) {
-                    close();
+                    close(action);
+                });
+            }
+        }
+        function bindClick() {
+            var items = element.querySelectorAll('[data-click]');
+            for(var item of items) {
+                let action = item.getAttribute('data-click');
+                item.addEventListener('click', function (e) {
+                    click(action);
                 });
             }
         }
