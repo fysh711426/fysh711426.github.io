@@ -14,9 +14,11 @@ var alertModal = (function () {
         _setting.content = settings.content ?? '';
         _setting.confirmText = settings.confirmText ?? 'Confirm';
         _setting.confirmClass = settings.confirmClass ?? 'dark';
-        _setting.showSeparator  = settings.showSeparator ?? true;
-        _setting.showCloseButton  = settings.showCloseButton ?? true;
-        _setting.className = settings.className ?? 'modal-sm';
+        _setting.showSeparator  = settings.showSeparator ?? false;
+        _setting.showCloseButton  = settings.showCloseButton ?? false;
+        _setting.className = settings.className ?? '';
+        _setting.size = settings.size ?? 'modal-sm';
+        _setting.btnSize = settings.btnSize ?? 'btn-sm';
 
         var titleTemplate = _setting.title ? `
         <div class="modal-header-title">
@@ -51,14 +53,14 @@ var alertModal = (function () {
         var template = createElement(`
         <div class="modal-template">
             <div class="modal-backdrop">
-                <div class="modal ${_setting.className}">
+                <div class="modal ${_setting.size} ${_setting.className}">
                     <div class="modal-block">
                         ${headerTemplate}
                         <div class="modal-scrollable">
                             ${contentTemplate}
                             ${separatorTemplate}
                             <div class="modal-footer">
-                                <button type="button" data-close="confirm" class="modal-button ${_setting.confirmClass}">
+                                <button type="button" data-close="confirm" class="modal-button ${_setting.btnSize} ${_setting.confirmClass}">
                                     <span>${_setting.confirmText}</span>
                                 </button>
                             </div>

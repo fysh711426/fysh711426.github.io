@@ -28,6 +28,7 @@
     <script src="src/theme/theme.js"></script>
     <script src="src/scroll/scroll.js"></script>
     <script src="src/scroll/resize.js"></script>
+    <script src="src/scrollbar/scrollbar.js"></script>
     <script src="src/tooltip/tooltip.js"></script>
     <script src="src/progress/progress.js"></script>
     <script src="src/spinner/spinner.js"></script>
@@ -90,21 +91,23 @@
                         </div>
                     </div>
                     <div class="board fw board-toolbar">
-                        <div class="start">
-                            <button class="button light" type="button" onclick="onModalButtonClick()">
-                                <span>Modal</span>
-                            </button>
-                            <button class="button light" type="button" onclick="onAlertModalButtonClick()">
-                                <span>Alert Modal</span>
-                            </button>
-                            <button class="button light" type="button" onclick="onConfirmModalButtonClick()">
-                                <span>Confirm Modal</span>
-                            </button>
-                            <button class="button light" type="button" onclick="onToastButtonClick()">
-                                <span>Toast</span>
-                            </button>
-                        </div>
-                        <div class="end">
+                        <div class="board-toolbar-scrollable">
+                            <div class="start">
+                                <button class="button light" type="button" onclick="onModalButtonClick()">
+                                    <span>Modal</span>
+                                </button>
+                                <button class="button light" type="button" onclick="onAlertModalButtonClick()">
+                                    <span>Alert Modal</span>
+                                </button>
+                                <button class="button light" type="button" onclick="onConfirmModalButtonClick()">
+                                    <span>Confirm Modal</span>
+                                </button>
+                                <button class="button light" type="button" onclick="onToastButtonClick()">
+                                    <span>Toast</span>
+                                </button>
+                            </div>
+                            <div class="end">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,7 +128,7 @@
     </div>
     <div class="popover-template modal-popover-template">
         <div class="popover-block modal-popover">
-            <div class="popover-inner">Modal Popover</div>
+            <div class="popover-inner">__data-content__</div>
         </div>
     </div>
     <div class="modal-template main">
@@ -137,7 +140,7 @@
                             <div class="modal-header-title">Title</div>
                         </div>
                         <div class="end">
-                            <button type="button" class="modal-icon-button round setting-button">
+                            <button type="button" data-content="Modal Popover" class="modal-icon-button round setting-button">
                                 <i class="fa-solid fa-gear fa-fw"></i>
                             </button>
                             <button type="button" data-close="cancel" class="modal-icon-button square">
@@ -226,9 +229,7 @@
         function onAlertModalButtonClick() {
             var _alert = alertModal({
                 // title: 'Title',
-                content: 'Content',
-                showSeparator: false,
-                showCloseButton: false
+                content: 'Content'
             });
             _alert.onClosed = function (ele, action) {
                 console.log(action);
@@ -238,8 +239,7 @@
         function onConfirmModalButtonClick() {
             var _confirm = confirmModal({
                 title: 'Title',
-                content: 'Content',
-                showCloseButton: false
+                content: 'Content'
             });
             _confirm.onClosed = function (ele, action) {
                 console.log(action);
@@ -249,6 +249,7 @@
         function onToastButtonClick() {
             toast.show('Show Toast');
         }
+        scrollbar(document.querySelector('.board-toolbar-scrollable'));
     </script>
 </body>
 

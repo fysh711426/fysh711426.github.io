@@ -16,9 +16,11 @@ var confirmModal = (function () {
         _setting.confirmText = settings.confirmText ?? 'Confirm';
         _setting.cancelClass = settings.cancelText ?? 'light';
         _setting.confirmClass = settings.confirmClass ?? 'dark';
-        _setting.showSeparator  = settings.showSeparator ?? true;
-        _setting.showCloseButton  = settings.showCloseButton ?? true;
+        _setting.showSeparator  = settings.showSeparator ?? false;
+        _setting.showCloseButton  = settings.showCloseButton ?? false;
         _setting.className = settings.className ?? '';
+        _setting.size = settings.size ?? '';
+        _setting.btnSize = settings.btnSize ?? '';
 
         var titleTemplate = _setting.title ? `
         <div class="modal-header-title">
@@ -53,17 +55,17 @@ var confirmModal = (function () {
         var template = createElement(`
         <div class="modal-template">
             <div class="modal-backdrop">
-                <div class="modal ${_setting.className}">
+                <div class="modal ${_setting.size} ${_setting.className}">
                     <div class="modal-block">
                         ${headerTemplate}
                         <div class="modal-scrollable">
                             ${contentTemplate}
                             ${separatorTemplate}
                             <div class="modal-footer">
-                                <button type="button" data-close="cancel" class="modal-button ${_setting.cancelClass}">
+                                <button type="button" data-close="cancel" class="modal-button ${_setting.btnSize} ${_setting.cancelClass}">
                                     <span>${_setting.cancelText}</span>
                                 </button>
-                                <button type="button" data-close="confirm" class="modal-button ${_setting.confirmClass}">
+                                <button type="button" data-close="confirm" class="modal-button ${_setting.btnSize} ${_setting.confirmClass}">
                                     <span>${_setting.confirmText}</span>
                                 </button>
                             </div>

@@ -1,5 +1,6 @@
 body.light {
     --formFieldDescriptionColor: #525252;
+    --formFieldErrorColor: hsl(35.753 96.053% 29.804%);
     --inputColor: #474747;
     --inputBgColor: #fcfcfc;
     --inputBorderColor: #c4c6c9;
@@ -19,6 +20,7 @@ body.light {
 
 body.dark {
     --formFieldDescriptionColor: #b7babd;
+    --formFieldErrorColor: hsl(32.941 57.955% 65.49%);
     --inputColor: #c4c6c9;
     --inputBgColor: #242424;
     --inputBorderColor: #040405;
@@ -40,6 +42,14 @@ body.dark {
 
 .form-field-description {
     color: var(--formFieldDescriptionColor);
+}
+
+.form-field-error {
+    color: var(--formFieldErrorColor);
+}
+
+.form-field-required-indicator {
+    color: hsl(358.659 87.317% 59.804%);
 }
 
 .form .hr {

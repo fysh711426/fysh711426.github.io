@@ -103,6 +103,27 @@ body.dark {
     background-color: var(--modalLightButtonActiveBgColor);
 }
 
+.modal-button.danger {
+    color: #fff;
+    background-color: #e02e2a;
+}
+
+.modal-button.danger:hover {
+    background-color:#911e1b;
+}
+
+.modal-button.danger:active {
+    background-color:#911e1b;
+    opacity: .8;
+}
+
+.modal-button.danger.disabled,
+.modal-button.danger:disabled {
+    color: #fff;
+    background-color: #e02e2a;
+    opacity: .5;
+}
+
 .modal-block .separator {
     background-color: var(--modalSeparatorBgColor);
 }
@@ -319,6 +340,12 @@ body.dark {
 
 .modal-xl .modal-block {
     max-width: 1080px;
+}
+
+.modal-button.btn-sm {
+    font-size: .8rem;
+    height: 40px;
+    padding: 0 12px;
 }
 
 .modal-backdrop {

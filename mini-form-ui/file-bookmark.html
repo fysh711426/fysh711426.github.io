@@ -28,6 +28,7 @@
     <script src="src/theme/theme.js"></script>
     <script src="src/scroll/scroll.js"></script>
     <script src="src/scroll/resize.js"></script>
+    <script src="src/scrollbar/scrollbar.js"></script>
     <script src="src/tooltip/tooltip.js"></script>
     <script src="src/progress/progress.js"></script>
     <script src="src/spinner/spinner.js"></script>
@@ -97,16 +98,18 @@
                         </div>
                     </div>
                     <div class="board fw board-toolbar">
-                        <div class="start">
-                            <button class="button light" type="button" onclick="onButtonClick()">
-                                <i class="fa-solid fa-plus fa-fw"></i>
-                                <span>Create Group</span>
-                            </button>
-                            <button class="button light" disabled type="button">
-                                <span>Disabled</span>
-                            </button>
-                        </div>
-                        <div class="end">
+                        <div class="board-toolbar-scrollable">
+                            <div class="start">
+                                <button class="button light" type="button" onclick="onButtonClick()">
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                    <span>Create Group</span>
+                                </button>
+                                <button class="button light" disabled type="button">
+                                    <span>Disabled</span>
+                                </button>
+                            </div>
+                            <div class="end">
+                            </div>
                         </div>
                     </div>
                     <div class="board fw bookmark-group open">
@@ -223,54 +226,21 @@
             <div class="popover-inner">__data-content__</div>
         </div>
     </div>
-    <div class="popover-template modal-popover-template">
-        <div class="popover-block modal-popover">
-            <div class="popover-inner">Modal Popover</div>
-        </div>
-    </div>
-    <!-- <div class="action-menu-template">
-        <div class="action-menu-block">
-            <div class="action-menu" data-index="__data-index__">
-                <div class="action-menu-item selected" onclick="onEdit(this)">
-                    <span class="action-menu-item-icon">
-                        <i class="fa-solid fa-pen fa-fw"></i>
-                    </span>
-                    <span class="action-menu-item-text">Edit</span>
-                    <span class="action-menu-item-trailing">
-                        <i class="fa-solid fa-check fa-fw"></i>
-                    </span>
-                </div>
-                <div class="separator"></div>
-                <div class="action-menu-item danger" onclick="onDelete(this)">
-                    <span class="action-menu-item-icon">
-                        <i class="fa-solid fa-trash fa-fw"></i>
-                    </span>
-                    <span class="action-menu-item-text">Delete</span>
-                    <span class="action-menu-item-trailing">
-                        <i class="fa-solid fa-check fa-fw"></i>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <div class="dropdown-menu-template">
         <div class="dropdown-menu-block">
             <div class="dropdown-menu" data-index="__data-index__">
             </div>
         </div>
     </div>
-    <div class="modal-template main">
+    <div class="modal-template create-group">
         <div class="modal-backdrop">
             <div class="modal">
                 <div class="modal-block">
                     <div class="modal-header">
                         <div class="start">
-                            <div class="modal-header-title">Edit</div>
+                            <div class="modal-header-title">Create Group</div>
                         </div>
                         <div class="end">
-                            <button type="button" class="modal-icon-button round setting-button">
-                                <i class="fa-solid fa-gear fa-fw"></i>
-                            </button>
                             <button type="button" data-close="cancel" class="modal-icon-button square">
                                 <i class="fa-solid fa-xmark fa-fw"></i>
                             </button>
@@ -290,7 +260,6 @@
                         </div>
                         <div class="separator"></div>
                         <div class="modal-footer">
-                            <button type="button" data-close="cancel" class="modal-button light">Cancel</button>
                             <button type="button" data-click="confirm" class="modal-button dark">Submit</button>
                         </div>
                     </div>
@@ -298,18 +267,15 @@
             </div>
         </div>
     </div>
-    <div class="modal-template sub">
+    <div class="modal-template edit">
         <div class="modal-backdrop">
             <div class="modal">
                 <div class="modal-block">
                     <div class="modal-header">
                         <div class="start">
-                            <div class="modal-header-title">Confirm submission</div>
+                            <div class="modal-header-title">Edit</div>
                         </div>
                         <div class="end">
-                            <button type="button" class="modal-icon-button round setting-button">
-                                <i class="fa-solid fa-gear fa-fw"></i>
-                            </button>
                             <button type="button" data-close="cancel" class="modal-icon-button square">
                                 <i class="fa-solid fa-xmark fa-fw"></i>
                             </button>
@@ -321,7 +287,7 @@
                         </div>
                         <div class="separator"></div>
                         <div class="modal-footer">
-                            <button type="button" data-close="confirm" class="modal-button dark">Confirm</button>
+                            <button type="button" data-click="confirm" class="modal-button dark">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -360,44 +326,6 @@
             template: '.popover-template.tooltip-style',
             placement: 'bottom'
         });
-        // var popovers = new Map();
-        // var bookmarkActions = document.querySelectorAll('.bookmark-item-action-button');
-        // for(var item of bookmarkActions) {
-        //     var pop = popover(item, {
-        //         template: '.action-menu-template',
-        //         placement: 'left',
-        //         stopPropagation: true
-        //     });
-        //     var index = item.getAttribute('data-index');
-        //     popovers.set(index, pop);
-        // }
-        // function onEdit(ele) {
-        //     var index = ele
-        //         .closest('.action-menu').getAttribute('data-index');
-        //     var pop = popovers.get(index);
-        //     if (pop) {
-        //         pop.close();
-        //         var dialog = modal(document.querySelector('.modal-template.main'));
-        //         dialog.onOpened = function(ele) {
-        //             var setting = ele.querySelector('.setting-button');
-        //             popover(setting, {
-        //                 template: '.popover-template.modal-popover-template',
-        //                 placement: 'bottom'
-        //             });
-        //         }
-        //         dialog.onClosed = function(ele) {
-        //         }
-        //         dialog.open();
-        //     }
-        // }
-        // function onDelete(ele) {
-        //     var index = ele
-        //         .closest('.action-menu').getAttribute('data-index');
-        //     var pop = popovers.get(index);
-        //     if (pop) {
-        //         // pop.close();
-        //     }
-        // }
         var bookmarkActions = document.querySelectorAll('.bookmark-item-action-button');
         for(var item of bookmarkActions) {
             var options = [
@@ -420,37 +348,38 @@
             }
         }
         function onEdit(ele) {
-            var index = ele.closest('.dropdown-menu').getAttribute('data-index');
-            var dialog = modal(document.querySelector('.modal-template.main'));
-            dialog.onOpened = function(ele) {
-                var setting = ele.querySelector('.setting-button');
-                popover(setting, {
-                    template: '.popover-template.modal-popover-template',
-                    placement: 'bottom'
+            var _modal = modal(document.querySelector('.modal-template.edit'));
+            _modal.onClick = function(ele, action) {
+                var _alert = alertModal({
+                    content: 'Group name is required.'
                 });
+                _alert.open();
             }
-            dialog.onClosed = function(ele, action) {
-                console.log(action);
-            }
-            dialog.onClick = function(ele, action) {
-                var dialog = modal(document.querySelector('.modal-template.sub'));
-                dialog.onOpened = function(ele) {
-                    var setting = ele.querySelector('.setting-button');
-                    popover(setting, {
-                        template: '.popover-template.modal-popover-template',
-                        placement: 'bottom'
-                    });
-                }
-                dialog.open();
-            }
-            dialog.open();
+            _modal.open();
         }
         function onDelete(ele) {
-            var index = ele.closest('.dropdown-menu').getAttribute('data-index');
+            var _confirm = confirmModal({
+                title: 'Delete',
+                content: 'Are you sure you want to delete this bookmark?',
+                confirmText: 'Delete',
+                confirmClass: 'danger'
+            });
+            _confirm.onClosed = function (ele, action) {
+                if (action === 'confirm') {
+                    toast.show('Saved successfully');
+                }
+            }
+            _confirm.open();
         }
         function onButtonClick() {
-            toast.show('Show Toast');
+            var _modal = modal(document.querySelector('.modal-template.create-group'));
+            _modal.onClick = function(ele, action) {
+                toast.show('Saved successfully');
+                _modal.close();
+            }
+            _modal.open();
         }
+        scrollbar(document.querySelector('.board-toolbar-scrollable'));
     </script>
 </body>
 

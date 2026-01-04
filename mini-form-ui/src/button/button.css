@@ -59,6 +59,7 @@ body.dark {
     box-sizing: border-box;
     outline-width: 0;
     font-family: inherit;
+    white-space: nowrap;
 }
 
 .button.disabled,
