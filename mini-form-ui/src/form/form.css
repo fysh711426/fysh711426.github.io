@@ -74,6 +74,7 @@ input::placeholder {
 }
 
 textarea {
+    display: block;
     outline: none;
     padding: 10px;
     border-width: 1px;
@@ -81,7 +82,7 @@ textarea {
     border-radius: 8px;
     box-sizing: border-box;
     width: 100%;
-    min-height: 120px;
+    min-height: 100px;
     overflow-y: auto;
     resize: none;
     appearance: none;

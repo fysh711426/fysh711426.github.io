@@ -128,6 +128,8 @@ var promptModal = (function () {
                 });
             }
             input.focus();
+            var length = input.value.length;
+            input.setSelectionRange(length, length);
             if (ref.onOpened) {
                 ref.onOpened(ele);
             }
