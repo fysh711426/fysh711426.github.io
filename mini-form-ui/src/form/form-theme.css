@@ -74,6 +74,28 @@ input::placeholder {
     color: var(--inputPlaceholderColor);
 }
 
+textarea {
+    color: var(--inputColor);
+    background-color: var(--inputBgColor);
+    border-color: var(--inputBorderColor);
+}
+
+textarea:focus {
+    border-color: var(--inputBorderFocusColor);
+}
+
+textarea::placeholder {
+    color: var(--inputPlaceholderColor);
+}
+
+textarea {
+    scrollbar-color: var(--scrollbarColor) transparent;
+}
+
+textarea:hover {
+    scrollbar-color: var(--scrollbarHoverColor) transparent;
+}
+
 /*----- input -----*/
 
 /*----- checkbox -----*/

@@ -85,7 +85,9 @@ var searchBar = (function () {
             search();
         });
         input.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
+            if (e.isComposing)
+                return;
+            if (e.key === 'Enter' && !e.shiftKey) {
                 search();
             }
         });

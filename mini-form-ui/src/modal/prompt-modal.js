@@ -1,4 +1,4 @@
-var confirmModal = (function () {
+var promptModal = (function () {
     function createElement(html) {
         var div = document.createElement('div');
         div.innerHTML = html;
@@ -21,6 +21,12 @@ var confirmModal = (function () {
         _setting.className = settings.className ?? '';
         _setting.size = settings.size ?? '';
         _setting.btnSize = settings.btnSize ?? '';
+        _setting.input = {};
+        var input = settings.input ?? {};
+        _setting.input.textarea = input.textarea ?? false;
+        _setting.input.value = input.value ?? '';
+        _setting.input.placeholder = input.placeholder ?? '';
+        _setting.input.required = input.required ?? false;
 
         var titleTemplate = _setting.title ? `
         <div class="modal-header-title">
@@ -52,6 +58,15 @@ var confirmModal = (function () {
             </div>
         </div>` : '';
 
+        var formLast = !settings.showSeparator ? 'last' : '';
+        var formFirst = !_setting.title && !_setting.content ? 'first' : '';
+        var inputTemplate = `
+        <input type="text" value="${_setting.input.value}" placeholder="${_setting.input.placeholder}" name="input" />`;
+        if (_setting.input.textarea) {
+            inputTemplate = `
+            <textarea placeholder="${_setting.input.placeholder}" name="input">${_setting.input.value}</textarea>`;
+        }
+
         var template = createElement(`
         <div class="modal-template">
             <div class="modal-backdrop">
@@ -60,6 +75,11 @@ var confirmModal = (function () {
                         ${headerTemplate}
                         <div class="modal-scrollable">
                             ${contentTemplate}
+                            <div class="modal-form ${formFirst} ${formLast}">
+                                <div class="modal-form-field first">
+                                    ${inputTemplate}
+                                </div>
+                            </div>
                             ${separatorTemplate}
                             <div class="modal-footer">
                                 <button type="button" data-close="cancel" class="modal-button ${_setting.btnSize} ${_setting.cancelClass}">
@@ -82,15 +102,43 @@ var confirmModal = (function () {
             onClosed: null
         };
         
+        var _value = '';
         var _modal = modal(template, _setting);
         _modal.onOpened = function (ele) {
+            var input = ele.querySelector('[name=input]');
+            var button = ele.querySelector('[data-close=confirm]');
+            function onInput() {
+                if (_setting.input.required) {
+                    button.removeAttribute('disabled');
+                    if (!input.value) {
+                        button.setAttribute('disabled', '');
+                    }
+                }
+                _value = input.value;
+            }
+            onInput();
+            input.addEventListener('input', onInput);
+            if (!_setting.input.textarea) {
+                input.addEventListener('keydown', (e) => {
+                    if (e.isComposing)
+                        return;
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        button.click();
+                    }
+                });
+            }
+            input.focus();
             if (ref.onOpened) {
                 ref.onOpened(ele);
             }
         }
         _modal.onClosed = function (ele, action) {
             if (ref.onClosed) {
-                ref.onClosed(ele, action);
+                var val = _value;
+                if (action !== 'confirm') {
+                    val = '';
+                }
+                ref.onClosed(ele, action, val);
             }
         }
         function open() {

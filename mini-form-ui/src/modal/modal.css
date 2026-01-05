@@ -220,7 +220,8 @@ body.dark {
 .modal-header {
     display: flex;
     justify-content: space-between;
-    padding: 15px 20px 15px 20px;
+    /* padding: 15px 20px 15px 20px; */
+    padding: 12px 12px 12px 20px;
 }
 
 .modal-header .start {
@@ -256,7 +257,7 @@ body.dark {
     word-break: break-all;
 }
 
-.modal-body.top {
+.modal-body.first {
     margin-top: 15px;
 }
 
@@ -264,7 +265,8 @@ body.dark {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 15px 20px;
+    /* padding: 15px 20px; */
+    padding: 15px;
     gap: 10px;
 }
 
@@ -316,10 +318,31 @@ body.dark {
 
 .modal-block .separator {
     height: 1px;
-    /* margin: 5px 20px;
-    transform: scaleY(1.2); */
-    margin: 5px 15px;
+    margin: 5px 20px;
+    /* transform: scaleY(1.2); */
     transform: scaleY(1.5);
+}
+
+.modal-form {
+    padding: 0px 20px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.modal-form.first {
+    margin-top: 20px;
+}
+
+.modal-form.last {
+    margin-bottom: 0px;
+}
+
+.modal-form-field {
+    margin: 20px 0px 5px 0px;
+}
+
+.modal-form-field.first {
+    margin-top: 0px;
 }
 
 .modal-block {

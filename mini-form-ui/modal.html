@@ -38,6 +38,7 @@
     <script src="src/modal/modal.js"></script>
     <script src="src/modal/alert-modal.js"></script>
     <script src="src/modal/confirm-modal.js"></script>
+    <script src="src/modal/prompt-modal.js"></script>
     <script src="src/layout/layout.js"></script>
     <script src="src/file/file.js"></script>
 </head>
@@ -101,6 +102,9 @@
                                 </button>
                                 <button class="button light" type="button" onclick="onConfirmModalButtonClick()">
                                     <span>Confirm Modal</span>
+                                </button>
+                                <button class="button light" type="button" onclick="onPromptModalButtonClick()">
+                                    <span>Prompt Modal</span>
                                 </button>
                                 <button class="button light" type="button" onclick="onToastButtonClick()">
                                     <span>Toast</span>
@@ -245,6 +249,22 @@
                 console.log(action);
             }
             _confirm.open();
+        }
+        function onPromptModalButtonClick() {
+            var _prompt = promptModal({
+                title: 'Title',
+                // content: 'Content',
+                input : {
+                    textarea: false,
+                    value: '',
+                    placeholder: 'Input',
+                    required: true
+                }
+            });
+            _prompt.onClosed = function (ele, action, value) {
+                console.log(`action: ${action}, value: ${value}`);
+            }
+            _prompt.open();
         }
         function onToastButtonClick() {
             toast.show('Show Toast');

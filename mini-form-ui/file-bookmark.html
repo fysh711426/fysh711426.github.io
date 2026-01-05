@@ -38,6 +38,7 @@
     <script src="src/modal/modal.js"></script>
     <script src="src/modal/alert-modal.js"></script>
     <script src="src/modal/confirm-modal.js"></script>
+    <script src="src/modal/prompt-modal.js"></script>
     <script src="src/layout/layout.js"></script>
     <script src="src/file/file.js"></script>
 </head>
@@ -126,7 +127,7 @@
                                 </a>
                             </div>
                             <div class="end">
-                                <a class="bookmark-group-action-button" href="javascript:void(0)" data-content="Tooltip Popover">
+                                <a class="bookmark-group-menu-button" href="javascript:void(0)" data-index="1">
                                     <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
                                 </a>
                             </div>
@@ -150,8 +151,7 @@
                                     <a class="bookmark-item-link" href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
                                         <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
                                     </a>
-                                    <a class="bookmark-item-action-button" href="javascript:void(0)"
-                                       data-content="bookmark01" data-index="1">
+                                    <a class="bookmark-item-menu-button" href="javascript:void(0)" data-index="1">
                                         <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
                                     </a>
                                 </div>
@@ -174,8 +174,7 @@
                                     <a class="bookmark-item-link" href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
                                         <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
                                     </a>
-                                    <a class="bookmark-item-action-button" href="javascript:void(0)"
-                                       data-content="bookmark02" data-index="2">
+                                    <a class="bookmark-item-menu-button" href="javascript:void(0)" data-index="2">
                                         <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
                                     </a>
                                 </div>
@@ -197,8 +196,7 @@
                                     <a class="bookmark-item-link" href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
                                         <i class="fa-solid fa-arrow-up-right-from-square fa-fw"></i>
                                     </a>
-                                    <a class="bookmark-item-action-button" href="javascript:void(0)"
-                                       data-content="bookmark03" data-index="3">
+                                    <a class="bookmark-item-menu-button" href="javascript:void(0)" data-index="3">
                                         <i class="fa-solid fa-ellipsis-vertical fa-fw"></i>
                                     </a>
                                 </div>
@@ -221,76 +219,9 @@
             <div class="toast-inner">__data-content__</div>
         </div>
     </div>
-    <div class="popover-template tooltip-style">
-        <div class="popover-block">
-            <div class="popover-inner">__data-content__</div>
-        </div>
-    </div>
     <div class="dropdown-menu-template">
         <div class="dropdown-menu-block">
             <div class="dropdown-menu" data-index="__data-index__">
-            </div>
-        </div>
-    </div>
-    <div class="modal-template create-group">
-        <div class="modal-backdrop">
-            <div class="modal">
-                <div class="modal-block">
-                    <div class="modal-header">
-                        <div class="start">
-                            <div class="modal-header-title">Create Group</div>
-                        </div>
-                        <div class="end">
-                            <button type="button" data-close="cancel" class="modal-icon-button square">
-                                <i class="fa-solid fa-xmark fa-fw"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="modal-scrollable">
-                        <div class="modal-body">
-                            <span>Edit item.</span>
-                            <div class="alert light">
-                                <span class="alert-icon">
-                                    <i class="fa-regular fa-lightbulb fa-fw"></i>
-                                </span>
-                                <span class="alert-text">
-                                    Simple light alert.
-                                </span>
-                            </div>
-                        </div>
-                        <div class="separator"></div>
-                        <div class="modal-footer">
-                            <button type="button" data-click="confirm" class="modal-button dark">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal-template edit">
-        <div class="modal-backdrop">
-            <div class="modal">
-                <div class="modal-block">
-                    <div class="modal-header">
-                        <div class="start">
-                            <div class="modal-header-title">Edit</div>
-                        </div>
-                        <div class="end">
-                            <button type="button" data-close="cancel" class="modal-icon-button square">
-                                <i class="fa-solid fa-xmark fa-fw"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="modal-scrollable">
-                        <div class="modal-body">
-                            Are you sure you want to submit?
-                        </div>
-                        <div class="separator"></div>
-                        <div class="modal-footer">
-                            <button type="button" data-click="confirm" class="modal-button dark">Submit</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -321,18 +252,13 @@
             board.classList.add('active');
             selected = id;
         }
-        var groupAction = document.querySelector('.bookmark-group-action-button');
-        popover(groupAction, {
-            template: '.popover-template.tooltip-style',
-            placement: 'bottom'
-        });
-        var bookmarkActions = document.querySelectorAll('.bookmark-item-action-button');
-        for(var item of bookmarkActions) {
+        if (true) {
+            var groupMenu = document.querySelector('.bookmark-group-menu-button');
             var options = [
                 { text: 'Edit', value: 0, icon: 'fa-solid fa-pen fa-fw' },
                 { text: 'Delete', value: 1, icon: 'fa-solid fa-trash fa-fw', className: 'danger', separator: true }
             ];
-            var _dropdownMenu = dropdownMenu(item, {
+            var _dropdownMenu = dropdownMenu(groupMenu, {
                 template: '.dropdown-menu-template',
                 placement: 'left',
                 stopPropagation: true,
@@ -344,40 +270,75 @@
                     onEdit(ele);
                     return;
                 }
-                onDelete(ele);
+                // onDelete(ele);
+            }
+        }
+        if (true) {
+            var bookmarkMenus = document.querySelectorAll('.bookmark-item-menu-button');
+            for(var item of bookmarkMenus) {
+                var options = [
+                    { text: 'Delete', icon: 'fa-solid fa-trash fa-fw', className: 'danger' }
+                ];
+                var _dropdownMenu = dropdownMenu(item, {
+                    template: '.dropdown-menu-template',
+                    placement: 'left',
+                    stopPropagation: true,
+                    enableSelect: false,
+                    options: options
+                });
+                _dropdownMenu.onChange = function (ele, val) {
+                    var _confirm = confirmModal({
+                        title: 'Delete',
+                        content: 'Are you sure you want to delete this bookmark?',
+                        confirmText: 'Delete',
+                        confirmClass: 'danger'
+                    });
+                    _confirm.onClosed = function (ele, action) {
+                        if (action === 'confirm') {
+                            toast.show('Saved successfully');
+                        }
+                    }
+                    _confirm.open();
+                }
             }
         }
         function onEdit(ele) {
-            var _modal = modal(document.querySelector('.modal-template.edit'));
-            _modal.onClick = function(ele, action) {
-                var _alert = alertModal({
-                    content: 'Group name is required.'
-                });
-                _alert.open();
-            }
-            _modal.open();
-        }
-        function onDelete(ele) {
-            var _confirm = confirmModal({
-                title: 'Delete',
-                content: 'Are you sure you want to delete this bookmark?',
-                confirmText: 'Delete',
-                confirmClass: 'danger'
+            var index = ele.closest('.dropdown-menu').getAttribute('data-index');
+            var _prompt = promptModal({
+                title: 'Edit',
+                input : {
+                    textarea: false,
+                    value: 'Other',
+                    placeholder: 'Name',
+                    required: true
+                }
             });
-            _confirm.onClosed = function (ele, action) {
+            _prompt.onClosed = function (ele, action, value) {
                 if (action === 'confirm') {
                     toast.show('Saved successfully');
                 }
+                console.log(`value: ${value}, index: ${index}`);
             }
-            _confirm.open();
+            _prompt.open();
         }
         function onButtonClick() {
-            var _modal = modal(document.querySelector('.modal-template.create-group'));
-            _modal.onClick = function(ele, action) {
-                toast.show('Saved successfully');
-                _modal.close();
+            var _prompt = promptModal({
+                title: 'Create Group',
+                // content: 'Create Group',
+                input : {
+                    textarea: false,
+                    value: '',
+                    placeholder: 'Name',
+                    required: true
+                }
+            });
+            _prompt.onClosed = function (ele, action, value) {
+                if (action === 'confirm') {
+                    toast.show('Saved successfully');
+                }
+                console.log(`value: ${value}`);
             }
-            _modal.open();
+            _prompt.open();
         }
         scrollbar(document.querySelector('.board-toolbar-scrollable'));
     </script>

@@ -65,10 +65,30 @@ input {
     border-radius: 8px;
     box-sizing: border-box;
     width: 100%;
+    appearance: none;
     transition: border .15s ease;
 }
 
 input::placeholder {
+    user-select: none
+}
+
+textarea {
+    outline: none;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 120px;
+    overflow-y: auto;
+    resize: none;
+    appearance: none;
+    transition: border .15s ease;
+}
+
+textarea::placeholder {
     user-select: none
 }
 

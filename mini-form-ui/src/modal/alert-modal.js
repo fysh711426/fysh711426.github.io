@@ -26,9 +26,9 @@ var alertModal = (function () {
         </div>
         ` : '';
         
-        var top = !_setting.title ? 'top' : '';
+        var bodyFirst = !_setting.title ? 'first' : '';
         var contentTemplate = _setting.content ? `
-        <div class="modal-body ${top}">
+        <div class="modal-body ${bodyFirst}">
             <span>${_setting.content}</span>
         </div>` : '';
 
