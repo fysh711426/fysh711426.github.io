@@ -2,7 +2,9 @@ body.light {
     /*----- dropdown-menu -----*/
     --dropdownMenuColor: #262626;
     --dropdownMenuBgColor: #fff;
-    --dropdownMenuShadow: 0px 8px 12px 0px #00000014,0px 0px 1px 0px #0000009e;
+    /* --dropdownMenuShadow: 0px 8px 12px 0px #00000014,0px 0px 1px 0px #0000009e; */
+    --dropdownMenuShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
+    --dropdownMenuBorderColor: #e6e6e6;
     --dropdownMenuHoverBgColor: #f5f5f5;
     --dropdownMenuActiveBgColor: #f0f0f0;
     --dropdownMenuDangerColor: #e02e2a;
@@ -33,8 +35,11 @@ body.light {
 body.dark {
     /*----- dropdown-menu -----*/
     --dropdownMenuColor: #d2d3d5;
-    --dropdownMenuBgColor: #353535;
-    --dropdownMenuShadow: 0px 8px 16px 0px #00000052,inset 0px 0px 1px 0px #fff3,0px 0px 1px 0px #0000009e;
+    /* --dropdownMenuBgColor: #353535; */
+    --dropdownMenuBgColor: #404040;
+    /* --dropdownMenuShadow: 0px 8px 16px 0px #00000052,inset 0px 0px 1px 0px #fff3,0px 0px 1px 0px #0000009e; */
+    --dropdownMenuShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    --dropdownMenuBorderColor: #454545;
     --dropdownMenuHoverBgColor: #4a4a4a;
     --dropdownMenuActiveBgColor: #3f3f3f;
     --dropdownMenuDangerColor: #ff8583;
@@ -67,6 +72,7 @@ body.dark {
 .dropdown-menu {
     background-color: var(--dropdownMenuBgColor);
     box-shadow: var(--dropdownMenuShadow);
+    border-color: var(--dropdownMenuBorderColor);
 }
 
 .dropdown-menu-item {
@@ -119,7 +125,9 @@ body.dark {
     user-select: none;
     border-radius: 1rem;
     padding: 8px 0;
-    border: 0 solid;
+    /* border: 0 solid; */
+    border-width: 1px;
+    border-style: solid;
 }
 
 .dropdown-menu-item {

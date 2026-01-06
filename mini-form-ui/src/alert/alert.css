@@ -5,7 +5,8 @@ body.light {
 
 body.dark {
     --alertLightColor: #f3f3f3;
-    --alertLightBgColor: #414141;
+    /* --alertLightBgColor: #414141; */
+    --alertLightBgColor: #494949;
 }
 
 .alert.light {
