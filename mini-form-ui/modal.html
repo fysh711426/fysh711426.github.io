@@ -210,25 +210,25 @@
             onThemeChange(theme);
         }
         function onModalButtonClick() {
-            var dialog = modal(document.querySelector('.modal-template.main'));
-            dialog.onOpened = function(ele) {
+            var _modal = modal(document.querySelector('.modal-template.main'));
+            _modal.onOpened = function(ele) {
                 var setting = ele.querySelector('.setting-button');
                 popover(setting, {
                     template: '.popover-template.modal-popover-template',
                     placement: 'bottom'
                 });
             }
-            dialog.onClosed = function(ele, action) {
+            _modal.onClosed = function(ele, action) {
                 console.log(action);
             }
-            dialog.onClick = function(ele, action) {
-                var dialog = modal(document.querySelector('.modal-template.sub'));
-                dialog.onClosed = function(ele, action) {
+            _modal.onClick = function(ele, action) {
+                var _modal = modal(document.querySelector('.modal-template.sub'));
+                _modal.onClosed = function(ele, action) {
                     console.log(action);
                 }
-                dialog.open();
+                _modal.open();
             }
-            dialog.open();
+            _modal.open();
         }
         function onAlertModalButtonClick() {
             var _alert = alertModal({
