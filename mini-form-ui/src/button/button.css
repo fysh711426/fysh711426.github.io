@@ -15,7 +15,53 @@ body.light {
     --buttonDisabledBgColor: #0d0d0d80; */
     --buttonDisabledColor: #505050;
     --buttonDisabledBgColor: #ccc;
+    --buttonDisabledBorderColor: #bbb;
     /*----- button -----*/
+
+    /*----- button-o -----*/
+    /* --buttonOLightColor: #7e7e7e; */
+    --buttonOLightColor: #505050;
+    /* --buttonOLightBorderColor: #e6e6e6; */
+    --buttonOLightBorderColor: #d3d3d3;
+    /* --buttonOLightHoverBgColor: #f5f5f5; */
+    --buttonOLightHoverBgColor: #f0f0f0;
+    /* --buttonOLightActiveBgColor: #f0f0f0; */
+    --buttonOLightActiveBgColor: #e6e6e6;
+    --buttonODarkColor: #3b3b3b;
+    --buttonODarkBorderColor: #3b3b3b;
+    --buttonODarkHoverColor: #fff;
+    --buttonODarkHoverBgColor: #3b3b3b;
+    /* --buttonODarkActiveBgColor: rgba(48,48,48,.85); */
+    --buttonODarkActiveBgColor: rgba(48,48,48,.75);
+    /*----- button-o -----*/
+
+    /*----- modal-button -----*/
+    --modalButtonLightColor: #262626;
+    --modalButtonLightBgColor: #f5f5f5;
+    --modalButtonLightHoverBgColor: #e6e6e6;
+    --modalButtonLightActiveBgColor: #f0f0f0;
+    --modalButtonDarkColor: #fff;
+    --modalButtonDarkBgColor: #3b3b3b;
+    --modalButtonDarkHoverBgColor: rgba(48,48,48,.85);
+    --modalButtonDarkActiveBgColor: rgba(48,48,48,.75);
+    /* --modalButtonDisabledColor: #fff;
+    --modalButtonDisabledBgColor: #0d0d0d80; */
+    --modalButtonDisabledColor: #505050;
+    --modalButtonDisabledBgColor: #ccc;
+    --modalButtonDisabledBorderColor: #bbb;
+    /*----- modal-button -----*/
+    
+    /*----- modal-button-o -----*/
+    --modalButtonOLightColor: #505050;
+    --modalButtonOLightBorderColor: #d3d3d3;
+    --modalButtonOLightHoverBgColor: #f0f0f0;
+    --modalButtonOLightActiveBgColor: #e6e6e6;
+    --modalButtonODarkColor: #3b3b3b;
+    --modalButtonODarkBorderColor: #3b3b3b;
+    --modalButtonODarkHoverColor: #fff;
+    --modalButtonODarkHoverBgColor: #3b3b3b;
+    --modalButtonODarkActiveBgColor: rgba(48,48,48,.75);
+    /*----- modal-button-o -----*/
 
     /*----- modal-icon-button -----*/
     --modalIconButtonColor: #262626;
@@ -23,21 +69,6 @@ body.light {
     --modalIconButtonHoverBgColor: #f5f5f5;
     --modalIconButtonActiveBgColor: #f0f0f0;
     /*----- modal-icon-button -----*/
-
-    /*----- modal-button -----*/
-    --modalLightButtonColor: #262626;
-    --modalLightButtonBgColor: #f5f5f5;
-    --modalLightButtonHoverBgColor: #e6e6e6;
-    --modalLightButtonActiveBgColor: #f0f0f0;
-    --modalDarkButtonColor: #fff;
-    --modalDarkButtonBgColor: #3b3b3b;
-    --modalDarkButtonHoverBgColor: rgba(48,48,48,.85);
-    --modalDarkButtonActiveBgColor: rgba(48,48,48,.75);
-    /* --modalButtonDisabledColor: #fff;
-    --modalButtonDisabledBgColor: #0d0d0d80; */
-    --modalButtonDisabledColor: #505050;
-    --modalButtonDisabledBgColor: #ccc;
-    /*----- modal-button -----*/
 }
 
 body.dark {
@@ -53,8 +84,56 @@ body.dark {
     --buttonDarkHoverBgColor: rgba(255, 255, 255, .85);
     --buttonDarkActiveBgColor: rgba(255, 255, 255, .75);
     --buttonDisabledColor: #fff;
-    --buttonDisabledBgColor: #f9f9f980;
+    /* --buttonDisabledBgColor: #f9f9f980; */
+    --buttonDisabledBgColor: #959595;
+    --buttonDisabledBorderColor: #a6a6a6;
     /*----- button -----*/
+
+    /*----- button-o -----*/
+    /* --buttonOLightColor: #aaa; */
+    --buttonOLightColor: #ccc;
+    /* --buttonOLightBorderColor: #4d4d4d; */
+    --buttonOLightBorderColor: #636363;
+    /* --buttonOLightHoverBgColor: #3d3d3d; */
+    --buttonOLightHoverBgColor: #434343;
+    /* --buttonOLightActiveBgColor: #434343; */
+    --buttonOLightActiveBgColor: #535353;
+    --buttonODarkColor: #ececec;
+    --buttonODarkBorderColor: #ececec;
+    --buttonODarkHoverColor: #181818;
+    --buttonODarkHoverBgColor: #ececec;
+    /* --buttonODarkActiveBgColor: rgba(255, 255, 255,.85); */
+    --buttonODarkActiveBgColor: rgba(255, 255, 255, .75);
+    /*----- button-o -----*/
+
+    /*----- modal-button -----*/
+    --modalButtonLightColor: #d2d3d5;
+    /* --modalButtonLightBgColor: #2c2c2c; */
+    --modalButtonLightBgColor: #3d3d3d;
+    /* --modalButtonLightHoverBgColor: #3d3d3d; */
+    --modalButtonLightHoverBgColor: #535353;
+    /* --modalButtonLightActiveBgColor: #353535; */
+    --modalButtonLightActiveBgColor: #434343;
+    --modalButtonDarkColor: #181818;
+    --modalButtonDarkBgColor: #ececec;
+    --modalButtonDarkHoverBgColor: rgba(255, 255, 255, .85);
+    --modalButtonDarkActiveBgColor: rgba(255, 255, 255, .75);
+    --modalButtonDisabledColor: #fff;
+    --modalButtonDisabledBgColor: #959595;
+    --modalButtonDisabledBorderColor: #a6a6a6;
+    /*----- modal-button -----*/
+    
+    /*----- modal-button-o -----*/
+    --modalButtonOLightColor: #ccc;
+    --modalButtonOLightBorderColor: #636363;
+    --modalButtonOLightHoverBgColor: #434343;
+    --modalButtonOLightActiveBgColor: #535353;
+    --modalButtonODarkColor: #ececec;
+    --modalButtonODarkBorderColor: #ececec;
+    --modalButtonODarkHoverColor: #181818;
+    --modalButtonODarkHoverBgColor: #ececec;
+    --modalButtonODarkActiveBgColor: rgba(255, 255, 255, .75);
+    /*----- modal-button-o -----*/
 
     /*----- modal-icon-button -----*/
     --modalIconButtonColor: #d2d3d5;
@@ -66,22 +145,6 @@ body.dark {
     /* --modalIconButtonHoverBgColor: #4a4a4a;
     --modalIconButtonActiveBgColor: #3f3f3f; */
     /*----- modal-icon-button -----*/
-
-    /*----- modal-button -----*/
-    --modalLightButtonColor: #d2d3d5;
-    /* --modalLightButtonBgColor: #2c2c2c; */
-    --modalLightButtonBgColor: #3d3d3d;
-    /* --modalLightButtonHoverBgColor: #3d3d3d; */
-    --modalLightButtonHoverBgColor: #535353;
-    /* --modalLightButtonActiveBgColor: #353535; */
-    --modalLightButtonActiveBgColor: #434343;
-    --modalDarkButtonColor: #181818;
-    --modalDarkButtonBgColor: #ececec;
-    --modalDarkButtonHoverBgColor: rgba(255, 255, 255, .85);
-    --modalDarkButtonActiveBgColor: rgba(255, 255, 255, .75);
-    --modalButtonDisabledColor: #fff;
-    --modalButtonDisabledBgColor: #f9f9f980;
-    /*----- modal-button -----*/
 }
 
 /*----- button -----*/
@@ -92,11 +155,11 @@ body.dark {
     background: var(--buttonLightBgColor);
 }
 
-.button.light:hover {
+.button.light:not(:disabled):hover {
     background: var(--buttonLightHoverBgColor);
 }
 
-.button.light:active {
+.button.light:not(:disabled):active {
     background: var(--buttonLightActiveBgColor);
 }
 
@@ -105,11 +168,11 @@ body.dark {
     background: var(--buttonDarkBgColor);
 }
 
-.button.dark:hover {
+.button.dark:not(:disabled):hover {
     background: var(--buttonDarkHoverBgColor);
 }
 
-.button.dark:active {
+.button.dark:not(:disabled):active {
     background: var(--buttonDarkActiveBgColor);
 }
 
@@ -149,6 +212,196 @@ body.dark {
 
 /*----- button -----*/
 
+/*----- button-o -----*/
+
+.button-o.light {
+    color: var(--buttonOLightColor);
+    border-color: var(--buttonOLightBorderColor);
+    background: transparent;
+}
+
+.button-o.light:not(:disabled):hover {
+    background: var(--buttonOLightHoverBgColor);
+}
+
+.button-o.light:not(:disabled):active {
+    background: var(--buttonOLightActiveBgColor);
+}
+
+.button-o.dark {
+    color: var(--buttonODarkColor);
+    border-color: var(--buttonODarkColor);
+    background-color: transparent;
+}
+
+.button-o.dark:not(:disabled):hover {
+    color: var(--buttonODarkHoverColor);
+    background: var(--buttonODarkHoverBgColor);
+}
+
+.button-o.dark:not(:disabled):active {
+    color: var(--buttonODarkHoverColor);
+    background: var(--buttonODarkActiveBgColor);
+}
+
+.button-o.light:disabled,
+.button-o.dark:disabled {
+    color: var(--buttonDisabledColor);
+    background: var(--buttonDisabledBgColor);
+    border-color: var(--buttonDisabledBorderColor);
+}
+
+.button-o {
+    display: inline-block;
+    font-weight: 700;
+    line-height: 2;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border-width: 1px;
+    border-style: solid;
+    /* border-radius: .35rem; */
+    border-radius: 8px;
+    padding: 0 12px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline-width: 0;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.button-o.round {
+    border-radius: 50rem;
+}
+
+.button-o:disabled {
+    opacity: .5;
+}
+
+/*----- button-o -----*/
+
+/*----- modal-button -----*/
+
+.modal-button.light {
+    color: var(--modalButtonLightColor);
+    background-color: var(--modalButtonLightBgColor);
+}
+
+.modal-button.light:not(:disabled):hover {
+    background-color: var(--modalButtonLightHoverBgColor);
+}
+
+.modal-button.light:not(:disabled):active {
+    background-color: var(--modalButtonLightActiveBgColor);
+}
+
+.modal-button.dark {
+    color: var(--modalButtonDarkColor);
+    background-color: var(--modalButtonDarkBgColor);
+}
+
+.modal-button.dark:not(:disabled):hover {
+    background-color: var(--modalButtonDarkHoverBgColor);
+}
+
+.modal-button.dark:not(:disabled):active {
+    background-color: var(--modalButtonDarkActiveBgColor);
+}
+
+.modal-button.light:disabled,
+.modal-button.dark:disabled {
+    color: var(--modalButtonDisabledColor);
+    background-color: var(--modalButtonDisabledBgColor);
+}
+
+.modal-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    font-size: 0.9rem;
+    line-height: 2;
+    font-weight: 700;
+    padding: 0 15px;
+    /* border-radius: 8px; */
+    /* border-radius: .35rem; */
+    border-radius: 50rem;
+    height: 45px;
+}
+
+.modal-button:disabled {
+    opacity: .5;
+}
+
+/*----- modal-button -----*/
+
+/*----- modal-button-o -----*/
+
+.modal-button-o.light {
+    color: var(--modalButtonOLightColor);
+    border-color: var(--modalButtonOLightBorderColor);
+    background: transparent;
+}
+
+.modal-button-o.light:not(:disabled):hover {
+    background: var(--modalButtonOLightHoverBgColor);
+}
+
+.modal-button-o.light:not(:disabled):active {
+    background: var(--modalButtonOLightActiveBgColor);
+}
+
+.modal-button-o.dark {
+    color: var(--modalButtonODarkColor);
+    border-color: var(--modalButtonODarkColor);
+    background-color: transparent;
+}
+
+.modal-button-o.dark:not(:disabled):hover {
+    color: var(--modalButtonODarkHoverColor);
+    background: var(--modalButtonODarkHoverBgColor);
+}
+
+.modal-button-o.dark:not(:disabled):active {
+    color: var(--modalButtonODarkHoverColor);
+    background: var(--modalButtonODarkActiveBgColor);
+}
+
+.modal-button-o.light:disabled,
+.modal-button-o.dark:disabled {
+    color: var(--modalButtonDisabledColor);
+    background: var(--modalButtonDisabledBgColor);
+    border-color: var(--modalButtonDisabledBorderColor);
+}
+
+.modal-button-o {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 0.9rem;
+    line-height: 2;
+    font-weight: 700;
+    padding: 0 15px;
+    /* border-radius: 8px; */
+    /* border-radius: .35rem; */
+    border-radius: 50rem;
+    height: 45px;
+}
+
+.modal-button-o:disabled {
+    opacity: .5;
+}
+
+/*----- modal-button-o -----*/
+
 /*----- modal-icon-button -----*/
 
 .modal-icon-button {
@@ -156,11 +409,11 @@ body.dark {
     background-color: var(--modalIconButtonBgColor);
 }
 
-.modal-icon-button:hover {
+.modal-icon-button:not(:disabled):hover {
     background-color: var(--modalIconButtonHoverBgColor);
 }
 
-.modal-icon-button:active {
+.modal-icon-button:not(:disabled):active {
     background-color: var(--modalIconButtonActiveBgColor);
 }
 
@@ -187,178 +440,3 @@ body.dark {
 }
 
 /*----- modal-icon-button -----*/
-
-/*----- modal-button -----*/
-
-.modal-button.light {
-    color: var(--modalLightButtonColor);
-    background-color: var(--modalLightButtonBgColor);
-}
-
-.modal-button.light:hover {
-    background-color: var(--modalLightButtonHoverBgColor);
-}
-
-.modal-button.light:active {
-    background-color: var(--modalLightButtonActiveBgColor);
-}
-
-.modal-button.dark {
-    color: var(--modalDarkButtonColor);
-    background-color: var(--modalDarkButtonBgColor);
-}
-
-.modal-button.dark:hover {
-    background-color: var(--modalDarkButtonHoverBgColor);
-}
-
-.modal-button.dark:active {
-    background-color: var(--modalDarkButtonActiveBgColor);
-}
-
-.modal-button.light:disabled,
-.modal-button.dark:disabled {
-    color: var(--modalButtonDisabledColor);
-    background-color: var(--modalButtonDisabledBgColor);
-}
-
-.modal-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: 0 solid;
-    font-size: 0.9rem;
-    line-height: 2;
-    font-weight: 700;
-    padding: 0 15px;
-    border-radius: 8px;
-    /* border-radius: .35rem; */
-    height: 45px;
-    border: 0px solid;
-}
-
-.modal-button.round {
-    border-radius: 50rem;
-}
-
-.modal-button:disabled {
-    opacity: .5;
-}
-
-/*----- modal-button -----*/
-
-/*----- color -----*/
-
-.button.danger,
-.button.success,
-.button.warning,
-.button.info,
-.button.blue,
-.button.purple,
-.modal-button.danger,
-.modal-button.success,
-.modal-button.warning,
-.modal-button.info,
-.modal-button.blue,
-.modal-button.purple {
-    color: #fff;
-}
-
-.button.danger:active,
-.button.success:active,
-.button.warning:active,
-.button.info:active,
-.button.blue:active,
-.button.purple:active,
-.modal-button.danger:active,
-.modal-button.success:active,
-.modal-button.warning:active,
-.modal-button.info:active,
-.modal-button.blue:active,
-.modal-button.purple:active {
-    opacity: .8;
-}
-
-.button.danger:disabled,
-.button.success:disabled,
-.button.warning:disabled,
-.button.info:disabled,
-.button.blue:disabled,
-.button.purple:disabled,
-.modal-button.danger:disabled,
-.modal-button.success:disabled,
-.modal-button.warning:disabled,
-.modal-button.info:disabled,
-.modal-button.blue:disabled,
-.modal-button.purple:disabled {
-    opacity: .5;
-}
-
-.button.danger, .modal-button.danger,
-.button.danger:disabled, .modal-button.danger:disabled,
-.button.danger:hover:disabled, .modal-button.danger:hover:disabled {
-    background-color: #e02e2a;
-}
-
-.button.danger:hover, .modal-button.danger:hover,
-.button.danger:active, .modal-button.danger:active {
-    background-color:#911e1b;
-}
-
-.button.success, .modal-button.success,
-.button.success:disabled, .modal-button.success:disabled,
-.button.success:hover:disabled, .modal-button.success:hover:disabled {
-    background-color: #008635;
-}
-
-.button.success:hover, .modal-button.success:hover,
-.button.success:active, .modal-button.success:active {
-    background-color:#00692a;
-}
-
-.button.warning, .modal-button.warning,
-.button.warning:disabled, .modal-button.warning:disabled,
-.button.warning:hover:disabled, .modal-button.warning:hover:disabled {
-    background-color: #ffc300;
-}
-
-.button.warning:hover, .modal-button.warning:hover,
-.button.warning:active, .modal-button.warning:active {
-    background-color:#ffc300e6;
-}
-
-.button.info, .modal-button.info,
-.button.info:disabled, .modal-button.info:disabled,
-.button.info:hover:disabled, .modal-button.info:hover:disabled {
-    background-color: #0285ff;
-}
-
-.button.info:hover, .modal-button.info:hover,
-.button.info:active, .modal-button.info:active {
-    background-color:#0285ffe6;
-}
-
-.button.blue, .modal-button.blue,
-.button.blue:disabled, .modal-button.blue:disabled,
-.button.blue:hover:disabled, .modal-button.blue:hover:disabled {
-    background-color: #0066de;
-}
-
-.button.blue:hover, .modal-button.blue:hover,
-.button.blue:active, .modal-button.blue:active {
-    background-color:#003f7a;
-}
-
-.button.purple, .modal-button.purple,
-.button.purple:disabled, .modal-button.purple:disabled,
-.button.purple:hover:disabled, .modal-button.purple:hover:disabled {
-    background-color: #615eeb;
-}
-
-.button.purple:hover, .modal-button.purple:hover,
-.button.purple:active, .modal-button.purple:active {
-    background-color:#6353c3;
-}
-
-/*----- color -----*/
