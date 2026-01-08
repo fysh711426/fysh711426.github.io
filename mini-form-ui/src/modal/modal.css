@@ -223,12 +223,6 @@ body.dark {
     max-width: 1080px;
 }
 
-.modal-button.btn-sm {
-    font-size: .8rem;
-    height: 40px;
-    padding: 0 12px;
-}
-
 .modal-backdrop {
     animation: .25s cubic-bezier(.4, 0, .2, 1) modalSlideDownAndFade;
 }

@@ -298,11 +298,6 @@ body.dark {
     align-items: center;
 }
 
-.board-toolbar .button,
-.board-toolbar .button-o {
-    font-size: .9rem;
-}
-
 .board-toolbar .start .button,
 .board-toolbar .start .button-o {
     margin-right: 10px;

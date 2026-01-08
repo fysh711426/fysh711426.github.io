@@ -1,0 +1,496 @@
+/*----- button -----*/
+
+.button.success {
+    color: #fff;
+    /* background-color: #008635; */
+    /* background-color: #009149; */
+    background-color: #2f8966;
+}
+
+@media screen and (min-width: 1025px) {
+    .button.success:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .button.success:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.button.danger {
+    color: #fff;
+    /* background-color: #e02e2a; */
+    /* background-color: #e53534; */
+    background-color: #dc3545;
+}
+
+@media screen and (min-width: 1025px) {
+    .button.danger:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .button.danger:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.button.warning {
+    color: #fff;
+    /* background-color: #ffc300; */
+    background-color: #f6a800;
+}
+
+@media screen and (min-width: 1025px) {
+    .button.warning:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .button.warning:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.button.orange {
+    color: #fff;
+    background-color: #ec7405;
+}
+
+@media screen and (min-width: 1025px) {
+    .button.orange:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .button.orange:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.button.info {
+    color: #fff;
+    background-color: #0285ff;
+    /* background-color: #3388ff; */
+}
+
+@media screen and (min-width: 1025px) {
+    .button.info:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .button.info:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.button.blue {
+    color: #fff;
+    background-color: #0066de;
+    /* background-color: #005da8; */
+}
+
+@media screen and (min-width: 1025px) {
+    .button.blue:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .button.blue:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.button.purple {
+    color: #fff;
+    background-color: #615eeb;
+    /* background-color: #572381; */
+}
+
+@media screen and (min-width: 1025px) {
+    .button.purple:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .button.purple:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* .button.all {
+    background-color: #005da8;   // blue
+    background-color: #3388ff;   // sky
+    background-color: #009149;   // green
+    background-color: #2f8966;   // darkgreen
+    background-color: #f6a800;   // yellow
+    background-color: #e53534;   // red
+    background-color: #572381;   // purple
+    background-color: #ec7405;   // orange
+} */
+
+/*----- button -----*/
+
+/*----- button-o -----*/
+
+.button-o.success {
+    color: #2f8966;
+    border-color: #2f8966;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .button-o.success:not(:disabled):hover,
+    .button-o.success:not(:disabled):active {
+        color: #fff;
+        background-color: #2f8966;
+    }
+    
+    .button-o.success:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.button-o.danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .button-o.danger:not(:disabled):hover,
+    .button-o.danger:not(:disabled):active {
+        color: #fff;
+        background-color: #dc3545;
+    }
+    
+    .button-o.danger:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.button-o.warning {
+    color: #f6a800;
+    border-color: #f6a800;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .button-o.warning:not(:disabled):hover,
+    .button-o.warning:not(:disabled):active {
+        color: #fff;
+        background-color: #f6a800;
+    }
+    
+    .button-o.warning:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.button-o.orange {
+    color: #ec7405;
+    border-color: #ec7405;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .button-o.orange:not(:disabled):hover,
+    .button-o.orange:not(:disabled):active {
+        color: #fff;
+        background-color: #ec7405;
+    }
+    
+    .button-o.orange:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.button-o.info {
+    color: #0285ff;
+    border-color: #0285ff;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .button-o.info:not(:disabled):hover,
+    .button-o.info:not(:disabled):active {
+        color: #fff;
+        background-color: #0285ff;
+    }
+    
+    .button-o.info:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.button-o.blue {
+    color: #0066de;
+    border-color: #0066de;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .button-o.blue:not(:disabled):hover,
+    .button-o.blue:not(:disabled):active {
+        color: #fff;
+        background-color: #0066de;
+    }
+    
+    .button-o.blue:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.button-o.purple {
+    color: #615eeb;
+    border-color: #615eeb;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .button-o.purple:not(:disabled):hover,
+    .button-o.purple:not(:disabled):active {
+        color: #fff;
+        background-color: #615eeb;
+    }
+    
+    .button-o.purple:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+/*----- button-o -----*/
+
+/*----- modal-button -----*/
+
+.modal-button.success {
+    color: #fff;
+    background-color: #2f8966;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button.success:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-button.success:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.modal-button.danger {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button.danger:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .modal-button.danger:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.modal-button.warning {
+    color: #fff;
+    background-color: #f6a800;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button.warning:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .modal-button.warning:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.modal-button.orange {
+    color: #fff;
+    background-color: #ec7405;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button.orange:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .modal-button.orange:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.modal-button.info {
+    color: #fff;
+    background-color: #0285ff;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button.info:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .modal-button.info:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.modal-button.blue {
+    color: #fff;
+    background-color: #0066de;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button.blue:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .modal-button.blue:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.modal-button.purple {
+    color: #fff;
+    background-color: #615eeb;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button.purple:not(:disabled):hover::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .modal-button.purple:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+/*----- modal-button -----*/
+
+/*----- modal-button-o -----*/
+
+.modal-button-o.success {
+    color: #2f8966;
+    border-color: #2f8966;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button-o.success:not(:disabled):hover,
+    .modal-button-o.success:not(:disabled):active {
+        color: #fff;
+        background-color: #2f8966;
+    }
+    
+    .modal-button-o.success:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.modal-button-o.danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button-o.danger:not(:disabled):hover,
+    .modal-button-o.danger:not(:disabled):active {
+        color: #fff;
+        background-color: #dc3545;
+    }
+    
+    .modal-button-o.danger:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.modal-button-o.warning {
+    color: #f6a800;
+    border-color: #f6a800;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button-o.warning:not(:disabled):hover,
+    .modal-button-o.warning:not(:disabled):active {
+        color: #fff;
+        background-color: #f6a800;
+    }
+    
+    .modal-button-o.warning:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.modal-button-o.orange {
+    color: #ec7405;
+    border-color: #ec7405;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button-o.orange:not(:disabled):hover,
+    .modal-button-o.orange:not(:disabled):active {
+        color: #fff;
+        background-color: #ec7405;
+    }
+    
+    .modal-button-o.orange:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.modal-button-o.info {
+    color: #0285ff;
+    border-color: #0285ff;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button-o.info:not(:disabled):hover,
+    .modal-button-o.info:not(:disabled):active {
+        color: #fff;
+        background-color: #0285ff;
+    }
+    
+    .modal-button-o.info:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.modal-button-o.blue {
+    color: #0066de;
+    border-color: #0066de;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button-o.blue:not(:disabled):hover,
+    .modal-button-o.blue:not(:disabled):active {
+        color: #fff;
+        background-color: #0066de;
+    }
+    
+    .modal-button-o.blue:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.modal-button-o.purple {
+    color: #615eeb;
+    border-color: #615eeb;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1025px) {
+    .modal-button-o.purple:not(:disabled):hover,
+    .modal-button-o.purple:not(:disabled):active {
+        color: #fff;
+        background-color: #615eeb;
+    }
+    
+    .modal-button-o.purple:not(:disabled):active::after {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+/*----- modal-button-o -----*/
