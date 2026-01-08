@@ -62,12 +62,17 @@ var confirmModal = (function () {
                             ${contentTemplate}
                             ${separatorTemplate}
                             <div class="modal-footer">
-                                <button type="button" data-close="cancel" class="modal-button ${_setting.btnSize} ${_setting.cancelClass}">
-                                    <span>${_setting.cancelText}</span>
-                                </button>
-                                <button type="button" data-close="confirm" class="modal-button ${_setting.btnSize} ${_setting.confirmClass}">
-                                    <span>${_setting.confirmText}</span>
-                                </button>
+                                <div class="modal-footer-scrollable">
+                                    <div class="start"></div>
+                                    <div class="end">
+                                        <button type="button" data-close="cancel" class="modal-button ${_setting.btnSize} ${_setting.cancelClass}">
+                                            <span>${_setting.cancelText}</span>
+                                        </button>
+                                        <button type="button" data-close="confirm" class="modal-button ${_setting.btnSize} ${_setting.confirmClass}">
+                                            <span>${_setting.confirmText}</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

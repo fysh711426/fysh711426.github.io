@@ -166,12 +166,51 @@ body.dark {
 }
 
 .modal-footer {
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: 10px; */
     /* padding: 15px 20px; */
     padding: 15px;
-    gap: 10px;
+}
+
+.modal-footer-scrollable {
+    overflow-x: auto;
+    scrollbar-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 1px;
+}
+
+.modal-footer .start {
+    display: flex;
+    align-items: center;
+}
+
+.modal-footer .end {
+    display: flex;
+    align-items: center;
+}
+
+.modal-footer .start .modal-button,
+.modal-footer .start .modal-button-o {
+    margin-right: 10px;
+}
+
+.modal-footer .end .modal-button,
+.modal-footer .end .modal-button-o {
+    margin-left: 10px;
+}
+
+.modal-footer .start .modal-button.last,
+.modal-footer .start .modal-button-o.last {
+    margin-right: 0px;
+}
+
+.modal-footer .end .modal-button.first,
+.modal-footer .end .modal-button-o.first {
+    margin-left: 0px;
 }
 
 .modal-block .separator {

@@ -152,38 +152,38 @@ body.dark {
 .button.light {
     /* color: var(--linkColor); */
     color: var(--buttonLightColor);
-    background: var(--buttonLightBgColor);
+    background-color: var(--buttonLightBgColor);
 }
 
 @media screen and (min-width: 1025px) {
     .button.light:not(:disabled):hover {
-        background: var(--buttonLightHoverBgColor);
+        background-color: var(--buttonLightHoverBgColor);
     }
     
     .button.light:not(:disabled):active {
-        background: var(--buttonLightActiveBgColor);
+        background-color: var(--buttonLightActiveBgColor);
     }
 }
 
 .button.dark {
     color: var(--buttonDarkColor);
-    background: var(--buttonDarkBgColor);
+    background-color: var(--buttonDarkBgColor);
 }
 
 @media screen and (min-width: 1025px) {
     .button.dark:not(:disabled):hover {
-        background: var(--buttonDarkHoverBgColor);
+        background-color: var(--buttonDarkHoverBgColor);
     }
 
     .button.dark:not(:disabled):active {
-        background: var(--buttonDarkActiveBgColor);
+        background-color: var(--buttonDarkActiveBgColor);
     }
 }
 
 .button.light:disabled,
 .button.dark:disabled {
     color: var(--buttonDisabledColor);
-    background: var(--buttonDisabledBgColor);
+    background-color: var(--buttonDisabledBgColor);
 }
 
 .button {
@@ -204,17 +204,17 @@ body.dark {
     outline-width: 0;
     font-family: inherit;
     white-space: nowrap;
-    position: relative;
-    overflow: hidden;
+    /* position: relative;
+    overflow: hidden; */
 }
 
-.button::after {
+/* .button::after {
     content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
     background-color: rgba(0, 0, 0, 0);
-}
+} */
 
 .button.round {
     border-radius: 50rem;
@@ -237,16 +237,16 @@ body.dark {
 .button-o.light {
     color: var(--buttonOLightColor);
     border-color: var(--buttonOLightBorderColor);
-    background: transparent;
+    background-color: transparent;
 }
 
 @media screen and (min-width: 1025px) {
     .button-o.light:not(:disabled):hover {
-        background: var(--buttonOLightHoverBgColor);
+        background-color: var(--buttonOLightHoverBgColor);
     }
     
     .button-o.light:not(:disabled):active {
-        background: var(--buttonOLightActiveBgColor);
+        background-color: var(--buttonOLightActiveBgColor);
     }
 }
 
@@ -259,19 +259,19 @@ body.dark {
 @media screen and (min-width: 1025px) {
     .button-o.dark:not(:disabled):hover {
         color: var(--buttonODarkHoverColor);
-        background: var(--buttonODarkHoverBgColor);
+        background-color: var(--buttonODarkHoverBgColor);
     }
 
     .button-o.dark:not(:disabled):active {
         color: var(--buttonODarkHoverColor);
-        background: var(--buttonODarkActiveBgColor);
+        background-color: var(--buttonODarkActiveBgColor);
     }
 }
 
 /* .button-o.light:disabled,
 .button-o.dark:disabled {
     color: var(--buttonDisabledColor);
-    background: var(--buttonDisabledBgColor);
+    background-color: var(--buttonDisabledBgColor);
     border-color: var(--buttonDisabledBorderColor);
 } */
 
@@ -294,17 +294,17 @@ body.dark {
     outline-width: 0;
     font-family: inherit;
     white-space: nowrap;
-    position: relative;
-    overflow: hidden;
+    /* position: relative;
+    overflow: hidden; */
 }
 
-.button-o::after {
+/* .button-o::after {
     content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
     background-color: rgba(0, 0, 0, 0);
-}
+} */
 
 .button-o.round {
     border-radius: 50rem;
@@ -375,17 +375,17 @@ body.dark {
     /* border-radius: .35rem; */
     border-radius: 50rem;
     height: 45px;
-    position: relative;
-    overflow: hidden;
+    /* position: relative;
+    overflow: hidden; */
 }
 
-.modal-button::after {
+/* .modal-button::after {
     content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
     background-color: rgba(0, 0, 0, 0);
-}
+} */
 
 .modal-button:disabled {
     opacity: .5;
@@ -404,16 +404,16 @@ body.dark {
 .modal-button-o.light {
     color: var(--modalButtonOLightColor);
     border-color: var(--modalButtonOLightBorderColor);
-    background: transparent;
+    background-color: transparent;
 }
 
 @media screen and (min-width: 1025px) {
     .modal-button-o.light:not(:disabled):hover {
-        background: var(--modalButtonOLightHoverBgColor);
+        background-color: var(--modalButtonOLightHoverBgColor);
     }
 
     .modal-button-o.light:not(:disabled):active {
-        background: var(--modalButtonOLightActiveBgColor);
+        background-color: var(--modalButtonOLightActiveBgColor);
     }
 }
 
@@ -426,19 +426,19 @@ body.dark {
 @media screen and (min-width: 1025px) {
     .modal-button-o.dark:not(:disabled):hover {
         color: var(--modalButtonODarkHoverColor);
-        background: var(--modalButtonODarkHoverBgColor);
+        background-color: var(--modalButtonODarkHoverBgColor);
     }
 
     .modal-button-o.dark:not(:disabled):active {
         color: var(--modalButtonODarkHoverColor);
-        background: var(--modalButtonODarkActiveBgColor);
+        background-color: var(--modalButtonODarkActiveBgColor);
     }
 }
 
 /* .modal-button-o.light:disabled,
 .modal-button-o.dark:disabled {
     color: var(--modalButtonDisabledColor);
-    background: var(--modalButtonDisabledBgColor);
+    background-color: var(--modalButtonDisabledBgColor);
     border-color: var(--modalButtonDisabledBorderColor);
 } */
 
@@ -458,17 +458,17 @@ body.dark {
     /* border-radius: .35rem; */
     border-radius: 50rem;
     height: 45px;
-    position: relative;
-    overflow: hidden;
+    /* position: relative;
+    overflow: hidden; */
 }
 
-.modal-button-o::after {
+/* .modal-button-o::after {
     content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
     background-color: rgba(0, 0, 0, 0);
-}
+} */
 
 .modal-button-o:disabled {
     opacity: .5;

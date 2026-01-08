@@ -278,14 +278,19 @@ body.dark {
 
 /*----- board-toolbar -----*/
 
-.board-toolbar {
+/* .board-toolbar {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-}
+} */
 
 .board-toolbar-scrollable {
     overflow-x: auto;
     scrollbar-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 1px;
 }
 
 .board-toolbar .start {
@@ -306,6 +311,16 @@ body.dark {
 .board-toolbar .end .button,
 .board-toolbar .end .button-o {
     margin-left: 10px;
+}
+
+.board-toolbar .start .button.last,
+.board-toolbar .start .button-o.last {
+    margin-right: 0px;
+}
+
+.board-toolbar .end .button.first,
+.board-toolbar .end .button-o.first {
+    margin-left: 0px;
 }
 
 /*----- board-toolbar -----*/
