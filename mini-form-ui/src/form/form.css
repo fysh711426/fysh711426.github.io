@@ -16,23 +16,21 @@
     margin-bottom: 0px;
 }
 
-/* .form-field-title-wrap {
+.form-field-title-wrap {
     margin-bottom: 15px;
-} */
+}
+
+.form-field-title-only-wrap {
+    margin-bottom: 8px;
+}
 
 .form-field-title {
     font-weight: bold;
-    margin-bottom: 8px;
 }
 
 .form-field-description {
     font-size: 0.8rem;
-    margin-bottom: 15px;
-}
-
-.form-field-title.last,
-.form-field-description.last {
-    margin-bottom: 0px;
+    margin-top: 5px;
 }
 
 .form-field-error {

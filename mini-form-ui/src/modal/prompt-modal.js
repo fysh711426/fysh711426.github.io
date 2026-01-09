@@ -76,7 +76,7 @@ var promptModal = (function () {
                         <div class="modal-scrollable">
                             ${contentTemplate}
                             <div class="modal-form ${formFirst} ${formLast}">
-                                <div class="modal-form-field first">
+                                <div class="form-field-input-only-wrap">
                                     ${inputTemplate}
                                 </div>
                             </div>

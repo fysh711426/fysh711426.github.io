@@ -1630,15 +1630,23 @@ body.text-green .file-navbar {
 }
 
 /*----- search-input-error -----*/
+body.light {
+    --bookmarkItemHoverBgColor: #f5f5f5;
+}
+
+body.dark {
+    --bookmarkItemHoverBgColor: #383838;
+}
+
 /*----- bookmark-item -----*/
 
 @media screen and (min-width: 1025px) {
     .bookmark-group a:hover {
-        color: var(--linkHoverColor)
+        color: var(--linkHoverColor);
     }
 
     a.bookmark-group-title-text:hover {
-        color: var(--linkHoverColor)
+        color: var(--linkHoverColor);
     }
 }
 
@@ -1652,48 +1660,49 @@ body.text-green .file-navbar {
 }
 
 .bookmark-item.hover:hover {
-    background-color: var(--boardHoverColor)
+    /* background-color: var(--boardHoverColor); */
+    background-color: var(--bookmarkItemHoverBgColor);
 }
 
 .bookmark-item.active,
 .bookmark-item.active.hover:hover {
-    background-color: var(--fileItemActiveBgColor)
+    background-color: var(--fileItemActiveBgColor);
 }
 
 .bookmark-item.active {
-    color: var(--fileItemActiveColor)
+    color: var(--fileItemActiveColor);
 }
 
 .bookmark-item.active.hover:hover {
-    color: var(--fileItemActiveColor)
+    color: var(--fileItemActiveColor);
 }
 
 .bookmark-item .bookmark-item-icon {
-    color: var(--fileIconColor)
+    color: var(--fileIconColor);
 }
 
 .bookmark-item:hover .bookmark-item-icon {
-    color: var(--fileIconHoverColor)
+    color: var(--fileIconHoverColor);
 }
 
 .bookmark-item.active .bookmark-item-icon {
-    color: var(--fileItemActiveIconColor)
+    color: var(--fileItemActiveIconColor);
 }
 
 .bookmark-item.active.hover:hover .bookmark-item-icon {
-    color: var(--fileItemActiveIconColor)
+    color: var(--fileItemActiveIconColor);
 }
 
 .bookmark-item-description {
-    color: var(--fileDescriptionColor)
+    color: var(--fileDescriptionColor);
 }
 
 .bookmark-item.active .bookmark-item-description {
-    color: var(--fileItemActiveDescriptionColor)
+    color: var(--fileItemActiveDescriptionColor);
 }
 
 .bookmark-item.active.hover:hover .bookmark-item-description {
-    color: var(--fileItemActiveDescriptionColor)
+    color: var(--fileItemActiveDescriptionColor);
 }
 
 .bookmark-item-sub-title {
@@ -1701,27 +1710,27 @@ body.text-green .file-navbar {
 }
 
 .bookmark-item.active .bookmark-item-sub-title {
-    color: var(--fileItemActiveDescriptionColor)
+    color: var(--fileItemActiveDescriptionColor);
 }
 
 .bookmark-item.active.hover:hover .bookmark-item-sub-title {
-    color: var(--fileItemActiveDescriptionColor)
+    color: var(--fileItemActiveDescriptionColor);
 }
 
 .bookmark-item.active a {
-    color: var(--fileItemActiveColor)
+    color: var(--fileItemActiveColor);
 }
 
 .bookmark-item.active.hover:hover a {
-    color: var(--fileItemActiveColor)
+    color: var(--fileItemActiveColor);
 }
 
 .bookmark-item.active a:hover {
-    color: var(--fileItemActiveLinkHoverColor)
+    color: var(--fileItemActiveLinkHoverColor);
 }
 
 .bookmark-item.active.hover:hover a:hover {
-    color: var(--fileItemActiveLinkHoverColor)
+    color: var(--fileItemActiveLinkHoverColor);
 }
 
 /*----- bookmark-item -----*/
@@ -1893,7 +1902,7 @@ body.text-green .file-navbar {
     margin-left: auto;
 }
 
-.bookmark-item-nav-button {
+.bookmark-item-menu-button {
     margin-left: 15px;
 }
 
@@ -1901,9 +1910,19 @@ body.text-green .file-navbar {
 
 /*----- board-toolbar -----*/
 
-.board-toolbar {
+/* .board-toolbar {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+} */
+
+.board-toolbar-scrollable {
+    overflow-x: auto;
+    scrollbar-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 1px;
 }
 
 .board-toolbar .start {
@@ -1916,16 +1935,24 @@ body.text-green .file-navbar {
     align-items: center;
 }
 
-.board-toolbar .button {
-    font-size: .9rem;
-}
-
-.board-toolbar .start .button {
+.board-toolbar .start .button,
+.board-toolbar .start .button-o {
     margin-right: 10px;
 }
 
-.board-toolbar .end .button {
+.board-toolbar .end .button,
+.board-toolbar .end .button-o {
     margin-left: 10px;
+}
+
+.board-toolbar .start .button.last,
+.board-toolbar .start .button-o.last {
+    margin-right: 0px;
+}
+
+.board-toolbar .end .button.first,
+.board-toolbar .end .button-o.first {
+    margin-left: 0px;
 }
 
 /*----- board-toolbar -----*/

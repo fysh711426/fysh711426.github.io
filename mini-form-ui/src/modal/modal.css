@@ -221,25 +221,21 @@ body.dark {
 }
 
 .modal-form {
+    font-family: "Segoe UI", "Microsoft JhengHei";
     padding: 0px 20px;
     margin-bottom: 15px;
-    margin-top: 5px;
 }
 
 .modal-form.first {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .modal-form.last {
     margin-bottom: 0px;
 }
 
-.modal-form-field {
-    margin: 20px 0px 5px 0px;
-}
-
-.modal-form-field.first {
-    margin-top: 0px;
+.modal-form.first .form-field-input-only-wrap {
+    margin-top: 20px;
 }
 
 .modal-block {

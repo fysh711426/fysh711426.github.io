@@ -136,6 +136,42 @@ var onResize = function (callback, delay = 200) {
         }, delay);
     });
 }
+var scrollbar = (function () {
+    return function(scrollable) {
+        scrollable.classList.add('scrollbar');
+        var isAnimating = false;
+        var targetScrollLeft = 0;
+        var prev = 0;
+        function smoothScroll() {
+            isAnimating = true;
+            var current = scrollable.scrollLeft;
+            var diff = targetScrollLeft - current;
+            // 差距夠小就停止
+            if (Math.abs(diff) <= 1 || current === prev) {
+                scrollable.scrollLeft = targetScrollLeft;
+                isAnimating = false;
+                return;
+            }
+            // easing 數值越小越滑
+            prev = current;
+            scrollable.scrollLeft = current + diff * 0.15;
+            requestAnimationFrame(smoothScroll);
+        }
+        scrollable.addEventListener('wheel', function (e) {
+            e.preventDefault();
+            // scrollable.scrollLeft += e.deltaY;
+            // var maxDelta = 80;
+            // var delta = Math.max(-maxDelta, Math.min(maxDelta, e.deltaY));
+            // targetScrollLeft += delta * 0.9;
+            targetScrollLeft += e.deltaY;
+            targetScrollLeft = Math.max(0, Math.min(targetScrollLeft,
+                scrollable.scrollWidth - scrollable.clientWidth));
+            if (!isAnimating) {
+                smoothScroll();
+            }
+        }, { passive: false });
+    };
+})();
 var tooltip = (function () {
     function createElement(html) {
         var div = document.createElement('div');
@@ -208,7 +244,7 @@ var tooltip = (function () {
                         var position = getPosition(setting.placement, item, element);
                         var scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
                         var scrollLeft = window.scrollX || document.documentElement.scrollLeft || document.body.scrollLeft;
-                        element.style.transform = 'translate3d(' + (position[0] + scrollLeft) + 'px, ' + (position[1] + scrollTop) + 'px, 0px)';
+                        element.style.transform = 'translate(' + (position[0] + scrollLeft) + 'px, ' + (position[1] + scrollTop) + 'px)';
                     }
                     if (global != null && global != element)
                         remove(global);
@@ -544,6 +580,11 @@ var popover = (function () {
         setting.stopPropagation = _settings.stopPropagation ?? false;
         var templateHTML = document.querySelector(setting.template).innerHTML;
 
+        var ref = {
+            close,
+            onOpen: null
+        };
+
         var element = null;
         function open() {
             if (!element) {
@@ -561,12 +602,15 @@ var popover = (function () {
                     element: element,
                     close: close
                 };
+                if (ref.onOpen) {
+                    ref.onOpen(element);
+                }
                 document.body.appendChild(element);
                 var position = getPosition(setting.placement, button, element);
                 
                 var scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
                 var scrollLeft = window.scrollX || document.documentElement.scrollLeft || document.body.scrollLeft;
-                element.style.transform = 'translate3d(' + (position[0] + scrollLeft) + 'px, ' + (position[1] + scrollTop) + 'px, 0px)';
+                element.style.transform = 'translate(' + (position[0] + scrollLeft) + 'px, ' + (position[1] + scrollTop) + 'px)';
             }
         }
         function close() {
@@ -587,9 +631,102 @@ var popover = (function () {
             }
             close();
         });
-        return {
-            close: close
+        return ref;
+    };
+})();
+var dropdownMenu = (function () {
+    function createElement(html) {
+        var div = document.createElement('div');
+        div.innerHTML = html;
+        if (div.children.length > 0) {
+            return div.children[0];
+        }
+    }
+    return function(button, _settings) {
+        var setting = {};
+        _settings = _settings ?? {};
+        setting.template = _settings.template ?? '.dropdown-menu-template';
+        setting.placement = _settings.placement;
+        setting.preventDefault = _settings.preventDefault;
+        setting.stopPropagation = _settings.stopPropagation;
+        setting.enableSelect = _settings.enableSelect ?? true;
+        var options = _settings.options ?? [];
+
+        var ref = {
+            getValue,
+            setValue,
+            onChange: null
         };
+
+        var selected = null;
+        function getValue() {
+            if (!selected)
+                return null;
+            return selected.value;
+        }
+        function setValue(val) {
+            selected = null;
+            if (setting.enableSelect) {
+                for(var item of options) {
+                    if (item.value === val) {
+                        selected = item;
+                        return;
+                    }
+                }
+            }
+        }
+        var _popover = popover(button, setting);
+        _popover.onOpen = function(ele) {
+            var menu = ele.querySelector('.dropdown-menu');
+            for (var item of options) {
+                var text = item.text ?? '';
+                var icon = item.icon ?? '';
+                var className = item.className ?? '';
+                var separator = item.separator ?? false;
+                let value = item.value;
+                
+                var innerHtml = '';
+                if (icon) {
+                    innerHtml += `
+                    <span class="dropdown-menu-item-icon">
+                        <i class="${icon}"></i>
+                    </span>`;
+                }
+                if (true) {
+                    innerHtml += `
+                    <span class="dropdown-menu-item-text">${text}</span>
+                    <span class="dropdown-menu-item-trailing">
+                        <i class="fa-solid fa-check fa-fw"></i>
+                    </span>`;
+                }
+                var outerHtml = 
+                `<div class="dropdown-menu-item ${className}">
+                    ${innerHtml}
+                </div>`;
+                var itemElement = createElement(outerHtml);
+                if (value === getValue()) {
+                    itemElement.classList.add('selected');
+                }
+                if (itemElement) {
+                    itemElement.addEventListener('click', function() {
+                        if (setting.enableSelect) {
+                            setValue(value);
+                            itemElement.classList.add('selected');
+                        }
+                        _popover.close();
+                        if (ref.onChange) {
+                            ref.onChange(itemElement, value);
+                        }
+                    });
+                }
+                if (separator) {
+                    menu.appendChild(
+                        createElement('<div class="separator"></div>'));
+                }
+                menu.appendChild(itemElement);
+            }
+        }
+        return ref;
     };
 })();
 var modal = (function () {
@@ -605,15 +742,17 @@ var modal = (function () {
             document.body.removeChild(element);
         } catch { }
     }
-    return function(template, _settings) {
-        var setting = {};
-        _settings = _settings ?? {};
+    return function(template, settings) {
+        var _setting = {};
+        settings = settings ?? {};
+        _setting.singleton = settings.singleton ?? true;
 
         var ref = {
-            open: open,
-            close: close,
+            open,
+            close,
             onOpened: null,
-            onClosed: null
+            onClosed: null,
+            onClick: null
         };
 
         var element = null;
@@ -622,33 +761,427 @@ var modal = (function () {
                 var html = template.innerHTML;
                 element = createElement(html);
                 document.body.appendChild(element);
-                template.innerHTML = '';
+                if (_setting.singleton) {
+                    template.innerHTML = '';
+                }
                 bodyScroll.lock();
-                bindDismiss();
+                bindClose();
+                bindClick();
                 if (ref.onOpened) {
                     ref.onOpened(element);
                 }
             }
         }
-        function close() {
+        function close(action = '') {
             if (element) {
                 var html = element.outerHTML;
                 remove(element);
                 element = null;
-                template.innerHTML = html;
+                if (_setting.singleton) {
+                    template.innerHTML = html;
+                }
                 bodyScroll.unlock();
                 if (ref.onClosed) {
-                    ref.onClosed(element);
+                    ref.onClosed(element, action);
                 }
             }
         }
-        function bindDismiss() {
-            var dismiss = element.querySelectorAll('[data-dismiss]');
-            for(var item of dismiss) {
+        function click(action = '') {
+            if (element) {
+                if (ref.onClick) {
+                    ref.onClick(element, action);
+                }
+            }
+        }
+        function bindClose() {
+            var items = element.querySelectorAll('[data-close]');
+            for(var item of items) {
+                let action = item.getAttribute('data-close');
                 item.addEventListener('click', function (e) {
-                    close();
+                    close(action);
                 });
             }
+        }
+        function bindClick() {
+            var items = element.querySelectorAll('[data-click]');
+            for(var item of items) {
+                let action = item.getAttribute('data-click');
+                item.addEventListener('click', function (e) {
+                    click(action);
+                });
+            }
+        }
+        return ref;
+    };
+})();
+var alertModal = (function () {
+    function createElement(html) {
+        var div = document.createElement('div');
+        div.innerHTML = html;
+        if (div.children.length > 0) {
+            return div.children[0];
+        }
+    }
+    return function(settings) {
+        var _setting = {};
+        settings = settings ?? {};
+        _setting.singleton = false;
+        _setting.title = settings.title ?? '';
+        _setting.content = settings.content ?? '';
+        _setting.confirmText = settings.confirmText ?? 'Confirm';
+        _setting.confirmClass = settings.confirmClass ?? 'dark';
+        _setting.showSeparator  = settings.showSeparator ?? false;
+        _setting.showCloseButton  = settings.showCloseButton ?? false;
+        _setting.className = settings.className ?? '';
+        _setting.size = settings.size ?? 'modal-sm';
+        _setting.btnSize = settings.btnSize ?? 'btn-sm';
+
+        var titleTemplate = _setting.title ? `
+        <div class="modal-header-title">
+            <span>${_setting.title}</span>
+        </div>
+        ` : '';
+        
+        var bodyFirst = !_setting.title ? 'first' : '';
+        var contentTemplate = _setting.content ? `
+        <div class="modal-body ${bodyFirst}">
+            <span>${_setting.content}</span>
+        </div>` : '';
+
+        var separatorTemplate = _setting.showSeparator ? `
+        <div class="separator"></div>` : '';
+
+        var closeButtonTemplate = _setting.showCloseButton ? `
+        <button type="button" data-close="cancel" class="modal-icon-button square">
+            <i class="fa-solid fa-xmark fa-fw"></i>
+        </button>` : '';
+
+        var headerTemplate = _setting.title ? `
+        <div class="modal-header">
+            <div class="start">
+                ${titleTemplate}
+            </div>
+            <div class="end">
+                ${closeButtonTemplate}
+            </div>
+        </div>` : '';
+
+        var template = createElement(`
+        <div class="modal-template">
+            <div class="modal-backdrop">
+                <div class="modal ${_setting.size} ${_setting.className}">
+                    <div class="modal-block">
+                        ${headerTemplate}
+                        <div class="modal-scrollable">
+                            ${contentTemplate}
+                            ${separatorTemplate}
+                            <div class="modal-footer">
+                                <div class="modal-footer-scrollable">
+                                    <div class="start"></div>
+                                    <div class="end">
+                                        <button type="button" data-close="confirm" class="modal-button ${_setting.btnSize} ${_setting.confirmClass}">
+                                            <span>${_setting.confirmText}</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`);
+
+        var ref = {
+            open,
+            close,
+            onOpened: null,
+            onClosed: null
+        };
+        
+        var _modal = modal(template, _setting);
+        _modal.onOpened = function (ele) {
+            if (ref.onOpened) {
+                ref.onOpened(ele);
+            }
+        }
+        _modal.onClosed = function (ele, action) {
+            if (ref.onClosed) {
+                ref.onClosed(ele, action);
+            }
+        }
+        function open() {
+            _modal.open();
+        }
+        function close(action = '') {
+            _modal.close(action);
+        }
+        return ref;
+    };
+})();
+var confirmModal = (function () {
+    function createElement(html) {
+        var div = document.createElement('div');
+        div.innerHTML = html;
+        if (div.children.length > 0) {
+            return div.children[0];
+        }
+    }
+    return function(settings) {
+        var _setting = {};
+        settings = settings ?? {};
+        _setting.singleton = false;
+        _setting.title = settings.title ?? '';
+        _setting.content = settings.content ?? '';
+        _setting.cancelText = settings.cancelText ?? 'Cancel';
+        _setting.confirmText = settings.confirmText ?? 'Confirm';
+        _setting.cancelClass = settings.cancelText ?? 'light';
+        _setting.confirmClass = settings.confirmClass ?? 'dark';
+        _setting.showSeparator  = settings.showSeparator ?? false;
+        _setting.showCloseButton  = settings.showCloseButton ?? false;
+        _setting.className = settings.className ?? '';
+        _setting.size = settings.size ?? '';
+        _setting.btnSize = settings.btnSize ?? '';
+
+        var titleTemplate = _setting.title ? `
+        <div class="modal-header-title">
+            <span>${_setting.title}</span>
+        </div>
+        ` : '';
+
+        var bodyFirst = !_setting.title ? 'first' : '';
+        var contentTemplate = _setting.content ? `
+        <div class="modal-body ${bodyFirst}">
+            <span>${_setting.content}</span>
+        </div>` : '';
+
+        var separatorTemplate = _setting.showSeparator ? `
+        <div class="separator"></div>` : '';
+
+        var closeButtonTemplate = _setting.showCloseButton ? `
+        <button type="button" data-close="cancel" class="modal-icon-button square">
+            <i class="fa-solid fa-xmark fa-fw"></i>
+        </button>` : '';
+
+        var headerTemplate = _setting.title ? `
+        <div class="modal-header">
+            <div class="start">
+                ${titleTemplate}
+            </div>
+            <div class="end">
+                ${closeButtonTemplate}
+            </div>
+        </div>` : '';
+
+        var template = createElement(`
+        <div class="modal-template">
+            <div class="modal-backdrop">
+                <div class="modal ${_setting.size} ${_setting.className}">
+                    <div class="modal-block">
+                        ${headerTemplate}
+                        <div class="modal-scrollable">
+                            ${contentTemplate}
+                            ${separatorTemplate}
+                            <div class="modal-footer">
+                                <div class="modal-footer-scrollable">
+                                    <div class="start"></div>
+                                    <div class="end">
+                                        <button type="button" data-close="cancel" class="modal-button ${_setting.btnSize} ${_setting.cancelClass}">
+                                            <span>${_setting.cancelText}</span>
+                                        </button>
+                                        <button type="button" data-close="confirm" class="modal-button ${_setting.btnSize} ${_setting.confirmClass}">
+                                            <span>${_setting.confirmText}</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`);
+
+        var ref = {
+            open,
+            close,
+            onOpened: null,
+            onClosed: null
+        };
+        
+        var _modal = modal(template, _setting);
+        _modal.onOpened = function (ele) {
+            if (ref.onOpened) {
+                ref.onOpened(ele);
+            }
+        }
+        _modal.onClosed = function (ele, action) {
+            if (ref.onClosed) {
+                ref.onClosed(ele, action);
+            }
+        }
+        function open() {
+            _modal.open();
+        }
+        function close(action = '') {
+            _modal.close(action);
+        }
+        return ref;
+    };
+})();
+var promptModal = (function () {
+    function createElement(html) {
+        var div = document.createElement('div');
+        div.innerHTML = html;
+        if (div.children.length > 0) {
+            return div.children[0];
+        }
+    }
+    return function(settings) {
+        var _setting = {};
+        settings = settings ?? {};
+        _setting.singleton = false;
+        _setting.title = settings.title ?? '';
+        _setting.content = settings.content ?? '';
+        _setting.cancelText = settings.cancelText ?? 'Cancel';
+        _setting.confirmText = settings.confirmText ?? 'Confirm';
+        _setting.cancelClass = settings.cancelText ?? 'light';
+        _setting.confirmClass = settings.confirmClass ?? 'dark';
+        _setting.showSeparator  = settings.showSeparator ?? false;
+        _setting.showCloseButton  = settings.showCloseButton ?? false;
+        _setting.className = settings.className ?? '';
+        _setting.size = settings.size ?? '';
+        _setting.btnSize = settings.btnSize ?? '';
+        _setting.input = {};
+        var input = settings.input ?? {};
+        _setting.input.textarea = input.textarea ?? false;
+        _setting.input.value = input.value ?? '';
+        _setting.input.placeholder = input.placeholder ?? '';
+        _setting.input.required = input.required ?? false;
+
+        var titleTemplate = _setting.title ? `
+        <div class="modal-header-title">
+            <span>${_setting.title}</span>
+        </div>
+        ` : '';
+
+        var bodyFirst = !_setting.title ? 'first' : '';
+        var contentTemplate = _setting.content ? `
+        <div class="modal-body ${bodyFirst}">
+            <span>${_setting.content}</span>
+        </div>` : '';
+
+        var separatorTemplate = _setting.showSeparator ? `
+        <div class="separator"></div>` : '';
+
+        var closeButtonTemplate = _setting.showCloseButton ? `
+        <button type="button" data-close="cancel" class="modal-icon-button square">
+            <i class="fa-solid fa-xmark fa-fw"></i>
+        </button>` : '';
+
+        var headerTemplate = _setting.title ? `
+        <div class="modal-header">
+            <div class="start">
+                ${titleTemplate}
+            </div>
+            <div class="end">
+                ${closeButtonTemplate}
+            </div>
+        </div>` : '';
+
+        var formLast = !settings.showSeparator ? 'last' : '';
+        var formFirst = !_setting.title && !_setting.content ? 'first' : '';
+        var inputTemplate = `
+        <input type="text" value="${_setting.input.value}" placeholder="${_setting.input.placeholder}" name="input" />`;
+        if (_setting.input.textarea) {
+            inputTemplate = `
+            <textarea placeholder="${_setting.input.placeholder}" name="input">${_setting.input.value}</textarea>`;
+        }
+
+        var template = createElement(`
+        <div class="modal-template">
+            <div class="modal-backdrop">
+                <div class="modal ${_setting.size} ${_setting.className}">
+                    <div class="modal-block">
+                        ${headerTemplate}
+                        <div class="modal-scrollable">
+                            ${contentTemplate}
+                            <div class="modal-form ${formFirst} ${formLast}">
+                                <div class="modal-form-field first">
+                                    ${inputTemplate}
+                                </div>
+                            </div>
+                            ${separatorTemplate}
+                            <div class="modal-footer">
+                                <div class="modal-footer-scrollable">
+                                    <div class="start"></div>
+                                    <div class="end">
+                                        <button type="button" data-close="cancel" class="modal-button ${_setting.btnSize} ${_setting.cancelClass}">
+                                            <span>${_setting.cancelText}</span>
+                                        </button>
+                                        <button type="button" data-close="confirm" class="modal-button ${_setting.btnSize} ${_setting.confirmClass}">
+                                            <span>${_setting.confirmText}</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`);
+
+        var ref = {
+            open,
+            close,
+            onOpened: null,
+            onClosed: null
+        };
+        
+        var _value = '';
+        var _modal = modal(template, _setting);
+        _modal.onOpened = function (ele) {
+            var input = ele.querySelector('[name=input]');
+            var button = ele.querySelector('[data-close=confirm]');
+            function onInput() {
+                if (_setting.input.required) {
+                    button.removeAttribute('disabled');
+                    if (!input.value) {
+                        button.setAttribute('disabled', '');
+                    }
+                }
+                _value = input.value;
+            }
+            onInput();
+            input.addEventListener('input', onInput);
+            if (!_setting.input.textarea) {
+                input.addEventListener('keydown', (e) => {
+                    if (e.isComposing)
+                        return;
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        button.click();
+                    }
+                });
+            }
+            input.focus();
+            var length = input.value.length;
+            input.setSelectionRange(length, length);
+            if (ref.onOpened) {
+                ref.onOpened(ele);
+            }
+        }
+        _modal.onClosed = function (ele, action) {
+            if (ref.onClosed) {
+                var val = _value;
+                if (action !== 'confirm') {
+                    val = '';
+                }
+                ref.onClosed(ele, action, val);
+            }
+        }
+        function open() {
+            _modal.open();
+        }
+        function close(action = '') {
+            _modal.close(action);
         }
         return ref;
     };
@@ -771,42 +1304,6 @@ var collapse = (function () {
         };
     };
 })();
-var scrollbar = (function () {
-    return function(scrollable) {
-        scrollable.classList.add('scrollbar');
-        var isAnimating = false;
-        var targetScrollLeft = 0;
-        var prev = 0;
-        function smoothScroll() {
-            isAnimating = true;
-            var current = scrollable.scrollLeft;
-            var diff = targetScrollLeft - current;
-            // 差距夠小就停止
-            if (Math.abs(diff) <= 1 || current === prev) {
-                scrollable.scrollLeft = targetScrollLeft;
-                isAnimating = false;
-                return;
-            }
-            // easing 數值越小越滑
-            prev = current;
-            scrollable.scrollLeft = current + diff * 0.15;
-            requestAnimationFrame(smoothScroll);
-        }
-        scrollable.addEventListener('wheel', function (e) {
-            e.preventDefault();
-            // scrollable.scrollLeft += e.deltaY;
-            // var maxDelta = 80;
-            // var delta = Math.max(-maxDelta, Math.min(maxDelta, e.deltaY));
-            // targetScrollLeft += delta * 0.9;
-            targetScrollLeft += e.deltaY;
-            targetScrollLeft = Math.max(0, Math.min(targetScrollLeft,
-                scrollable.scrollWidth - scrollable.clientWidth));
-            if (!isAnimating) {
-                smoothScroll();
-            }
-        }, { passive: false });
-    };
-})();
 var searchBar = (function () {
     return function(selector) {
         var block = document.querySelector(selector);
@@ -894,7 +1391,9 @@ var searchBar = (function () {
             search();
         });
         input.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
+            if (e.isComposing)
+                return;
+            if (e.key === 'Enter' && !e.shiftKey) {
                 search();
             }
         });
