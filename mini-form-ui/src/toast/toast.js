@@ -11,6 +11,7 @@ var toast = (function () {
             document.body.removeChild(element);
         } catch { }
     }
+    var _ = null;
     var global = null;
     return {
         show: function(text, _settings) {
@@ -27,20 +28,18 @@ var toast = (function () {
                 remove(global);
             }
             var element = createElement(html);
-
             document.body.appendChild(element);
             global = element;
-            (function(element) {
-                setTimeout(function() {
-                    element.classList.add('show');
-                    setTimeout(function() {
-                        if (element === global) {
-                            remove(global);
-                            element = null;
-                        }
-                    }, setting.delay);
-                }, 1);
-            })(element);
+
+            // 觸發瀏覽器重繪
+            _ = element.offsetHeight;
+            element.classList.add('show');
+            setTimeout(function() {
+                if (element === global) {
+                    remove(global);
+                    global = null;
+                }
+            }, setting.delay);
         }
     };
 })();

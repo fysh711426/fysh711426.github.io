@@ -95,6 +95,26 @@ a {
 
 /*----- layout -----*/
 
+/*----- font-color -----*/
+
+error {
+    color: #ff0000;
+}
+
+success {
+    color: #009149;
+}
+
+warning {
+    color: #f6a800;
+}
+
+info {
+    color: #0094ff;
+}
+
+/*----- font-color -----*/
+
 /*----- header -----*/
 
 .header {

@@ -23,13 +23,14 @@ var progress = (function () {
     function start() {
         if (!started) {
             started = true;
-            inc();
-            setTimeout(function () {
+            function loop() {
                 if (started) {
                     inc();
-                    setTimeout(arguments.callee, settings.speed);
+                    setTimeout(loop, settings.speed);
                 }
-            }, settings.speed);
+            }
+            inc();
+            setTimeout(loop, settings.speed);
         }
     }
     function done() {
@@ -58,7 +59,8 @@ var progress = (function () {
             started = false;
         }
         queue.push(function(next) {
-            setTimeout(function() {
+            requestAnimationFrame(function() {
+            // setTimeout(function() {
                 num = minmax(num, settings.minimum, 1);
                 ele.style.opacity = 1;
                 ele.style.width = num * 100 + '%';
@@ -75,7 +77,8 @@ var progress = (function () {
                     return;
                 }
                 next();
-            }, 1);
+            // }, 1);
+            });
         });
     }
     var queue = (function() {
