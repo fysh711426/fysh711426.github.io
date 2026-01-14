@@ -106,8 +106,7 @@ var popover = (function () {
             if (!element) {
                 var html = templateHTML;
                 var attrs = button.attributes;
-                for (var i = 0; i < attrs.length; i++) {
-                    var attr = attrs[i];
+                for(var attr of attrs) {
                     if (attr.name.startsWith('data-')) {
                         html = html.replace('__' + attr.name + '__', attr.value);
                     }

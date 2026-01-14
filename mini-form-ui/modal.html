@@ -39,6 +39,7 @@
     <script src="src/modal/alert-modal.js"></script>
     <script src="src/modal/confirm-modal.js"></script>
     <script src="src/modal/prompt-modal.js"></script>
+    <script src="src/modal/loading-modal.js"></script>
     <script src="src/layout/layout.js"></script>
     <script src="src/file/file.js"></script>
 </head>
@@ -108,6 +109,9 @@
                                 </button>
                                 <button class="button light" type="button" onclick="onFormModalButtonClick()">
                                     <span>Form Modal</span>
+                                </button>
+                                <button class="button light" type="button" onclick="onLoadingModalButtonClick()">
+                                    <span>Loading Modal</span>
                                 </button>
                                 <button class="button light last" type="button" onclick="onToastButtonClick()">
                                     <span>Toast</span>
@@ -383,6 +387,16 @@
         function onFormModalButtonClick() {
             var _modal = modal(document.querySelector('.modal-template.form'));
             _modal.open();
+        }
+        function onLoadingModalButtonClick() {
+            var _loading = loadingModal({
+                content: 'Loading',
+                showSpinner: true
+            });
+            _loading.open();
+            setTimeout(() => {
+                _loading.close();
+            }, 5000);
         }
         function onToastButtonClick() {
             toast.show('Show Toast');

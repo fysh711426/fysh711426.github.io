@@ -15,6 +15,14 @@ var modal = (function () {
         var _setting = {};
         settings = settings ?? {};
         _setting.singleton = settings.singleton ?? true;
+        _setting.attrs = [];
+        var data = settings.data ?? {};
+        for (var [key, value] of Object.entries(data)) {
+            _setting.attrs.push({
+                name: key,
+                value: value
+            });
+        }
 
         var ref = {
             open,
@@ -28,6 +36,9 @@ var modal = (function () {
         function open() {
             if (!element) {
                 var html = template.innerHTML;
+                for(var attr of _setting.attrs) {
+                    html = html.replace('__data-' + attr.name + '__', attr.value);
+                }
                 element = createElement(html);
                 document.body.appendChild(element);
                 if (_setting.singleton) {

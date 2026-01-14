@@ -238,6 +238,16 @@ body.dark {
     margin-top: 20px;
 }
 
+.modal-loading .modal-body {
+    padding: 10px 15px;
+    margin: 0px;
+    text-align: center;
+}
+
+.modal-loading-spinner {
+    margin-left: 5px;
+}
+
 .modal-block {
     max-width: 640px;
 }
