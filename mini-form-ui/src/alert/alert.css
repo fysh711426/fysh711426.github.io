@@ -24,7 +24,8 @@ body.dark {
 
 .alert-icon {
     display: inline-flex;
-    margin-right: 12px;
+    /* margin-right: 12px; */
+    margin-right: 10px;
 }
 
 .alert-text {

@@ -63,6 +63,13 @@ body.light {
     --modalButtonODarkActiveBgColor: rgba(48,48,48,.75);
     /*----- modal-button-o -----*/
 
+    /*----- icon-button -----*/
+    --iconButtonColor: #262626;
+    --iconButtonBgColor: #0000;
+    --iconButtonHoverBgColor: #f5f5f5;
+    --iconButtonActiveBgColor: #f0f0f0;
+    /*----- icon-button -----*/
+
     /*----- modal-icon-button -----*/
     --modalIconButtonColor: #262626;
     --modalIconButtonBgColor: #0000;
@@ -134,6 +141,13 @@ body.dark {
     --modalButtonODarkHoverBgColor: #ececec;
     --modalButtonODarkActiveBgColor: rgba(255, 255, 255, .75);
     /*----- modal-button-o -----*/
+
+    /*----- icon-button -----*/
+    --iconButtonColor: #d2d3d5;
+    --iconButtonBgColor: #0000;
+    --iconButtonHoverBgColor: #3d3d3d;
+    --iconButtonActiveBgColor: #434343;
+    /*----- icon-button -----*/
 
     /*----- modal-icon-button -----*/
     --modalIconButtonColor: #d2d3d5;
@@ -481,6 +495,49 @@ body.dark {
 }
 
 /*----- modal-button-o -----*/
+
+/*----- icon-button -----*/
+
+.icon-button {
+    color: var(--iconButtonColor);
+    background-color: var(--iconButtonBgColor);
+}
+
+@media screen and (min-width: 1025px) {
+    .icon-button:not(:disabled):hover {
+        color: var(--iconButtonColor);
+        background-color: var(--iconButtonHoverBgColor);
+    }
+    
+    .icon-button:not(:disabled):active {
+        color: var(--iconButtonColor);
+        background-color: var(--iconButtonActiveBgColor);
+    }
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+    width: 36px;
+    height: 36px;
+    border: 0 solid;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.icon-button.round {
+    border-radius: 50rem;
+}
+
+.icon-button.square {
+    border-radius: .5rem;
+}
+
+/*----- icon-button -----*/
 
 /*----- modal-icon-button -----*/
 
@@ -1668,8 +1725,10 @@ body.dark {
     /* --dropdownMenuShadow: 0px 8px 16px 0px #00000052,inset 0px 0px 1px 0px #fff3,0px 0px 1px 0px #0000009e; */
     --dropdownMenuShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
     --dropdownMenuBorderColor: #454545;
-    --dropdownMenuHoverBgColor: #4a4a4a;
-    --dropdownMenuActiveBgColor: #3f3f3f;
+    /* --dropdownMenuHoverBgColor: #4a4a4a;*/
+    --dropdownMenuHoverBgColor: #555555;
+    /* --dropdownMenuActiveBgColor: #3f3f3f; */
+    --dropdownMenuActiveBgColor: #4a4a4a;
     --dropdownMenuDangerColor: #ff8583;
     --dropdownMenuDangerHoverBgColor: #e02e2a23;
     --dropdownMenuDangerActiveBgColor: #e02e2a2f;
@@ -2045,25 +2104,31 @@ body.dark {
 }
 
 .modal-form {
+    font-family: "Segoe UI", "Microsoft JhengHei";
     padding: 0px 20px;
     margin-bottom: 15px;
-    margin-top: 5px;
 }
 
 .modal-form.first {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .modal-form.last {
     margin-bottom: 0px;
 }
 
-.modal-form-field {
-    margin: 20px 0px 5px 0px;
+.modal-form.first .form-field-input-only-wrap {
+    margin-top: 20px;
 }
 
-.modal-form-field.first {
-    margin-top: 0px;
+.modal-loading .modal-body {
+    padding: 10px 15px;
+    margin: 0px;
+    text-align: center;
+}
+
+.modal-loading-spinner {
+    margin-left: 5px;
 }
 
 .modal-block {
@@ -2396,6 +2461,26 @@ a {
 }
 
 /*----- layout -----*/
+
+/*----- font-color -----*/
+
+error {
+    color: #ff0000;
+}
+
+success {
+    color: #009149;
+}
+
+warning {
+    color: #f6a800;
+}
+
+info {
+    color: #0094ff;
+}
+
+/*----- font-color -----*/
 
 /*----- header -----*/
 
@@ -3557,23 +3642,21 @@ a.nav-link-button:active {
     margin-bottom: 0px;
 }
 
-/* .form-field-title-wrap {
+.form-field-title-wrap {
     margin-bottom: 15px;
-} */
+}
+
+.form-field-title-only-wrap {
+    margin-bottom: 8px;
+}
 
 .form-field-title {
     font-weight: bold;
-    margin-bottom: 8px;
 }
 
 .form-field-description {
     font-size: 0.8rem;
-    margin-bottom: 15px;
-}
-
-.form-field-title.last,
-.form-field-description.last {
-    margin-bottom: 0px;
+    margin-top: 5px;
 }
 
 .form-field-error {

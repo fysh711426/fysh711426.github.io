@@ -165,6 +165,10 @@ body.dark {
     margin-top: 15px;
 }
 
+.modal-body.last {
+    margin-bottom: 0px;
+}
+
 .modal-footer {
     /* display: flex;
     align-items: center;
@@ -218,6 +222,10 @@ body.dark {
     margin: 5px 20px;
     /* transform: scaleY(1.2); */
     transform: scaleY(1.5);
+}
+
+.modal-block .alert {
+    margin-top: 15px;
 }
 
 .modal-form {

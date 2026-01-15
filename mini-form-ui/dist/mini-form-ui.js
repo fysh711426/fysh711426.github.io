@@ -300,13 +300,14 @@ var progress = (function () {
     function start() {
         if (!started) {
             started = true;
-            inc();
-            setTimeout(function () {
+            function loop() {
                 if (started) {
                     inc();
-                    setTimeout(arguments.callee, settings.speed);
+                    setTimeout(loop, settings.speed);
                 }
-            }, settings.speed);
+            }
+            inc();
+            setTimeout(loop, settings.speed);
         }
     }
     function done() {
@@ -335,7 +336,8 @@ var progress = (function () {
             started = false;
         }
         queue.push(function(next) {
-            setTimeout(function() {
+            requestAnimationFrame(function() {
+            // setTimeout(function() {
                 num = minmax(num, settings.minimum, 1);
                 ele.style.opacity = 1;
                 ele.style.width = num * 100 + '%';
@@ -352,7 +354,8 @@ var progress = (function () {
                     return;
                 }
                 next();
-            }, 1);
+            // }, 1);
+            });
         });
     }
     var queue = (function() {
@@ -449,6 +452,7 @@ var toast = (function () {
             document.body.removeChild(element);
         } catch { }
     }
+    var _ = null;
     var global = null;
     return {
         show: function(text, _settings) {
@@ -465,20 +469,18 @@ var toast = (function () {
                 remove(global);
             }
             var element = createElement(html);
-
             document.body.appendChild(element);
             global = element;
-            (function(element) {
-                setTimeout(function() {
-                    element.classList.add('show');
-                    setTimeout(function() {
-                        if (element === global) {
-                            remove(global);
-                            element = null;
-                        }
-                    }, setting.delay);
-                }, 1);
-            })(element);
+
+            // 觸發瀏覽器重繪
+            _ = element.offsetHeight;
+            element.classList.add('show');
+            setTimeout(function() {
+                if (element === global) {
+                    remove(global);
+                    global = null;
+                }
+            }, setting.delay);
         }
     };
 })();
@@ -590,8 +592,7 @@ var popover = (function () {
             if (!element) {
                 var html = templateHTML;
                 var attrs = button.attributes;
-                for (var i = 0; i < attrs.length; i++) {
-                    var attr = attrs[i];
+                for(var attr of attrs) {
                     if (attr.name.startsWith('data-')) {
                         html = html.replace('__' + attr.name + '__', attr.value);
                     }
@@ -746,6 +747,14 @@ var modal = (function () {
         var _setting = {};
         settings = settings ?? {};
         _setting.singleton = settings.singleton ?? true;
+        _setting.attrs = [];
+        var data = settings.data ?? {};
+        for (var [key, value] of Object.entries(data)) {
+            _setting.attrs.push({
+                name: key,
+                value: value
+            });
+        }
 
         var ref = {
             open,
@@ -759,6 +768,9 @@ var modal = (function () {
         function open() {
             if (!element) {
                 var html = template.innerHTML;
+                for(var attr of _setting.attrs) {
+                    html = html.replace('__data-' + attr.name + '__', attr.value);
+                }
                 element = createElement(html);
                 document.body.appendChild(element);
                 if (_setting.singleton) {
@@ -934,7 +946,7 @@ var confirmModal = (function () {
         _setting.content = settings.content ?? '';
         _setting.cancelText = settings.cancelText ?? 'Cancel';
         _setting.confirmText = settings.confirmText ?? 'Confirm';
-        _setting.cancelClass = settings.cancelText ?? 'light';
+        _setting.cancelClass = settings.cancelClass ?? 'light';
         _setting.confirmClass = settings.confirmClass ?? 'dark';
         _setting.showSeparator  = settings.showSeparator ?? false;
         _setting.showCloseButton  = settings.showCloseButton ?? false;
@@ -1043,7 +1055,7 @@ var promptModal = (function () {
         _setting.content = settings.content ?? '';
         _setting.cancelText = settings.cancelText ?? 'Cancel';
         _setting.confirmText = settings.confirmText ?? 'Confirm';
-        _setting.cancelClass = settings.cancelText ?? 'light';
+        _setting.cancelClass = settings.cancelClass ?? 'light';
         _setting.confirmClass = settings.confirmClass ?? 'dark';
         _setting.showSeparator  = settings.showSeparator ?? false;
         _setting.showCloseButton  = settings.showCloseButton ?? false;
@@ -1105,7 +1117,7 @@ var promptModal = (function () {
                         <div class="modal-scrollable">
                             ${contentTemplate}
                             <div class="modal-form ${formFirst} ${formLast}">
-                                <div class="modal-form-field first">
+                                <div class="form-field-input-only-wrap">
                                     ${inputTemplate}
                                 </div>
                             </div>
@@ -1175,6 +1187,68 @@ var promptModal = (function () {
                     val = '';
                 }
                 ref.onClosed(ele, action, val);
+            }
+        }
+        function open() {
+            _modal.open();
+        }
+        function close(action = '') {
+            _modal.close(action);
+        }
+        return ref;
+    };
+})();
+var loadingModal = (function () {
+    function createElement(html) {
+        var div = document.createElement('div');
+        div.innerHTML = html;
+        if (div.children.length > 0) {
+            return div.children[0];
+        }
+    }
+    return function(settings) {
+        var _setting = {};
+        settings = settings ?? {};
+        _setting.singleton = false;
+        _setting.content = settings.content ?? '';
+        _setting.className = settings.className ?? '';
+        _setting.size = settings.size ?? 'modal-xs';
+        _setting.showSpinner = settings.showSpinner ?? true;
+
+        var spinnerTemplate = _setting.showSpinner ? `
+            <span class="modal-loading-spinner">
+                <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+            </span>` : '';
+        
+        var template = createElement(`
+        <div class="modal-template">
+            <div class="modal-backdrop">
+                <div class="modal modal-loading ${_setting.size} ${_setting.className}">
+                    <div class="modal-block">
+                        <div class="modal-body">
+                            ${_setting.content} ${spinnerTemplate}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`);
+
+        var ref = {
+            open,
+            close,
+            onOpened: null,
+            onClosed: null
+        };
+        
+        var _modal = modal(template, _setting);
+        _modal.onOpened = function (ele) {
+            if (ref.onOpened) {
+                ref.onOpened(ele);
+            }
+        }
+        _modal.onClosed = function (ele, action) {
+            if (ref.onClosed) {
+                ref.onClosed(ele, action);
             }
         }
         function open() {
