@@ -40,8 +40,10 @@ body.dark {
     /* --dropdownMenuShadow: 0px 8px 16px 0px #00000052,inset 0px 0px 1px 0px #fff3,0px 0px 1px 0px #0000009e; */
     --dropdownMenuShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
     --dropdownMenuBorderColor: #454545;
-    --dropdownMenuHoverBgColor: #4a4a4a;
-    --dropdownMenuActiveBgColor: #3f3f3f;
+    /* --dropdownMenuHoverBgColor: #4a4a4a;*/
+    --dropdownMenuHoverBgColor: #555555;
+    /* --dropdownMenuActiveBgColor: #3f3f3f; */
+    --dropdownMenuActiveBgColor: #4a4a4a;
     --dropdownMenuDangerColor: #ff8583;
     --dropdownMenuDangerHoverBgColor: #e02e2a23;
     --dropdownMenuDangerActiveBgColor: #e02e2a2f;
