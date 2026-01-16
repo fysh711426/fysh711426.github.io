@@ -98,6 +98,9 @@
                                 <button class="button light" type="button" onclick="onModalButtonClick()">
                                     <span>Modal</span>
                                 </button>
+                                <button class="button light" type="button" onclick="onModalSmallButtonClick()">
+                                    <span>Modal Small</span>
+                                </button>
                                 <button class="button light" type="button" onclick="onAlertModalButtonClick()">
                                     <span>Alert Modal</span>
                                 </button>
@@ -210,6 +213,37 @@
                                 <div class="start"></div>
                                 <div class="end">
                                     <button type="button" data-close="confirm" class="modal-button dark">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-template small">
+        <div class="modal-backdrop">
+            <div class="modal modal-sm">
+                <div class="modal-block">
+                    <div class="modal-scrollable">
+                        <div class="modal-body first last">
+                            <div>Content</div>
+                            <div class="modal-body-description">Simple content description.</div>
+                            <div class="alert light">
+                                <span class="alert-icon">
+                                    <i class="fa-regular fa-lightbulb fa-fw"></i>
+                                </span>
+                                <span class="alert-text">
+                                    Simple light alert.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="modal-footer-scrollable">
+                                <div class="start"></div>
+                                <div class="end">
+                                    <button type="button" data-close="cancel" class="modal-button light btn-sm">Cancel</button>
+                                    <button type="button" data-click="confirm" class="modal-button dark btn-sm">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -345,6 +379,10 @@
                 }
                 _modal.open();
             }
+            _modal.open();
+        }
+        function onModalSmallButtonClick() {
+            var _modal = modal(document.querySelector('.modal-template.small'));
             _modal.open();
         }
         function onAlertModalButtonClick() {
