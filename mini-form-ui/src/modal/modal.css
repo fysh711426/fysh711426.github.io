@@ -149,7 +149,8 @@ body.dark {
 
 .modal-header-title {
     font-weight: 700;
-    font-size: 1.25rem;
+    /* font-size: 1.25rem; */
+    font-size: 1.125rem;
     line-height: 1.5;
     overflow: hidden;
     white-space: nowrap;
@@ -159,7 +160,8 @@ body.dark {
 .modal-body {
     padding: 0px 20px;
     font-weight: 700;
-    font-size: 1rem;
+    /* font-size: 1rem; */
+    font-size: .875rem;
     line-height: 1.5;
     margin-bottom: 15px;
     word-wrap: break-word;
@@ -174,8 +176,13 @@ body.dark {
     margin-bottom: 0px;
 }
 
+.modal-body.relax {
+    padding: 0px 15px;
+}
+
 .modal-body-description {
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
+    font-size: 0.75rem;
     margin-top: 10px;
 }
 
@@ -256,6 +263,14 @@ body.dark {
     margin-top: 20px;
 }
 
+.modal-form.relax {
+    padding: 0px 15px;
+}
+
+.modal-form.font-family-base {
+    font-family: inherit;
+}
+
 .modal-loading .modal-body {
     padding: 10px 15px;
     margin: 0px;
@@ -264,6 +279,10 @@ body.dark {
 
 .modal-loading-spinner {
     margin-left: 5px;
+}
+
+.modal .alert-text {
+    font-size: .75rem;
 }
 
 .modal-block {

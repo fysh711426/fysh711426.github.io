@@ -13,6 +13,7 @@ var loadingModal = (function () {
         _setting.content = settings.content ?? '';
         _setting.className = settings.className ?? '';
         _setting.size = settings.size ?? 'modal-xs';
+        _setting.contentSize = settings.contentSize ?? 'text-base';
         _setting.showSpinner = settings.showSpinner ?? true;
 
         var spinnerTemplate = _setting.showSpinner ? `
@@ -25,7 +26,7 @@ var loadingModal = (function () {
             <div class="modal-backdrop">
                 <div class="modal modal-loading ${_setting.size} ${_setting.className}">
                     <div class="modal-block">
-                        <div class="modal-body">
+                        <div class="modal-body ${_setting.contentSize}">
                             ${_setting.content} ${spinnerTemplate}
                         </div>
                     </div>

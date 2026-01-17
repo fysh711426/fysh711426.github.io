@@ -165,6 +165,8 @@
                     <div class="modal-scrollable">
                         <div class="modal-body">
                             <span>Content.</span>
+                        </div>
+                        <div class="modal-body relax">
                             <div class="alert light">
                                 <span class="alert-icon">
                                     <i class="fa-regular fa-lightbulb fa-fw"></i>
@@ -226,10 +228,12 @@
             <div class="modal modal-sm">
                 <div class="modal-block">
                     <div class="modal-scrollable">
-                        <div class="modal-body first last">
+                        <div class="modal-body first">
                             <div>Content</div>
                             <div class="modal-body-description">Simple content description.</div>
-                            <div class="alert light">
+                        </div>
+                        <div class="modal-body relax last">
+                            <div class="alert sm light">
                                 <span class="alert-icon">
                                     <i class="fa-regular fa-lightbulb fa-fw"></i>
                                 </span>
@@ -258,7 +262,7 @@
                 <div class="modal-block">
                     <div class="modal-header">
                         <div class="start">
-                            <div class="modal-header-title">Title</div>
+                            <div class="modal-header-title text-xl">Title</div>
                         </div>
                         <div class="end">
                         </div>
@@ -267,7 +271,7 @@
                         <!-- <div class="modal-body">
                             <span>Content.</span>
                         </div> -->
-                        <div class="modal-form last">
+                        <div class="modal-form last font-family-base">
                             <div class="form-field first">
                                 <div class="form-field-title-wrap">
                                     <div class="form-field-title">Use Deep Link</div>
@@ -388,7 +392,8 @@
         function onAlertModalButtonClick() {
             var _alert = alertModal({
                 // title: 'Title',
-                content: 'Content'
+                content: 'Content',
+                contentSize: 'text-base'
             });
             _alert.onClosed = function (ele, action) {
                 console.log(action);

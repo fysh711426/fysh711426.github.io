@@ -19,16 +19,18 @@ var alertModal = (function () {
         _setting.className = settings.className ?? '';
         _setting.size = settings.size ?? 'modal-sm';
         _setting.btnSize = settings.btnSize ?? 'btn-sm';
+        _setting.titleSize = settings.titleSize ?? '';
+        _setting.contentSize = settings.contentSize ?? '';
 
         var titleTemplate = _setting.title ? `
-        <div class="modal-header-title">
+        <div class="modal-header-title ${_setting.titleSize}">
             <span>${_setting.title}</span>
         </div>
         ` : '';
         
         var bodyFirst = !_setting.title ? 'first' : '';
         var contentTemplate = _setting.content ? `
-        <div class="modal-body ${bodyFirst}">
+        <div class="modal-body ${bodyFirst} ${_setting.contentSize}">
             <span>${_setting.content}</span>
         </div>` : '';
 

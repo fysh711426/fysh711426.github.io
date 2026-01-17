@@ -37,3 +37,13 @@ body.dark {
 .alert.center {
     justify-content: center;
 }
+
+.alert.sm {
+    border-radius: .55rem;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.alert.sm .alert-icon {
+    margin-right: 5px;
+}

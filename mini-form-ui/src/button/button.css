@@ -381,7 +381,8 @@ body.dark {
     cursor: pointer;
     user-select: none;
     border: none;
-    font-size: .9rem;
+    /* font-size: .9rem; */
+    font-size: .875rem;
     line-height: 2;
     font-weight: 700;
     padding: 0 15px;
@@ -406,7 +407,8 @@ body.dark {
 }
 
 .modal-button.btn-sm {
-    font-size: .8rem;
+    /* font-size: .8rem; */
+    font-size: .75rem;
     height: 40px;
     padding: 0 12px;
 }
@@ -464,7 +466,8 @@ body.dark {
     user-select: none;
     border-width: 1px;
     border-style: solid;
-    font-size: .9rem;
+    /* font-size: .9rem; */
+    font-size: .875rem;
     line-height: 2;
     font-weight: 700;
     padding: 0 15px;
@@ -489,7 +492,8 @@ body.dark {
 }
 
 .modal-button-o.btn-sm {
-    font-size: .8rem;
+    /* font-size: .8rem; */
+    font-size: .75rem;
     height: 40px;
     padding: 0 12px;
 }
