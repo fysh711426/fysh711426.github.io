@@ -847,16 +847,18 @@ var alertModal = (function () {
         _setting.className = settings.className ?? '';
         _setting.size = settings.size ?? 'modal-sm';
         _setting.btnSize = settings.btnSize ?? 'btn-sm';
+        _setting.titleSize = settings.titleSize ?? '';
+        _setting.contentSize = settings.contentSize ?? '';
 
         var titleTemplate = _setting.title ? `
-        <div class="modal-header-title">
+        <div class="modal-header-title ${_setting.titleSize}">
             <span>${_setting.title}</span>
         </div>
         ` : '';
         
         var bodyFirst = !_setting.title ? 'first' : '';
         var contentTemplate = _setting.content ? `
-        <div class="modal-body ${bodyFirst}">
+        <div class="modal-body ${bodyFirst} ${_setting.contentSize}">
             <span>${_setting.content}</span>
         </div>` : '';
 
@@ -953,16 +955,18 @@ var confirmModal = (function () {
         _setting.className = settings.className ?? '';
         _setting.size = settings.size ?? '';
         _setting.btnSize = settings.btnSize ?? '';
+        _setting.titleSize = settings.titleSize ?? '';
+        _setting.contentSize = settings.contentSize ?? '';
 
         var titleTemplate = _setting.title ? `
-        <div class="modal-header-title">
+        <div class="modal-header-title ${_setting.titleSize}">
             <span>${_setting.title}</span>
         </div>
         ` : '';
 
         var bodyFirst = !_setting.title ? 'first' : '';
         var contentTemplate = _setting.content ? `
-        <div class="modal-body ${bodyFirst}">
+        <div class="modal-body ${bodyFirst} ${_setting.contentSize}">
             <span>${_setting.content}</span>
         </div>` : '';
 
@@ -1062,6 +1066,8 @@ var promptModal = (function () {
         _setting.className = settings.className ?? '';
         _setting.size = settings.size ?? '';
         _setting.btnSize = settings.btnSize ?? '';
+        _setting.titleSize = settings.titleSize ?? '';
+        _setting.contentSize = settings.contentSize ?? '';
         _setting.input = {};
         var input = settings.input ?? {};
         _setting.input.textarea = input.textarea ?? false;
@@ -1070,14 +1076,14 @@ var promptModal = (function () {
         _setting.input.required = input.required ?? false;
 
         var titleTemplate = _setting.title ? `
-        <div class="modal-header-title">
+        <div class="modal-header-title ${_setting.titleSize}">
             <span>${_setting.title}</span>
         </div>
         ` : '';
 
         var bodyFirst = !_setting.title ? 'first' : '';
         var contentTemplate = _setting.content ? `
-        <div class="modal-body ${bodyFirst}">
+        <div class="modal-body ${bodyFirst} ${_setting.contentSize}">
             <span>${_setting.content}</span>
         </div>` : '';
 
@@ -1213,6 +1219,7 @@ var loadingModal = (function () {
         _setting.content = settings.content ?? '';
         _setting.className = settings.className ?? '';
         _setting.size = settings.size ?? 'modal-xs';
+        _setting.contentSize = settings.contentSize ?? 'text-base';
         _setting.showSpinner = settings.showSpinner ?? true;
 
         var spinnerTemplate = _setting.showSpinner ? `
@@ -1225,7 +1232,7 @@ var loadingModal = (function () {
             <div class="modal-backdrop">
                 <div class="modal modal-loading ${_setting.size} ${_setting.className}">
                     <div class="modal-block">
-                        <div class="modal-body">
+                        <div class="modal-body ${_setting.contentSize}">
                             ${_setting.content} ${spinnerTemplate}
                         </div>
                     </div>

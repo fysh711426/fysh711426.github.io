@@ -26,6 +26,7 @@ body.dark {
     display: inline-flex;
     /* margin-right: 12px; */
     margin-right: 10px;
+    font-size: 1rem;
 }
 
 .alert-text {
@@ -46,4 +47,5 @@ body.dark {
 
 .alert.sm .alert-icon {
     margin-right: 5px;
+    font-size: .9rem;
 }
