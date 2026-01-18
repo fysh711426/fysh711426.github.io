@@ -131,6 +131,7 @@ body.dark {
     /* padding: 15px 20px 15px 20px; */
     /* padding: 12px 12px 12px 20px; */
     padding: 10px 12px 10px 20px;
+    height: 2.15em;
 }
 
 .modal-header .start {
