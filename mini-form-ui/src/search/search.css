@@ -40,10 +40,12 @@
     align-items: center;
     flex: 1;
     justify-content: flex-end;
+    font-size: 1rem;
 }
 
 .search-box {
     display: flex;
+    align-items: center;
     position: relative;
     margin-left: 30px;
     margin-right: 30px;
@@ -57,15 +59,23 @@
 
     .search-box.show {
         display: flex;
+        align-items: center;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 60px;
         margin: 0;
-        padding: 10px 10px 10px 10px;
+        /* padding: 10px 10px 10px 10px; */
+        padding: .5em .5em .5em .5em;
         box-sizing: border-box;
     }
+}
+
+.search-box-inner {
+    display: flex;
+    align-items: center;
+    flex: 1;
 }
 
 .search-back-button {
@@ -73,7 +83,8 @@
     align-items: center;
     font-size: 1rem;
     align-self: center;
-    padding: 5px;
+    /* padding: 5px; */
+    padding: .25em;
     margin-right: 5px;
 }
 
@@ -91,9 +102,10 @@
     border-style: solid;
     border-right: 0;
     box-shadow: none;
-    border-radius: 100px 0 0 100px;
+    border-radius: 50rem 0 0 50rem;
     margin: 0;
-    padding: 5px 5px 5px 15px;
+    /* padding: 5px 5px 5px 15px; */
+    padding: .25em .25em .25em .75em;
     flex: 1;
     cursor: text;
 }
@@ -120,19 +132,22 @@
     appearance: none;
     -webkit-font-smoothing: antialiased;
     font-size: .9rem;
-    line-height: 1.2rem;
+    /* line-height: 1.2rem; */
+    line-height: 1.5;
     font-weight: 500;
 }
 
 .search-button {
     border-width: 1px;
     border-style: solid;
-    width: 60px;
-    border-radius: 0 40px 40px 0;
+    /* width: 60px; */
+    width: 3em;
+    border-radius: 0 50rem 50rem 0;
     cursor: pointer;
     padding: 0;
     margin: 0;
     color: inherit;
+    align-self: stretch;
 }
 
 .search-button-wrap {
@@ -144,20 +159,23 @@
     width: 100%;
     height: 100%;
     font-size: 1rem;
-    transform: translateX(-3px);
+    /* transform: translateX(-3px); */
+    transform: translateX(-0.15rem);
 }
 
 .search-toggle-button {
     align-items: center;
     font-size: 1rem;
     align-self: center;
-    padding: 5px;
+    /* padding: 5px; */
+    padding: .25em;
     margin-right: 10px;
 }
 
 @media screen and (max-width: 640px) {
     .search-toggle-button {
-        display: flex;
+        /* display: flex; */
+        display: block;
     }
 }
 

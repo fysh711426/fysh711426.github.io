@@ -16,7 +16,8 @@
 }
 
 .nav-link-icon {
-    margin-right: 5px;
+    /* margin-right: 5px; */
+    margin-right: .25em;
 }
 
 .nav-link-button-icon.svg,
@@ -27,12 +28,13 @@
 
 @media screen and (max-width: 640px) {
     .nav-link.toggle {
-        padding: 5px 5px;
+        /* padding: 5px 5px; */
+        padding: .25em .25em;
     }
 
     .nav-link.toggle .nav-link-icon {
         /* display: inline-flex; */
-        margin-right: 0px;
+        margin-right: 0;
     }
 
     .nav-link.toggle .nav-link-text {
@@ -73,14 +75,16 @@ a.nav-link-button:active {
 .nav-link-button {
     display: flex;
     align-items: center;
-    border-radius: 100px;
+    border-radius: 50rem;
     font-size: 1rem;
     align-self: center;
-    padding: 5px 15px;
+    /* padding: 5px 15px; */
+    padding: .25em .75em;
 }
 
 .nav-link-button-icon {
-    margin-right: 5px;
+    /* margin-right: 5px; */
+    margin-right: .25em;
 }
 
 .nav-link-button-icon.svg,
@@ -91,12 +95,13 @@ a.nav-link-button:active {
 
 @media screen and (max-width: 640px) {
     .nav-link-button.toggle {
-        padding: 5px 5px;
+        /* padding: 5px 5px; */
+        padding: .25em .25em;
     }
 
     .nav-link-button.toggle .nav-link-button-icon {
         /* display: inline-flex; */
-        margin-right: 0px;
+        margin-right: 0;
     }
 
     .nav-link-button.toggle .nav-link-button-text {
