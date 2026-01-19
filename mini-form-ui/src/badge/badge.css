@@ -3,6 +3,10 @@ body.light {
     --badgeBgColor: rgba(48, 48, 48, .95);
     --badgeActiveColor: #333333;
     --badgeActiveBgColor: rgba(255, 255, 255, .85);
+    --tagColor: #7e7e7e;
+    --tagBgColor: #f1f1f1;
+    --tagOColor: #7e7e7e;
+    --tagOBorderColor: #e6e6e6;
 }
 
 body.dark {
@@ -10,6 +14,10 @@ body.dark {
     --badgeBgColor: rgba(255, 255, 255, .85);
     --badgeActiveColor: #d2d3d5;
     --badgeActiveBgColor: rgba(48, 48, 48, .95);
+    --tagColor: #aaa;
+    --tagBgColor: #454545;
+    --tagOColor: #aaa;
+    --tagOBorderColor: #4d4d4d;
 }
 
 .badge {
@@ -35,6 +43,20 @@ body.dark {
 }
 
 /*----- badge-circle -----*/
+
+/*----- tag -----*/
+
+.tag {
+    color: var(--tagColor);
+    background-color: var(--tagBgColor);
+}
+
+.tag-o {
+    color: var(--tagOColor);
+    border-color: var(--tagOBorderColor);
+}
+
+/*----- tag -----*/
 
 .badge {
     display: inline-block;
@@ -105,3 +127,27 @@ body.dark {
 }
 
 /*----- badge-circle -----*/
+
+/*----- tag -----*/
+
+.tag {
+    display: inline-block;
+    /* padding: 5px; */
+    padding: .28em;
+    border-radius: .25rem;
+    font-size: .9rem;
+    line-height: 1;
+}
+
+.tag-o {
+    display: inline-block;
+    /* padding: 5px; */
+    padding: .28em;
+    border-radius: .25rem;
+    font-size: .9rem;
+    line-height: 1;
+    border-width: 1px;
+    border-style: solid;
+}
+
+/*----- tag -----*/

@@ -27,8 +27,6 @@ body.light {
     --boardActiveColor: #f1f1f1;
     --boardHoverColor: #f5f5f5;
     --footerFontColor: #999;
-    --tagOColor: #7e7e7e;
-    --tagOBorderColor: #e6e6e6;
     --controlBgColor: #454545;
     --controlFontColor: #f5f5f5;
     --controlHoverColor: #5e5e5e;
@@ -67,8 +65,6 @@ body.dark {
     --boardActiveColor: #454545;
     --boardHoverColor: #404040;
     --footerFontColor: #aaa;
-    --tagOColor: #aaa;
-    --tagOBorderColor: #4d4d4d;
     --controlBgColor: #f9f9f9;
     --controlFontColor: #333333;
     --controlHoverColor: #ccc;
@@ -140,8 +136,12 @@ a.link-default:active {
     box-shadow: var(--boardShadow);
 }
 
-.sub-menu-item.active {
+/* .sub-menu-item.active {
     border-bottom-color: var(--menuSelected);
+} */
+
+.sub-menu-item.active::before {
+    background-color: var(--menuSelected);
 }
 
 @media screen and (min-width: 1025px) {
@@ -190,11 +190,6 @@ a.link-default:active {
 table th,
 table td {
     border-top-color: var(--hrColor);
-}
-
-.tag-o {
-    color: var(--tagOColor);
-    border-color: var(--tagOBorderColor);
 }
 
 /*----- table -----*/

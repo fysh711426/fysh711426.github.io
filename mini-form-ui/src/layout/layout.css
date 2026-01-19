@@ -284,7 +284,7 @@ info {
     position: relative;
     z-index: 5100;
     margin: 15px 0px 15px 0px;
-    border-radius: 0.35rem;
+    border-radius: .35rem;
     border-top: 1px solid rgb(60, 60, 60, .12);
 }
 
@@ -304,26 +304,46 @@ info {
 .sub-menu-inner {
     display: flex;
     justify-content: center;
-    padding: 0px 15px 0px 15px;
+    /* padding: 0px 15px 0px 15px; */
+    padding: 0px 10px;
     word-wrap: break-word;
     word-break: break-all;
 }
 
 .sub-menu-item {
     display: block;
-    padding: 10px 15px 7px 15px;
+    position: relative;
+    /* padding: 10px 15px 7px 15px; */
+    padding: 10px 15px;
     font-size: 1rem;
     line-height: 1.3;
     white-space: nowrap;
 }
 
 .sub-menu-item.round {
-    border-radius: 3px;
+    border-radius: .25rem;
 }
 
-.sub-menu-item.active {
+/* .sub-menu-item.active {
     border-bottom-width: 3px;
     border-bottom-style: solid;
+} */
+
+.sub-menu-item.active::before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* height: 3px; */
+    height: 2.4px;
+    /* margin: 0 5px; */
+}
+
+.sub-menu-item.round.active::before {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 /*----- sub-menu -----*/
@@ -505,29 +525,9 @@ table td {
     }
 }
 
-.tag {
-    display: inline-block;
-    color: #7e7e7e;
-    background: #f1f1f1;
-    padding: 5px;
-    border-radius: 0.25rem;
-    font-size: 0.9rem;
-    line-height: 0.9rem;
-}
-
-.tag-o {
-    display: inline-block;
-    padding: 5px;
-    border-radius: 0.25rem;
-    font-size: 0.9rem;
-    line-height: 0.9rem;
-    border-width: 1px;
-    border-style: solid;
-}
-
 .row-empty {
     padding: 30px 15px;
-    font-size: 0.9rem;
+    font-size: .9rem;
 }
 
 /*----- table -----*/

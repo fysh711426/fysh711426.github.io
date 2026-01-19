@@ -170,7 +170,8 @@
 } */
 
 .left-menu-item.round {
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    border-radius: .5rem;
 }
 
 .left-menu-item.round.active {
