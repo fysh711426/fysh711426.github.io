@@ -131,7 +131,8 @@ body.dark {
     /* padding: 15px 20px 15px 20px; */
     /* padding: 12px 12px 12px 20px; */
     padding: 10px 12px 10px 20px;
-    height: 2.15em;
+    /* height: 2.15em; */
+    height: 2.1em;
 }
 
 .modal-header .start {
@@ -237,6 +238,28 @@ body.dark {
 .modal-footer .end .modal-button.first,
 .modal-footer .end .modal-button-o.first {
     margin-left: 0px;
+}
+
+.modal-footer .start .button-group {
+    margin-right: 10px;
+}
+
+.modal-footer .end .button-group {
+    margin-left: 10px;
+}
+
+.modal-footer .start .button-group.last {
+    margin-right: 0px;
+}
+
+.modal-footer .end .button-group.first {
+    margin-left: 0px;
+}
+
+.modal-footer .button-group .modal-button,
+.modal-footer .button-group .modal-button-o {
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .modal-block .separator {

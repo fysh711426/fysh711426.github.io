@@ -438,6 +438,44 @@ body.dark {
     margin-left: 0px;
 }
 
+.board-toolbar .start .icon-button {
+    margin-right: 10px;
+}
+
+.board-toolbar .end .icon-button {
+    margin-left: 10px;
+}
+
+.board-toolbar .start .icon-button.last {
+    margin-right: 0px;
+}
+
+.board-toolbar .end .icon-button.first {
+    margin-left: 0px;
+}
+
+.board-toolbar .start .button-group {
+    margin-right: 10px;
+}
+
+.board-toolbar .end .button-group {
+    margin-left: 10px;
+}
+
+.board-toolbar .start .button-group.last {
+    margin-right: 0px;
+}
+
+.board-toolbar .end .button-group.first {
+    margin-left: 0px;
+}
+
+.board-toolbar .button-group .button,
+.board-toolbar .button-group .button-o {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
 @media screen and (max-width: 640px) {
     .board-toolbar .button .title,
     .board-toolbar .button-o .title {

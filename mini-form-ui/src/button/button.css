@@ -19,15 +19,21 @@ body.light {
     /*----- button -----*/
 
     /*----- button-o -----*/
-    /* --buttonOLightColor: #7e7e7e; */
-    --buttonOLightColor: #505050;
-    /* --buttonOLightBorderColor: #e6e6e6; */
-    --buttonOLightBorderColor: #d3d3d3;
-    /* --buttonOLightHoverBgColor: #f5f5f5; */
-    --buttonOLightHoverBgColor: #f0f0f0;
-    /* --buttonOLightActiveBgColor: #f0f0f0; */
-    --buttonOLightActiveBgColor: #e6e6e6;
-    --buttonODarkColor: #3b3b3b;
+    --buttonOLightColor: #262626;
+    --buttonOLightBorderColor: #e6e6e6;
+    --buttonOLightHoverBgColor: #f5f5f5;
+    --buttonOLightActiveBgColor: #f1f1f1;
+    --buttonOLightIsActiveBgColor: #f1f1f1;
+    /* --buttonOLight2Color: #7e7e7e; */
+    --buttonOLight2Color: #505050;
+    /* --buttonOLight2BorderColor: #e6e6e6; */
+    --buttonOLight2BorderColor: #d3d3d3;
+    /* --buttonOLight2HoverBgColor: #f5f5f5; */
+    --buttonOLight2HoverBgColor: #f0f0f0;
+    /* --buttonOLight2ActiveBgColor: #f0f0f0; */
+    --buttonOLight2ActiveBgColor: #e6e6e6;
+    /* --buttonODarkColor: #3b3b3b; */
+    --buttonODarkColor: #262626;
     --buttonODarkBorderColor: #3b3b3b;
     --buttonODarkHoverColor: #fff;
     --buttonODarkHoverBgColor: #3b3b3b;
@@ -52,11 +58,17 @@ body.light {
     /*----- modal-button -----*/
     
     /*----- modal-button-o -----*/
-    --modalButtonOLightColor: #505050;
-    --modalButtonOLightBorderColor: #d3d3d3;
-    --modalButtonOLightHoverBgColor: #f0f0f0;
-    --modalButtonOLightActiveBgColor: #e6e6e6;
-    --modalButtonODarkColor: #3b3b3b;
+    --modalButtonOLightColor: #262626;
+    --modalButtonOLightBorderColor: #e6e6e6;
+    --modalButtonOLightHoverBgColor: #f5f5f5;
+    --modalButtonOLightActiveBgColor: #f1f1f1;
+    --modalButtonOLightIsActiveBgColor: #f1f1f1;
+    --modalButtonOLight2Color: #505050;
+    --modalButtonOLight2BorderColor: #d3d3d3;
+    --modalButtonOLight2HoverBgColor: #f0f0f0;
+    --modalButtonOLight2ActiveBgColor: #e6e6e6;
+    /* --modalButtonODarkColor: #3b3b3b; */
+    --modalButtonODarkColor: #262626;
     --modalButtonODarkBorderColor: #3b3b3b;
     --modalButtonODarkHoverColor: #fff;
     --modalButtonODarkHoverBgColor: #3b3b3b;
@@ -76,6 +88,12 @@ body.light {
     --modalIconButtonHoverBgColor: #f5f5f5;
     --modalIconButtonActiveBgColor: #f0f0f0;
     /*----- modal-icon-button -----*/
+
+    /*----- button-round -----*/
+    /* --buttonRound: #e6e6e6;
+    --buttonRoundHover: #f5f5f5;
+    --buttonRoundActive: #f1f1f1; */
+    /*----- button-round -----*/
 }
 
 body.dark {
@@ -97,15 +115,21 @@ body.dark {
     /*----- button -----*/
 
     /*----- button-o -----*/
-    /* --buttonOLightColor: #aaa; */
-    --buttonOLightColor: #ccc;
-    /* --buttonOLightBorderColor: #4d4d4d; */
-    --buttonOLightBorderColor: #636363;
-    /* --buttonOLightHoverBgColor: #3d3d3d; */
-    --buttonOLightHoverBgColor: #434343;
-    /* --buttonOLightActiveBgColor: #434343; */
-    --buttonOLightActiveBgColor: #535353;
-    --buttonODarkColor: #ececec;
+    --buttonOLightColor: #d2d3d5;
+    --buttonOLightBorderColor: #4d4d4d;
+    --buttonOLightHoverBgColor: #404040;
+    --buttonOLightActiveBgColor: #454545;
+    --buttonOLightIsActiveBgColor: #454545;
+    /* --buttonOLight2Color: #aaa; */
+    --buttonOLight2Color: #ccc;
+    /* --buttonOLight2BorderColor: #4d4d4d; */
+    --buttonOLight2BorderColor: #636363;
+    /* --buttonOLight2HoverBgColor: #3d3d3d; */
+    --buttonOLight2HoverBgColor: #434343;
+    /* --buttonOLight2ActiveBgColor: #434343; */
+    --buttonOLight2ActiveBgColor: #535353;
+    /* --buttonODarkColor: #ececec; */
+    --buttonODarkColor: #d2d3d5;
     --buttonODarkBorderColor: #ececec;
     --buttonODarkHoverColor: #181818;
     --buttonODarkHoverBgColor: #ececec;
@@ -131,11 +155,17 @@ body.dark {
     /*----- modal-button -----*/
     
     /*----- modal-button-o -----*/
-    --modalButtonOLightColor: #ccc;
-    --modalButtonOLightBorderColor: #636363;
-    --modalButtonOLightHoverBgColor: #434343;
-    --modalButtonOLightActiveBgColor: #535353;
-    --modalButtonODarkColor: #ececec;
+    --modalButtonOLightColor: #d2d3d5;
+    --modalButtonOLightBorderColor: #4d4d4d;
+    --modalButtonOLightHoverBgColor: #404040;
+    --modalButtonOLightActiveBgColor: #454545;
+    --modalButtonOLightIsActiveBgColor: #454545;
+    --modalButtonOLight2Color: #ccc;
+    --modalButtonOLight2BorderColor: #636363;
+    --modalButtonOLight2HoverBgColor: #434343;
+    --modalButtonOLight2ActiveBgColor: #535353;
+    /* --modalButtonODarkColor: #ececec; */
+    --modalButtonODarkColor: #d2d3d5;
     --modalButtonODarkBorderColor: #ececec;
     --modalButtonODarkHoverColor: #181818;
     --modalButtonODarkHoverBgColor: #ececec;
@@ -159,6 +189,12 @@ body.dark {
     /* --modalIconButtonHoverBgColor: #4a4a4a;
     --modalIconButtonActiveBgColor: #3f3f3f; */
     /*----- modal-icon-button -----*/
+
+    /*----- button-round -----*/
+    /* --buttonRound: #4d4d4d;
+    --buttonRoundHover: #404040;
+    --buttonRoundActive: #454545; */
+    /*----- button-round -----*/
 }
 
 /*----- button -----*/
@@ -265,6 +301,10 @@ body.dark {
     .button-o.light:not(:disabled):active {
         background-color: var(--buttonOLightActiveBgColor);
     }
+}
+
+.button-o.light:not(:disabled).active {
+    background-color: var(--buttonOLightIsActiveBgColor);
 }
 
 .button-o.dark {
@@ -443,6 +483,10 @@ body.dark {
     }
 }
 
+.modal-button-o.light:not(:disabled).active {
+    background-color: var(--modalButtonOLightIsActiveBgColor);
+}
+
 .modal-button-o.dark {
     color: var(--modalButtonODarkColor);
     border-color: var(--modalButtonODarkColor);
@@ -586,8 +630,10 @@ body.dark {
     user-select: none;
     /* width: 43px;
     height: 43px; */
-    width: 2.15em;
-    height: 2.15em;
+    /* width: 2.15em;
+    height: 2.15em; */
+    width: 2.1em;
+    height: 2.1em;
     border: 0 solid;
     font-size: 1rem;
     line-height: 1.5;
@@ -602,3 +648,112 @@ body.dark {
 }
 
 /*----- modal-icon-button -----*/
+
+/*----- button-round -----*/
+
+/* .button-round {
+    border-color: var(--buttonRound);
+}
+
+.button-round.active {
+    background-color: var(--buttonRoundActive);
+}
+
+@media screen and (min-width: 1025px) {
+    .button-round.active:hover {
+        background-color: var(--buttonRoundActive);
+    }
+
+    .button-round:hover {
+        background-color: var(--buttonRoundHover);
+    }
+}
+
+.button-round {
+    display: flex;
+    font-size: .9rem;
+    justify-content: center;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+} 
+
+.button-round.left {
+    padding: 5px 10px 5px 15px;
+    border-radius: 50rem 0 0 50rem;
+    margin-left: auto;
+}
+
+.button-round.right {
+    padding: 5px 15px 5px 10px;
+    border-radius: 0 50rem 50rem 0;
+    border-left: none;
+} */
+
+/*----- button-round -----*/
+
+/*----- button-group -----*/
+
+.button-group {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.button-group .button:not(:first-child),
+.button-group .button-o:not(:first-child),
+.button-group .modal-button:not(:first-child),
+.button-group .modal-button-o:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+}
+
+.button-group .button:not(:last-child),
+.button-group .button-o:not(:last-child),
+.button-group .modal-button:not(:last-child),
+.button-group .modal-button-o:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.button-group .button.round:is(:first-child):not(:last-child),
+.button-group .button-o.round:is(:first-child):not(:last-child) {
+    padding-left: .8em;
+}
+
+.button-group .button.round:is(:last-child):not(:first-child),
+.button-group .button-o.round:is(:last-child):not(:first-child) {
+    padding-right: .8em;
+}
+
+.button-group .button.round.btn-sm:is(:first-child):not(:last-child),
+.button-group .button-o.round.btn-sm:is(:first-child):not(:last-child) {
+    padding-left: .75em;
+}
+
+.button-group .button.round.btn-sm:is(:last-child):not(:first-child),
+.button-group .button-o.round.btn-sm:is(:last-child):not(:first-child) {
+    padding-right: .75em;
+}
+
+.button-group .modal-button:is(:first-child):not(:last-child),
+.button-group .modal-button-o:is(:first-child):not(:last-child) {
+    padding-left: 1.05em;
+}
+
+.button-group .modal-button:is(:last-child):not(:first-child),
+.button-group .modal-button-o:is(:last-child):not(:first-child) {
+    padding-right: 1.05em;
+}
+
+.button-group .modal-button.btn-sm:is(:first-child):not(:last-child),
+.button-group .modal-button-o.btn-sm:is(:first-child):not(:last-child) {
+    padding-left: 1em;
+}
+
+.button-group .modal-button.btn-sm:is(:last-child):not(:first-child),
+.button-group .modal-button-o.btn-sm:is(:last-child):not(:first-child) {
+    padding-right: 1em;
+}
+
+/*----- button-group -----*/

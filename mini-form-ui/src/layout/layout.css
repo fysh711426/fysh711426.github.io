@@ -426,13 +426,14 @@ info {
     align-items: center;
     font-weight: bold;
     font-size: 1.35rem;
-    line-height: 1.35rem;
+    /* line-height: 1.35rem; */
+    line-height: 1.5;
     padding: 15px 15px 15px 15px;
     margin: 0 0 15px 0;
 }
 
 .board-header i {
-    padding-right: 0.5rem;
+    padding-right: .5rem;
 }
 
 .board-header-title {
@@ -442,8 +443,12 @@ info {
 
 .board-header .description {
     font-size: 1rem;
-    padding-left: 0.5rem;
+    padding-left: .5rem;
     cursor: pointer;
+}
+
+.board-header .end {
+    margin-left: auto;
 }
 
 .board-title {
@@ -531,31 +536,6 @@ table td {
 }
 
 /*----- table -----*/
-
-/*----- button-round -----*/
-
-.button-round {
-    display: flex;
-    font-size: 0.9rem;
-    justify-content: center;
-    cursor: pointer;
-    border-width: 1px;
-    border-style: solid;
-}
-
-.button-round.left {
-    padding: 5px 10px 5px 15px;
-    border-radius: 3.5rem 0 0 3.5rem;
-    margin-left: auto;
-}
-
-.button-round.right {
-    padding: 5px 15px 5px 10px;
-    border-radius: 0 3.5rem 3.5rem 0;
-    border-left: none;
-}
-
-/*----- button-round -----*/
 
 /*----- control -----*/
 
