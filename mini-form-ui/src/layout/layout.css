@@ -373,7 +373,7 @@ info {
 /*----- footer -----*/
 
 .footer {
-    font-size: 0.8rem;
+    font-size: .8rem;
     margin: 15px 0px 15px 0px;
     text-align: center;
 }
@@ -383,7 +383,7 @@ info {
 }
 
 .copyright-divider {
-    margin: 0 0.3rem;
+    margin: 0 .3rem;
 }
 
 /*----- footer -----*/
@@ -391,33 +391,39 @@ info {
 /*----- board -----*/
 
 .board {
-    margin: 15px auto;
-    padding: 15px 15px;
-    border-radius: 0.35rem;
+    /* margin: 15px auto; */
+    margin: .75em auto;
+    /* padding: 15px 15px; */
+    padding: .75em .75em;
+    border-radius: .35rem;
     word-wrap: break-word;
     word-break: break-all;
     border-top: 1px solid rgb(60, 60, 60, .12);
 }
 
 .board.fw {
-    padding: 15px 15px;
+    /* padding: 15px 15px; */
+    padding: .75em .75em;
 }
 
 @media screen and (max-width: 640px) {
     .board {
-        padding: 15px 5px;
+        /* padding: 15px 5px; */
+        padding: .75em .25em;
     }
 }
 
 @media screen and (min-width: 641px) {
     .board {
-        padding: 15px 10px;
+        /* padding: 15px 10px; */
+        padding: .75em .5em;
     }
 }
 
 @media screen and (min-width: 1025px) {
     .board {
-        padding: 15px 15px;
+        /* padding: 15px 15px; */
+        padding: .75em .75em;
     }
 }
 
@@ -549,7 +555,7 @@ table td {
     text-decoration: none;
     cursor: pointer;
     font-size: 1rem;
-    border-radius: 50%;
+    border-radius: 50rem;
     text-align: center;
     margin-top: 15px;
     outline: 0;

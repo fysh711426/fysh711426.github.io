@@ -65,7 +65,8 @@ input {
     border-radius: .45em;
     box-sizing: border-box;
     font-size: .9rem;
-    line-height: 1.5;
+    /* line-height: 1.5; */
+    line-height: 1;
     font-family: sans-serif;
     width: 100%;
     appearance: none;
@@ -90,7 +91,8 @@ textarea {
     line-height: 1.5;
     font-family: sans-serif;
     width: 100%;
-    min-height: 100px;
+    /* min-height: 100px; */
+    min-height: 5.5em;
     overflow-y: auto;
     resize: none;
     appearance: none;

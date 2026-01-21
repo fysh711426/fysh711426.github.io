@@ -1,3 +1,25 @@
+body.light {
+    /* --buttonRound: #e6e6e6;
+    --buttonRoundHover: #f5f5f5;
+    --buttonRoundActive: #f1f1f1; */
+    --searchButtonBorderColor: #e6e6e6;
+    --searchButtonHoverBgColor: #f5f5f5;
+    --searchButtonActiveBgColor: #f1f1f1;
+    /* --inputColor: #474747; */
+    /* --searchInputColor: #474747; */
+}
+
+body.dark {
+    /* --buttonRound: #4d4d4d;
+    --buttonRoundHover: #404040;
+    --buttonRoundActive: #454545; */
+    --searchButtonBorderColor: #4d4d4d;
+    --searchButtonHoverBgColor: #404040;
+    --searchButtonActiveBgColor: #454545;
+    /* --inputColor: #c4c6c9; */
+    /* --searchInputColor: #c4c6c9; */
+}
+
 /*----- search-box -----*/
 
 @media screen and (max-width: 640px) {
@@ -7,7 +29,7 @@
 }
 
 .search-input-box {
-    border-color: var(--buttonRound);
+    border-color: var(--searchButtonBorderColor);
 }
 
 /* .search-input-box.focus {
@@ -19,13 +41,17 @@
 }
 
 .search-button {
-    border-color: var(--buttonRound);
-    background-color: var(--buttonRoundHover);
+    border-color: var(--searchButtonBorderColor);
+    background-color: var(--searchButtonHoverBgColor);
 }
 
 .search-button:hover {
-    background-color: var(--buttonRoundActive);
+    background-color: var(--searchButtonActiveBgColor);
 }
+
+/* .search-input {
+    color: var(--searchInputColor);
+} */
 
 /*----- search-box -----*/
 
@@ -133,8 +159,10 @@
     -webkit-font-smoothing: antialiased;
     font-size: .9rem;
     /* line-height: 1.2rem; */
-    line-height: 1.5;
+    /* line-height: 1.5; */
+    line-height: 1.4;
     font-weight: 500;
+    font-family: sans-serif;
 }
 
 .search-button {
