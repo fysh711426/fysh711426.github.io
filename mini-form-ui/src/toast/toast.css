@@ -37,7 +37,8 @@ body.dark {
 
 .toast-inner {
     outline: 0;
-    border-radius: 0.45rem;
+    /* border-radius: .45rem; */
+    border-radius: 9px;
     box-sizing: border-box;
     /* font-size: 1.1rem;*/
     font-size: 1rem;

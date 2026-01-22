@@ -260,7 +260,7 @@ body.dark {
 .bookmark-item {
     display: flex;
     align-items: center;
-    border-radius: .35rem;
+    /* border-radius: .35rem; */
     /*border-radius: 5px;*/ 
     border-radius: 8px;
     border-style: solid;

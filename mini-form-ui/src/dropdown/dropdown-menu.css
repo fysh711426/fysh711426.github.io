@@ -125,7 +125,8 @@ body.dark {
     min-width: max-content;
     outline: none;
     user-select: none;
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
+    border-radius: 20px;
     padding: 8px 0;
     /* border: 0 solid; */
     border-width: 1px;

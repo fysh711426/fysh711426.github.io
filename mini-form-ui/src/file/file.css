@@ -92,7 +92,8 @@ z-index
     word-wrap: break-word;
     word-break: break-all;
     margin: 15px auto;
-    border-radius: 0.35rem;
+    /* border-radius: .35rem; */
+    border-radius: 7px;
     border-top: 1px solid rgb(60, 60, 60, .12);
     margin-bottom: 0px;
 }
@@ -191,7 +192,8 @@ z-index
     top: -7px;
     left: -1px;
     padding: 5px 10px 5px 10px;
-    border-radius: 0.35rem;
+    /* border-radius: .35rem; */
+    border-radius: 7px;
     border-width: 1px;
     border-style: solid;
     max-width: 100%;
@@ -460,7 +462,7 @@ z-index
     background-color: rgba(0, 0, 0, .55);
     text-decoration: none;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 50rem;
     text-align: center;
     outline: 0;
 }

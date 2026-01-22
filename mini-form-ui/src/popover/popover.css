@@ -34,11 +34,12 @@ body.dark {
 }
 
 .popover-inner {
-    font-size: 0.9rem;
+    font-size: .9rem;
     line-height: 1.5;
     padding: 10px 15px 10px 15px;
     max-width: 250px;
-    border-radius: 0.35rem;
+    /* border-radius: .35rem; */
+    border-radius: 7px;
     border-width: 1px;
     border-style: solid;
     word-wrap: break-word;

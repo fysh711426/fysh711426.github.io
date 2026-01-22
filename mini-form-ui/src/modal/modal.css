@@ -92,7 +92,8 @@ body.dark {
     display: flex;
     flex-direction: column;
     /* border-radius: 1rem; */
-    border-radius: .6rem;
+    /* border-radius: .6rem; */
+    border-radius: 12px;
     pointer-events: auto;
     border: 0 solid;
     /* border-top: 1px solid rgb(60, 60, 60, .12); */
@@ -326,23 +327,27 @@ body.dark {
     font-size: .75rem;
 }
 
-.modal-block {
-    max-width: 640px;
+.modal-xs .modal-block {
+    max-width: 360px;
 }
 
 .modal-sm .modal-block {
     max-width: 480px;
 }
 
-.modal-xs .modal-block {
-    max-width: 360px;
+.modal-block {
+    max-width: 560px;
 }
 
 .modal-lg .modal-block {
-    max-width: 720px;
+    max-width: 640px;
 }
 
 .modal-xl .modal-block {
+    max-width: 720px;
+}
+
+.modal-2xl .modal-block {
     max-width: 1080px;
 }
 

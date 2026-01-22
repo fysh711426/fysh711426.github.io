@@ -164,7 +164,8 @@ body.dark {
     background-color: #181818;
     flex-shrink: 0;
     position: relative;
-    border-radius: 0.15rem;
+    /* border-radius: .15rem; */
+    border-radius: 3px;
     overflow: hidden;
 }
 
@@ -421,7 +422,8 @@ body.dark {
         position: relative;
         height: inherit;
         overflow: hidden;
-        border-radius: 0.35rem;
+        /* border-radius: .35rem; */
+        border-radius: 7px;
     }
 
     .view-mode .file-image-item-icon img {

@@ -27,7 +27,7 @@
     display: inline-flex;
     padding: 0px 2px;
     /*border-radius: 5px;*/
-    border-radius: 0.375rem;
+    border-radius: .375rem;
     /*border: 1px solid;*/
     border: 0;
 }
@@ -77,7 +77,8 @@
 .search-input-error .alert {
     margin-top: 5px;
     padding: 5px 15px;
-    border-radius: .55rem;
+    /* border-radius: .55rem; */
+    border-radius: .5rem;
 }
 
 /*----- search-input-error -----*/

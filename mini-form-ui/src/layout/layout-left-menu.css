@@ -71,7 +71,8 @@
         position: sticky;
         z-index: 5200;
         top: 75px;
-        border-radius: .35rem;
+        /* border-radius: .35rem; */
+        border-radius: 7px;
         margin-top: 15px;
         margin-right: 15px;
     }
@@ -170,8 +171,8 @@
 } */
 
 .left-menu-item.round {
-    /* border-radius: 10px; */
-    border-radius: .5rem;
+    /* border-radius: .5rem; */
+    border-radius: 10px;
 }
 
 .left-menu-item.round.active {
