@@ -377,11 +377,11 @@
                 console.log(action);
             }
             _modal.onClick = function(ele, action) {
-                var _modal = modal(document.querySelector('.modal-template.sub'));
-                _modal.onClosed = function(ele, action) {
+                var sub = modal(document.querySelector('.modal-template.sub'));
+                sub.onClosed = function(ele, action) {
                     console.log(action);
                 }
-                _modal.open();
+                sub.open();
             }
             _modal.open();
         }

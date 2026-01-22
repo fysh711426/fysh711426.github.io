@@ -374,16 +374,22 @@ body.dark {
 .modal-block:not(.open) {
     margin-top: -20px;
     margin-bottom: 20px;
+    /* margin-top: -1px;
+    margin-bottom: 1px; */
 }
 
 .modal-block.opening {
     margin-top: -20px;
     margin-bottom: 20px;
+    /* margin-top: -1px;
+    margin-bottom: 1px; */
     transition: margin-top .2s linear, margin-bottom .2s linear;
 }
 
 .modal-block.closing {
     margin-top: 20px;
     margin-bottom: -20px;
+    /* margin-top: 1px;
+    margin-bottom: -1px; */
     transition: margin-top .2s linear, margin-bottom .2s linear;
 }

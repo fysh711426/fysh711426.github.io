@@ -96,13 +96,12 @@ var modal = (function () {
                 bodyScroll.lock();
                 bindClose();
                 bindClick();
-                var block = element.querySelector('.modal-block');
-                block.focus();
                 focusLastButton(element);
+                if (ref.onOpened) {
+                    ref.onOpened(element);
+                }
+                var block = element.querySelector('.modal-block');
                 openAnim(block, element, function() {
-                    if (ref.onOpened) {
-                        ref.onOpened(element);
-                    }
                 });
             }
         }

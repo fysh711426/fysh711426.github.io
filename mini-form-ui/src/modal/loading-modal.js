@@ -43,6 +43,7 @@ var loadingModal = (function () {
         
         var _modal = modal(template, _setting);
         _modal.onOpened = function (ele) {
+            ele.querySelector('.modal-block').focus();
             if (ref.onOpened) {
                 ref.onOpened(ele);
             }
