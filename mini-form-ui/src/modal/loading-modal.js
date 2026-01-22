@@ -25,7 +25,7 @@ var loadingModal = (function () {
         <div class="modal-template">
             <div class="modal-backdrop">
                 <div class="modal modal-loading ${_setting.size} ${_setting.className}">
-                    <div class="modal-block">
+                    <div class="modal-block" tabindex="-1">
                         <div class="modal-body ${_setting.contentSize}">
                             ${_setting.content} ${spinnerTemplate}
                         </div>

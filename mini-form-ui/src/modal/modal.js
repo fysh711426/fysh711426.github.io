@@ -32,8 +32,57 @@ var modal = (function () {
             onClick: null
         };
 
+        var _ = null;
+        var isAnimating = false;
+        function openAnim(block, backdrop, callback) {
+            isAnimating = true;
+            block.classList.add('opening');
+            backdrop.classList.add('opening');
+            // 觸發瀏覽器重繪
+            _ = block.offsetHeight;
+            block.style.marginTop = '0px';
+            block.style.marginBottom = '0px';
+            backdrop.style.opacity = '1';
+            var handler = function (e) {
+                if (e.target === e.currentTarget) {
+                    block.classList.remove('opening');
+                    block.classList.add('open');
+                    block.style.marginTop = '';
+                    block.style.marginBottom = '';
+                    backdrop.classList.remove('opening');
+                    backdrop.classList.add('open');
+                    backdrop.style.opacity = '';
+                    block.removeEventListener('transitionend', handler);
+                    isAnimating = false;
+                    callback();
+                }
+            }
+            block.addEventListener('transitionend', handler);
+        }
+        function closeAnim(block, backdrop, callback) {
+            isAnimating = true;
+            // 觸發瀏覽器重繪
+            _ = block.offsetHeight;
+            block.classList.remove('open');
+            block.classList.add('closing');
+            backdrop.classList.remove('open');
+            backdrop.classList.add('opening');
+            var handler = function (e) {
+                if (e.target === e.currentTarget) {
+                    block.classList.remove('closing');
+                    backdrop.classList.remove('opening');
+                    block.removeEventListener('transitionend', handler);
+                    isAnimating = false;
+                    callback();
+                }
+            }
+            block.addEventListener('transitionend', handler);
+        }
+        
         var element = null;
         function open() {
+            if (isAnimating) 
+                return;
             if (!element) {
                 var html = template.innerHTML;
                 for(var attr of _setting.attrs) {
@@ -47,23 +96,33 @@ var modal = (function () {
                 bodyScroll.lock();
                 bindClose();
                 bindClick();
-                if (ref.onOpened) {
-                    ref.onOpened(element);
-                }
+                var block = element.querySelector('.modal-block');
+                block.focus();
+                focusLastButton(element);
+                openAnim(block, element, function() {
+                    if (ref.onOpened) {
+                        ref.onOpened(element);
+                    }
+                });
             }
         }
         function close(action = '') {
+            if (isAnimating) 
+                return;
             if (element) {
-                var html = element.outerHTML;
-                remove(element);
-                element = null;
-                if (_setting.singleton) {
-                    template.innerHTML = html;
-                }
-                bodyScroll.unlock();
-                if (ref.onClosed) {
-                    ref.onClosed(element, action);
-                }
+                var block = element.querySelector('.modal-block');
+                closeAnim(block, element, function() {
+                    var html = element.outerHTML;
+                    remove(element);
+                    element = null;
+                    if (_setting.singleton) {
+                        template.innerHTML = html;
+                    }
+                    bodyScroll.unlock();
+                    if (ref.onClosed) {
+                        ref.onClosed(element, action);
+                    }
+                });
             }
         }
         function click(action = '') {
@@ -89,6 +148,12 @@ var modal = (function () {
                 item.addEventListener('click', function (e) {
                     click(action);
                 });
+            }
+        }
+        function focusLastButton(ele) {
+            var buttons = ele.querySelectorAll('button');
+            if (buttons && buttons.length > 0) {
+                buttons[buttons.length - 1].focus();
             }
         }
         return ref;

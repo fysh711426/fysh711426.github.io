@@ -98,6 +98,7 @@ body.dark {
     /* border-top: 1px solid rgb(60, 60, 60, .12); */
     /* max-width: 32rem; */
     width: 100%;
+    outline: none;
     grid-row: auto;
     grid-column: auto;
     grid-row-start: 2;
@@ -345,7 +346,7 @@ body.dark {
     max-width: 1080px;
 }
 
-.modal-backdrop {
+/* .modal-backdrop {
     animation: .25s cubic-bezier(.4, 0, .2, 1) modalSlideDownAndFade;
 }
 
@@ -358,4 +359,31 @@ body.dark {
         opacity: 1;
         transform: translateY(0);
     }
+} */
+
+.modal-backdrop:not(.open) {
+    opacity: 0;
+}
+
+.modal-backdrop.opening {
+    opacity: 0;
+    transition: opacity .2s linear;
+    /* transition: opacity .25s ease; */
+}
+
+.modal-block:not(.open) {
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.modal-block.opening {
+    margin-top: -20px;
+    margin-bottom: 20px;
+    transition: margin-top .2s linear, margin-bottom .2s linear;
+}
+
+.modal-block.closing {
+    margin-top: 20px;
+    margin-bottom: -20px;
+    transition: margin-top .2s linear, margin-bottom .2s linear;
 }
