@@ -151,6 +151,34 @@ textarea:hover {
 
 /*----- checkbox -----*/
 
+/*----- radio -----*/
+
+.radio-mark {
+    border-color: var(--checkboxMarkColor);
+}
+
+.radio input:checked ~ .radio-mark {
+    border-color: var(--checkboxMarkCheckedBgColor);
+    background-color: var(--checkboxMarkCheckedBgColor);
+}
+
+.radio-mark circle {
+    fill: var(--checkboxMarkCheckedColor);
+}
+
+@media screen and (min-width: 1025px) {
+    .radio.hover:hover .radio-text {
+        color: var(--linkHoverColor);
+    }
+}
+
+.radio-wrap {
+    background-color: var(--checkboxWrapColor);
+    border-color: var(--checkboxWrapBorderColor);
+}
+
+/*----- radio -----*/
+
 /*----- file-picker -----*/
 
 .file-picker {

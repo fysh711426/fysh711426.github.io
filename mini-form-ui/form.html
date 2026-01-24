@@ -167,7 +167,7 @@
                             </div>
                             <div class="checkbox-wrap">
                                 <label class="checkbox">
-                                    <input type="checkbox" name="itemA" value="" />
+                                    <input type="checkbox" name="itemA" value="A" onchange="onRadioChecked(this)" />
                                     <div class="checkbox-mark">
                                         <svg width="18" height="18" viewBox="0 0 18 18">
                                             <g fill="none" fill-rule="evenodd">
@@ -178,7 +178,7 @@
                                     <div class="checkbox-text">ItemA</div>
                                 </label>
                                 <label class="checkbox">
-                                    <input type="checkbox" name="itemB" value="" />
+                                    <input type="checkbox" name="itemB" value="B" onchange="onRadioChecked(this)" />
                                     <div class="checkbox-mark">
                                         <svg width="18" height="18" viewBox="0 0 18 18">
                                             <g fill="none" fill-rule="evenodd">
@@ -198,22 +198,22 @@
                             </div>
                             <div class="radio-wrap">
                                 <label class="radio">
-                                    <input type="radio" name="radio" value="" onchange="onChecked(this)" />
+                                    <input type="radio" name="radio" value="A" onchange="onRadioChecked(this)" />
                                     <div class="radio-mark">
                                         <svg width="18" height="18" viewBox="0 0 18 18">
                                             <g fill="none" fill-rule="evenodd">
-                                                <polyline stroke-width="2" points="3.5 9.5 7 13 15 5"></polyline>
+                                                <circle cx="9" cy="9" r="4"></circle>
                                             </g>
                                         </svg>
                                     </div>
                                     <div class="radio-text">ItemA</div>
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="radio" value="" onchange="onChecked(this)" />
+                                    <input type="radio" name="radio" value="B" onchange="onRadioChecked(this)" />
                                     <div class="radio-mark">
                                         <svg width="18" height="18" viewBox="0 0 18 18">
                                             <g fill="none" fill-rule="evenodd">
-                                                <polyline stroke-width="2" points="3.5 9.5 7 13 15 5"></polyline>
+                                                <circle cx="9" cy="9" r="4"></circle>
                                             </g>
                                         </svg>
                                     </div>
@@ -258,6 +258,10 @@
         function onChecked(element) {
             console.log(element.checked);
             toast.show('Saved');
+        }
+        function onRadioChecked(element) {
+            console.log(element.checked);
+            console.log(element.value);
         }
         function onBlur(element) {
             toast.show('Saved');
