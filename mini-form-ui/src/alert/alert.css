@@ -1,10 +1,12 @@
 body.light {
-    --alertLightColor: #5d5d5d;
+    /* --alertLightColor: #5d5d5d; */
+    --alertLightColor: #5e5e5e;
     --alertLightBgColor: #f3f3f3;
 }
 
 body.dark {
-    --alertLightColor: #f3f3f3;
+    /* --alertLightColor: #f3f3f3; */
+    --alertLightColor: #ccc;
     /* --alertLightBgColor: #414141; */
     --alertLightBgColor: #494949;
 }

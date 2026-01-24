@@ -52,7 +52,7 @@ body.dark {
 
 .toast-block.show {
     transform: translateY(0%);
-    transition: 0.35s ease-in-out;
+    transition: .35s ease-in-out;
 }
 
 @media screen and (max-width: 640px) {
