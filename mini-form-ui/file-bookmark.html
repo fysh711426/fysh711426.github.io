@@ -107,7 +107,7 @@
                                     <span class="title">Create Group</span>
                                     <span class="title-short">Create</span>
                                 </button>
-                                <button class="button light" type="button">
+                                <button class="button light" type="button" onclick="onImportButtonClick()">
                                     <!-- <i class="fa-solid fa-indent"></i> -->
                                     <span>Import</span>
                                 </button>
@@ -258,6 +258,69 @@
             </div>
         </div>
     </div>
+    <div class="modal-template import">
+        <div class="modal-backdrop">
+            <div class="modal modal-lg">
+                <div class="modal-block">
+                    <div class="modal-scrollable">
+                        <div class="modal-body first text-lg">
+                            <div>Import Bookmarks</div>
+                        </div>
+                        <div class="modal-form">
+                            <div class="form-field tight">
+                                <label class="file-picker">
+                                    <input type="file" onchange="fileChange(this)" accept="" />
+                                    <div class="file-picker-choose-block">
+                                        <div class="file-picker-icon">
+                                            <i class="fa-solid fa-file-circle-plus fa-2x fa-fw"></i>
+                                        </div>
+                                        <div>Click to choose file.</div>
+                                    </div>
+                                    <div class="file-picker-selected-block">
+                                        <div>Selected(1)</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="form-field tight">
+                                <!-- <label class="checkbox hover"> -->
+                                <label class="checkbox">
+                                    <input type="checkbox" name="" value="">
+                                    <div class="checkbox-mark">
+                                        <svg width="18" height="18" viewBox="0 0 18 18">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <polyline stroke-width="2" points="3.5 9.5 7 13 15 5"></polyline>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="checkbox-text">Clear existing bookmarks.</div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-body relax">
+                            <div class="alert light">
+                                <span class="alert-icon">
+                                    <i class="fa-regular fa-lightbulb fa-fw"></i>
+                                </span>
+                                <span class="alert-text">
+                                    <span>This action will clear existing bookmarks.</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="modal-footer">
+                            <div class="modal-footer-scrollable">
+                                <div class="start"></div>
+                                <div class="end">
+                                    <button type="button" data-close="cancel" class="modal-button light btn-sm">Cancel</button>
+                                    <button type="button" data-close="confirm" class="modal-button dark btn-sm">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         var theme = document.body.getAttribute('theme');
         onThemeButtonChange(theme);
@@ -362,6 +425,22 @@
         }
         function onIconButtonClick(e) {
             e.stopPropagation();
+        }
+        function onImportButtonClick() {
+            var _modal = modal(document.querySelector('.modal-template.import'), {
+                singleton: false
+            });
+            _modal.open();
+        }
+        function fileChange(ele) {
+            var picker = ele.closest('.file-picker');
+            if (ele.files && ele.files.length > 0) {
+                picker.classList.add('selected');
+                // var block = picker.querySelector('.file-picker-selected-block');
+                // block.innerHTML = ele.files[0].name;
+            } else {
+                picker.classList.remove('selected');
+            }
         }
         scrollbar(document.querySelector('.board-toolbar-scrollable'));
     </script>
