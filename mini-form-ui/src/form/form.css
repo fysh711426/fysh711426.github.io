@@ -523,7 +523,7 @@ textarea {
 .radio-mark svg {
     transform: scale(0);
     opacity: 0;
-    transition: transform .35s cubic-bezier(.47, 1.8, .4, 1.15), opacity .25s ease;
+    transition: transform .35s cubic-bezier(.47, 1.56, .4, 1.15), opacity .25s ease;
 }
 
 .radio input:checked ~ .radio-mark svg {

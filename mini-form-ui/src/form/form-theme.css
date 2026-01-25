@@ -158,12 +158,13 @@ textarea:hover {
 }
 
 .radio input:checked ~ .radio-mark {
+    border-width: 3px;
     border-color: var(--checkboxMarkCheckedBgColor);
-    background-color: var(--checkboxMarkCheckedBgColor);
+    background-color: var(--checkboxMarkCheckedColor);
 }
 
 .radio-mark circle {
-    fill: var(--checkboxMarkCheckedColor);
+    fill: var(--checkboxMarkCheckedBgColor);
 }
 
 @media screen and (min-width: 1025px) {
