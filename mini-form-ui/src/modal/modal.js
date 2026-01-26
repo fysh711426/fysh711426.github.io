@@ -30,7 +30,9 @@ var modal = (function () {
             onOpened: null,
             onClosed: null,
             onClick: null,
-            onReady: null
+            onReady: null,
+            onCreate: null,
+            onRemove: null
         };
 
         var _ = null;
@@ -89,7 +91,11 @@ var modal = (function () {
                 for(var attr of _setting.attrs) {
                     html = html.replace('__data-' + attr.name + '__', attr.value);
                 }
-                element = createElement(html);
+                if (ref.onCreate) {
+                    element = ref.onCreate(html);
+                } else {
+                    element = createElement(html);
+                }
                 document.body.appendChild(element);
                 if (_setting.singleton) {
                     template.innerHTML = '';
@@ -118,7 +124,11 @@ var modal = (function () {
                 var block = element.querySelector('.modal-block');
                 closeAnim(block, element, function() {
                     var html = element.outerHTML;
-                    remove(element);
+                    if (ref.onRemove) {
+                        ref.onRemove(element);
+                    } else {
+                        remove(element);
+                    }
                     element = null;
                     if (_setting.singleton) {
                         template.innerHTML = html;
