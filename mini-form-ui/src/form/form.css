@@ -295,6 +295,7 @@ textarea::placeholder {
 }
 
 .file-picker-icon {
+    display: block;
     margin-bottom: 10px;
 }
 

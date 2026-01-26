@@ -434,12 +434,13 @@
         function onLoadingModalButtonClick() {
             var _loading = loadingModal({
                 content: 'Loading',
-                showSpinner: true
+                showSpinner: true,
+                timeout: 5000
             });
             _loading.open();
-            setTimeout(() => {
-                _loading.close();
-            }, 5000);
+            // setTimeout(() => {
+            //     _loading.close();
+            // }, 5000);
         }
         function onToastButtonClick() {
             toast.show('Show Toast');

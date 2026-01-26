@@ -1438,12 +1438,14 @@ body.dark {
 
 /*----- tag -----*/
 body.light {
-    --alertLightColor: #5d5d5d;
+    /* --alertLightColor: #5d5d5d; */
+    --alertLightColor: #5e5e5e;
     --alertLightBgColor: #f3f3f3;
 }
 
 body.dark {
-    --alertLightColor: #f3f3f3;
+    /* --alertLightColor: #f3f3f3; */
+    --alertLightColor: #ccc;
     /* --alertLightBgColor: #414141; */
     --alertLightBgColor: #494949;
 }
@@ -1839,7 +1841,7 @@ body.dark {
 
 .toast-block.show {
     transform: translateY(0%);
-    transition: 0.35s ease-in-out;
+    transition: .35s ease-in-out;
 }
 
 @media screen and (max-width: 640px) {
@@ -2769,6 +2771,10 @@ body.dark {
 }
 
 /*----- search-box -----*/
+
+.search-input-box {
+    transition: border .15s ease, box-shadow .15s ease;
+}
 /*  
 z-index
     alert = 7000
@@ -4060,6 +4066,10 @@ a.nav-link-button:active {
     margin: 25px 0px 10px 0px;
 }
 
+.form-field.tight {
+    margin-top: 15px;
+}
+
 .form-field.first {
     margin-top: 0px;
 }
@@ -4122,7 +4132,6 @@ input {
     font-family: sans-serif;
     width: 100%;
     appearance: none;
-    transition: border .15s ease;
 }
 
 input::placeholder {
@@ -4148,7 +4157,6 @@ textarea {
     overflow-y: auto;
     resize: none;
     appearance: none;
-    transition: border .15s ease;
 }
 
 textarea::placeholder {
@@ -4161,12 +4169,13 @@ textarea::placeholder {
 
 .checkbox {
     /* height: 24px; */
-    height: 1.2rem;
+    /* height: 1.2rem; */
     display: flex;
     align-items: center;
+    /* align-items: start; */
     position: relative;
     user-select: none;
-    flex: 0 0 auto;
+    cursor: pointer;
 }
 
 .checkbox input {
@@ -4181,8 +4190,7 @@ textarea::placeholder {
     opacity: 0;
     margin: 0;
     padding: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    appearance: none;
 }
 
 .checkbox-mark {
@@ -4194,7 +4202,8 @@ textarea::placeholder {
     border-style: solid;
     box-sizing: border-box;
     display: flex;
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
+    flex: 0 0 auto;
     /* border-radius: 3px; */
     border-radius: .15rem;
     justify-content: center;
@@ -4202,8 +4211,11 @@ textarea::placeholder {
 }
 
 .checkbox-mark svg {
-    width: .9rem;
-    height: .9rem;
+    /* width: .9rem;
+    height: .9rem; */
+    width: 1rem;
+    height: 1rem;
+    margin-bottom: .05rem;
 }
 
 .checkbox-text {
@@ -4211,6 +4223,8 @@ textarea::placeholder {
     padding: 0 .56em;
     /* font-size: .85rem; */
     font-size: .9rem;
+    /* line-height: 1; */
+    line-height: 1.25;
 }
 
 .checkbox-wrap {
@@ -4221,10 +4235,128 @@ textarea::placeholder {
     border-radius: .4rem;
     border-style: solid;
     border-width: 1px;
-    transition: border .125s;
+}
+
+.checkbox-wrap:has(> :nth-child(2)) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 /*----- checkbox -----*/
+
+/*----- radio -----*/
+
+.radio {
+    display: flex;
+    align-items: center;
+    /* align-items: start; */
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+}
+
+.radio input {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+}
+
+.radio-mark {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-width: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 auto;
+    border-radius: 50rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio-mark svg {
+    /* width: 1rem;
+    height: 1rem; */
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.radio-text {
+    /* padding: 0 10px; */
+    padding: 0 .56em;
+    /* font-size: .85rem; */
+    font-size: .9rem;
+    /* line-height: 1; */
+    line-height: 1.25;
+}
+
+.radio-wrap {
+    padding: .5em;
+    border-radius: .4rem;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.radio-wrap:has(> :nth-child(2)) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/*----- radio -----*/
+
+/*----- file-picker -----*/
+
+.file-picker input {
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+}
+
+.file-picker {
+    display: block;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    border-width: 2px;
+    border-style: dashed;
+    border-radius: 8px;
+    width: 100%;
+    padding: 30px 20px;
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+.file-picker.selected .file-picker-choose-block {
+    display: none;
+}
+
+.file-picker:not(.selected) .file-picker-selected-block {
+    display: none;
+}
+
+.file-picker-icon {
+    margin-bottom: 10px;
+}
+
+/*----- file-picker -----*/
 
 /*----- theme-circle -----*/
 
@@ -4364,6 +4496,126 @@ textarea::placeholder {
 }
 
 /*----- theme-sample-text -----*/
+
+/*----- input -----*/
+
+input {
+    transition: border .15s ease;
+}
+
+textarea {
+    transition: border .15s ease;
+}
+
+/*----- input -----*/
+
+/*----- checkbox -----*/
+
+.checkbox-wrap {
+    transition: border .125s;
+}
+
+.checkbox-mark {
+    transition: border-color .2s ease, background-color .2s ease;
+    /* transition: border-color .3s ease, background-color .3s ease; */
+}
+
+.checkbox-mark svg {
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+}
+
+/* .checkbox-mark svg {
+    animation: checkboxUndraw .12s cubic-bezier(.65, 0, .83, .84) backwards;
+}
+
+.checkbox input:checked ~ .checkbox-mark svg {
+    animation: checkboxDraw .3s cubic-bezier(.65, 0, .83, .83) both;
+}
+
+@keyframes checkboxDraw {
+    0% {
+        transform: scale(.7);
+        opacity: 0;
+    }
+    25% {
+        transform: scale(.7);
+        opacity: 0;
+    }
+    26% {
+        transform: scale(.7);
+        opacity: 1;
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes checkboxUndraw {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    25% {
+        transform: scale(.7);
+        opacity: 1;
+    }
+    26% {
+        transform: scale(.7);
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+} */
+
+.checkbox-mark svg {
+    transform: scale(0);
+    opacity: 0;
+    /* transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), opacity .3s ease; */
+    /* transition: transform .45s cubic-bezier(.34, 1.85, .64, 1), opacity .3s ease; */
+    transition: transform .35s cubic-bezier(.47, 1.8, .4, 1.15), opacity .25s ease;
+    /* transition: transform .45s cubic-bezier(.68, -0.6, .32, 1.6), opacity .3s ease; */
+}
+
+.checkbox input:checked ~ .checkbox-mark svg {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/*----- checkbox -----*/
+
+/*----- radio -----*/
+
+.radio-wrap {
+    transition: border .125s;
+}
+
+.radio-mark {
+    transition: border-color .2s ease, background-color .2s ease;
+}
+
+.radio-mark svg {
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+}
+
+.radio-mark svg {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform .35s cubic-bezier(.47, 1.56, .4, 1.15), opacity .25s ease;
+}
+
+.radio input:checked ~ .radio-mark svg {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/*----- radio -----*/
 body.light {
     --formFieldDescriptionColor: #525252;
     --formFieldErrorColor: hsl(35.753 96.053% 29.804%);
@@ -4377,6 +4629,13 @@ body.light {
     --checkboxMarkCheckedBgColor: #474747;
     --checkboxWrapColor: #fcfcfc;
     --checkboxWrapBorderColor: #c4c6c9;
+    --filePickerColor: #262626;
+    --filePickerIconColor: #505050;
+    /* --filePickerHoverColor: #7a7a7a; */
+    /* --filePickerHoverColor: #242424; */
+    --filePickerHoverColor: #141414;
+    --filePickerHoverBgColor: #f5f5f5;
+    /* --filePickerHoverBgColor: #fcfcfc; */
     --themeCircleBoardColor: #474747;
     --themeCircleShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);;
     --themeCircleLightColor: #f9f9f9;
@@ -4397,6 +4656,11 @@ body.dark {
     --checkboxMarkCheckedBgColor:#c4c6c9;
     --checkboxWrapColor: #242424;
     --checkboxWrapBorderColor: #040405;
+    --filePickerColor: #d2d3d5;
+    /* --filePickerIconColor: #ccc; */
+    --filePickerIconColor: #dadada;
+    --filePickerHoverColor: #fff;
+    --filePickerHoverBgColor: #404040;
     --themeCircleBoardColor: #c4c6c9;
     --themeCircleShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);;
     --themeCircleLightColor: #c4c6c9;
@@ -4470,13 +4734,32 @@ textarea:hover {
     border-color: var(--checkboxMarkColor);
 }
 
-.checkbox-mark.checked {
+/* .checkbox-mark.checked {
     border-color: var(--checkboxMarkCheckedBgColor);
     background-color: var(--checkboxMarkCheckedBgColor);
 }
 
 .checkbox-mark.checked polyline {
     stroke: var(--checkboxMarkCheckedColor);
+} */
+
+.checkbox input:checked ~ .checkbox-mark {
+    border-color: var(--checkboxMarkCheckedBgColor);
+    background-color: var(--checkboxMarkCheckedBgColor);
+}
+
+/* .checkbox input:checked ~ .checkbox-mark polyline {
+    stroke: var(--checkboxMarkCheckedColor);
+} */
+
+.checkbox-mark polyline {
+    stroke: var(--checkboxMarkCheckedColor);
+}
+
+@media screen and (min-width: 1025px) {
+    .checkbox.hover:hover .checkbox-text {
+        color: var(--linkHoverColor);
+    }
 }
 
 .checkbox-wrap {
@@ -4485,6 +4768,60 @@ textarea:hover {
 }
 
 /*----- checkbox -----*/
+
+/*----- radio -----*/
+
+.radio-mark {
+    border-color: var(--checkboxMarkColor);
+}
+
+.radio input:checked ~ .radio-mark {
+    border-width: 3px;
+    border-color: var(--checkboxMarkCheckedBgColor);
+    background-color: var(--checkboxMarkCheckedColor);
+}
+
+.radio-mark circle {
+    fill: var(--checkboxMarkCheckedBgColor);
+}
+
+@media screen and (min-width: 1025px) {
+    .radio.hover:hover .radio-text {
+        color: var(--linkHoverColor);
+    }
+}
+
+.radio-wrap {
+    background-color: var(--checkboxWrapColor);
+    border-color: var(--checkboxWrapBorderColor);
+}
+
+/*----- radio -----*/
+
+/*----- file-picker -----*/
+
+.file-picker {
+    color: var(--filePickerColor);
+    border-color: var(--filePickerColor);
+}
+
+.file-picker-icon {
+    color: var(--filePickerIconColor);
+}
+
+@media screen and (min-width: 1025px) {
+    .file-picker:hover {
+        color: var(--filePickerHoverColor);
+        border-color: var(--filePickerHoverColor);
+        background-color: var(--filePickerHoverBgColor);
+    }
+
+    .file-picker:hover .file-picker-icon {
+        color: var(--filePickerHoverColor);
+    }
+}
+
+/*----- file-picker -----*/
 
 /*----- theme-circle -----*/
 
