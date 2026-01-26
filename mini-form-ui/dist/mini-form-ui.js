@@ -1287,7 +1287,8 @@ var loadingModal = (function () {
         _setting.size = settings.size ?? 'modal-xs';
         _setting.contentSize = settings.contentSize ?? 'text-base';
         _setting.showSpinner = settings.showSpinner ?? true;
-
+        _setting.timeout = settings.timeout ?? null;
+        
         var spinnerTemplate = _setting.showSpinner ? `
             <span class="modal-loading-spinner">
                 <i class="fa-solid fa-spinner fa-spin-pulse"></i>
@@ -1318,6 +1319,15 @@ var loadingModal = (function () {
             ele.querySelector('.modal-block').focus();
             if (ref.onOpened) {
                 ref.onOpened(ele);
+            }
+            if (_setting.timeout !== null) {
+                var _timeout = _setting.timeout;
+                if (_timeout < 250) {
+                    _timeout = 250;
+                }
+                setTimeout(() => {
+                    ref.close();
+                }, _timeout);
             }
         }
         _modal.onClosed = function (ele, action) {

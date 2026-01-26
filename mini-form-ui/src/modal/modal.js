@@ -29,7 +29,8 @@ var modal = (function () {
             close,
             onOpened: null,
             onClosed: null,
-            onClick: null
+            onClick: null,
+            onReady: null
         };
 
         var _ = null;
@@ -102,6 +103,11 @@ var modal = (function () {
                 }
                 var block = element.querySelector('.modal-block');
                 openAnim(block, element, function() {
+                    requestAnimationFrame(function() {
+                        if (ref.onReady) {
+                            ref.onReady(element);
+                        }
+                    });
                 });
             }
         }

@@ -15,7 +15,6 @@ var loadingModal = (function () {
         _setting.size = settings.size ?? 'modal-xs';
         _setting.contentSize = settings.contentSize ?? 'text-base';
         _setting.showSpinner = settings.showSpinner ?? true;
-        _setting.timeout = settings.timeout ?? null;
         
         var spinnerTemplate = _setting.showSpinner ? `
             <span class="modal-loading-spinner">
@@ -39,7 +38,8 @@ var loadingModal = (function () {
             open,
             close,
             onOpened: null,
-            onClosed: null
+            onClosed: null,
+            onReady: null
         };
         
         var _modal = modal(template, _setting);
@@ -48,19 +48,15 @@ var loadingModal = (function () {
             if (ref.onOpened) {
                 ref.onOpened(ele);
             }
-            if (_setting.timeout !== null) {
-                var _timeout = _setting.timeout;
-                if (_timeout < 250) {
-                    _timeout = 250;
-                }
-                setTimeout(() => {
-                    ref.close();
-                }, _timeout);
-            }
         }
         _modal.onClosed = function (ele, action) {
             if (ref.onClosed) {
                 ref.onClosed(ele, action);
+            }
+        }
+        _modal.onReady = function (ele) {
+            if (ref.onReady) {
+                ref.onReady(ele);
             }
         }
         function open() {
