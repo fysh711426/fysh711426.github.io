@@ -4637,6 +4637,14 @@ body.light {
     --filePickerHoverColor: #141414;
     --filePickerHoverBgColor: #f5f5f5;
     /* --filePickerHoverBgColor: #fcfcfc; */
+    --filePickerLightColor: #262626;
+    --filePickerLightIconColor: #505050;
+    --filePickerLightBorderColor: #ccc;
+    --filePickerLightHoverBgColor: #f9f9f9;
+    --filePickerDarkColor: #262626;
+    --filePickerDarkIconColor: #505050;
+    --filePickerDarkBorderColor: #262626;
+    --filePickerDarkHoverBgColor: #f5f5f5;
     --themeCircleBoardColor: #474747;
     --themeCircleShadow: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);;
     --themeCircleLightColor: #f9f9f9;
@@ -4662,6 +4670,14 @@ body.dark {
     --filePickerIconColor: #dadada;
     --filePickerHoverColor: #fff;
     --filePickerHoverBgColor: #404040;
+    --filePickerLightColor: #d2d3d5;
+    --filePickerLightIconColor: #dadada;
+    --filePickerLightBorderColor: #5e5e5e;
+    --filePickerLightHoverBgColor: #393939;
+    --filePickerDarkColor: #d2d3d5;
+    --filePickerDarkIconColor: #dadada;
+    --filePickerDarkBorderColor: #d2d3d5;
+    --filePickerDarkHoverBgColor: #404040;
     --themeCircleBoardColor: #c4c6c9;
     --themeCircleShadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);;
     --themeCircleLightColor: #c4c6c9;
@@ -4801,7 +4817,7 @@ textarea:hover {
 
 /*----- file-picker -----*/
 
-.file-picker {
+/* .file-picker {
     color: var(--filePickerColor);
     border-color: var(--filePickerColor);
 }
@@ -4819,6 +4835,36 @@ textarea:hover {
 
     .file-picker:hover .file-picker-icon {
         color: var(--filePickerHoverColor);
+    }
+} */
+
+.file-picker.light {
+    color: var(--filePickerLightColor);
+    border-color: var(--filePickerLightBorderColor);
+}
+
+.file-picker.light .file-picker-icon {
+    color: var(--filePickerLightIconColor);
+}
+
+@media screen and (min-width: 1025px) {
+    .file-picker.light:hover {
+        background-color: var(--filePickerLightHoverBgColor);
+    }
+}
+
+.file-picker.dark {
+    color: var(--filePickerDarkColor);
+    border-color: var(--filePickerDarkBorderColor);
+}
+
+.file-picker.dark .file-picker-icon {
+    color: var(--filePickerDarkIconColor);
+}
+
+@media screen and (min-width: 1025px) {
+    .file-picker.dark:hover {
+        background-color: var(--filePickerDarkHoverBgColor);
     }
 }
 

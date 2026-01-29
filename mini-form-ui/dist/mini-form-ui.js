@@ -99,7 +99,9 @@ var onScroll = function (callback, delay) {
 var bodyScroll = (function () {
     var scrollY = 0;
     var isLocked = false;
+    var count = 0;
     function lock() {
+        count++;
         if (!isLocked) {
             scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
             var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -114,13 +116,20 @@ var bodyScroll = (function () {
         isLocked = true;
     }
     function unlock() {
+        count--;
+        count = Math.max(0, count);
+        if (count > 0)
+            return;
         if (isLocked) {
             document.body.style.position = '';
             document.body.style.top = '';
             document.body.style.minWidth = '';
             document.body.style.maxWidth = '';
             document.body.style.paddingRight = '';
-            window.scrollTo({ top: scrollY });
+            window.scrollTo({ 
+                top: scrollY,
+                behavior: 'instant'
+            });
         }
         isLocked = false;
     }

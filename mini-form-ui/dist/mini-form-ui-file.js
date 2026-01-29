@@ -2,12 +2,18 @@ var fileNavbar = (function() {
     // hover
     var enableHover = function() {
         var wrap = document.querySelector('.file-navbar-title-wrap');
-        var navbarTitle = document.querySelector('.file-navbar-title');
-        var navbarTitleOver = document.querySelector('.file-navbar-title-over');
-        navbarTitle.addEventListener('mouseover', function () {
+        // var navbarTitle = document.querySelector('.file-navbar-title');
+        // var navbarTitleOver = document.querySelector('.file-navbar-title-over');
+        // navbarTitle.addEventListener('mouseover', function () {
+        //     wrap.classList.add('hover');
+        // });
+        // navbarTitleOver.addEventListener('mouseleave', function () {
+        //     wrap.classList.remove('hover');
+        // });
+        wrap.addEventListener('mouseover', function () {
             wrap.classList.add('hover');
         });
-        navbarTitleOver.addEventListener('mouseleave', function () {
+        wrap.addEventListener('mouseleave', function () {
             wrap.classList.remove('hover');
         });
     }

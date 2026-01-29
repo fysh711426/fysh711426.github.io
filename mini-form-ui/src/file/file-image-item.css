@@ -169,21 +169,24 @@ body.dark {
     overflow: hidden;
 }
 
-.file-image-item-icon img {
+.file-image-item-icon img,
+.file-image-item-icon video
+ {
     display: block;
     align-self: center;
-    height: auto;
     width: auto;
+    height: auto;
     margin: auto;
-    opacity: 1;
 }
 
-.file-image-item-icon video {
-    display: block;
-    align-self: center;
-    height: auto;
-    width: auto;
-    margin: auto;
+.file-image-item-icon img[loading="lazy"]:not([data-loaded]) {
+    width: 120px;
+    height: 90px;
+    opacity: 0;
+}
+
+.file-image-item-icon img {
+    opacity: 1;
 }
 
 .file-image-item-icon .preview {
@@ -491,7 +494,7 @@ body.dark {
 }
 
 .file-image-item-icon img {
-    transition: max-width .8s, max-height .8s;
+    transition: max-width .8s, max-height .8s, opacity .5s ease-in-out;
 }
 
 .file-image-item-icon video {

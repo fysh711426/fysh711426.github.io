@@ -48,14 +48,13 @@ z-index
     z-index: 15000;
 }
 
-.file-image-block img.hide {
-    visibility: hidden;
+.file-image-block img[loading="lazy"]:not([data-loaded]) {
     height: 320px;
+    opacity: 0;
 }
 
-.file-image-block img.show {
-    visibility: visible;
-    height: auto;
+.file-image-block img {
+    opacity: 1;
 }
 
 /*.file-image-block img {
@@ -511,3 +510,7 @@ z-index
 }
 
 /*----- file-image-control -----*/
+
+.file-image-block img {
+    transition: opacity .5s ease-in-out;
+}
