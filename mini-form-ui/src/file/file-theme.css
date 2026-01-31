@@ -71,6 +71,11 @@ body.dark {
     box-shadow: var(--fileImageBlockShadow);
 }
 
+.file-image-block-floating .badge-circle-number,
+.file-image-block-floating .badge-circle-check {
+    background-color: var(--fileImageItemFloatingBadgeBgColor);
+}
+
 /*----- file-image-block -----*/
 
 /*----- file-navbar -----*/

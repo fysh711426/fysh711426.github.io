@@ -63,6 +63,7 @@ z-index
 
 .file-image-block .image-wrap {
     margin: 0 auto;
+    position: relative;
 }
 
 .file-image-block .image-wrap.scale100 {
@@ -79,6 +80,53 @@ z-index
 
 .file-image-block .image-wrap.scale25 {
     width: 25%;
+}
+
+.file-image-block-floating {
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+@media screen and (max-width: 480px) {
+    .file-image-block-floating {
+        top: 5px;
+        right: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /*----- .badge-circle.sm -----*/
+    .file-image-block-floating .badge-circle {
+        min-width: 20px;
+        height: 20px;
+    }
+    /*----- .badge-circle.sm -----*/
+
+    /*----- .badge-circle-number.sm -----*/
+    .file-image-block-floating .badge-circle-number {
+        font-size: 13px;
+        line-height: 13px;
+        padding-top: 3.3px;
+    }
+    /*----- .badge-circle-number.sm -----*/
+
+    /*----- .badge-circle-check.sm -----*/
+    .file-image-block-floating .badge-circle-check {
+        font-size: 13px;
+        line-height: 13px;
+        padding-top: 3.3px;
+    }
+    /*----- .badge-circle-check.sm -----*/
+}
+
+.file-main .main-inner:has(> .file-navbar:not(.over)) .file-image-block-floating {
+    display: none;
+}
+
+.file-image-block .image-wrap:has(> img:not([data-loaded])) .file-image-block-floating {
+    display: none;
 }
 
 /*----- file-image-block -----*/
