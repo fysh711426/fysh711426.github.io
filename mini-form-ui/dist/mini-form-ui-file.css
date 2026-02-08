@@ -48,14 +48,13 @@ z-index
     z-index: 15000;
 }
 
-.file-image-block img.hide {
-    visibility: hidden;
+.file-image-block img[loading="lazy"]:not([data-loaded]) {
     height: 320px;
+    opacity: 0;
 }
 
-.file-image-block img.show {
-    visibility: visible;
-    height: auto;
+.file-image-block img {
+    opacity: 1;
 }
 
 /*.file-image-block img {
@@ -64,6 +63,7 @@ z-index
 
 .file-image-block .image-wrap {
     margin: 0 auto;
+    position: relative;
 }
 
 .file-image-block .image-wrap.scale100 {
@@ -80,6 +80,53 @@ z-index
 
 .file-image-block .image-wrap.scale25 {
     width: 25%;
+}
+
+.file-image-block-floating {
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+@media screen and (max-width: 480px) {
+    .file-image-block-floating {
+        top: 5px;
+        right: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /*----- .badge-circle.sm -----*/
+    .file-image-block-floating .badge-circle {
+        min-width: 20px;
+        height: 20px;
+    }
+    /*----- .badge-circle.sm -----*/
+
+    /*----- .badge-circle-number.sm -----*/
+    .file-image-block-floating .badge-circle-number {
+        font-size: 13px;
+        line-height: 13px;
+        padding-top: 3.3px;
+    }
+    /*----- .badge-circle-number.sm -----*/
+
+    /*----- .badge-circle-check.sm -----*/
+    .file-image-block-floating .badge-circle-check {
+        font-size: 13px;
+        line-height: 13px;
+        padding-top: 3.3px;
+    }
+    /*----- .badge-circle-check.sm -----*/
+}
+
+.file-main .main-inner:has(> .file-navbar:not(.over)) .file-image-block-floating {
+    display: none;
+}
+
+.file-image-block .image-wrap:has(> img:not([data-loaded])) .file-image-block-floating {
+    display: none;
 }
 
 /*----- file-image-block -----*/
@@ -511,6 +558,10 @@ z-index
 }
 
 /*----- file-image-control -----*/
+
+.file-image-block img {
+    transition: opacity .5s ease-in-out;
+}
 body.light {
     --fileIconColor: hsl(0, 0%, 31%);
     --fileIconHoverColor: hsl(0, 0%, 31%);
@@ -582,6 +633,11 @@ body.dark {
 
 .file-image-block .image-wrap.first {
     box-shadow: var(--fileImageBlockShadow);
+}
+
+.file-image-block-floating .badge-circle-number,
+.file-image-block-floating .badge-circle-check {
+    background-color: var(--fileImageItemFloatingBadgeBgColor);
 }
 
 /*----- file-image-block -----*/
@@ -1012,21 +1068,24 @@ body.dark {
     overflow: hidden;
 }
 
-.file-image-item-icon img {
+.file-image-item-icon img,
+.file-image-item-icon video
+ {
     display: block;
     align-self: center;
-    height: auto;
     width: auto;
+    height: auto;
     margin: auto;
-    opacity: 1;
 }
 
-.file-image-item-icon video {
-    display: block;
-    align-self: center;
-    height: auto;
-    width: auto;
-    margin: auto;
+.file-image-item-icon img[loading="lazy"]:not([data-loaded]) {
+    width: 120px;
+    height: 90px;
+    opacity: 0;
+}
+
+.file-image-item-icon img {
+    opacity: 1;
 }
 
 .file-image-item-icon .preview {
@@ -1269,19 +1328,7 @@ body.dark {
         border-radius: 7px;
     }
 
-    .view-mode .file-image-item-icon img {
-        width: auto;
-        height: auto;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        max-width: 100%;
-        max-height: 100%;
-    }
-
+    .view-mode .file-image-item-icon img,
     .view-mode .file-image-item-icon video {
         width: auto;
         height: auto;
@@ -1300,16 +1347,12 @@ body.dark {
         height: inherit;
     }
 
-    .view-mode .file-image-item-icon.over img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-
+    .view-mode .file-image-item-icon.over img,
     .view-mode .file-image-item-icon.over video {
         max-width: 100%;
         max-height: 100%;
     }
-
+    
     .view-mode .file-image-item-text {
         align-self: start;
         padding: 10px 5px 0px 5px;
@@ -1334,7 +1377,7 @@ body.dark {
 }
 
 .file-image-item-icon img {
-    transition: max-width .8s, max-height .8s;
+    transition: max-width .8s, max-height .8s, opacity .2s ease-in-out;
 }
 
 .file-image-item-icon video {

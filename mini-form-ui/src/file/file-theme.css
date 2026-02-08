@@ -116,3 +116,11 @@ body.dark {
 }
 
 /*----- file-text-content -----*/
+
+/*----- file-data-stream-loading -----*/
+
+.file-data-stream-loading {
+    color: var(--spinnerColor);
+}
+
+/*----- file-data-stream-loading -----*/
