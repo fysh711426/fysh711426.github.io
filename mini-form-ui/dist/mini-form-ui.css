@@ -2684,6 +2684,8 @@ body.dark {
     padding: .25em .25em .25em .75em;
     flex: 1;
     cursor: text;
+    height: 40px;
+    box-sizing: border-box;
 }
 
 /* .search-input-box.focus {
@@ -2718,8 +2720,8 @@ body.dark {
 .search-button {
     border-width: 1px;
     border-style: solid;
-    /* width: 60px; */
-    width: 3em;
+    width: 60px;
+    /* width: 3em; */
     border-radius: 0 50rem 50rem 0;
     cursor: pointer;
     padding: 0;
