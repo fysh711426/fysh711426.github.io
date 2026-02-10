@@ -6,7 +6,6 @@ body.light {
     --toastColor: #fff;
     --toastBgColor: #3b3b3b;
     --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
-    
 }
 
 body.dark {

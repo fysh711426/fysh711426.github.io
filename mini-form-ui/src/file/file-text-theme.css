@@ -17,7 +17,9 @@ body.text-dark {
     --fileTextContentBgColor: hsl(0, 0%, 14%);
     --themeButtonBgColor: #f9f9f9;
     --themeButtonFontColor: #181818;
-    
+    --toastColor: #181818;
+    --toastBgColor: #ececec;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
 }
 
 body.text-dark-blue {
@@ -39,6 +41,9 @@ body.text-dark-blue {
     --fileTextContentBgColor: hsl(213, 27%, 13%);
     --themeButtonBgColor: #f9f9f9;
     --themeButtonFontColor: #181818;
+    --toastColor: #181818;
+    --toastBgColor: #ececec;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
 }
 
 body.text-light {
@@ -60,6 +65,9 @@ body.text-light {
     --fileTextContentBgColor: hsl(0, 0%, 96%);
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
+    --toastColor: #fff;
+    --toastBgColor: #3b3b3b;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
 }
 
 body.text-gray {
@@ -81,6 +89,9 @@ body.text-gray {
     --fileTextContentBgColor: hsl(240, 13%, 87%);
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
+    --toastColor: #fff;
+    --toastBgColor: #3b3b3b;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
 }
 
 body.text-yellow {
@@ -102,6 +113,9 @@ body.text-yellow {
     --fileTextContentBgColor: hsl(47, 92%, 93%);
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
+    --toastColor: #fff;
+    --toastBgColor: #3b3b3b;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
 }
 
 body.text-orange {
@@ -123,6 +137,9 @@ body.text-orange {
     --fileTextContentBgColor: hsl(37, 92%, 93%);
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
+    --toastColor: #fff;
+    --toastBgColor: #3b3b3b;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
 }
 
 body.text-blue {
@@ -144,6 +161,9 @@ body.text-blue {
     --fileTextContentBgColor: hsl(202, 67%, 93%);
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
+    --toastColor: #fff;
+    --toastBgColor: #3b3b3b;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
 }
 
 body.text-green {
@@ -165,6 +185,9 @@ body.text-green {
     --fileTextContentBgColor: hsl(146, 47%, 92%);
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
+    --toastColor: #fff;
+    --toastBgColor: #3b3b3b;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
 }
 
 /*----- file-navbar -----*/

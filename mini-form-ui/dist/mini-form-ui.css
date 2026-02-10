@@ -3008,41 +3008,6 @@ info {
     padding-left: 10px;
 }
 
-@media screen and (max-width: 640px) {
-    .header .nav-link,
-    .header .nav-link-button {
-        margin-right: 10px;
-    }
-}
-
-@media screen and (min-width: 641px) {
-    .header .nav-link,
-    .header .nav-link-button {
-        margin-right: 15px;
-    }
-}
-
-.header .end .nav-link:last-child,
-.header .end .nav-link-button:last-child {
-    margin-right: 0px;
-}
-
-.nav-link-button.theme-button-light {
-    display: none;
-}
-
-.nav-link-button.theme-button-light.show {
-    display: flex;
-}
-
-.nav-link-button.theme-button-dark {
-    display: none;
-}
-
-.nav-link-button.theme-button-dark.show {
-    display: flex;
-}
-
 /*----- header -----*/
 
 /*----- container -----*/
@@ -3663,8 +3628,8 @@ table td {
 }
 
 .nav-link-icon {
-    /* margin-right: 5px; */
-    margin-right: .25em;
+    margin-right: 5px;
+    /* margin-right: .25em; */
 }
 
 .nav-link-button-icon.svg,
@@ -3675,8 +3640,8 @@ table td {
 
 @media screen and (max-width: 640px) {
     .nav-link.toggle {
-        /* padding: 5px 5px; */
-        padding: .25em .25em;
+        padding: 5px 5px;
+        /* padding: .25em .25em; */
     }
 
     .nav-link.toggle .nav-link-icon {
@@ -3725,13 +3690,13 @@ a.nav-link-button:active {
     border-radius: 50rem;
     font-size: 1rem;
     align-self: center;
-    /* padding: 5px 15px; */
-    padding: .25em .75em;
+    padding: 5px 15px;
+    /* padding: .25em .75em; */
 }
 
 .nav-link-button-icon {
-    /* margin-right: 5px; */
-    margin-right: .25em;
+    margin-right: 5px;
+    /* margin-right: .25em; */
 }
 
 .nav-link-button-icon.svg,
@@ -3742,8 +3707,8 @@ a.nav-link-button:active {
 
 @media screen and (max-width: 640px) {
     .nav-link-button.toggle {
-        /* padding: 5px 5px; */
-        padding: .25em .25em;
+        padding: 5px 5px;
+        /* padding: .25em .25em; */
     }
 
     .nav-link-button.toggle .nav-link-button-icon {
@@ -3762,7 +3727,43 @@ a.nav-link-button:active {
     }
 }
 
+.nav-link-button.theme-button-light {
+    display: none;
+}
+
+.nav-link-button.theme-button-light.show {
+    display: flex;
+}
+
+.nav-link-button.theme-button-dark {
+    display: none;
+}
+
+.nav-link-button.theme-button-dark.show {
+    display: flex;
+}
+
 /*----- nav-link-button -----*/
+
+@media screen and (max-width: 640px) {
+    .header .nav-link,
+    .header .nav-link-button {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .header .nav-link,
+    .header .nav-link-button {
+        margin-right: 15px;
+    }
+}
+
+.header .end .nav-link.last,
+.header .end .nav-link:last-child,
+.header .end .nav-link-button:last-child {
+    margin-right: 0px;
+}
 /*----- left-menu -----*/
 
 .left-menu {
