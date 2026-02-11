@@ -95,10 +95,12 @@ var popover = (function () {
         setting.preventDefault = _settings.preventDefault ?? false;
         setting.stopPropagation = _settings.stopPropagation ?? false;
         var templateHTML = document.querySelector(setting.template).innerHTML;
-
+        
         var ref = {
             close,
-            onOpen: null
+            onOpen: null,
+            onCreate: null,
+            onRemove: null
         };
 
         var element = null;
@@ -111,7 +113,11 @@ var popover = (function () {
                         html = html.replace('__' + attr.name + '__', attr.value);
                     }
                 }
-                element = createElement(html);
+                if (ref.onCreate) {
+                    element = ref.onCreate(html);
+                } else {
+                    element = createElement(html);
+                }
                 global = {
                     button: button,
                     element: element,
@@ -130,7 +136,11 @@ var popover = (function () {
         }
         function close() {
             if (element) {
-                remove(element);
+                if (ref.onRemove) {
+                    ref.onRemove(element);
+                } else {
+                    remove(element);
+                }
                 element = null;
                 global = null;
             }
