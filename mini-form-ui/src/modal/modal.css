@@ -168,8 +168,9 @@ body.dark {
     font-size: .875rem;
     line-height: 1.5;
     margin-bottom: 15px;
-    word-wrap: break-word;
-    word-break: break-all;
+    /* word-wrap: break-word;
+    word-break: break-all; */
+    overflow-wrap: anywhere;
 }
 
 .modal-body.relax {
