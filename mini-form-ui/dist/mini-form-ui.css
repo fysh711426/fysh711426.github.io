@@ -1795,7 +1795,6 @@ body.light {
     --toastColor: #fff;
     --toastBgColor: #3b3b3b;
     --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
-    
 }
 
 body.dark {
@@ -2295,8 +2294,9 @@ body.dark {
     font-size: .875rem;
     line-height: 1.5;
     margin-bottom: 15px;
-    word-wrap: break-word;
-    word-break: break-all;
+    /* word-wrap: break-word;
+    word-break: break-all; */
+    overflow-wrap: anywhere;
 }
 
 .modal-body.relax {
