@@ -1,31 +1,3 @@
-body {
-    --scrollbarColor_Light: #0000001a;
-    --scrollbarHoverColor_Light: #0003;
-    --scrollbarColor_Dark: #ffffff1a;
-    --scrollbarHoverColor_Dark: #fff3;
-
-    --toastColor_Light: #fff;
-    --toastBgColor_Light: #3b3b3b;
-    --toastShadow_Light: 0 0 24px 0 rgba(0, 0, 0, .1);
-    --toastColor_Dark: #181818;
-    --toastBgColor_Dark: #ececec;
-    --toastShadow_Dark: 0 0 24px 0 rgba(0, 0, 0, .1);
-
-    --popoverBgColor_Light: #fff;
-    --popoverBorderColor_Light: #e6e6e6;
-    --popoverShadow_Light: 0 2px 5px 0 rgb(0 0 0 / 15%), 0 3px 3px -2px rgb(0 0 0 / 15%);
-    --popoverBgColor_Dark: #404040;
-    --popoverBorderColor_Dark: #454545;
-    --popoverShadow_Dark: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
-
-    --dropdownMenuColor_Light: #262626;
-    --dropdownMenuHoverBgColor_Light: #f5f5f5;
-    --dropdownMenuActiveBgColor_Light: #f0f0f0;
-    --dropdownMenuColor_Dark: #d2d3d5;
-    --dropdownMenuHoverBgColor_Dark: #555555;
-    --dropdownMenuActiveBgColor_Dark: #4a4a4a;
-}
-
 body.text-dark {
     --bgColor: hsl(0, 0%, 14%);
     --fontColor: hsl(220, 3%, 83%);
@@ -45,17 +17,11 @@ body.text-dark {
     --fileTextContentBgColor: hsl(0, 0%, 14%);
     --themeButtonBgColor: #f9f9f9;
     --themeButtonFontColor: #181818;
-    --scrollbarColor: var(--scrollbarColor_Dark);
-    --scrollbarHoverColor: var(--scrollbarHoverColor_Dark);
-    --toastColor: var(--toastColor_Dark);
-    --toastBgColor: var(--toastBgColor_Dark);
-    --toastShadow: var(--toastShadow_Dark);
-    --popoverBgColor: var(--popoverBgColor_Dark);
-    --popoverBorderColor: var(--popoverBorderColor_Dark);
-    --popoverShadow: var(--popoverShadow_Dark);
-    --dropdownMenuColor: var(--dropdownMenuColor_Dark);
-    --dropdownMenuHoverBgColor: var(--dropdownMenuHoverBgColor_Dark);
-    --dropdownMenuActiveBgColor: var(--dropdownMenuActiveBgColor_Dark);
+    --toastColor: #181818;
+    --toastBgColor: #ececec;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
+    --scrollbarColor: #ffffff1a;
+    --scrollbarHoverColor: #fff3;
 }
 
 body.text-dark-blue {
@@ -77,17 +43,11 @@ body.text-dark-blue {
     --fileTextContentBgColor: hsl(213, 27%, 13%);
     --themeButtonBgColor: #f9f9f9;
     --themeButtonFontColor: #181818;
-    --scrollbarColor: var(--scrollbarColor_Dark);
-    --scrollbarHoverColor: var(--scrollbarHoverColor_Dark);
-    --toastColor: var(--toastColor_Dark);
-    --toastBgColor: var(--toastBgColor_Dark);
-    --toastShadow: var(--toastShadow_Dark);
-    --popoverBgColor: var(--popoverBgColor_Dark);
-    --popoverBorderColor: var(--popoverBorderColor_Dark);
-    --popoverShadow: var(--popoverShadow_Dark);
-    --dropdownMenuColor: var(--dropdownMenuColor_Dark);
-    --dropdownMenuHoverBgColor: var(--dropdownMenuHoverBgColor_Dark);
-    --dropdownMenuActiveBgColor: var(--dropdownMenuActiveBgColor_Dark);
+    --toastColor: #181818;
+    --toastBgColor: #ececec;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
+    --scrollbarColor: #ffffff1a;
+    --scrollbarHoverColor: #fff3;
 }
 
 body.text-light {
@@ -109,17 +69,11 @@ body.text-light {
     --fileTextContentBgColor: hsl(0, 0%, 96%);
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
-    --scrollbarColor: var(--scrollbarColor_Light);
-    --scrollbarHoverColor: var(--scrollbarHoverColor_Light);
-    --toastColor: var(--toastColor_Light);
-    --toastBgColor: var(--toastBgColor_Light);
-    --toastShadow: var(--toastShadow_Light);
-    --popoverBgColor: var(--popoverBgColor_Light);
-    --popoverBorderColor: var(--popoverBorderColor_Light);
-    --popoverShadow: var(--popoverShadow_Light);
-    --dropdownMenuColor: var(--dropdownMenuColor_Light);
-    --dropdownMenuHoverBgColor: var(--dropdownMenuHoverBgColor_Light);
-    --dropdownMenuActiveBgColor: var(--dropdownMenuActiveBgColor_Light);
+    --toastColor: #fff;
+    --toastBgColor: #3b3b3b;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
+    --scrollbarColor: #0000001a;
+    --scrollbarHoverColor: #0003;
 }
 
 body.text-gray {
@@ -141,17 +95,11 @@ body.text-gray {
     --fileTextContentBgColor: hsl(240, 13%, 87%);
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
-    --scrollbarColor: var(--scrollbarColor_Light);
-    --scrollbarHoverColor: var(--scrollbarHoverColor_Light);
-    --toastColor: var(--toastColor_Light);
-    --toastBgColor: var(--toastBgColor_Light);
-    --toastShadow: var(--toastShadow_Light);
-    --popoverBgColor: var(--popoverBgColor_Light);
-    --popoverBorderColor: var(--popoverBorderColor_Light);
-    --popoverShadow: var(--popoverShadow_Light);
-    --dropdownMenuColor: var(--dropdownMenuColor_Light);
-    --dropdownMenuHoverBgColor: var(--dropdownMenuHoverBgColor_Light);
-    --dropdownMenuActiveBgColor: var(--dropdownMenuActiveBgColor_Light);
+    --toastColor: #fff;
+    --toastBgColor: #3b3b3b;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
+    --scrollbarColor: #0000001a;
+    --scrollbarHoverColor: #0003;
 }
 
 body.text-yellow {
@@ -173,17 +121,11 @@ body.text-yellow {
     --fileTextContentBgColor: hsl(47, 92%, 93%);
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
-    --scrollbarColor: var(--scrollbarColor_Light);
-    --scrollbarHoverColor: var(--scrollbarHoverColor_Light);
-    --toastColor: var(--toastColor_Light);
-    --toastBgColor: var(--toastBgColor_Light);
-    --toastShadow: var(--toastShadow_Light);
-    --popoverBgColor: var(--popoverBgColor_Light);
-    --popoverBorderColor: var(--popoverBorderColor_Light);
-    --popoverShadow: var(--popoverShadow_Light);
-    --dropdownMenuColor: var(--dropdownMenuColor_Light);
-    --dropdownMenuHoverBgColor: var(--dropdownMenuHoverBgColor_Light);
-    --dropdownMenuActiveBgColor: var(--dropdownMenuActiveBgColor_Light);
+    --toastColor: #fff;
+    --toastBgColor: #3b3b3b;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
+    --scrollbarColor: #0000001a;
+    --scrollbarHoverColor: #0003;
 }
 
 body.text-orange {
@@ -205,17 +147,11 @@ body.text-orange {
     --fileTextContentBgColor: hsl(37, 92%, 93%);
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
-    --scrollbarColor: var(--scrollbarColor_Light);
-    --scrollbarHoverColor: var(--scrollbarHoverColor_Light);
-    --toastColor: var(--toastColor_Light);
-    --toastBgColor: var(--toastBgColor_Light);
-    --toastShadow: var(--toastShadow_Light);
-    --popoverBgColor: var(--popoverBgColor_Light);
-    --popoverBorderColor: var(--popoverBorderColor_Light);
-    --popoverShadow: var(--popoverShadow_Light);
-    --dropdownMenuColor: var(--dropdownMenuColor_Light);
-    --dropdownMenuHoverBgColor: var(--dropdownMenuHoverBgColor_Light);
-    --dropdownMenuActiveBgColor: var(--dropdownMenuActiveBgColor_Light);
+    --toastColor: #fff;
+    --toastBgColor: #3b3b3b;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
+    --scrollbarColor: #0000001a;
+    --scrollbarHoverColor: #0003;
 }
 
 body.text-blue {
@@ -237,17 +173,11 @@ body.text-blue {
     --fileTextContentBgColor: hsl(202, 67%, 93%);
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
-    --scrollbarColor: var(--scrollbarColor_Light);
-    --scrollbarHoverColor: var(--scrollbarHoverColor_Light);
-    --toastColor: var(--toastColor_Light);
-    --toastBgColor: var(--toastBgColor_Light);
-    --toastShadow: var(--toastShadow_Light);
-    --popoverBgColor: var(--popoverBgColor_Light);
-    --popoverBorderColor: var(--popoverBorderColor_Light);
-    --popoverShadow: var(--popoverShadow_Light);
-    --dropdownMenuColor: var(--dropdownMenuColor_Light);
-    --dropdownMenuHoverBgColor: var(--dropdownMenuHoverBgColor_Light);
-    --dropdownMenuActiveBgColor: var(--dropdownMenuActiveBgColor_Light);
+    --toastColor: #fff;
+    --toastBgColor: #3b3b3b;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
+    --scrollbarColor: #0000001a;
+    --scrollbarHoverColor: #0003;
 }
 
 body.text-green {
@@ -269,17 +199,12 @@ body.text-green {
     --fileTextContentBgColor: hsl(146, 47%, 92%);
     --themeButtonBgColor: #404040;
     --themeButtonFontColor: #fff;
-    --scrollbarColor: var(--scrollbarColor_Light);
-    --scrollbarHoverColor: var(--scrollbarHoverColor_Light);
-    --toastColor: var(--toastColor_Light);
-    --toastBgColor: var(--toastBgColor_Light);
-    --toastShadow: var(--toastShadow_Light);
-    --popoverBgColor: var(--popoverBgColor_Light);
-    --popoverBorderColor: var(--popoverBorderColor_Light);
-    --popoverShadow: var(--popoverShadow_Light);
-    --dropdownMenuColor: var(--dropdownMenuColor_Light);
-    --dropdownMenuHoverBgColor: var(--dropdownMenuHoverBgColor_Light);
-    --dropdownMenuActiveBgColor: var(--dropdownMenuActiveBgColor_Light);
+    --toastColor: #fff;
+    --toastBgColor: #3b3b3b;
+    --toastShadow: 0 0 24px 0 rgba(0, 0, 0, .1);
+    --scrollbarColor: #0000001a;
+    --scrollbarHoverColor: #0003;
+    
 }
 
 /*----- file-navbar -----*/

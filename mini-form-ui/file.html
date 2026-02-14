@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="src/tooltip/tooltip.css">
     <link rel="stylesheet" href="src/progress/progress.css">
     <link rel="stylesheet" href="src/spinner/spinner.css">
+    <link rel="stylesheet" href="src/popover/popover.css">
     <link rel="stylesheet" href="src/gotop/gotop.css">
     <link rel="stylesheet" href="src/collapse/collapse.css">
     <link rel="stylesheet" href="src/scrollbar/scrollbar.css">
+    <link rel="stylesheet" href="src/dropdown/dropdown-menu.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
     <link rel="stylesheet" href="src/layout/layout-nav-link.css">
@@ -23,12 +25,14 @@
     <link rel="stylesheet" href="src/file/file-theme.css">
     <link rel="stylesheet" href="src/file/file-item.css">
     <link rel="stylesheet" href="src/file/file-image-item.css">
+    <link rel="stylesheet" href="src/file/file-bookmark-popover.css">
     <script src="src/theme/theme.js"></script>
     <script src="src/scroll/scroll.js"></script>
     <script src="src/scroll/resize.js"></script>
     <script src="src/tooltip/tooltip.js"></script>
     <script src="src/progress/progress.js"></script>
     <script src="src/spinner/spinner.js"></script>
+    <script src="src/popover/popover.js"></script>
     <script src="src/gotop/gotop.js"></script>
     <script src="src/collapse/collapse.js"></script>
     <script src="src/scrollbar/scrollbar.js"></script>
@@ -99,7 +103,7 @@
                         </div>
                         <div></div>
                         <div class="end">
-                            <a href="javascript:void(0)" class="file-navbar-btn right">
+                            <a href="javascript:void(0)" class="file-navbar-btn right bookmark-popover-button">
                                 <i class="fa-regular fa-star fa-fw"></i>
                             </a>
                             <div class="file-navbar-gotop-wrap">
@@ -274,6 +278,50 @@
             </div>
         </div>
     </div>
+    <div class="bookmark-popover-template">
+        <div class="bookmark-popover-block">
+            <div class="bookmark-popover-inner">
+                <div class="bookmark-popover-scrollable">
+                    <div class="bookmark-popover-item">
+                        <span class="bookmark-popover-item-text">Group1</span>
+                        <span class="bookmark-popover-item-trailing">
+                            <i class="fa-solid fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="bookmark-popover-item">
+                        <span class="bookmark-popover-item-text">Group2</span>
+                        <span class="bookmark-popover-item-trailing">
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="bookmark-popover-item">
+                        <span class="bookmark-popover-item-text">Group3</span>
+                        <span class="bookmark-popover-item-trailing">
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="bookmark-popover-item">
+                        <span class="bookmark-popover-item-text">Group4</span>
+                        <span class="bookmark-popover-item-trailing">
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="bookmark-popover-item">
+                        <span class="bookmark-popover-item-text">Group5</span>
+                        <span class="bookmark-popover-item-trailing">
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="bookmark-popover-item">
+                        <span class="bookmark-popover-item-text">Group6</span>
+                        <span class="bookmark-popover-item-trailing">
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         gotop('.file-navbar-gotop-wrap');
         spinner('.spinner');
@@ -306,6 +354,12 @@
             onThemeButtonChange(theme);
             onThemeChange(theme);
         }
+        var bookmarkButton = document.querySelector('.bookmark-popover-button');
+        popover(bookmarkButton, {
+            template: '.bookmark-popover-template',
+            placement: 'bottomRight',
+            stopPropagation: true
+        });
     </script>
 </body>
 

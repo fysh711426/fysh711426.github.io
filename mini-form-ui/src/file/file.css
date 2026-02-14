@@ -482,6 +482,18 @@ z-index
     max-width: 1319px;
 }
 
+.image-main .toast-inner {
+    color: #181818;
+    background-color: #ececec;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, .1);
+}
+
+.image-main .popover-inner {
+    background-color: #404040;
+    border-color: #454545;
+    box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+}
+
 /*----- image-main -----*/
 
 /*----- file-image-content -----*/

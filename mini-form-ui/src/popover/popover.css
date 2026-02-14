@@ -47,18 +47,3 @@ body.dark {
 }
 
 /*----- tooltip-style -----*/
-
-.popover-menu {
-    animation: .2s cubic-bezier(.16, 1, .3, 1) popoverSlideDownAndFade;
-}
-
-@keyframes popoverSlideDownAndFade {
-    0% {
-        opacity: 0;
-        transform: translateY(-1px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}

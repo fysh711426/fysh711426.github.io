@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="src/tooltip/tooltip.css">
     <link rel="stylesheet" href="src/progress/progress.css">
     <link rel="stylesheet" href="src/spinner/spinner.css">
+    <link rel="stylesheet" href="src/popover/popover.css">
+    <link rel="stylesheet" href="src/dropdown/dropdown-menu.css">
     <link rel="stylesheet" href="src/layout/layout.css">
     <link rel="stylesheet" href="src/layout/layout-theme.css">
     <link rel="stylesheet" href="src/layout/layout-nav-link.css">
@@ -19,6 +21,7 @@
     <link rel="stylesheet" href="src/file/file-theme.css">
     <link rel="stylesheet" href="src/file/file-video-player.css">
     <link rel="stylesheet" href="src/file/file-text-theme.css">
+    <link rel="stylesheet" href="src/file/file-bookmark-popover.css">
     <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
     <script src="src/theme/theme.js"></script>
     <script src="src/scroll/scroll.js"></script>
@@ -26,6 +29,7 @@
     <script src="src/tooltip/tooltip.js"></script>
     <script src="src/progress/progress.js"></script>
     <script src="src/spinner/spinner.js"></script>
+    <script src="src/popover/popover.js"></script>
     <script src="src/layout/layout.js"></script>
     <script src="src/file/file.js"></script>
 </head>
@@ -79,6 +83,12 @@
                                 </div>
                             </div>
                         </div>
+                        <div></div>
+                        <div class="end">
+                            <a href="javascript:void(0)" class="file-navbar-btn right last bookmark-popover-button">
+                                <i class="fa-regular fa-star fa-fw"></i>
+                            </a>
+                        </div>
                     </div>
                     <div class="block file-text-content">次林那這是書活
 
@@ -104,6 +114,50 @@
                         <span>Copyright © 2022</span>
                         <span class="copyright-divider">|</span>
                         <span>小碼農米爾</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bookmark-popover-template">
+        <div class="bookmark-popover-block">
+            <div class="bookmark-popover-inner">
+                <div class="bookmark-popover-scrollable">
+                    <div class="bookmark-popover-item">
+                        <span class="bookmark-popover-item-text">Group1</span>
+                        <span class="bookmark-popover-item-trailing">
+                            <i class="fa-solid fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="bookmark-popover-item">
+                        <span class="bookmark-popover-item-text">Group2</span>
+                        <span class="bookmark-popover-item-trailing">
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="bookmark-popover-item">
+                        <span class="bookmark-popover-item-text">Group3</span>
+                        <span class="bookmark-popover-item-trailing">
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="bookmark-popover-item">
+                        <span class="bookmark-popover-item-text">Group4</span>
+                        <span class="bookmark-popover-item-trailing">
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="bookmark-popover-item">
+                        <span class="bookmark-popover-item-text">Group5</span>
+                        <span class="bookmark-popover-item-trailing">
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="bookmark-popover-item">
+                        <span class="bookmark-popover-item-text">Group6</span>
+                        <span class="bookmark-popover-item-trailing">
+                            <i class="fa-regular fa-star"></i>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -135,6 +189,12 @@
             onTextThemeButtonChange(textTheme);
             onTextThemeChange(textTheme);
         }
+        var bookmarkButton = document.querySelector('.bookmark-popover-button');
+        popover(bookmarkButton, {
+            template: '.bookmark-popover-template',
+            placement: 'bottomRight',
+            stopPropagation: true
+        });
     </script>
 </body>
 
