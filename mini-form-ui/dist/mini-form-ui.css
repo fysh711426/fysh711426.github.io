@@ -1910,21 +1910,6 @@ body.dark {
 }
 
 /*----- tooltip-style -----*/
-
-.popover-menu {
-    animation: .2s cubic-bezier(.16, 1, .3, 1) popoverSlideDownAndFade;
-}
-
-@keyframes popoverSlideDownAndFade {
-    0% {
-        opacity: 0;
-        transform: translateY(-1px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 body.light {
     /*----- dropdown-menu -----*/
     --dropdownMenuColor: #262626;
@@ -2068,7 +2053,7 @@ body.dark {
     border-radius: 10px;
     margin: 0 8px;
     padding: 8px 36px 8px 12px;
-    font-size: 0.9rem;
+    font-size: .9rem;
     font-weight: 700;
 }
 
